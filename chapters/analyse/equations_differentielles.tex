@@ -1,0 +1,253 @@
+\chapter{Equations différentielles linéaires}
+
+\noindent Pour résoudre une équation différentielle, nous allons suivre ces 3 étapes :
+\begin{enumerate}
+	\item Déterminer les solutions de l'équation homogène associée.
+	\item Déterminer une solution particulière de l'équation différentielle.
+	\item Combiner les solutions précédentes pour obtenir la solution générale.
+\end{enumerate}
+
+\section{\'Equations différentielles d'ordre 1}
+
+\begin{definition}[\'Equation différentielle d'ordre 1]
+	Une équation différentielle d'ordre 1 est une équation de la forme
+	\[ y' + a(x)y = b(x) \]
+	pour $y \in \mathcal{C}^{1}(\R, \R),\ a, b \in \mathcal{C}^{0}(\R,\R)$.
+\end{definition}
+
+\begin{theorem}
+	Soient $y \in \mathcal{C}^1(\R, \R),\ a \in \mathcal{C}^0(\R, \R)$, les solutions de :
+	\[ y' + a(x)y = 0 \]
+	sont de la forme $C \in \R,\ A'(x) = a(x)$:
+	\[ y = C \cdot \exp(-A(x)) \]
+\end{theorem}
+
+\begin{proof}Idée trouvée sur Bibmath pour la deuxième partie  \cite{bibmath_resolution_eq_diff}.
+    Il faut montrer l'inclusion dans les deux sens. \\
+    \emph{Inclusion réciproque :}
+	Définissons
+	\[ y = C e^{-A(x)} \]
+	on aurait donc
+	\[ y' = -C a(x)e^{-A(x)} \]
+	puis
+	\[ y' + a(x)y(x) = -C a(x) e^{-A(x)} + a(x)Ce^{-A(x)} = 0 \]
+    \emph{Inclusion directe :}
+    Supposons $y$ solution de $y' + a(x) y = 0$.
+    Alors il existerait un $C \in \R$ tel que $y(x) = Ce^{-A(x)}$.
+    Posons $f(x) = y(x)e^{A(x)}$.
+    \begin{align*}
+        f'(x) &= y'(x)e^{A(x)} + y(x)e^{A(x)}A'(x) \\
+        &= -a(x)y(x)e^{A(x)} + a(x)y(x)e^{A(x)} \\
+        &= 0
+    \end{align*}
+    Cela implique que $f(x) = C,\ C \in \R$. Donc :
+    \begin{align*}
+        C = y(x)e^{A(x)} \iff y(x) = Ce^{-A(x)}
+    \end{align*}
+\end{proof}
+
+\begin{example}
+    $(E_1) : y' - 2xy = 0$.
+    En appliquant le théorème précédent on obtient les solutions :
+    \begin{align*}
+        y_0 = Ce^{x^2}
+    \end{align*}
+\end{example}
+
+\begin{proposition}[Variation de la constante]
+    Pour trouver une solution particulière d'une équation différentielle d'ordre 1. Nous utilisons $y_{h}(x)$, sauf qu'ici, $C$ n'est plus une constante mais une fonction. Cette méthode est appelée \emph{variation de la constante}.
+    \begin{align*}
+        \begin{cases}
+            y_{p} = C(x)e^{-A(x)} \\
+            y_{p}' = C'(x)e^{-A(x)} - C(x)a(x)e^{-A(x)}
+        \end{cases}
+    \end{align*}
+    On obtient alors en remplaçant dans l'équation générale :
+    \begin{align*}
+        &y_{p}' + a(x) y_{p} = b(x) \\
+        \iff &C'(x)e^{-A(x)} - C(x)a(x) e^{-A(x)} + a(x)C(x)e^{-A(x)} = b(x) \\
+        \iff &C'(x) e^{-A(x)} = b(x) \\
+        \iff &C(x) = \int b(x) e^{A(x)}
+    \end{align*}
+\end{proposition}
+
+\begin{example}
+    $(E_1) : y' - 2xy = \exp(x^2 - x)$.
+    On utilise donc la solution homogène trouvée précédemment avec la variation de la constante.
+    \begin{align*}
+        \begin{cases}
+            y_p = C(x) e^{x^2} \\ 
+            y_p' = C'(x) e^{x^2} + C(x)2x e^{x^2}
+        \end{cases}
+    \end{align*}
+    On remplace dans l'équation $(E_1)$.
+    \begin{align*}
+        y_p' - 2x y_p &= \exp(x^2 - x) \\
+        C'(x) e^{x^2} + C(x)2x e^{x^2} - 2x C(x)e^{x^2} &= \exp(x^2 - x) \\
+        C'(x)e^{x^2} &= \exp(x^2 - x) \\ 
+        C'(x) &= \frac{\exp(x^2 - x)}{e^{x^2}} \\
+        C'(x) &= \exp(x^2 - x - x^2) \\
+        C'(x) &= \exp(-x) \\
+        C(x) &= -\exp(-x) + k, k \in \R
+    \end{align*}
+    Ainsi on a l'ensemble des solutions de $(E_1)$ :
+    \begin{align*}
+        y &= (-e^{-x} + k) e^{x^2}, k \in \R \\
+        y &= -\exp(x^2 - x) + ke^{x^2}, k \in \R
+    \end{align*}
+\end{example}
+
+\section{\'Equations différentielles d'ordre 2}
+
+\begin{definition}[\'Equations différentielle d'ordre 2]
+	Une équation différentielle d'ordre 2 est une équation de la forme
+	\[ y'' + py' + q = b(x) \]
+	pour $y \in \mathcal{C}^{2},\ b \in \mathcal{C}^{0},\ p, q \in \R$.
+\end{definition}
+
+\begin{theorem}
+  Soient $y \in \mathcal{C}^2(\R,\R),\ p, q \in \R$ et $(E)$ l'équation suivante :
+  \[ (E) : y'' + py' + qy = 0, \]
+  On s'intéresse d'abord à cette équation associée :
+  \[ \ \lambda^{2} + p\lambda + q = 0 \]
+  Pour $\Delta = p^2 - 4q$. 
+  \begin{enumerate}
+	\item Cas 1 :
+		  $\Delta > 0$
+		  \[ y = C_{1} e^{\lambda_{1} x} + C_{2} e^{\lambda_{2} x},\ \lambda_{i} C_{i} \in \R \]
+        \[ \lambda_{1/2} = \frac{-p \pm \sqrt{\Delta}}{2} \]
+	\item Cas 2:
+		  $\Delta = 0$
+		  \[ y = (C_{1} + C_{2}x) e^{\lambda x},\ C_{i}, \lambda \in \R \]
+        \[ \lambda = \frac{-p}{2} \]
+	\item Cas 3 :
+		  $\Delta < 0$
+		  $,\ \lambda_{1} = a + ib,\ a, b \in \R,\ \lambda_{2} = a - ib \equiv \overline{\lambda_{1}}$
+		  \[ y = e^{ax}(C_1 \cos(\abs{b}x) + C_2 \sin(\abs{b}x)), C_i \in \R \]
+        \[ \lambda_{1/2} = \frac{-p \pm i \sqrt{-\Delta}}{2} \]
+  \end{enumerate}
+\end{theorem}
+
+La variation de la constante est difficilement applicable sur les équations différentielles de second ordre, nous devons trouver d'autres méthodes.
+Toutes les équations de second ordre qu'on étudiera dans ce chapitre auront pour second membre une composé de fonctions polynomiales, exponentielles et trigonométriques. Ainsi, nous pouvons utiliser ces propriétés.
+\begin{proposition}
+    Voici une méthode pour trouver une solution particulière d'une équation de type :
+    \[ y'' + py' + qy = b(x) \]
+    pour $p, q \in \R, b \in \mathcal{C}^0(\R, \R), y \in \mathcal{C}^2(\R, \R)$. \\
+    Soient $\alpha, \beta \in \R$, $m \in \N$, $P, P_1, P_2, Q_1, Q_2 \in \R[X]$. 
+    \begin{itemize}
+        \item \cite{exo7_analyse1} Si $b(x) = e^{\alpha x}(P_1(x) \cos(\beta x) + P_2(x) \sin(\beta x) )$
+        \[y_{p} = x^{m} e^{\alpha x}(Q_1(x) \cos(\beta x) + Q_2(x) \sin(\beta x)) ,\ \deg(Q_1), \deg(Q_2) \leq \max\left\{ \deg(P_1), \deg(P_2) \right\} \]
+        \[ m = \begin{cases}
+            0 \text{ si } \alpha + i\beta \text{ n'est pas racine de l'équation caractéristique} \\
+            1 \text{ sinon}
+        \end{cases} \]
+        \item Si $b(x) = P(x) e^{\alpha x}$ 
+        \[ y_p = x^m Q(x)e^{\alpha x},\ \deg(Q) \leq \deg(P) \]
+        avec $m$ l'ordre de multiplicité (voir \autoref{def:ordre_mult}) de la racine $\alpha$ par rapport à l'équation caractéristique associée.
+    \end{itemize}
+\end{proposition}
+
+\begin{remark}
+    Il existe des propriétés analogues pour les équations différentielles du premier ordre, parfois cela est plus rapide qu'avec la variation de la constante.
+\end{remark}
+
+\begin{example}
+    $(E) : y'' - 2y' + 3y = 9x^2 e^{2x} + 4e^x$
+    Tout d'abord, résolvons l'équation homogène associée :
+    \[ (E_0) : y'' - 2y' + 3y = 0 \]
+    \[ \lambda^2 - 2\lambda + 3 = 0 \]
+    \[ \Delta = (-2)^2 - 4 \cdot 3 = -8 < 0 \]
+    \begin{align*}
+        \lambda_1 &= \frac{2 - i\sqrt{8}}{2} & \lambda_2 &= \frac{2 + i\sqrt{8}}{2} \\
+        &= 1 - i\sqrt{2} & &= 1 + i\sqrt{2}
+    \end{align*}
+    Ainsi les solutions de $(E_0)$ sont :
+    \[ y_0 = e^x \left(C_1 \cos(\sqrt{2}x) + C_2 i \sin(\sqrt{2}x) \right) \]
+    Trouvons une solution particulière de l'équation :
+    \[ (E_1) : y'' - 2y' + 3y = 9x^2 e^{2x} \]
+    On remarque que le second membre (le \og $b(x)$ \fg) est de la forme $P(x) e^{\alpha x}$ avec $\deg(P) = 2$ et $\alpha \notin \{1 \pm i\sqrt{2}\}$, ainsi la solution particulière est de la forme $y_1 = (ax^2 + bx + c)e^{2x},\ a, b, c \in \R$.
+    On a donc :
+    \begin{align*}
+        \begin{cases}
+            y_1 = (ax^2 + bx + c)e^{2x} \\
+            y_1' = (2ax + b)e^{2x} + 2(ax^2 + bx + c)e^{2x} = (2ax + b)e^{2x} + 2y_1 \\
+            y_1'' = 2a e^{2x} + 2(2ax + b)e^{2x} + 2y_1'
+        \end{cases}
+    \end{align*}
+    En remplaçant dans $(E_1)$ :
+    \begin{align*}
+        2ae^{2x} + 2(2ax + b)e^{2x} + 2y_1' - 2[(2ax + b)e^{2x} + 2y_1] + 3y_1 &= 9x^2 e^{2x} \\
+        2ae^{2x} + (4ax + 2b)e^{2x} + 2y_1' - (4ax + 2b)e^{2x} - 4y_1 + 3y_1 &= 9x^2 e^{2x} \\
+        2ae^{2x}+ 2y_1' - y_1 &= 9x^2e^{2x} \\
+        2ae^{2x} + 2[(2ax + b)e^{2x} + 2y_1] - y_1 &= 9x^2e^{2x} \\
+        2ae^{2x} + (4ax + 2b)e^{2x} + 4 y_1 - y_1 &= 9x^2 e^{2x} \\
+        2ae^{2x} + (4ax + 2b)e^{2x} + 3y_1 &= 9x^2e^{2x} \\
+        2ae^{2x} + (4ax + 2b)e^{2x} + 3[(ax^2 + bx + c)e^{2x}] &= 9x^2 e^{2x} \\ 
+        2ae^{2x} + (4ax + 2b)e^{2x} + (3ax^2 + 3bx + 3c)e^{2x} &= 9x^2 e^{2x} \\
+        (2a + 4ax + 2b + 3ax^2 + 3bx + 3c)e^{2x} &= 9x^2 e^{2x} \\
+        [3ax^2 + (4a + 3b)x + (2a + 2b + 3c)]e^{2x} &= 9x^2 e^{2x}
+    \end{align*}
+    On procède par identification :
+    \begin{align*}
+        \systeme{
+            3a = 9,
+            4a + 3b = 0,
+            2a + 2b + 3c = 0
+        }
+        \iff 
+        \systeme{
+            a = 3,
+            4a + 3b = 0,
+            2a + 2b + 3c = 0
+        }
+        \iff 
+        \systeme{
+            a = 3,
+            3b = -12,
+            2a + 2b + 3c = 0
+        }
+        \\ 
+        \iff 
+        \systeme{
+            a = 3,
+            b = -4,
+            2a + 2b + 3c = 0
+        }
+        \iff 
+        \systeme{
+            a = 3,
+            b = -4,
+            3c = 2
+        }
+        \iff 
+        \systeme{
+            a = 3,
+            b = -4,
+            c = \frac{2}{3}
+        }
+    \end{align*}
+    \[ y_1 = \left(3x^2 - 4x + \frac{2}{3} \right)e^{2x} \]
+    Maintenant trouvons une solution particulière de l'équation :
+    \[ (E_2) : y'' - 2y' + 3y = 4e^x \]
+    Ici on a encore une forme $P(x)e^{\alpha x}$ avec $P(x) = 1, \deg(P) = 0$ et $\alpha \notin \{ 1 \pm i \sqrt{2} \}$ ainsi $y_2 = k e^{x}, k \in \R$
+    \begin{align*}
+        \begin{cases}
+            y_2 = k e^{x} \\
+            y_2' = k e^{x} \\
+            y_2'' = k e^{x}
+        \end{cases}
+    \end{align*}
+    \begin{align*}
+        k e^{x} -2k e^{x} + 3k e^{x} &= 4e^x \\ 
+        2k e^x &= 4e^x \\
+        k e^x = 2e^x
+    \end{align*}
+    \[ y_2 = 2e^x \]
+    Solution générale :
+    \begin{align*}
+        y &= y_0 + y_1 + y_2 \\
+        y &= e^x \left(C_1 \cos(\sqrt{2}x) + C_2 i \sin(\sqrt{2}x) \right) + \left(3x^2 - 4x + \frac{2}{3} \right)e^{2x} + 2e^x \\
+        y &= \left(C_1 \cos(\sqrt{2}x) + C_2 i \sin(\sqrt{2}x) + 2 \right)e^x + \left(3x^2 - 4x + \frac{2}{3} \right)e^{2x}
+    \end{align*} 
+\end{example}

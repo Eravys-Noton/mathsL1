@@ -1,0 +1,36 @@
+\chapter{Nombres complexes}
+
+On définit l'ensemble des nombres complexes, noté $\C$, comme une extension de l'ensemble des nombres réels.
+Cette extension introduit un nouvel élément, noté $i$, appelé \emph{nombre imaginaire} et défini comme $i^2=-1$.
+
+\subsection{Vision algébrique des nombres complexes}
+\begin{definition}[Forme algébrique d'un nombre complexe]
+    Soient $a, b \in \R$ et $z \in \C$, on appelle \emph{forme algébrique} de $z$ l'expression $z = a + ib$.
+    \\
+    $a$ est appelé \og \emph{partie réelle} \fg, notée $\Re(z)$ et $b$ est appelé \og \emph{partie imaginaire} \fg, notée $\Im(z)$.
+\end{definition}
+
+\begin{definition}[Module d'un nombre complexe]
+    Soit $z = a + ib$ avec $a, b \in \R$. 
+    \\
+    On définit $\abs{z}$ tel que :
+    \[ \abs{z} = \sqrt{a^2 + b^2} \]
+    qu'on appelle \emph{module} de $z$.
+\end{definition}
+
+\begin{definition}[Conjugué d'un nombre complexe]
+    Soit $z = a + ib$ avec $a, b \in \R$. On appelle conjugué de $z$ qu'on note $\overline{z}$ tel que :
+    \[ \overline{z} = a - ib \]
+\end{definition}
+
+\begin{proposition}
+    Soient $z_1, z_2 \in \C$.
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $\abs{z_1 + z_2} \leq \abs{z_1} + \abs{z_2}$.
+            \item $\abs{z_1 - z_2} \geq \abs{z_1} - \abs{z_2}$.
+            \item $\abs{z_1 \cdot z_2} = \abs{z_1} \cdot \abs{z_2}$.
+        \end{enumerate}
+    \end{multicols}
+\end{proposition}
+

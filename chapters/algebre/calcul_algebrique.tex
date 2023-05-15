@@ -1,0 +1,69 @@
+\chapter{Calcul Algèbrique}
+\par \noindent Dans cette partie, $\K$ désigne soit $\N$, soit $\Z$, soit $\Q$, soit $\R$.
+
+\begin{axiom}[Loi de composition \og $+$ \fg]
+    $\forall a, b, c \in \K,\ \K \backslash \{\N\}$ 
+    \begin{align*}
+        a + (b + c) &= (a + b) + c & a + b &= b + a \\
+        a + 0 &= a & \exists a' \in \K,\ a + a' &= 0 \implies a' = -a
+    \end{align*}
+\end{axiom}
+
+\begin{axiom}[Loi de composition \og $\cdot$ \fg]
+    $\forall a, b, c \in \K$ 
+    \begin{align*}
+        a \cdot (b \cdot c) &= (a \cdot b) \cdot c & a \cdot b &= b \cdot a \\
+        a \cdot 1 &= a & a \cdot 0 &= 0 \\
+        a \cdot (b + c) &= a \cdot b + a \cdot c & (a + b) \cdot c &= a \cdot c + b \cdot c 
+    \end{align*}
+\end{axiom}
+
+\begin{proposition}[Opérations sur les fractions]
+    $\forall a, c \in \Z,\ \forall b, d \in \Z^*$
+    \begin{align*}
+        \frac{a}{b} + \frac{c}{d} &= \frac{ad + bc}{bd} & \frac{a}{b} \cdot \frac{c}{d} &= \frac{a \cdot c}{b \cdot d}
+    \end{align*}
+\end{proposition}
+
+\begin{definition}[Somme]
+    $\forall m, n \in \N,\ m \leq n,\ \forall a_k \in \R,\ m \leq k \leq n$ 
+    \[ \sum_{k = m}^n a_k = a_m + a_{m + 1} + \cdots + a_n \]
+\end{definition}
+
+\begin{notation}
+    La somme est parfois notée de cette manière :
+    \[ \sum_{k = m}^n \equiv \sum_{m \leq k \leq n} \]
+\end{notation}
+
+\begin{proposition}[Linéarité de la somme]
+    $\forall m, n \in \N,\ m \leq n,\ \forall a_k, \lambda \in \R,\ m \leq k \leq n$
+    \[ \sum_{k = m}^{n} (a_k + \lambda b_k) = \sum_{k = m}^n a_k + \lambda \sum_{k = m}^n b_k \]
+\end{proposition}
+
+\begin{proposition}[Somme téléscopique]
+    $\forall m, n \in \N,\ m \leq n,\ \forall a_k \in \R,\ m \leq k \leq n$
+    \[ \sum_{k = m}^n (a_k - a_{k - 1}) = a_n - a_{m - 1} \]
+\end{proposition}
+
+\begin{proposition}
+	$\forall n, p \in \N,\ n \geq p$,
+	\[ \binom{n}{p} = \frac{n!}{p!(n - p)!} \]
+	$\forall n \in \N$,
+	\begin{align*}
+		\sum_{k = 0}^{n} k &= \frac{n(n+1)}{2} & 
+		\sum_{k = 0}^{n} k^2 &= \frac{n(n+1)(2n+1)}{6} &
+		\sum_{k = 0}^{n} k^3 &= \frac{n^2(n+1)^2}{4}
+	\end{align*}
+	$\forall a, b \in \K,\ n \in \N$,
+	\begin{align*}
+		(a + b)^n = \sum_{k = 0}^{n} \binom{n}{k} a^kb^{n-k}
+	\end{align*}
+\end{proposition}
+\begin{proof}
+    Pour les démonstrations, on procède par interprétation combinatoire et par récurrence.
+\end{proof}
+
+\begin{definition}[Produit]
+    $\forall m, n \in \N,\ m \leq n, a_k \in \R, m \leq k \leq n$
+    \[ \prod_{k = m}^{n} \equiv \prod_{m \leq k \leq n} = a_1 \cdot a_2 \cdot \ldots \cdot a_n \]
+\end{definition}

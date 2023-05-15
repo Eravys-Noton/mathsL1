@@ -1,0 +1,162 @@
+\chapter{Développements limités et formules de Taylor}
+
+Dans cette partie, en l'absence de précisions supplémentaires, $I$ désigne un intervalle de $\R$.
+
+\begin{notation}
+    Dans cette section, on définit la notation suivante : 
+    \[ \overline{I} \coloneqq I \cup \{\pm \infty\} \]
+\end{notation}
+
+\par Il arrive parfois des situations où l'on se retrouve avec des formes indéterminées de type \og $\frac{0}{0}$ \fg ou \og $\frac{\infty}{\infty}$ \fg lorsque nous essayons de calculer les limites, le théorème suivant permet de lever l'indétermination assez simplement.
+Plus tard dans ce chapitre, nous pourrons également utiliser les développements limités pour lever les indéterminations.
+\section{Règle de l'Hôpital}
+\begin{theorem}[Règle de l'Hôpital]\cite{regle_hopital_bibmath}
+    Soient $a, b, \ell \in \overline{\R}$ tels que $a < b$ et $f, g : ]a, b[ \to \R$ deux fonctions dérivables telles que $g'$ ne s'annule pas. 
+    \begin{enumerate}
+        \item Si $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$ et si $\lim_{x \to a} \frac{f'(x)}{g'(x)} = \ell$, alors $\lim_{x \to a} \frac{f(x)}{g(x)} = \ell$.
+        \item Si $\lim_{x \to a} g(x) = \pm \infty$ et si $\lim_{x \to a} \frac{f'(x)}{g'(x)} = \ell$, alors $\lim_{x \to a} \frac{f(x)}{g(x)} = \ell$.
+    \end{enumerate}
+\end{theorem}
+
+
+\begin{example}
+    $\lim_{x \to 0} \frac{\sin(2x)}{x}$, on a ici une forme indéterminée \og $\frac{0}{0}$ \fg.
+    On remarque que $\sin(2x)$ et $x$ sont dérivables en 0 et $x' = 1 \neq 0$, on utilise donc la règle de l'Hôpital pour lever l'indétermination.
+    \begin{align*}
+        \lim_{x \to 0} \frac{\sin(2x)}{x} &= \lim_{x \to 0} \frac{\sin'(2x)}{x'} \\
+        &= \lim_{x \to 0} \frac{2 \cos(x)}{1} \\
+        &= 2 \lim_{x \to 0} \cos(x) \\
+        &= 2
+    \end{align*}
+\end{example}
+
+\begin{definition} 
+    Soit $a \in \R$.
+    On dit que $x$ est au voisinage d'un point $a$ si et seulement si :
+    \[ \exists \varepsilon > 0, \text{ tel que } x \in ]a - \varepsilon, a + \varepsilon[ \]
+\end{definition}
+
+\section{Relations de négligeabilité, domination, d'équivalence}
+\begin{definition}
+    Soient $I \subset \R$, $f, g : I \to \R$, $a \in \overline{I}$ et $\varepsilon$ telle que $\lim_{x \to a} \varepsilon(x) = 0$.
+    \begin{enumerate}
+        \item On dit que $f$ est \emph{dominée} par $g$ au voisinage de $a$ s'il existe un $B \in \R_+$ tel que $\abs{f(x)} \leq B \abs{g(x)}$ au voisinage de $a$. 
+        On écrit alors $f \underset{a}{=} O(g)$ ou $f = O_a(g)$.
+        \item On dit que $f$ est \emph{négligeable} devant $g$ au voisinage de $a$ si $f(x) = g(x) \cdot \varepsilon(x)$.
+        On écrit alors $f \underset{a}{=} o(g)$ ou $f = o_a(g)$.
+        \item On dit que $f$ est \emph{équivalente} à $g$ au voisinage de $a$ si $f(x) = g(x) (1 + \varepsilon(x))$.
+        On écrit alors $f \underset{a}{\sim} g$.
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}\leavevmode
+    \begin{enumerate}
+        \item Si $\lim_{x \to a} \frac{f(x)}{g(x)} = 0$ alors $f$ est négligeable devant $g$.
+        \item Si $\lim_{x \to a} \frac{f(x)}{g(x)} = 1$ alors $f$ est équivalente à $g$.
+        \item Si $\lim_{x \to a} \frac{f(x)}{g(x)}$ est bornée, alors $f$ est dominée par $g$.
+    \end{enumerate}   
+\end{proposition}
+
+\begin{proposition}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $o(1) + o(1) = o(1)$
+        \item $\forall \lambda \in \R,\ \lambda \cdot o(1) = o(1)$
+        \item $\forall n \in \N^*,\ (o(1))^n = o(1)$
+        \item $\forall \alpha > 0,\ (o(1))^{\alpha} = o(1)$
+        \item $\forall \alpha \in \R,\ (1 + o(1))^{\alpha} = 1 + o(1)$
+        \item $O(1) + O(1) = O(1)$
+        \item $\forall \lambda \in \R,\ \lambda \cdot O(1) = O(1)$
+        \item $\forall n \in \N^*,\ (O(1))^n = O(1)$
+        \item $o(1) \cdot O(1) = o(1)$
+    \end{enumerate}
+\end{multicols}
+\end{proposition}
+
+\begin{proposition}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\ln(x) \underset{+\infty}{\sim} o(x)$
+        \item $\forall \alpha, \beta \in \R_+^*,\ (\ln(x))^{\beta} = o(x^{\alpha})$
+        \item $\forall \alpha, \beta \in \R_+^*,\ x^{\beta} = o(e^{\alpha x})$
+    \end{enumerate}
+\end{multicols}
+\end{proposition}
+
+\begin{proposition}
+    Soit $f$ une fonction polynomiale. 
+    \begin{enumerate}
+        \item Un équivalent de $f$ en l'infini est un son monôme de plus haut degré.
+        \item Un équivalent de $f$ en 0 est son monôme de plus bas degré.
+    \end{enumerate}
+\end{proposition}
+
+\section{Développements limités}
+
+\begin{definition}[Polynôme de Taylor]
+    Soit $f \in \mathcal{D}^n(I, \R)$ alors son polynôme de Taylor en $x_0$ est :
+    \[ T_{n, x_0}^f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k \]
+\end{definition}
+
+\begin{theorem}[Formule de Taylor-Young]
+    Soient $f \in \mathcal{C}^{n}(I, \R),\ x_0 \in I$.
+    \begin{align*}
+        f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + o((x - x_0)^n) 
+    \end{align*}
+\end{theorem}
+
+\begin{theorem}[Formue de Taylor-Lagrange]
+    Soient $f \in \mathcal{C}^{n+1}(I, \R),\ x_0 \in I$. 
+    \begin{align*}
+        \exists c \in 
+        \begin{cases}
+            ]x_0, x[ \text{ si } x > x_0 \\
+            ]x, x_0[ \text{ si } x < x_0
+        \end{cases},\
+        f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + 
+        \frac{f^{(n+1)}(c)}{(n+1)!} (x - x_0)^{n+1}
+    \end{align*}
+\end{theorem}
+
+\begin{theorem}[Formule de Taylor avec reste intégral]
+    Soient $f \in \mathcal{C}^{n+1}(I, \R),\ x_0 \in I$.
+    \begin{align*}
+        f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + \int_{x_0}^{x} \frac{f^{(n+1)}(t)}{n!} (x - t)^n \diffd t
+    \end{align*}
+\end{theorem}
+
+\begin{corollary}[Inégalité de Taylor-Lagrange]
+    Si $\forall x \in I,\ \abs{f^{(n+1)}(x)} \leq M$ alors
+    \[ \abs{\int_{x_0}^{x} \frac{f^{(n+1)}(t)}{n!} (x - t)^n \ \diffd t} \leq M \frac{\abs{x - x_0}^{n+1}}{(n+1)!} \]
+\end{corollary}
+
+\begin{definition}[Développement limité]
+    Un polynôme $P_n(x)$ de degré $n$ satisfaisant :
+    \[ f(x) = P_n(x) + o((x - x_0)^n) \]
+    est un développement limité d'ordre $n$ de la fonction $f$.
+\end{definition}
+
+\begin{remark}
+    Il est courant d'abréger développement limité par DL s'il n'y a pas d'ambiguïté.
+\end{remark}
+
+\begin{proposition}
+    Si une fonction admet un développement limité, alors il est unique.
+\end{proposition}
+
+\subsection{Opérations sur les développements limités}
+\begin{proposition}
+    Soient $(c_0, \ldots, c_n) \in \R^{n+1}, (d_0, \ldots, d_n) \in \R^{n+1}$ et $f, g$ deux fonctions admettant des développements limités en 0 telles que :
+    \[ f(x) = c_0 + c_1x + \cdots + c_n x^n + o(x^n) \]
+    \[ g(x) = d_0 + d_1x + \cdots + d_n x^n + o(x^n) \]
+    \begin{enumerate}
+        \item Addition : $f + g$ admet un développement limité en 0 à l'ordre $n$.
+        \[ f(x) + g(x) = (c_0 + d_0) + (c_1 + d_1)x + \cdots + (c_n + d_n) x^n + o(x^n) \]
+        \item Multiplication : $f \cdot g$ admet un développement limité en 0 à l'ordre $n$.
+        \[ (c_0 + c_1 x + \cdots + c_n x^n) \cdot (d_0 + d_1 x + \cdots + d_n x^n) \]
+        où l'on conserve les monômes de degré inférieur ou égal à $n$.
+        \item Composition : Si $g(0) = 0$ alors la fonction $f \circ g$ admet un développement limité en 0 à l'ordre $n$.\\
+        Posons $C(x) \coloneqq c_0 + c_1x + \cdots + c_n x^n$ et $D(x) \coloneqq d_0 + d_1x + \cdots + d_n x^n$.\\
+        Sa partie polynomiale est le polynôme tronqué à l'ordre $n$ (on conserve les monômes de degré inférieur ou égal à $n$) de la composition $C(D(x))$. 
+    \end{enumerate}
+\end{proposition}

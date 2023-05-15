@@ -1,0 +1,49 @@
+\chapter{Logique}
+\begin{definition}[Assertion]
+  Une assertion est une affirmation mathématique soit vraie soit fausse.
+\end{definition}
+
+\begin{definition}[Prédicat]
+  Un prédicat est un énoncé mathématique dont la véracité dépend d'une ou plusieurs variables.
+\end{definition}
+
+\begin{proposition}[Opérations logiques de base]
+  Soient $P, Q$ deux prédicats.
+  \begin{table}[!h]
+    \centering
+    \begin{tabular}{cccccc}
+      \toprule
+      $P$ & $Q$ & $P$ et $Q$ & $P$ ou $Q$ & non($P$) & $P \implies Q$ \\
+      \midrule
+      $V$ & $V$ & $V$ & $V$ & $F$ & $V$ \\
+      $V$ & $F$ & $F$ & $V$ & $F$ & $F$ \\
+      $F$ & $V$ & $F$ & $V$ & $V$ & $V$ \\
+      $F$ & $F$ & $F$ & $F$ & $V$ & $V$ \\
+      \bottomrule
+    \end{tabular}
+  \end{table}
+  
+  \noindent Si $P \implies Q$ et $Q \implies P$ alors $P \iff Q$.
+  \begin{multicols}{2}
+    \begin{enumerate} 
+    \item $P \implies Q \iff \operatorname{non}(P) \text{ ou } Q$
+    \item $\operatorname{non}(P \text{ ou } Q) \iff \operatorname{non}(P) \text{ et } \operatorname{non}(Q)$
+    \item $\operatorname{non}(P \text{ et } Q) \iff \operatorname{non}(P) \text{ ou } \operatorname{non}(Q)$
+    \item $P \implies Q \iff \operatorname{non}(Q) \implies \operatorname{non}(P)$
+  \end{enumerate}
+  \end{multicols}
+\end{proposition}
+
+\begin{remark}
+    Les 2. et 3. sont les lois de Morgan, la 4. est la contraposée.
+\end{remark}
+
+\begin{notation}
+    En logique le \og ET \fg peut se noter $\land$ et le \og OU \fg $\lor$.
+\end{notation}
+
+\par \noindent Voici quelques négations usuelles :
+\begin{itemize}
+    \item Le contraire de \og $\forall x \in E, P(x)$ \fg est \og $\exists x \in E, \operatorname{non}(P(x))$ \fg.
+    \item Le contraire de \og $x < y$ \fg est \og $x \geq y$ \fg.
+\end{itemize}

@@ -1,0 +1,80 @@
+\chapter{Continuité et limites de fonctions}
+\begin{definition}[Limite d'une fonction]
+    \begin{enumerate}
+        \item En un point $a \in \R$, $\ell \in \R$ :
+        \begin{enumerate}
+            \item $ \lim_{x \to a} f(x) = \ell \iff 
+	\forall \varepsilon > 0,\ \exists \delta > 0,\ \abs{x - a} \leq \delta \implies \abs{f(x) - \ell} \leq \varepsilon $.
+            \item $ \lim_{x \to a} f(x) = +\infty \iff 
+	\forall A \in \R,\ \exists \delta > 0,\ \abs{x - a} \leq \delta \implies f(x) \geq A $.
+            \item $ \lim_{x \to a} f(x) = -\infty \iff 
+	\forall A \in \R,\ \exists \delta > 0,\ \abs{x - a} \leq \delta \implies f(x) \leq A $.
+        \end{enumerate}
+        \item En l'infini, $\ell \in \R$ : 
+        \begin{enumerate}
+            \item $ \lim_{x \to +\infty} f(x) = \ell \iff 
+	\forall \varepsilon > 0,\ \exists A \in \R,\ x \geq A \implies \abs{f(x) - \ell} < \varepsilon $.
+            \item $ \lim_{x \to -\infty} f(x) = \ell \iff 
+	\forall \varepsilon > 0,\ \exists A \in \R,\ x \leq A \implies \abs{f(x) - \ell} \leq \varepsilon $.
+            \item $\lim_{x \to +\infty} f(x) = +\infty \iff 
+	\forall A \in \R,\ \exists B \in \R,\ x \geq B \implies f(x) \geq A $.
+            \item $ \lim_{x \to +\infty} f(x) = -\infty \iff 
+	\forall A \in \R,\ \exists B \in \R,\ x \geq B \implies f(x) \leq A $.
+            \item $ \lim_{x \to -\infty} f(x) = +\infty \iff 
+	\forall A \in \R,\ \exists B \in \R,\ x \leq B \implies f(x) \geq A $.
+            \item $\lim_{x \to -\infty} f(x) = -\infty \iff 
+	\forall A \in \R,\ \exists B \in \R,\ x \leq B \implies f(x) \leq A$.
+        \end{enumerate}
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+	Soit $I \subseteq \R,\ f : I \to \R,\ a \in I,\ \ell \in \R \cup \{-\infty, +\infty\}$
+	\[ \lim_{x \to a} f(x) = \ell \iff \forall (u_n)_{n \in \N},\ \lim_{n \to +\infty} u_n = a \implies \lim_{n \to +\infty} f(u_n) = \ell \]
+\end{theorem}
+
+\begin{definition}[Limite à gauche et à droite]
+    Soit $I \subseteq \R,\ a \in I,\ f : I \to \R $.
+    \begin{enumerate}
+        \item $ \lim_{\substack{x \to a \\ x < a}} f(x) \equiv \lim_{x \to a^-} f(x) = \ell \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ a - \delta < x < a \implies \abs{f(x) - \ell} \leq \varepsilon $.
+        \item $\lim_{\substack{x \to a \\ x > a}} f(x) \equiv \lim_{x \to a^+} f(x) = \ell \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ a < x < a + \delta \implies \abs{f(x) - \ell} \leq \varepsilon$.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Continuité]
+	Soit $I$ un intervalle, $a \in I,\ f : I \to \R$.
+        \\ 
+        On dit que $f$ est \emph{continue} si et seulement si :
+        \[\lim_{x \to a} f(x) = f(a).\] 
+	On dit que $f$ est continue sur $I$ si elle est continue en tout point de $I$.\\
+	On peut également définir la continuité à gauche et à droite.
+\end{definition}
+
+\begin{theorem}[Théorème des valeurs intermédiaires]
+	$\forall a, b \in \R,\ a < b,\ f : [a, b] \to \R$ une fonction continue.
+	\[ \forall y \in [f(a), f(b)],\ \exists c \in [a, b],\ f(c) = y \]
+\end{theorem}
+
+\begin{theorem}
+	$\forall a, b \in \R,\ a < b,\ f : ]a, b[ \to \R$. 
+	Si $f$ est croissante.
+	\begin{enumerate}
+		\item $f$ admet une limite en $b$, qui est finie si et seulement si $f$ est \emph{majorée}.
+		\item $f$ admet une limite en $a$, qui est finie si et seulement si $f$ est \emph{minorée}.
+	\end{enumerate}
+	Si $f$ est décroissante.
+	\begin{enumerate}
+		\item $f$ admet une limite en $b$, qui est finie si et seulement si $f$ est \emph{minorée}.
+		\item $f$ admet une limite en $a$, qui est finie si et seulement si $f$ est \emph{majorée}.
+	\end{enumerate}
+	$\forall x_0 \in ]a, b[$
+	\[ \lim_{\substack{x \to a \\ x < x_0}} f(x) \leq f(x_0) \leq \lim_{\substack{x \to a \\ x > x_0}} f(x) \]
+\end{theorem}
+
+\begin{theorem}
+	$\forall a, b \in \R,\ a < b,\ f : [a, b] \to \R$ une fonction continue.
+	\begin{enumerate}
+	    \item $ f \text{ strictement croissante} \implies f : [a, b] \to [f(a), f(b)] \text{ est une bijection} $.
+            \item $ f \text{ strictement décroissante} \implies f : [a, b] \to [f(b), f(a)] \text{ est une bijection} $.
+	\end{enumerate}
+\end{theorem}

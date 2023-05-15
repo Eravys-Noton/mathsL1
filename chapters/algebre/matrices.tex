@@ -1,0 +1,368 @@
+\chapter{Systèmes linéaires et matrices}
+\def\arraystretch{1}
+
+\section{Définitions et opérations élémentaires}
+\begin{definition}[Matrice]
+    Une \emph{matrice} est un tableau de données appartenant à $\mathcal{M}_{m,n} (\K)$ : $\forall i \in \llbracket 1, m \rrbracket,\ j \in \llbracket 1, n \rrbracket ,\ a_{ij} \in \K$ : 
+    \begin{align*}
+        \begin{pmatrix}
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{pmatrix}
+    \end{align*}
+\end{definition}
+
+\begin{definition}[Système linéaire]
+    Soient $(x_1, \ldots, x_n) \in \K^n \ n$ inconnues et $\forall i \in \llbracket 1, m \rrbracket,\ j \in \llbracket 1, n \rrbracket,\ a_{ij}, b_i \in \K$.
+    Un \emph{système linéaire} est décrit par :
+    \begin{align*}
+        \begin{cases}
+            a_{11} \cdot x_1 + a_{12} \cdot x_2 + \cdots + a_{1n} \cdot x_n = b_1 \\
+            a_{21} \cdot x_1 + a_{22} \cdot x_2 + \cdots + a_{2n} \cdot x_n = b_2 \\
+            \vdots \\
+            a_{m1} \cdot x_1 + a_{m2} \cdot x_2 + \cdots + a_{mn} \cdot x_n = b_m
+        \end{cases}
+    \end{align*}        
+    Sa matrice associée est : 
+    \begin{align*}
+        \left(
+        \begin{matrix}    
+            a_{11} & a_{12} & \cdots & a_{1n} \\
+            a_{21} & a_{22} & \cdots & a_{2n} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{matrix}
+        \
+        \middle|
+        \
+        \begin{matrix}
+            b_1 \\
+            b_2 \\
+            \vdots \\
+            b_m
+        \end{matrix}
+        \right)
+    \end{align*}
+\end{definition}
+
+\begin{definition}[Opérations élémentaires]
+	Soient $i, j$ tels que $i \neq j$ des numéros de ligne et $\forall \lambda \in \K^*$.
+	\begin{multicols}{2}
+        \begin{enumerate}
+		\item $L_i \leftarrow L_i + \lambda L_j$ 
+		\item $L_i \leftrightarrow L_j$
+		\item $L_i \leftarrow \lambda \cdot L_i$
+	\end{enumerate}
+    \end{multicols}
+	Opérations analogues sur les colonnes.
+\end{definition}
+
+\begin{proposition}[Pivot de Gauss]
+    L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est analogue sauf qu'on applique les opérations sur les colonnes. \\
+	Soit un système ou une matrice. On applique les opérations élémentaires pour obtenir un système ou une matrice équivalente de la forme :
+	\begin{align*}
+		\begin{pmatrix}
+			a_{11} & a_{12} & \cdots & a_{1n} \\
+			0 & a_{22} & \cdots & a_{2n} \\
+			\vdots & \vdots & \ddots & \vdots \\
+			0 & 0 & \ldots & a_{mn}
+		\end{pmatrix}
+	\end{align*}
+	On appelle cela échelonner.
+    \\
+    Ensuite le but est d'appliquer les opérations élémentaires pour \og remonter \fg dans l'algorithme et d'obtenir une matrice ou un système de cette forme :
+    \begin{align*}
+        \begin{pmatrix}
+            a_{11} & 0 & \cdots & 0 \\
+            0 & a_{22} & \cdots & 0 \\ 
+            \vdots & \vdots & \ddots & \vdots \\ 
+            0 & 0 & \cdots & a_{mn}
+        \end{pmatrix}
+    \end{align*}
+\end{proposition}
+
+\begin{definition}[Rang d'une matrice]
+	Le rang d'une matrice $A$ est son nombre de lignes non nulles après échelonnage. Il est noté $\rg{A}$.
+\end{definition}
+
+\begin{theorem}
+    Soient $\mathcal{S}$ un système linéaire de $m$ lignes et $n$ inconnues, $A \in \mathcal{M}_{m,n}(\K)$ et $B \in \mathcal{M}_{m,1}(\K)$ telles que $A|B$ forme la matrice associée à $\mathcal{S}$. $\mathcal{S}$ est solvable si et seulement si :
+    \[ \rg(A) = \rg(A|B) \]
+\end{theorem}
+
+\section{Opérations sur les matrices}
+\begin{definition}[Opérations sur les matrices]
+	Soient $A \in \mathcal{M}_{m, n}(\K), B \in \mathcal{M}_{p, q}(\K), \lambda \in \K$ tels que :
+	\begin{align*}
+		A &=
+		\begin{pmatrix}
+			a_{11} & \cdots & a_{1n} \\
+			\vdots & \ddots & \vdots \\
+			a_{m1} & \cdots & a_{mn}
+		\end{pmatrix}
+		&
+		B &= 
+		\begin{pmatrix}
+			b_{11} & \cdots & b_{1q} \\
+			\vdots & \ddots & \vdots \\
+			b_{p1} & \cdots & b_{pq}
+		\end{pmatrix}
+	\end{align*}
+	\begin{enumerate}
+		\item Si $m = p$ et $n = q$ alors on peut définir l'addition entre $A$ et $ B$ et la multiplication par $\lambda$.
+		\begin{align*}
+			A + \lambda B &= 
+			\begin{pmatrix}
+				(a_{11} + \lambda b_{11}) & \cdots & (a_{1n} + \lambda b_{1q}) \\
+				\vdots & \ddots & \vdots \\
+				(a_{m1} + \lambda b_{p1}) & \cdots & (a_{mn} + \lambda b_{pq})
+			\end{pmatrix}
+		\end{align*}
+		\item Si $n = p$ alors on peut définir la multiplication entre $A$ et $B$.\\
+		Soit $C = AB$. Chaque coefficient $C_{ij}$ est défini par :
+		\begin{align*}
+			C_{ij} = \sum_{k=1}^{n} A_{ik} B_{kj}
+		\end{align*}
+        Autrement dit, soient $A, B$ deux matrices telles que :
+        \begin{align*}
+            A &= 
+            \begin{pmatrix}
+                a_{11} & a_{12} & \cdots & a_{1n} \\ 
+                \vdots & \vdots & \vdots & \vdots \\
+                a_{i1} & a_{i2} & \cdots & a_{in} \\ 
+                \vdots & \vdots & \vdots & \vdots \\
+                a_{m1} & a_{m2} & \cdots & a_{mn}
+            \end{pmatrix}
+            &
+            B &= 
+            \begin{pmatrix}
+                b_{11} & \cdots & b_{1j} & \cdots & b_{1q} \\
+                b_{21} & \cdots & b_{2j} & \cdots & b_{2q} \\
+                \vdots & \cdots & \vdots & \cdots & \vdots \\
+                b_{p1} & \cdots & b_{pj} & \cdots & b_{pq}
+            \end{pmatrix}
+        \end{align*}
+        Alors le coefficient $(C)_{ij}$ pour $C = AB$ est donné par :
+        \begin{align*}
+            &\begin{pmatrix}
+                b_{11} & \cdots & \color{red}b_{1j} & \cdots & b_{1q} \\
+                b_{21} & \cdots & \color{green}b_{2j} & \cdots & b_{2q} \\
+                \vdots & \cdots & \vdots & \cdots & \vdots \\
+                b_{p1} & \cdots & \color{blue}b_{pj} & \cdots & b_{pq}
+            \end{pmatrix}
+            \\
+            \begin{pmatrix}
+                a_{11} & a_{12} & \cdots & a_{1n} \\ 
+                \vdots & \vdots & \vdots & \vdots \\
+                \color{red}a_{i1} & \color{green}a_{i2} & \cdots & \color{blue}a_{in} \\ 
+                \vdots & \vdots & \vdots & \vdots \\
+                a_{m1} & a_{m2} & \cdots & a_{mn}
+            \end{pmatrix}
+            &\begin{pmatrix}
+                c_{11} & c_{12} & \cdots & \cdots & c_{1q} \\
+                \vdots & \vdots & \vdots & \vdots & \vdots \\
+                \cdots & \cdots & \boxed{c_{ij}} & \cdots & c_{iq} \\
+                \vdots & \vdots & \vdots & \vdots & \vdots \\
+                c_{m1} & \cdots & \cdots & \cdots & c_{mq}
+            \end{pmatrix}
+        \end{align*}
+        \[ \boxed{c_{ij}} = \color{red}a_{i1} \cdot b_{1j} \color{black}+ \color{green} a_{i2} \cdot b_{2j} \color{black}+ \color{blue}\cdots + a_{in} \cdot b_{pj} \]
+		Attention, la multiplication n'est pas commutative $(AB \neq BA)$.
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}\leavevmode
+	\begin{enumerate}
+		\item Soient $A, B, C \in \mathcal{M}_{m,n} (\K)$.
+		\[A + B = B + A\]
+		\[A + (B + C) = (A + B) + C\]
+		\item Soient $A \in \mathcal{M}_{m, k}(\K),\ B \in \mathcal{M}_{k, l}(\K),\ C \in \mathcal{M}_{l, n}(\K)$.
+		\[A \cdot (B \cdot C) = (A \cdot B) \cdot C\]
+		\item Soient $A \in \mathcal{M}_{m, k}(\K),\ B, C \in \mathcal{M}_{k, n}(\K),\ \lambda \in \K$.
+		\[A \cdot (B + \lambda C) = A \cdot B + \lambda \cdot A \cdot C\]
+		\[(A + \lambda B) \cdot C = A \cdot C + \lambda \cdot B \cdot C\]
+	\end{enumerate}
+\end{proposition}
+
+\begin{definition}[Matrice nulle]
+	La matrice nulle est la matrice dont tous les coefficients sont $0$. On la note $0_{m,n}$, $m$ étant le nombre de lignes, $n$ le nombre de colonnes. 
+\end{definition}
+
+\begin{definition}[Matrice identité]
+	La matrice identité est la matrice dont tous les coefficients sont $0$ à l'exception de ceux de la diagonale principale à $1$. On la note $I_n$, $n$ étant le nombre de lignes.
+	\begin{align*}
+		I_n = 
+		\begin{pmatrix}
+			1 & 0 & \cdots & 0 \\
+			0 & 1 & \cdots & 0 \\
+			\vdots & \ddots & \ddots & \vdots \\
+			0 & \cdots & 0 & 1
+		\end{pmatrix}
+	\end{align*}
+\end{definition}
+
+\begin{remark}
+    La matrice identité est parfois notée : $\mathds{1}_n$.
+\end{remark}
+
+\begin{lemma}\leavevmode
+	\begin{multicols}{2}
+	    \begin{enumerate}
+    		\item $\forall A \in \mathcal{M}_{m, n}(\K),\ A + 0_{m,n} = A$
+    		\item $\forall A \in \mathcal{M}_{n}(\K),\ A \cdot I_n = I_n \cdot A = A$
+    	\end{enumerate}
+	\end{multicols}
+\end{lemma}
+
+\begin{definition}[Transposée]
+	Soit $A \in \mathcal{M}_{m, n}(\K)$. On définit $A^T \in \mathcal{M}_{n, m}(\K)$ la transposée de $A$ par :
+	\[(A^T)_{ij} = A_{ji}\]
+    Autrement dit, les colonnes de $A$ deviennent ses lignes et réciproquement.
+\end{definition}
+
+\begin{definition}
+	Soit $M \in \mathcal{M}_n$.
+	\begin{multicols}{2}
+	    \begin{enumerate}
+    		\item $M$ est symétrique $\iff M^T = M$
+    		\item $M$ est anti-symétrique $\iff M^T = -M$
+    	\end{enumerate}
+	\end{multicols}
+\end{definition}
+
+\begin{proposition}[Calculer le déterminant d'une matrice carrée]
+    Pour calculer le déterminant d'une matrice carrée, il existe plusieurs méthodes.
+    Soit $A$ une matrice carrée de taille $n \times n$. 
+    \begin{itemize}
+        \item $n = 2$. 
+        \[ 
+        A = 
+        \begin{pmatrix}
+            a & b \\
+            c & d
+        \end{pmatrix}
+        \quad 
+        \det(A) = ad - bc 
+        \]
+        \item $n = 3$
+        \[
+        A = 
+        \begin{pmatrix}
+            a & b & c \\
+            d & e & f \\
+            g & h & i
+        \end{pmatrix}
+        \quad 
+        \det(A) = (aei + bfg + cdh) - (ceg + bdi + afh)
+        \]
+        \item $n \geq 3$.
+        (Meilleure rédaction prévue)
+        \begin{align*}
+            \det(A) = \sum_{j = 1}^{n} A_{ij} = (-1)^{i+j} \cdot \det(A^{ij})
+        \end{align*}
+    \end{itemize}
+\end{proposition}
+
+\begin{proposition}
+	Soient $A, B \in \mathcal{M}_n,\ \forall \lambda \in \K$.
+	\begin{multicols}{2}
+	    \begin{enumerate}
+		\item $\det(A \cdot B) = \det(A) \cdot \det(B)$
+		\item $\det(\lambda A) = \lambda^n \det(A)$
+		\item $\det(A^T) = \det(A)$
+		\item $\det(A^{-1}) = \frac{1}{\det(A)}$ si $\det(A) \neq 0$
+	\end{enumerate}
+	\end{multicols}
+\end{proposition}
+
+\begin{definition}[Matrice inversible]
+	Une matrice $A$ est inversible s'il existe une unique matrice $B \equiv A^{-1}$ telle que 
+	\[AB = BA = I_n.\]
+\end{definition}
+
+\begin{proposition}
+	Une matrice est inversible si et seulement si son déterminant est non nul.
+\end{proposition}
+
+\begin{definition}[Comatrice]
+	La comatrice $\com(A)$ d'une matrice $A \in \mathcal{M}_n(\K)$.
+	$$
+	[\com(A)]_{ij} = (-1)^{i + j} \det(A^{(ij)}) 
+	$$
+\end{definition}
+
+\begin{proposition}[Calculer l'inverse d'une matrice]
+    Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibles.
+    Si on a une matrice
+    $A =
+    \begin{pmatrix}
+        a & b \\
+        c & d
+    \end{pmatrix}
+    $.
+    \[
+    A^{-1} = \frac{1}{\det(A)} 
+    \begin{pmatrix}
+        d & -b \\
+        -c & a
+    \end{pmatrix}
+    \]
+    Une méthode générale pour calculer l'inverse d'une matrice $A$ est d'utiliser l'algorithme de Gauss-Jordan.
+    On part de la matrice 
+    \[ A|I_n \]
+    et on applique les opérations élémentaires pour avoir une matrice de la forme
+    \[I_n|B\]
+    $B \equiv A^{-1}$ est l'inverse de $A$.
+    \\
+    Une autre méthode générale est d'utiliser la comatrice de $A$.
+    \[ A^{-1} = \frac{1}{\det(A)} \left( \com(A) \right)^T \]
+\end{proposition}
+
+\begin{definition}[Trace d'une matrice]
+	Soit $A \in \mathcal{M}_n(\K)$, la trace de $A$, notée $\tr(A)$ est définie par l'application suivante.
+	\begin{align*}
+		\tr : \mathcal{M}_n(\K) &\to \K \\
+		A &\mapsto \sum_{i = 1}^{n} A_{ii}
+	\end{align*}
+    Autrement dit, c'est la somme des coefficients de la diagonale principale (celle allant du premier au dernier coefficient).
+\end{definition}
+
+\begin{lemma}
+	\begin{multicols}{2}
+	    \begin{enumerate}
+    		\item $\tr(A^T) = \tr(A)$
+    		\item $\tr(A \cdot B) = \tr(B \cdot A)$
+    	\end{enumerate}
+	\end{multicols}
+\end{lemma}
+
+\begin{proof}\leavevmode
+    \begin{enumerate}
+        \item Par application directe de la définition de la trace et de la transposée.
+        \item On utilise la définition du produit matriciel.
+        \begin{align*}
+            \tr(AB) = \tr(BA) \iff \tr(AB) - \tr(BA) = 0
+        \end{align*}
+        \begin{align*}
+            \tr(AB) - \tr(BA) &=\sum_{i=1}^n (AB)_{ii} - \sum_{i=1}^n (BA)_{ii} \\ 
+            &= \sum_{i=1}^n [(AB)_{ii} - (BA)_{ii}] \\ 
+            &= \sum_{k=1}^n \left[ \sum_{i=1}^n \left( A_{ik} B_{ki} - B_{ik}A_{ki} \right) \right] \\ 
+            = 
+            \begin{split}
+                &[(\cancel{a_{11} b_{11}} - \cancel{b_{11} a_{11}}) +  (\cancel{a_{12} b_{21}} - \cancel{b_{12} a_{21}}) + \cdots + (\cancel{a_{1n} b_{n1}} - \cancel{b_{1n} a_{n1}})] \\
+                + &[(\cancel{a_{21} b_{12}} - \cancel{b_{21}a_{12}}) + (\cancel{a_{22} b_{22}} - \cancel{b_{22} a_{22}}) + \cdots + (\cancel{a_{2n}b_{n2}} - \cancel{b_{2n}a_{n2}})] \\
+                + &\cdots + \\ 
+                + &[(\cancel{a_{n1} b_{1n}} - \cancel{b_{n1} a_{1n}}) + (\cancel{a_{n2} b_{2n}} - \cancel{b_{n2} a_{2n}}) + \cdots + (\cancel{a_{nn} b_{nn}} - \cancel{b_{nn} a_{nn}})]
+            \end{split}
+            \\
+            &= 0
+        \end{align*}
+    \end{enumerate}
+\end{proof}
+
+\begin{proposition}
+    Pour passer d'une forme cartésienne à une forme paramétrique, on applique le pivot de Gauss sur les lignes.
+    Pour passer d'une forme paramétrique à une forme cartésienne, on utilise le déterminant.
+\end{proposition}

@@ -1,0 +1,189 @@
+\documentclass[a4paper, 11pt, twoside]{book}
+
+\usepackage{comment}
+
+% ---------------- Encodage ------------- %
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{csquotes}
+% ---------------- Encodage ------------- %
+
+%------- Bibliographie ----------
+\usepackage[maxbibnames=99, style=science]{biblatex}
+\addbibresource{refs.bib}
+%------- Bibliographie ----------
+
+% -------------- Mise en page ---------- %
+\usepackage[top=1.5cm, bottom=1.5cm, left = 1.5cm, right=3cm]{geometry}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{lastpage}
+%\fancyfoot[C]{\thepage \ / \pageref{LastPage}}
+\fancyhead[L]{L'essentiel des mathématiques de première année de Licence}
+\fancyhead[R]{Année scolaire 2022-2023}
+\usepackage{indentfirst}
+\usepackage{setspace}
+\usepackage[usenames, dvipsnames]{xcolor}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{diagbox}
+\usepackage{xspace}
+
+\setlength{\tabcolsep}{10pt}
+\usepackage{needspace}
+% -------------- Mise en page ---------- %
+
+% ------------ Boxes -------------- %
+\usepackage{framed}
+% ------------- Boxes -------------- %
+
+% ---------------- Maths -------------- %
+\usepackage{mathtools, amssymb, amsthm}
+\usepackage[makeroom]{cancel}
+\usepackage{centernot}
+\usepackage{systeme}
+\usepackage{stmaryrd}
+\usepackage{dsfont}
+% ---------------- Maths -------------- %
+
+% ------------- Théorèmes ------------ %
+\theoremstyle{plain}
+\newtheorem{theorem}{Théorème}[chapter]
+\newtheorem{lemma}{Lemme}[chapter]
+\newtheorem{corollary}{Corollaire}[theorem]
+\newtheorem{proposition}{Proposition}[chapter]
+
+\theoremstyle{definition}
+\newtheorem{definition}{Définition}[chapter]
+\newtheorem{axiom}{Axiome}[chapter]
+\newtheorem{example}{Exemple}[chapter]
+\newtheorem{exercise}{Exercice}[chapter]
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remarque}
+\newtheorem*{notation}{Notation}
+\newtheorem*{nomenclature}{Nomenclature}
+% ------------- Théorèmes ------------ %
+
+% -------- Liens -------
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    allcolors=black,
+    pdftitle={Essentiel mathématiques L1},
+}
+% -------- Liens -------
+
+% ------------- Images --------------- %
+\usepackage{graphicx}
+% ------------- Images --------------- %
+
+% ------------ TIKZ -------------- %
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+% -------- TIKZ ------------------ %
+
+% ------------------ Physique ---------------- %
+\usepackage{physics}
+\usepackage{siunitx}
+\AtBeginDocument{\RenewCommandCopy\qty\SI}
+% ------------------ Physique ---------------- %
+
+% ------------ Ensembles de nombres ---------- %
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\D}{\mathbb{D}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\K}{\mathbb{K}}
+% ------------ Ensembles de nombres ---------- %
+
+% ------------ Macros ---------------- %
+\DeclareMathOperator{\pgcd}{pgcd}
+\DeclareMathOperator{\rg}{rg}
+\DeclareMathOperator{\com}{com}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+
+\newcommand{\deriv}[2]{\frac{\diffd{#1}}{\diffd{#2}}}
+\newcommand{\link}[2]{\href{#1}{\textcolor{blue}{\underline{#2}}}}
+% ------------ Macros ---------- %
+
+%-----------Bloc de code------------%
+\usepackage{listings}
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=single,
+	language=C++,
+	aboveskip=3mm,
+	belowskip=3mm,
+	showstringspaces=false,
+	columns=flexible,
+	basicstyle={\small\ttfamily},
+	numbers=none,
+	numberstyle=\tiny\color{gray},
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	breaklines=true,
+	breakatwhitespace=true,
+	tabsize=4
+}
+
+\newcommand*{\inlineCode}{\fontfamily{pnc}\selectfont\ttfamily}
+
+%-----------Bloc de code----------------%
+
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+\begin{document}
+
+\newgeometry{margin=2.5cm}
+\include{titlepage}
+\restoregeometry
+
+\tableofcontents
+
+\include{chapters/introduction}
+
+\part{Analyse}
+\input{chapters/analyse/nombres_reels}
+\include{chapters/analyse/fonctions_reelles}
+\include{chapters/analyse/fonctions_usuelles}
+\include{chapters/analyse/suites_reelles}
+\include{chapters/analyse/continuite_fonctions}
+\include{chapters/analyse/derivabilite}
+\include{chapters/analyse/integration}
+\include{chapters/analyse/equations_differentielles}
+\include{chapters/analyse/dev_limites}
+
+\part{Algèbre}
+\input{chapters/algebre/calcul_algebrique}
+\include{chapters/algebre/ensembles_applications}
+\include{chapters/algebre/logique}
+\include{chapters/algebre/complexes}
+\include{chapters/algebre/arithmetique}
+\include{chapters/algebre/polynomes}
+\include{chapters/algebre/matrices}
+\include{chapters/algebre/espaces_vectoriels}
+\include{chapters/algebre/applications_lineaires}
+
+\include{chapters/annexe}
+
+\printbibliography
+
+\end{document}

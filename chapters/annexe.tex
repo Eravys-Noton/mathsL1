@@ -1,0 +1,110 @@
+\part{Annexes}
+\def\arraystretch{1.5}
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{cc}
+        \toprule
+        Soient $f, g$ des fonctions \\
+        \midrule
+        $C \in \R,\ C f(x)$ & $C f'(x)$  \\
+        $(f + g)'(x)$ & $f'(x) + g'(x)$ \\
+        $(f \cdot g)'(x)$ & $f'(x) \cdot g(x) + f(x) \cdot g'(x)$ \\
+        $\left( \frac{f}{g} \right)'(x)$ & $\frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{(g(x))^2}$ \\
+        $(f \circ g)'(x)$ & $f'(g(x)) \cdot g'(x) $ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Formules de dérivation.}
+    \label{tab:formules_derivation}
+\end{table}
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{ccc}
+        \toprule
+        $f(x)$ & $f'(x)$ & $\mathcal{D}_f$ \\ 
+        \midrule
+        $C \in \R$ & $0$ & $\R$ \\
+        $x^a,\ a \in \R$ & $a x^{a - 1}$ & $\R^* \text{ si } a \in \Z^-, \R_+^* \text{ sinon }$ \\
+        $\sqrt{x}$ & $\frac{1}{2\sqrt{x}}$ & $\R_+^*$ \\
+        $e^x$ & $e^x$ & $\R$ \\
+        $\ln{\abs{x}}$ & $\frac{1}{x}$ & $\R_+^*$ \\
+        $\cos{x}$ & $-\sin{x}$ & $\R$ \\
+        $\sin{x}$ & $\cos{x}$ & $\R$ \\
+        $\tan{x}$ & $\frac{1}{\cos^2{x}} = 1 + \tan^2{x}$ & $\forall k \in \Z, \R \backslash \left\{ \frac{\pi}{2} + k \pi \right\}$ \\
+        $\cosh{x}$ & $\sinh{x}$ & $\R$ \\
+        $\sinh{x}$ & $\cosh{x}$ & $\R$ \\
+        $\tanh{x}$ & $1 - \tanh^2{x} = \frac{1}{\cosh^2{x}}$ & $\R$ \\
+        $\arctan{x}$ & $\frac{1}{1 + x^2}$ & $\R$ \\
+        $\arcsin{x}$ & $\frac{1}{\sqrt{1 - x^2}}$ & $]-1, 1[$ \\
+        $\arccos{x}$ & $-\frac{1}{\sqrt{1 - x^2}}$ & $]-1, 1[$ \\
+        \bottomrule
+    \end{tabular}
+    \caption{Dérivées usuelles.}
+    \label{tab:derivees_usuelles}
+\end{table}
+
+\begin{table}[!ht]
+    \centering
+    \begin{tabular}{ccc}
+         \toprule
+         $f(x)$ & $F(x)$ & $I$ \\
+         \midrule
+         $x^a,\ a \in \R \backslash \{1\}$ & $\frac{1}{a + 1} x^{a+1} + C$ & $\R_+^* \text{ ou } \R_-^* \text{ si } a \in \Z^-,\ \R_+^* \text{ sinon}$ \\
+         $\frac{1}{x}$ & $\ln(\abs{x}) + C$ & $\R_+^* \text{ ou } \R_-^*$ \\
+         $e^{ax},\ a \in \R$ & $\frac{1}{a} e^{ax} + C$ & $\R$ \\
+         $\cos{x}$ & $\sin{x} + C$ & $\R$ \\
+         $\sin{x}$ & $-\cos{x} + C$ & $\R$ \\
+         $1 + \cos^2{x} = 1 + \tan^2{x}$ & $\tan{x} + C$ & $\forall k \in \Z,\ \left] -\frac{\pi}{2} + k \pi, \frac{\pi}{2} + k \pi \right[$ \\
+         $\cosh{x}$ & $\sinh{x} + C$ & $\R$ \\
+         $\sinh{x}$ & $\cosh{x} + C$ & $\R$ \\
+         $\frac{1}{\cosh^2{x}} \text{ ou } 1 + \tanh^2{x}$ & $\tanh{x} + C$ & $\R$ \\
+         $\frac{1}{1 + x^2}$ & $\arctan{x} + C$ & $\R$ \\
+         $\frac{1}{\sqrt{1 - x^2}}$ & $-\arccos{x} + C \text{ ou } \arcsin{x} + C$ & $]-1, 1[$ \\
+         \bottomrule
+    \end{tabular}
+    \caption{Primitives usuelles, $C \in \R$.}
+    \label{tab:primitives_usuelles}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{cc}
+         \toprule
+         $f(x)$ & DL \\ 
+         \midrule
+         $e^x$ & $\sum_{k=0}^n \frac{x^k}{k!} + o(x^n)$ \\
+         $\cosh(x)$ & $ \sum_{k=0}^n \frac{x^{2k}}{(2k)!} + o(x^n)$ \\
+         $\sinh(x)$ & $ \sum_{k=0}^n \frac{x^{2k + 1}}{(2k + 1)!} + o(x^{2n + 1})$ \\
+         $\cos(x)$ & $ \sum_{k=0}^n (-1)^k \frac{x^{2k}}{(2k)!} + o(x^{2n})$ \\
+         $\sin(x)$ & $ \sum_{k=0}^n (-1)^k \frac{x^{2k+1}}{(2k+1)!} + o(x^{2n + 1})$ \\
+         $(1 + x)^{a}$ & $ \sum_{k=0}^n \binom{a}{k} x^k + o(x^n)$ \\ 
+         $\frac{1}{1 - x}$ & $ \sum_{k=0}^n x^k + o(x^n)$ \\ 
+         $\frac{1}{1 + x}$ & $ \sum_{k=0}^n (-1)^k x^k + o(x^n)$ \\ 
+         $\ln(1 + x)$ & $ \sum_{k=1}^n (-1)^{k - 1} \frac{x^k}{k} + o(x^n)$ \\ 
+         $\ln(1 - x)$ & $ \sum_{k=1}^n \frac{x^k}{k} + o(x^n)$ \\ 
+         $\arctan(x)$ & $ \sum_{k=0}^n (-1)^k \frac{x^{2k+1}}{2k+1} + o(x^{2n+1})$ \\
+         \bottomrule
+    \end{tabular}
+    \caption{Développements limités usuels en 0.}
+    \label{tab:dl_usuels}
+\end{table}
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{cc}
+         \toprule 
+         $e^x - 1 \underset{x \to 0}{\sim} x$ \\
+         $\ln(1+x) \underset{x \to 0}{\sim} x$ \\
+         $\ln(x) \underset{x \to 1}{\sim} x - 1$ \\ 
+         $\sin(x) \underset{x \to 0}{\sim} \sinh(x) \underset{x \to 0}{\sim} \tan(x) \underset{x \to 0}{\sim} \tanh(x) \underset{x \to 0}{\sim} \arcsin(x) \underset{x \to 0}{\sim} \arctan(x) \underset{x \to 0}{\sim} x$ \\ 
+         $1 - \cos(x) \underset{x \to 0}{\sim} \frac{x^2}{2}$ \\ 
+         $\cosh(x) - 1 \underset{x \to 0}{\sim} \frac{x^2}{2}$ \\ 
+         $\arccos(x) \underset{\substack{x \to 1 \\ x < 1}}{\sim} \sqrt{2}\sqrt{1-x}$ \\ 
+         $(1 + x)^a - 1 \underset{x \to 0}{\sim} ax,\ a \in \R^*$ \\ 
+         $\frac{1}{1-x} - 1 \underset{x \to 0}{\sim} x$ \\ 
+         $\cosh(x) \underset{x \to +\infty}{\sim} \sinh(x) \underset{x \to +\infty}{\sim} \frac{e^x}{2}$ \\ 
+         \bottomrule
+    \end{tabular}
+    \caption{\'Equivalents usuels}
+    \label{tab:equiv_usuels}
+\end{table}

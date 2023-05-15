@@ -1,0 +1,444 @@
+\chapter{Suites réelles}
+\begin{definition}[Suite réelle]
+    On appelle \emph{suite réelle} une fonction de $\N \to \R$. 
+    On note $(u_n)_{n \in \N}$ la fonction $x \mapsto u_n$.
+\end{definition}
+
+\begin{remark}
+    Ainsi les propriétés des fonctions réelles s'appliquent également aux suites.
+\end{remark}
+
+\section{Suites usuelles}
+\begin{definition}[Suite arithmétique]
+    $\forall (r, u_0) \in \R^2$. 
+    \\
+    On définit une \emph{suite arithmétique} $(u_n)_{n \in \N}$ de la manière suivante :
+    \begin{align*}
+        (u_n)_{n \in \N} \coloneqq
+        \begin{cases}
+            u_{n+1} = u_n + r \\ 
+            u_n = u_0 + nr
+        \end{cases}
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    Soit $(u_n)_{n \in \N}$ une suite arithmétique.
+    \begin{align*}
+        \sum_{k = 0}^{n} u_k = (n+1)u_0 + r \frac{n(n+1)}{2}
+    \end{align*}
+\end{proposition}
+
+\begin{definition}[Suite géométrique]
+    $\forall (q, u_0) \in \R^* \times \R$. 
+    \\
+    On définit une \emph{suite géométrique} $(u_n)_{n \in \N}$ de la manière suivante : 
+    \begin{align*}
+        (u_n)_{n \in \N} \coloneqq 
+        \begin{cases}
+            u_{n+1} = qu_n \\
+            u_n = u_0 q^n
+        \end{cases}
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    Soit $(u_n)_{n \in \N}$ une suite géométrique.
+    \begin{align*}
+        \sum_{k = 0}^{n} u_k = 
+        \begin{cases}
+            u_0 \frac{1 - q^{n+1}}{1 - q} \text{ si } q \neq 1\\
+            u_0(n+1) \text{ si } q = 1
+        \end{cases}
+    \end{align*}
+\end{proposition}
+
+\begin{definition}[Suite arithmético-géométrique]
+    $\forall (r, u_0, q) \in \R^2 \times \R^*$. 
+    \\
+    On définit une \emph{suite arithmético-géométrique} $(u_n)_{n \in \N}$ de la manière suivante :
+    \begin{align*}
+        (u_n)_{n \in \N} \coloneqq 
+        \begin{cases}
+            u_{n+1} = qu_n + r \\ 
+            u_n = a + (u_0 - a) q^n,\ a = \frac{r}{1 - q}
+        \end{cases}
+    \end{align*}
+\end{definition}
+
+En pratique, pour l'étude des suites arithmético-géométrique, on commence par résoudre $a = qa + r \iff a = \frac{r}{1 - q}$, puis on pose $v_n = u_n - a$ et $v_{n+1} = u_{n+1} - a$ qui est une suite géométrique, ainsi $v_n = v_0 q^n$ et finalement $u_n = v_n + a \iff u_n = v_0 q^n + a \iff u_n = (u_0 - a) q^n + a$.
+
+\section{Convergence d'une suite}
+\begin{definition}
+    Soient $(u_n)_{n \in \N}$ une suite et $\ell \in \R$. 
+    \\
+    On dit que $(u_n)_{n \in \N}$ \emph{tend} vers $\ell$ si et seulement si :
+    \[ \forall \varepsilon > 0,\ \exists N \in \N,\ \forall n \geq N,\ \abs{u_n - \ell} \leq \varepsilon \]
+    On note alors :
+    \begin{align*}
+        u_n \xrightarrow[n \to +\infty]{} \ell \text{ ou } \lim_{n \to +\infty} u_n = \ell
+    \end{align*}
+\end{definition}
+
+\begin{definition}
+    Soit $(u_n)_{n \in \N}$ une suite réelle. On dit que :
+    \begin{enumerate}
+        \item $(u_n)_{n \in \N}$ \emph{converge} si et seulement si : $\exists \ell \in \R,\ \varepsilon > 0,\ \exists N \in \N,\ \abs{u_n - \ell} \leq \varepsilon$.
+        \item $(u_n)_{n \in \N}$ \emph{diverge} si et seulement si : $\forall \ell \in \R,\ \varepsilon > 0,\ \forall N \in \N,\ \exists n \geq N,\ \abs{u_n - \ell} > \varepsilon$.
+        \item $(u_n)_{n \in \N}$ \emph{ne converge pas vers} $\ell \in \R$ si et seulement si : $\exists \varepsilon > 0,\ \forall N \in \N,\ \exists n \geq N,\ \abs{u_n - \ell} > \varepsilon$.
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    La limite d'une suite convergente $(u_n)_{n \in \N}$ est unique.
+\end{theorem}
+
+\begin{proof}
+    Procédons à un raisonnement par l'absurde.
+    \\
+    On suppose que $\ell_1 \neq \ell_2$. Posons $\varepsilon \coloneqq \frac{1}{3} \abs{\ell_1 - \ell_2} > 0$.
+    \\
+    Par définition de la limite :
+    \begin{align*}
+        &\exists N_1 \in \N,\ \forall n \geq N_1,\ \abs{u_n - \ell_1} \leq \varepsilon 
+        &
+        &\exists N_2 \in \N,\ \forall n \geq N_2,\ \abs{u_n - \ell_2} \leq \varepsilon
+    \end{align*}
+    Posons $N \coloneqq \max(N_1, N_2)$, si $n \geq N$ alors :
+    \begin{align*}
+        \abs{u_n - \ell_1} \leq \varepsilon \text{ et } \abs{u_n - \ell_2} \leq \varepsilon
+    \end{align*}
+    \[ \abs{\ell_1 - \ell_2} = \abs{\ell_1 - u_n + u_n - \ell_2} \leq \abs{u_n - \ell_1} + \abs{u_n - \ell_2} \]
+    Alors : 
+    \begin{align*}
+        \abs{u_n - \ell_1} + \abs{u_n - \ell_2} &\leq \varepsilon + \varepsilon = \frac{2}{3} \abs{\ell_1 - \ell_2} \\
+        \abs{\ell_1 - \ell_2} &\leq \frac{2}{3} \abs{\ell_1 - \ell_2} \\
+        \frac{1}{3} \abs{\ell_1 - \ell_2} \leq 0 \\
+        \varepsilon \leq 0
+    \end{align*}
+    ce qui est absurde. Ainsi on a montré que $\ell_1 = \ell_2$.
+\end{proof}
+
+\begin{theorem}
+    Toute suite convergente est bornée.
+\end{theorem}
+
+\begin{proof}
+    Supposons qu'une suite $(u_n)_{n \in \N}$ converge vers $\ell \in \R$.
+    Posons $\varepsilon \coloneqq 1$. 
+    \\
+    Par définition de la limite :
+    \[ \exists N \in \N,\ \forall n \geq N,\ \abs{u_n - \ell} \leq 1 \iff \ell - 1 \leq u_n \leq \ell + 1 \]
+    Posons $M \coloneqq \max(u_0, \ldots, u_{N-1}, \ell + 1)$ et $m = \min(u_0, \ldots, u_{N - 1}, \ell - 1)$.
+    \begin{align*}
+        \forall n \in \N,\ 
+        \begin{cases}
+            m \leq u_n \leq M, &\text{ si } n < N \\
+            \ell - 1 \leq u_n \leq \ell + 1, &\text{ si } n > N
+        \end{cases}
+    \end{align*}
+    Sachant que $m \leq \ell - 1$ et $M \geq \ell + 1$.
+    On a :
+    \[ \forall n \in \N,\ m \leq u_n \leq M \]
+    ce qui signifie que $(u_n)_{n \in \N}$ est bornée.
+\end{proof}
+
+\begin{theorem}
+    Soient $(\ell_1, \ell_2) \in \R^2$, $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ deux suites convergentes telles que :
+    \[ \lim_{n \to +\infty} u_n = \ell_1 \text{ et } \lim_{n \to +\infty} v_n = \ell_2 \]
+    Alors :
+    \[ \lim_{n \to +\infty} (u_n + v_n) = \ell_1 + \ell_2 \]
+\end{theorem}
+
+\begin{proof}
+    Soit $\varepsilon > 0$.
+    \\
+    \\
+    Par définition de la limite :
+    \begin{align*}
+        &\exists N_1 \in \N,\ \forall n \geq N_1,\ \abs{u_n - \ell_1} \leq \varepsilon &
+        &\exists N_2 \in \N,\ \forall n \geq N_2,\ \abs{v_n - \ell_2} \leq \varepsilon
+    \end{align*}
+    Posons $N \coloneqq \max(N_1, N_2)$. Si $n \geq N$, alors :
+    \begin{align*}
+        \abs{u_n - \ell_1} \leq \varepsilon \text{ et } \abs{v_n - \ell_2} \leq \varepsilon
+    \end{align*}
+    Puis : 
+    \begin{align*}
+        \abs{u_n + v_n - (\ell_1 + \ell_2)} = \abs{u_n - \ell_1 + v_n - \ell_2} &\leq \abs{u_n - \ell_1} + \abs{v_n - \ell_2} \\
+        \abs{u_n - \ell_1} + \abs{v_n - \ell_2} &\leq \varepsilon + \varepsilon = 2 \varepsilon
+    \end{align*}
+    Posons $\varepsilon' \coloneqq 2\varepsilon$.
+    Ainsi : 
+    \[ \abs{u_n - \ell_1} + \abs{v_n - \ell_2} \leq \varepsilon' \]
+    C'est-à-dire que $\lim_{n \to +\infty} (u_n + v_n) = \ell_1 + \ell_2$.
+\end{proof}
+
+\begin{theorem}
+    Soient $\ell_1, \ell_2 \in \R$, $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ deux suites convergentes telles que :
+    \[ \lim_{n \to + \infty} u_n = \ell_1 \text{ et } \lim_{n \to +\infty} v_n = \ell_2 \]
+    Alors :
+    \[ \lim_{n \to +\infty} (u_n \cdot v_n) = \ell_1 \cdot \ell_2 \]
+\end{theorem}
+
+\begin{proof}
+    Soit $\varepsilon > 0$.
+    \\
+    Comme $(u_n)_{n \in \N}$ converge, elle est bornée :
+    \[ \exists M \in \R, \forall n \in \N,\ \abs{u_n} \leq M \]
+    Par définition de la limite :
+    \begin{align*}
+        &\exists N_1,\ \forall n \geq N_1,\ \abs{u_n - \ell_1} \leq \varepsilon &
+        &\exists N_2,\ \forall n \geq N_2,\ \abs{v_n - \ell_2} \leq \varepsilon
+    \end{align*}
+    Posons $N \coloneqq \max(N_1, N_2)$. Si $n \geq N$ alors :
+    \[ \abs{u_n - \ell_1} \leq \varepsilon \text{ et } \abs{v_n - \ell_2} \leq \varepsilon \]
+    Puis : 
+    \begin{align*}
+        \abs{u_n \cdot v_n - \ell_1 \cdot \ell_2} &= \abs{u_n \cdot v_n - u_n \cdot \ell_2 + u_n \cdot \ell_2 - \ell_1 \cdot \ell_2} \\
+        &= \abs{u_n(v_n - \ell_2) + \ell_2 (u_n - \ell_1)} \\ 
+        &\leq \abs{u_n} \abs{v_n - \ell_2} + \abs{\ell_2} \abs{u_n - \ell_1} \\ 
+        &\leq M \varepsilon + \abs{\ell_2} \varepsilon = (M + \abs{\ell_2}) \varepsilon
+    \end{align*}
+    Posons $\varepsilon' \coloneqq \varepsilon$. Ainsi :
+    \[ \abs{u_n \cdot v_n - \ell_1 \cdot \ell_2} = \varepsilon' \]
+    C'est-à-dire que $\lim_{n \to +\infty} (u_n \cdot v_n) = \ell_1 \cdot \ell_2$.
+\end{proof}
+
+\begin{theorem}
+    Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ deux suites convergentes telles que $\forall n \in \N, u_n \leq v_n$. 
+    \[ \lim_{n \to +\infty} u_n \leq \lim_{n \to +\infty} v_n \]
+\end{theorem}
+
+\begin{proof}
+    Soient $\ell_1, \ell_2 \in \R$.
+    Posons :
+    \begin{align*}
+        \ell_1 &\coloneqq \lim_{n \to +\infty} u_n & \ell_2 &\coloneqq \lim_{n \to +\infty} v_n
+    \end{align*}
+    On raisonne par l'absurde en supposant que $\ell_1 > \ell_2$.
+    \\
+    Posons : 
+    \[ \varepsilon \coloneqq \frac{\ell_1 - \ell_2}{3} > 0 \]
+    \begin{align*}
+        &\exists N_1,\ \forall n \geq N_1,\ \abs{u_n - \ell_1} \leq \varepsilon & 
+        &\exists N_2,\ \forall n \geq N_2,\ \abs{v_n - \ell_2} \leq \varepsilon
+    \end{align*}
+    Autrement dit :
+    \begin{align*}
+        &\forall n \geq N_1,\ u_n \geq \ell_1 - \varepsilon &
+        &\forall n \geq N_2,\ v_n \leq \ell_2 + \varepsilon
+    \end{align*}
+    Posons $N \coloneqq \max(N_1, N_2)$. Si $n \geq N$ alors :
+    \begin{align*}
+        v_n \leq \ell_2 + \varepsilon < \ell_1 - \varepsilon \leq u_n \implies v_n < u_n
+    \end{align*}
+    ce qui est absurde. Ainsi $\ell_1 \leq \ell_2$.
+\end{proof}
+
+\begin{corollary}
+    Soient $(u_n)_{n \in \N}$ et $\ell \in \R$ tels que $\lim_{n \to +\infty} = \ell$.
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item Si $\forall n \in \N,\ u_n \leq M$ alors $\ell \leq M$.
+            \item Si $\forall n \in \N,\ u_n \geq m$ alors $\ell \geq m$.
+        \end{enumerate}
+    \end{multicols}
+\end{corollary}
+
+\begin{theorem}[Théorème des gendarmes]
+    Soient $\ell \in \R$, $(u_n)_{n \in \N}, (v_n)_{n \in \N}, (w_n)_{n \in \N}$ des suites telles que :
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $\forall n \in \N,\ u_n \leq v_n \leq w_n$.
+            \item $\lim_{n \to +\infty} u_n = \ell$ et $\lim_{n \to +\infty} w_n = \ell$.
+        \end{enumerate}
+    \end{multicols} 
+    \[ \lim_{n \to + \infty} v_n = \ell \]
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        &\exists N_1 \in \R,\ \forall n \geq N_1,\ \abs{u_n - \ell} \geq \varepsilon &
+        &\exists N_2 \in \R,\ \forall n \geq N_2,\ \abs{w_n - \ell} \geq \varepsilon
+    \end{align*}
+    Posons $N \coloneqq \max(N_1, N_2)$. Si $n \geq N$ alors :
+    \begin{align*}
+        \abs{u_n - \ell} \leq \varepsilon \text{ et } \abs{w_n - \ell} \leq \varepsilon
+    \end{align*}
+    ce qui revient à dire : 
+    \begin{align*}
+        &\ell - \varepsilon \leq u_n - \ell \leq \ell + \varepsilon & &\ell - \varepsilon \leq w_n - \ell \leq \ell + \varepsilon
+    \end{align*}
+    Sachant que :
+    \[ u_n \leq v_n \leq w_n \]
+    on a :
+    \begin{align*}
+        \ell - \varepsilon \leq u_n - \ell \leq v_n - \ell \leq w_n - \ell \leq \ell + \varepsilon
+    \end{align*}
+    et donc finalement :
+    \[ \ell - \varepsilon \leq v_n - \ell \leq \ell + \varepsilon \iff \abs{v_n - \ell} \leq \varepsilon \]
+    C'est-à-dire $\lim_{n \to +\infty} v_n = \ell$.
+\end{proof}
+
+\begin{theorem}
+    \begin{enumerate}
+        \item Toute suite croissante majorée converge.
+        \item Toute suite décroissante minorée converge.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Théorème des suites adjacentes]
+    Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ deux suites telles que :
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $(u_n)_{n \in \N}$ est croissante.
+            \item $(v_n)_{n \in \N}$ est décroissante.
+            \item $\lim_{n \to +\infty} (v_n - u_n) = 0$
+        \end{enumerate}
+    \end{multicols}
+    \noindent Alors $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ convergent vers la même limite.
+\end{theorem}
+
+\begin{proof}
+    Posons $w_n \coloneqq v_n - u_n$.
+    \\ 
+    On sait que $(v_n)_{n \in \N}$ est décroissante et que $(u_n)_{n \in \N}$ est croissante. 
+    \\ 
+    Ainsi $v_{n+1} - v_n \leq 0$ et $u_{n+1} - u_n \geq 0$.
+    Etudions la variation de $(w_n)_{n \in \N}$.
+    \begin{align*}
+        w_{n+1} - w_n &= v_{n+1} - v_n - (u_{n+1} - u_n) < 0
+    \end{align*}
+    Ainsi $(w_n)_{n \in \N}$ est décroissante et sa limite est $0$.
+    On a alors  :
+    \[ w_n \geq 0 \iff  v_n - u_n \geq 0 \iff v_n \geq u_n \]
+    D'après les monotonies de $(v_n)_{n \in \N}$ et $(u_n)_{n \in \N}$, on a l'encadrement suivant : 
+    \[ u_0 \leq u_n \leq v_n \leq v_0 \]
+    $(u_n)_{n \in \N}$ est majorée par $v_0$ et est croissante, donc elle converge vers une limite $\ell_1$.
+    \\ 
+    $(v_n)_{n \in \N}$ est minorée par $u_0$ et est croissante, donc elle converge vers une limite $\ell_2$.
+    D'une part :
+    \[ \lim_{n \to +\infty} w_n = 0 \]
+    D'autre part :
+    \[ \lim_{n \to +\infty} w_n = \lim_{n \to +\infty} (v_n - u_n) = \ell_2 - \ell_1 \]
+    Donc :
+    \[ \ell_2 - \ell_1 = 0 \iff \ell_2 = \ell_1 \]
+\end{proof}
+
+\section{Suites extraites}
+\begin{definition}[Extraction]
+    Une extraction est une fonction $\varphi : \N \to \N$ qui est strictement croissante.
+\end{definition}
+
+\begin{definition}[Suite extraite]
+    Une suite extraite ou une sous-suite d'une suite $(u_n)_{n \in \N}$ est une suite de la forme $(u_{\varphi(n)})_{n \in \N}$ où $\varphi$ est une extraction.
+\end{definition}
+
+\begin{proposition}
+    Soit $(u_n)_{n \in \N}$ une suite et $(u_{\varphi(n)})_{n \in \N}$ une de ses sous-suites.
+    \begin{itemize}
+        \item Si $(u_n)_{n \in \N}$ est croissante, alors $(u_{\varphi(n)})_{n \in \N}$ aussi.
+        \item Si $(u_n)_{n \in \N}$ est décroissante, alors $(u_{\varphi(n)})_{n \in \N}$ aussi.
+        \item Si $(u_n)_{n \in \N}$ est majorée, alors $(u_{\varphi(n)})_{n \in \N}$ aussi.
+        \item Si $(u_n)_{n \in \N}$ est minorée, alors $(u_{\varphi(n)})_{n \in \N}$ aussi.
+        \item Si $(u_n)_{n \in \N}$ est converge, alors $(u_{\varphi(n)})_{n \in \N}$ aussi.
+    \end{itemize}
+\end{proposition}
+
+\begin{proposition}
+    Soit $(u_n)_{n \in \N}$ une suite, alors :
+    \[ (u_n)_{n \in \N} \text{ converge} \iff (u_{2n})_{n \in \N} \text{ et } (u_{2n + 1})_{n \in \N} \text{ convergent vers la même limite} \]
+\end{proposition}
+
+\begin{theorem}[Théorème de Ramsey]
+    Toute suite admet une sous-suite monotone.
+\end{theorem}
+
+\begin{proof}
+    Soit $(u_n)_{n \in \N}$ une suite. Soit $E = \{ n \in \N,\ \forall m \geq n,\ u_m \leq u_n \}$.
+    \\ 
+    \emph{Cas 1 :} $E$ est fini, donc majoré par un entier $N,\ \forall n \leq N,\ n \notin E$ donc $\exists m > n,\ u_m > u_n$. On définit alors par récurrence une extraction $\varphi : \N \to \N$ en posant $\varphi(0) = N + 1$, puis, étant donnés $\varphi(0) < \varphi(1) < \cdots < \varphi(K)$, on choisit $\varphi(K + 1)$ tel que $u_{\varphi(K+1)} > u_{\varphi(K)}$ et la suite extraite $(u_{\varphi(n)})_{n \in \N}$ est croissante.
+    \\ 
+    \emph{Cas 2 :} $E$ est infini. On pose $E = \{ \varphi(n) : n \in \N \}$ avec $\varphi : \N \to \N$.
+    \[ \forall k \in \N,\ \varphi(k) \in E, \text{ comme } \varphi(K + 1) > \varphi(K),\ u_{\varphi(K+1)} \leq u_{\varphi(K)} \]
+    et la sous-suite $(u_{\varphi(n)})_{n \in \N}$ est décroissante.
+\end{proof}
+
+\begin{theorem}[Théorème de Bolzano-Weierstra{\ss}]
+    Toute suite bornée admet une sous-suite convergente.
+\end{theorem}
+
+\begin{proof}
+    Soit $(u_n)_{n \in \N}$ une suite bornée. D'après le théorème de Ramsey, il existe une sous-suite monotone $(u_{\varphi(n)})_{n \in \N}$. Comme $(u_{\varphi(n)})_{n \in \N}$ est monotone et bornée, alors elle converge.
+\end{proof}
+
+\section{Limites infinies}
+
+\begin{definition}[Limites infinies]
+    Soit $(u_n)_{n \in \N}$ une suite.
+    \begin{enumerate}
+        \item $\lim_{n \to +\infty} u_n = +\infty \iff \forall A \in \R,\ \exists N \in \N,\ \forall n \geq N,\ u_n \geq A$.
+        \item $\lim_{n \to -\infty} u_n = -\infty \iff \forall A \in \R,\ \exists N \in \N,\ \forall n \geq N,\ u_n \leq A$.
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+    Soit $(u_n)_{n \in \N}$ une suite. \\
+    \begin{enumerate}
+        \item Si elle est \emph{croissante} alors :
+        \begin{multicols}{2}
+            \begin{itemize}
+                \item ou bien elle converge.
+                \item ou bien elle tend vers $+\infty$.
+            \end{itemize}
+        \end{multicols}
+        \item Si elle est \emph{décroissante} alors :
+        \begin{multicols}{2}
+            \begin{itemize}
+                \item ou bien elle diverge.
+                \item ou bien elle tend vers $-\infty$.
+            \end{itemize}
+        \end{multicols}
+    \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+    Démontrons les propriétés si $(u_n)_{n \in \N}$ est croissante. \\ 
+    On distingue deux cas :
+    \begin{enumerate}
+        \item Si $(u_n)$ est majorée, elle converge, d'après le théorème de convergence monotone car elle est croissante et majorée.
+        \item Si $(u_n)$ n'est pas majorée, montrons qu'elle tend vers $+\infty$.
+        Soit $A$ un réel. Comme $(u_n)_{n \in \N}$ n'est pas majorée :
+        \[ \exists N \in \N,\ u_N \geq A \]
+        \[ \forall n \geq N,\ u_n \geq u_N \geq A \]
+    \end{enumerate}
+    On utilise un raisonnement analogue si $(u_n)_{n \in \N}$ est décroissante.
+\end{proof}
+
+\begin{theorem}[Limites par comparaison]
+   Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ deux suites telles que $u_n \leq v_n$.
+   \[ \lim_{n \to +\infty} u_n = +\infty \implies \lim_{n \to +\infty} v_n = +\infty \]
+   \[ \lim_{n \to +\infty} v_n = -\infty \implies \lim_{n \to +\infty} u_n = -\infty \]
+\end{theorem}
+
+\begin{table}[!h]
+    \centering
+    \begin{tabular}{cc}
+         \toprule
+         Hypothèses & Conclusion \\ 
+         \midrule
+         \og $-\infty \cdot \ell > 0$ \fg & $-\infty$ \\ 
+         \og $-\infty \cdot \ell < 0$ \fg & $+\infty$ \\ 
+         \og $+\infty \cdot \ell > 0$ \fg & $+\infty$ \\ 
+         \og $+\infty \cdot \ell < 0$ \fg & $-\infty$ \\ 
+         \og $+\infty \cdot +\infty$ \fg & $+\infty$ \\ 
+         \og $-\infty \cdot -\infty$ \fg & $+\infty$ \\ 
+         \og $-\infty \cdot +\infty$ \fg & $-\infty$ \\  
+         \og $\infty - \infty$ \fg & FI \\
+         \og $0 \cdot \infty$ \fg  & FI \\
+         \bottomrule
+    \end{tabular}
+    \caption{Limites infinies ($\ell \in \R$) et formes indéterminées}
+    \label{tab:limites_infinies_et_fi}
+\end{table}

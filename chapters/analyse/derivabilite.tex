@@ -1,0 +1,215 @@
+\chapter{Dérivabilité et accroissements finis}
+
+\par \noindent Dans ce chapitre, en l'absence de précisions supplémentaires, $I$ désigne un intervalle de $\R$.
+\section{Dérivabilité, théorèmes de Rolle et des accroissements finis}
+\begin{definition}
+	Soit $f : I \to \R$, $f$ est dérivable en $a \in I$ si et seulement s'il existe $\ell \in \R$ tel que :
+	\begin{align*}
+		  \lim_{x \to a} \frac{f(x) - f(a)}{x - a} &= \ell
+	\end{align*}
+    Une autre manière de définir la dérivabilité :
+    \begin{align*}
+        \lim_{\substack{h \to 0 \\ h \neq 0}} \frac{f(a + h) - f(a)}{h} &= \ell
+    \end{align*}
+	On note $f'(a) \coloneqq \ell$ la dérivée de $f$ en $a$.
+	Ainsi une fonction dérivable est une fonction dérivable en tout point de $I$.
+	On peut également vérifier la limite à gauche et à droite de $a$.
+\end{definition}
+
+\begin{proposition}
+	Soient $f : I \to \R$ et $a \in I$, si $f$ est \emph{dérivable} en $a$ alors elle est \emph{continue} en $a$.
+\end{proposition}
+
+\begin{definition}[Maximum, minimum]
+    Soient $f : I \to \R$ et $a \in I$.
+    \begin{enumerate}
+        \item On dit que $a$ est un \emph{maximum} si et seulement si : $\forall x \in I,\ f(a) \geq f(x)$.
+        \item On dit que $a$ est un \emph{minimum} si et seulement si : $\forall x \in I,\ f(a) \leq f(x)$.
+    \end{enumerate}
+    On appelle extremum un point qui est soit un maximum soit un minimum.
+    \begin{enumerate}
+        \item On dit que $a$ est un \emph{maximum local} si et seulement si : $\exists \varepsilon > 0,\ a \text{ est un maximum de } f_{|]a - \varepsilon, a + \varepsilon[}$.
+        \item On dit que $a$ est un \emph{minimum local} si et seulement si : $\exists \varepsilon > 0,\ a \text{ est un minimum de } f_{|]a - \varepsilon, a + \varepsilon[}$.
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+	Soient $f : I \to \R$ une fonction dérivable et $a \in \overset{\circ}{I}$, $\overset{\circ}{I}$ désigne l'intérieur de $I$. 
+	\[ a \text{ est un extremum local} \implies f'(a) = 0 \]
+\end{theorem}
+
+\begin{theorem}[Théorème de Rolle]
+    Soient $(a, b) \in \R^2$ tel que $a < b$ et $f : [a, b] \to \R$ une fonction telle que :
+    \begin{multicols}{3}
+        \begin{enumerate}
+            \item $f$ est continue sur $[a, b]$.
+            \item $f$ est dérivable sur $]a, b[$.
+            \item $f(a) = f(b)$.
+        \end{enumerate}
+    \end{multicols}
+    \par \noindent Il existe un $c \in ]a, b[$ tel que : \[ f'(c) = 0 \]
+\end{theorem}
+
+\begin{theorem}[Théorème des accroissements finis]
+    Soient $(a, b) \in \R^2$ tel que $a < b$ et $f : [a, b] \to \R$, telle que : 
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $f$ est continue sur $[a, b]$.
+            \item $f$ est dérivable sur $]a, b[$.
+        \end{enumerate}
+    \end{multicols}
+    \par \noindent Il existe un $c \in ]a, b[$ tel que :
+	\[ f'(c) = \frac{f(b) - f(a)}{b - a} \]
+\end{theorem}
+
+\begin{corollary}[Inégalité des accroissements finis]
+	Soit $M$ tel que $\abs{f'} \leq M$ sur $]a, b[$.
+	\[ \abs{\frac{f(b) - f(a)}{b - a}} \leq M \]
+\end{corollary}
+
+\begin{proposition}
+    Soient $f : [a, b] \to \R$ une fonction continue sur $[a, b]$ et dérivable sur $]a, b[$.
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $f \text{ croissante} \iff f' \geq 0$.
+            \item $f \text{ décroissante} \iff f' \leq 0$
+        \end{enumerate}
+    \end{multicols}
+\end{proposition}
+
+\begin{definition}
+	Soit $f : I \to \R$ et $n \in \N$.
+	\begin{enumerate}
+		\item $f \in \mathcal{D}^n(I, \R)$ signifie que $f$ est $n$ fois dérivable sur $I$.
+		\item $f \in \mathcal{C}^n(I, \R)$ signifie que $f$ est $n$ fois dérivable et que sa dérivée $n$-ième est continue.
+		\item $f \in \mathcal{C}^{\infty}(I, \R) = \mathcal{D}^{\infty}(I, \R)$ signifie que $f \in \mathcal{C}^n(I, \R),\ \forall n \in \N$. On dit que les fonctions $\mathcal{C}^{\infty}$ sont des \emph{fonctions lisses}.
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+	$f, g \in \mathcal{C}^n \implies f + g, f \cdot g, f \circ g \in \mathcal{C}^n$
+\end{proposition}
+
+\section{Convexité}
+\begin{definition}
+    Soit $f : I \to \R$.
+    \begin{enumerate}
+        \item On dit que $f$ est \emph{convexe} si et seulement si : 
+        \[ \forall x, y \in I,\ \forall \lambda \in [0, 1],\ f(\lambda x + (1 - \lambda)y) \leq \lambda f(x) + (1 - \lambda) f(y) \]
+        \item On dit que $f$ est \emph{concave} si et seulement si : 
+        \[ \forall x, y \in I,\ \forall \lambda \in [0, 1],\ f(\lambda x + (1 - \lambda)y) \geq \lambda f(x) + (1 - \lambda) f(y) \]
+    \end{enumerate}
+\end{definition}
+
+\par Géométriquement, $f$ est convexe signifie que son graphe passe sous les cordes de $f$ et que les tangentes passent sous le graphe. $f$ est concave signifie que son graphe au-dessus des cordes de $f$ et que les tangentes passent par-dessus le graphe.
+
+\begin{theorem}
+	Soit $f \in \mathcal{D}^2$.
+        \begin{multicols}{2}
+            \begin{enumerate}
+                \item $f \text{ convexe} \iff f'' \geq 0$.
+                \item $f \text{ concave} \iff f'' \leq 0$.
+            \end{enumerate}
+        \end{multicols}
+\end{theorem}
+
+\begin{proposition}
+	Soient $f : I \to \R$ et $a \in I$, la tangente de $f$ en $a$ est :
+	\[ \mathcal{T}_a(x) = f(a) + f'(a)(x - a) \]
+\end{proposition}
+
+\begin{proposition}
+	Soient $a < b,\ f : [a, b] \to \R$.
+	La corde $c$ reliant les points $(a, f(a))$ et $(b, f(b))$ est définie par l'équation suivante :
+	\[ c = \frac{f(b) - f(a)}{b - a} (x - a) + f(a) \]
+\end{proposition}
+
+\begin{proposition}
+	$f \in \mathcal{D}^2(I, \R),\ a \in I$.
+	\begin{align*}
+		\begin{cases}
+			f'(a) = 0 \\
+			f''(a) < 0
+		\end{cases}
+		\implies a \text{ est un maximum local, si } f''(a) > 0,\ a \text{  est un minimum local}
+	\end{align*}
+\end{proposition}
+
+\begin{definition}[Suite récurrente]
+	Soient $f : I \to \R$ et $u_0 \in I$.
+	Si $\forall n \in \N,\ u_n \in I$ alors on peut définir :
+	\[ u_{n + 1} = f(u_n) \]
+\end{definition}
+
+\begin{lemma}
+	S'il existe un $\ell \in I$ tel que $\lim_{n \to +\infty} u_n = \ell$ et si $f$ est continue en $\ell$ alors 
+	\[ f(\ell) = \ell \]
+\end{lemma}
+
+\begin{definition}
+	Soit $f : I \to \R$. On dit que $f$ est stable sur $I$ si et seulement si : 
+	\[ f(I) \subseteq I \]
+\end{definition}
+
+\begin{proposition}
+	Si $f$ est \emph{croissante} sur $I$ alors 
+	$
+	(u_n)_{n \in \N} = 
+	\begin{cases}
+		u_0 \in I \\
+		u_{n + 1} = f(u_n)
+	\end{cases}
+	$
+	est monotone.
+	\[ u_1 \geq u_0 \iff (u_n) \text{ croissante} \]
+	\[ u_1 \leq u_0 \iff (u_n) \text{ décroissante} \]
+	Si $f$ est \emph{décroissante} sur $I$, alors les suites extraites $(v_n)_{n \in \N} \coloneqq u_{2n}$ et $(w_n)_{n \in \N} \coloneqq u_{2n + 1}$ sont monotones, l'une est \emph{croissante}, l'autre est \emph{décroissante}.
+\end{proposition}
+
+\begin{definition}[Point fixe]
+	Soient $f : \mathcal{D}_f \to \R$ et $x \in \mathcal{D}_f,\ f(x) = x$. On dit que $x$ est un \emph{point fixe} de $f$.
+\end{definition}
+
+\begin{definition}[Coefficient de convergence]
+    Soient $(u_n)_{n \in \N}$ tel que $\lim_{n \to +\infty} u_n = \ell \in \R$, $\varepsilon_n \coloneqq \abs{u_n - \ell}$ et supposons que $\lim_{n \to +\infty} \frac{\varepsilon_{n + 1}}{\varepsilon_n} = K \in \R_+$. 
+    On appelle $K$ coefficient de la convergence.
+    \begin{itemize}
+        \item Si $K = 1$ la convergence est \emph{lente}.
+        \item Si $K = 0$ la convergence est \emph{rapide}.
+        \item Si $0 < K < 1$ la convergence est \emph{géométrique}.
+    \end{itemize}
+\end{definition}
+
+\begin{definition}[Fonction contractante]
+	Soit $f : I \to \R$.
+    On dit que $f$ est \emph{contractante} si et seulement si :
+    \[ \exists k \in ]0, 1[,\ \forall (x, y) \in I^2 : \abs{f(x) - f(y)} \leq k \abs{x - y} \]
+\end{definition}
+
+\begin{theorem}[Théorème du point fixe]
+	Soient $I$ un intervalle fermé et $f : I \to I$ une fonction contractante et continue et $(u_n)_{n \in \N}$ sa suite récurrente associée.
+	\begin{enumerate}
+        \item Il existe un unique point fixe $\ell \in I$.
+        \item $\lim_{n \to +\infty} u_n = \ell$.
+        \item La convergence de $(u_n)_{n \in \N}$ est géométrique.
+    \end{enumerate}
+\end{theorem}
+
+\begin{theorem}[Suites récurrentes linéaires d'ordre 2]
+	Soit $u_{n+2} = a u_{n+1} + b u_n$ pour $a, b$ des réels.
+	On pose l'équation suivante pour $r \in \R$ :
+	\[ r^2 - ar - b = 0 \qquad \Delta = (-a)^2 + 4b \]
+	Pour $\lambda, \mu, \alpha \in \R$ :
+	\begin{itemize}
+        \item $\Delta > 0 \implies u_n = \lambda r_1^n + \mu r_2^n$ avec $r_1, r_2$ tels que :
+        \begin{align*}
+            r_1 &= \frac{a - \sqrt{\Delta}}{2} & r_2 &= \frac{a + \sqrt{\Delta}}{2}
+        \end{align*}
+        \item $\Delta = 0 \implies u_n = \lambda r_0^n + \mu n r_0^n$ avec $r_0$ tel que :
+        \begin{align*}
+            r_0 = \frac{a}{2}
+        \end{align*}
+        \item $\Delta < 0 \implies u_n = \lambda r^n \cos(n \alpha) + \mu r^n \sin(n \alpha)$ avec les racines de la forme $re^{i\alpha}$ et $re^{-i\alpha}$.
+    \end{itemize}    
+    On trouve $\lambda, \mu$ grâce aux conditions sur les deux premiers termes de la suite.
+\end{theorem}

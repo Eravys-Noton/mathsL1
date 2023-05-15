@@ -1,0 +1,87 @@
+\chapter{Nombres réels}\label{chap:nb_reels}
+
+\begin{definition}[Nombre réel]\cite{cours_ressayre}
+    Un nombre réel est une écriture décimale composée de :
+    \begin{enumerate}
+        \item Un signe $\pm$.
+        \item Une suite de chiffres de 0 à 9 ne commençant pas par 0 ou étant réduite à 0.
+        \item Une virgule.
+        \item Une suite infinies de chiffres de 0 à 9 après la virgule ne finissant pas par une infinité de 9 successifs.
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition}[Addition et multiplication sur $\R$]
+    On peut définir sur $\R$ une addition (notée \og + \fg) et une multiplication (notée \og $\times$ \fg ou \og $\cdot$ \fg) qui prolonge l'addition et la multiplication de $\N$ et vérifie les règles suivantes :
+    \begin{enumerate}
+        \item Commutativité : $\forall (a, b) \in \R^2,\ a + b = b + a \text{ et } a \cdot b = b \cdot a$.
+        \item Associativité : $\forall (a, b, c) \in \R^3,\ a + (b + c) = (a + b) + c \text{ et } a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
+        \item Distributivité : $\forall (a, b, c) \in \R^3,\ a \cdot (b + c) = a \cdot b + a \cdot b$.
+        \item \'Elements neutres ou absorbants : $\forall a \in \R : a + 0 = 0,\ a \cdot 1 = a,\ a \cdot 0 = 0$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{proposition}[Relation d'ordre sur $\R$]
+    On peut définir une relation d'ordre sur $\R$, notée \og $\leq$ \fg, qui prolonge l'ordre de $\N$ et vérifie les règles suivantes :
+    \begin{enumerate}
+        \item Réflexivité : $\forall a \in \R,\ a \leq a$.
+        \item Antisymétrie : $\forall (a, b) \in \R^2,\ a \leq b$ et $b \leq a$ alors $a = b$.
+        \item Transitivité : $\forall (a, b, c) \in \R^3,\ a \leq b$ et $b \leq c$ alors $a \leq c$.
+        \item Ordre total : $\forall (a, b) \in \R^2,\ a \leq b$ ou\footnote{En mathématiques, le \og ou \fg n'est pas exclusif contrairement au français. Autrement dit, en mathématiques le \og ou \fg signifie \og soit l'un, soit l'autre, soit les deux \fg.} $b \leq a$.
+        \item Compatibilité avec l'addition : $\forall (a, b, c) \in \R^3,\ a + c \leq b + c$.
+        \item Compatibilité avec la multiplication par un réel positif : $\forall (a, b, c) \in \R^3$ : si $a \leq b$ et $c \geq 0$, alors $a \cdot c \leq b \cdot c$.
+    \end{enumerate}
+\end{proposition}
+
+\begin{definition}[Valeur absolue]
+    Soit $x \in \R$, on définit la valeur absolue ainsi :
+    \begin{align*}
+        \abs{x} =
+        \begin{cases}
+            x &\text{ si } x \geq 0 \\
+            -x &\text{ si } x < 0
+        \end{cases}
+    \end{align*}
+\end{definition}
+
+\begin{proposition}
+    $\forall (a, b) \in \R^2$.
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $\abs{a + b} \leq \abs{a} + \abs{b}$
+            \item $\abs{a \cdot b} = \abs{a} \cdot \abs{b}$
+            \item $\abs{a - b} \geq \abs{a} - \abs{b}$
+            \item $\abs{a} = \sqrt{a^2}$
+        \end{enumerate}
+    \end{multicols}
+\end{proposition}
+
+\begin{definition}[Intervalle]
+    Un intervalle $I$ est une partie de $\R$ tel que :
+    \begin{align*}
+        \forall (x, y) \in I^2 \implies \forall z \in I \text{ et } z \in \R,\ x \leq z \leq y
+    \end{align*}
+\end{definition}
+
+\begin{definition}
+    Soient $A$ une partie de $\R$ et $m \in \R$.
+    \begin{enumerate}
+        \item On dit que $m$ est un \emph{majorant} de $A$ si et seulement si : $A \iff \forall x \in A,\ x \leq m$.
+        \item On dit que $m$ est un \emph{minorant} de $A$ si et seulement si : $\forall x \in A,\ x \geq m$.
+    \end{enumerate}
+    On dit que $A$ est \emph{majorée} si elle admet un \emph{majorant}, \emph{minorée} si elle admet un \emph{minorant} et \emph{bornée} si elle est \emph{majorée} et \emph{minorée}.
+\end{definition}
+
+\begin{theorem}
+    Soit $A$ une partie non-vide de $\R$. \\
+    Si $A$ est \emph{majorée}, elle admet un \emph{plus petit majorant} appelé la \emph{borne supérieure} de $A$, notée : $\sup(A)$.
+    \\
+    Si $A$ est \emph{minorée}, elle admet un \emph{plus grand minorant} appelé la \emph{borne inférieure} de $A$, notée : $\inf(A)$.
+\end{theorem}
+
+\begin{proposition}
+    Soient $A$ une partie de $\R$ non-vide, $M$ un majorant de $A$ et $m$ un minorant de $A$.  
+    \begin{enumerate}
+        \item $M = \sup(A) \iff \forall \varepsilon > 0,\ ]M - \varepsilon,\ M] \cap A \neq \emptyset \iff \exists x \in A,\ M - x < \varepsilon$.
+        \item $m = \inf(A) \iff \forall \varepsilon > 0,\ [m, m + \varepsilon[ \cap A \neq \emptyset \iff \exists x \in A,\ x - m < \varepsilon$.
+    \end{enumerate}
+\end{proposition}

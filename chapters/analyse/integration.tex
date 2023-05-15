@@ -1,0 +1,146 @@
+\chapter{Intégration}
+
+\begin{theorem}[Théorème fondamental de l'analyse]
+	Soit $f \in \mathcal{C}^0([a, b])$ et 
+	\begin{align*}
+		\forall x \in [a,b],\ F(x) \coloneqq \int_a^x f(t) \ \diffd t
+	\end{align*}
+	alors $F \in \mathcal{C}^1(]a, b[)$ et $\forall x \in ]a, b[,\ F'(x) = f(x)$.    
+\end{theorem}
+
+\begin{corollary}
+    Si $F \in \mathcal{C}^1(]a, b[)$ tel que $\forall x \in ]a, b[,\ F'(x) = f(x)$ alors
+	\begin{align*}
+		\int_a^b f(x) \ \diffd x = [F(x)]_a^b \equiv F(b) - F(a) 
+	\end{align*}
+\end{corollary}
+
+\begin{proposition}
+	Pour $\lambda, a, b \in \R$ et $f, g$ des fonctions.
+	\begin{align*}
+		\int_a^b f(x) + \lambda g(x) \ \diffd x = \int_a^b f(x) \ \diffd x + \lambda \int_a^b g(x) \ \diffd x 
+	\end{align*}
+\end{proposition}
+
+\begin{proof}
+    \begin{align*}
+        \int_{a}^{b} f(x) + \lambda g(x) \ \diffd x &= [F(x) + \lambda G(x)]_a^b \\
+                                                    &= (F(b) + \lambda G(b)) - (F(a) + \lambda G(a)) \\
+                                                    &= F(b) - F(a) + \lambda (G(b) - G(a)) \\
+                                                    &= \int_{a}^{b} f(x) \ \diffd x + \lambda \int_{a}^{b} g(x) \ \diffd x
+    \end{align*}
+\end{proof}
+
+\begin{proposition}
+	Soient $(a, b) \in \R^2$ et $c \in ]a, b[$.
+	\begin{align*}
+		\int_a^b f(x) \ \diffd x = \int_a^c f(x) \ \diffd x + \int_c^b f(x) \ \diffd x
+	\end{align*}
+\end{proposition}
+
+\begin{theorem}[Théorème de la moyenne]
+    Soit $f \in \mathcal{C}^0([a, b])$. $\exists c \in ]a, b[$  tel que :
+    \[ \frac{\int_{a}^{b} f(x) \ \diffd x}{b - a} = f(c) \]
+\end{theorem}
+
+\begin{theorem}[Intégration par parties]
+	Soient $u, v \in \mathcal{C}^1([a, b])$ alors
+	\begin{align*}
+		\int_a^b u'(x) v(x) \ \diffd x = [u(x)v(x)]_a^b - \int_a^b u(x) v'(x) \ \diffd x
+	\end{align*}
+  \end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        (uv)'(x) &= u'(x) v(x) + u(x)v'(x) \\
+        \iff u'(x)v(x) &= (uv)'(x) - u(x)v'(x)
+    \end{align*}
+    Par croissance et linéarité de l'intégrale :
+    \begin{align*}
+        \int_a^b u'(x)v(x) \diffd x &= \int_a^b (uv)'(x) \diffd x - \int_a^b u(x)v'(x) \ \diffd x \\
+        \int_a^b u'(x)v(x) \diffd x &=  [u(x)v(x)]_a^b - \int_a^b u(x)v'(x) \ \diffd x 
+    \end{align*}
+\end{proof}
+
+\begin{theorem}[Intégration par changement de variable]
+	Soit $f \in \mathcal{C}^0(I)$ et $\varphi \in \mathcal{C}^1([a, b])$ tel que $\varphi ([a, b]) \subset I$ alors 
+	\begin{align*}
+		\int_a^b f(\varphi(x)) \cdot \varphi'(x) \ \diffd x = \int_{\varphi(a)}^{\varphi(b)} f(x) \ \diffd x
+	\end{align*}
+\end{theorem}
+
+\begin{proof}
+    \begin{align*}
+        (f \circ \varphi)'(x) &= f' \circ \varphi(x) \cdot \varphi'(x) \\
+        \int_a^b (f \circ \varphi)'(x) \diffd x &= \int_a^b f' \circ \varphi(x)  \cdot \varphi'(x) \diffd x \\
+         &= [F(\varphi(x))]_a^b \\
+         &= F(\varphi(b)) - F(\varphi(a)) \\
+         &= [F(x)]_{\varphi{a}}^{\varphi(b)} \\
+         &= \int_{\varphi(a)}^{\varphi(b)} f(x) \ \diffd x 
+    \end{align*}
+\end{proof}
+
+Lorsque nous sommes confrontés à une intégrale de fonctions trigonométriques, on peut se ramener à une intégrale de fraction rationnelle en posant le changement de variable suivant :
+\[ u = \tan(\frac{x}{2}) \]
+\begin{multicols}{3}
+    \begin{enumerate}
+        \item $\cos(x) = \frac{1 - u^2}{1 + u^2}$
+        \item $\sin(x) = \frac{2u}{1 + u^2}$
+        \item $\diffd x = \frac{2}{1 + u^2} \diffd u$
+    \end{enumerate}
+\end{multicols}
+\begin{proof}
+    \begin{enumerate}
+        \item \[ \cos(x) = \cos^2\left( \frac{x}{2} \right) - \sin^2\left( \frac{x}{2} \right) \]
+            \begin{align*}
+                \cos^2\left( \frac{x}{2} \right) - \sin^2\left( \frac{x}{2} \right) &= \cos^2\left( \frac{x}{2} \right) - \sin^2\left( \frac{x}{2} \right) \cdot \frac{1 + \tan^2 \left( \frac{x}{2} \right)}{1 + \tan^2 \left( \frac{x}{2} \right)}
+            \end{align*}
+            Posons $A(x) = \left( \cos^2\left( \frac{x}{2} \right) - \sin^2\left( \frac{x}{2} \right) \right) \left( 1 + \tan^2\left( \frac{x}{2} \right) \right)$.
+            \begin{align*}
+                A(x) &= \cos^2\left( \frac{x}{2} \right) - \sin^2\left( \frac{x}{2} \right) + \left[ \cos^2\left( \frac{x}{2} \right) - \sin^2\left( \frac{x}{2} \right) \right] \frac{\sin^2 \left( \frac{x}{2} \right)}{\cos^2 \left( \frac{x}{2} \right)} \\
+                &= \cos^2 \left( \frac{x}{2} \right) - \frac{\sin^4 \left( \frac{x}{2} \right)}{\cos^2 \left( \frac{x}{2} \right)} \\
+                &= \frac{\cos^4 \left( \frac{x}{2} \right) - \sin^4 \left( \frac{x}{2} \right)}{\cos^2 \left( \frac{x}{2} \right)}\\
+                &= \frac{\left[ \cos^2\left( \frac{x}{2} \right) - \sin^2 \left( \frac{x}{2} \right) \right] \left[ \cos^2\left( \frac{x}{2} \right) + \sin^2 \left( \frac{x}{2} \right) \right]}{\cos^2 \left( \frac{x}{2} \right)}
+            \end{align*}
+             On sait que $\forall x \in \R, \cos^2(x) + \sin^2(x) = 1$.
+             Ainsi : 
+             \begin{align*}
+                 A(x) = 1 - \frac{\sin^2\left( \frac{x}{2} \right)}{\cos^2\left( \frac{x}{2} \right)} = 1 - \tan^2 \left( \frac{x}{2} \right)
+             \end{align*}
+             Ainsi en posant $u = \tan(\frac{x}{2})$, on retrouve bien :
+             \begin{align*}
+                 \cos^2\left( \frac{x}{2} \right) - \sin^2\left( \frac{x}{2} \right) = \cos(x) = \frac{1 - u^2}{1 + u^2}
+             \end{align*}
+     \item \[ \sin(x) =  2 \sin(\frac{x}{2}) \cos(\frac{x}{2}) \]
+        \begin{align*}
+            2\sin(\frac{x}{2})\cos(\frac{x}{2}) &= 2\sin(\frac{x}{2})\cos(\frac{x}{2}) \cdot \frac{1 + \tan^2 \left( \frac{x}{2} \right)}{1 + \tan^2 \left( \frac{x}{2} \right)} \\
+            &= \frac{2\sin(\frac{x}{2})\cos(\frac{x}{2}) \cdot \left( 1 + \tan^2 \left( \frac{x}{2} \right) \right)}{1 + \tan^2 \left( \frac{x}{2} \right)}
+        \end{align*}
+        Posons $A(x) = 2\sin(\frac{x}{2})\cos(\frac{x}{2}) \cdot \left( 1 + \tan^2 \left( \frac{x}{2} \right) \right)$.
+        \begin{align*}
+            A(x) &= 2\sin(\frac{x}{2})\cos(\frac{x}{2}) + 2\sin(\frac{x}{2})\cos(\frac{x}{2}) \tan^2 \left( \frac{x}{2} \right) \\
+            &= 2\sin(\frac{x}{2})\cos(\frac{x}{2}) + 2\sin(\frac{x}{2})\cos(\frac{x}{2}) \frac{\sin^2 \left( \frac{x}{2} \right)}{\cos^2 \left( \frac{x}{2} \right)} \\
+            &= 2\sin(\frac{x}{2})\cos(\frac{x}{2}) + \frac{2 \sin^3 \left( \frac{x}{2} \right)}{\cos(\frac{x}{2})} \\ 
+            &= 2 \left( \sin(\frac{x}{2}) \left[ \cos(\frac{x}{2}) + \frac{\sin^2 \left( \frac{x}{2} \right)}{\cos(\frac{x}{2})} \right] \right) \\
+            &= 2 \left( \sin(\frac{x}{2}) \left[ \frac{\cos^2 \left(\frac{x}{2}\right) + \sin^2 \left( \frac{x}{2} \right)}{\cos(\frac{x}{2})} \right] \right)
+        \end{align*}
+        On sait que $\forall x \in \R, \cos^2(x) + \sin^2(x) = 1$. Ainsi :
+        \begin{align*}
+            A(x) &= 2 \frac{\sin(\frac{x}{2})}{\cos(\frac{x}{2})} \\
+            &= 2 \tan(\frac{x}{2})
+        \end{align*}
+        On a donc :
+        \begin{align*}
+            2\sin(\frac{x}{2})\cos(\frac{x}{2}) = \sin(x) = \frac{2 \tan(\frac{x}{2})}{1 + \tan^2 \left( \frac{x}{2} \right)}
+        \end{align*}
+        En posant $u = \tan(\frac{x}{2})$ on retrouve :
+        \[ \sin(x) = \frac{2u}{1 + u^2} \]
+        \item 
+        \begin{align*}
+            u = \tan(\frac{x}{2}) &\iff \arctan(u) = \frac{x}{2} \\
+            &\iff x = 2 \arctan(u) \\
+            &\iff \diffd x = \frac{2}{1 + u^2} \diffd u
+        \end{align*}
+    \end{enumerate}
+\end{proof}
+

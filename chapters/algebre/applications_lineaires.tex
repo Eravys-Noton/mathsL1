@@ -1,0 +1,271 @@
+\chapter{Applications linéaires}
+
+\section{Définitions}
+\begin{definition}[Application linéaire]
+    Soient $E, F$ des $\K$-espaces vectoriels et $f : E \to F$.
+    $f$ est une \emph{application linéaire} si et seulement si $\forall x_1, x_2 \in E,\ \forall \lambda \in \K$ :
+    \[ f(x_1 + \lambda x_2) = f(x_1) + \lambda f(x_2) \]
+\end{definition}
+
+\begin{definition}
+    Soient $E, F$ des espaces vectoriels et $f : E \to F$ une application linéaire.
+    \\
+    On définit le \emph{noyau} de $f$, noté $\ker(f)$ tel que :
+    \[ \ker(f) \coloneqq \{ x \in E : f(x) = 0_E \} \] 
+    On définit l'\emph{image} de $f$, notée $\Im(f)$ telle que :
+    \[ \Im(f) \coloneqq \{ y \in F : \exists x \in E,\ y = f(x) \} \]
+\end{definition}
+
+\begin{definition}
+    \par \noindent Soient $E, F$ des espaces vectoriels et $f$ une application linéaire  de $E$ vers $F$.
+    \begin{enumerate}
+        \item On dit que $f$ est un \emph{morphisme} de $E$ vers $F$, on note $f \in \mathcal{L}(E, F)$.
+        \item Si $E = F$, on dit que $f$ est un \emph{endomorphisme} de $E$, on note $f \in \mathcal{L}(E)$.
+        \item Si $f \in \mathcal{L}(E, F)$ est une \emph{bijection}, alors $f$ est un \emph{isomorphisme}. On note parfois $f : E \overset{\sim}{\to} F$.
+        \item Si $f \in \mathcal{L}(E)$ est un \emph{isomorphisme}, on dit que $f$ est un \emph{automorphisme} de $E$.
+        \\
+        $E$ et $F$ sont appelés \emph{isomorphes} s'il existe un \emph{isomorphisme} de l'un vers l'autre, on écrit parfois $E \cong F$.
+    \end{enumerate}
+\end{definition}
+
+\begin{remark}
+    L'ensemble des endomorphismes de $E$ est parfois noté $\End(E)$, celui des automorphismes de $E$ est parfois noté $\Aut(E)$.
+\end{remark}
+
+Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} + \cdots + a_1 f' + a_0 f = 0 \},\ n, N \in \N^*,\ a_i \in \mathcal{C}^0(I),\ I$ un intervalle ouvert.
+
+\begin{proposition}
+    Soit $n \in \N$.
+    \begin{multicols}{2}
+        \begin{enumerate}
+            \item $\varepsilon \subseteq \mathcal{C}^n(I)$
+            \item $\dim(E) = n$
+        \end{enumerate}
+    \end{multicols}
+\end{proposition}
+
+\begin{definition}[Rang d'un morphisme]
+    Soit $f \in \mathcal{L}(E, F)$. On appelle $\rg(f) \coloneqq \dim(\Im(f))$ le rang de $f$.
+\end{definition}
+
+\begin{theorem}[Théorème du rang]
+    Soient $E, F$ des espaces vectoriels de dimensions finies ou infinies et $f \in \mathcal{L}(E, F)$, alors :
+    \[ \dim(E) = \dim(\ker(f)) + \rg(f) \]
+\end{theorem}
+
+\begin{corollary}
+    Soit $f \in \mathcal{L}(E)$.
+    \begin{align*}
+        \begin{cases}
+            \ker(f) + \Im(f) = \ker(f) \oplus \Im(f) \\
+            \ker(f) \oplus \Im(f) = E
+        \end{cases}
+        \iff 
+        \ker(f) \cap \Im(f) = \{0_E\}
+    \end{align*}
+\end{corollary}
+
+\begin{proposition}
+    Soit $f \in \mathcal{L}(E, F)$ et $(b_1, \ldots, b_n)$ une base de $E$. Si l'on connait $f(b_i) \in F$, $\forall i = 1, \ldots, n$, on connait toute l'application $f$.
+\end{proposition}
+
+\begin{corollary}
+    Soit $(b_1, \ldots, b_n)$ une base de $E$. Alors $\varphi \in \mathcal{L}(E, \R^n)$ est un isomorphisme donné par :
+    \[ \varphi(b_i) = e_i,\ \forall i \in \llbracket 1, n \rrbracket \]
+    \[ \varphi \left( \sum_{i = 1}^{n} x_i b_i \right) = \sum_{i = 1}^{n} x_i e_i \equiv 
+    \begin{pmatrix}
+        x_1 \\
+        \vdots \\
+        x_n
+    \end{pmatrix}
+    \in \R^n
+     \]
+\end{corollary}
+
+\begin{definition}
+    Soient $f \in \mathcal{L}(E, F)$ et $\mathcal{B} \coloneqq (b_1, \ldots, b_n)$ une base de $E$ et $\mathcal{C} \coloneqq (c_1, \ldots, c_n)$ une base de $F$.
+    Alors on peut définir une matrice $A \in \mathcal{M}_{m,n}(\mathcal{K}),\ \forall i \in \llbracket 1, n \rrbracket$. 
+    \[ f(b_i) = \sum_{j = 1}^{n} A_{ji} c_j \]
+\end{definition}
+
+\begin{lemma} Soient $\K$ un corps et $E$ un espace-vectoriel de dimension $n \in \N$.
+    \[ \dim(E) = n \implies E \cong \K^n \]
+\end{lemma}
+
+\begin{lemma}
+    Soient $\mathcal{B} = (b_1, \ldots, b_n)$ base de $E$ et $\varphi \in \mathcal{L}(E, \K^n)$  alors :
+    \begin{align*}
+        \varphi : E &\to \K^n \\
+        x \equiv \sum_{i = 1}^{n} \lambda_i b_i &\mapsto 
+            \begin{pmatrix}
+                \lambda_1 \\
+                \vdots \\
+                \lambda_n
+            \end{pmatrix}
+    \end{align*}
+    est une bijection, alors c'est un isomorphisme.
+\end{lemma}
+
+\begin{proposition}
+    Soient $E, F$ des espaces vectoriels $f \in \mathcal{L}(E, F)$ un morphisme et $A$ sa matrice associée. 
+    \[ y = f(x) \iff y = A \cdot x \]
+\end{proposition}
+
+\section{Projecteurs et symétries}
+\begin{definition}
+    Soit $f \in \mathcal{L}(E)$. Notons $f^2 \equiv f \circ f$.
+    \begin{enumerate}
+        \item On dit que $f$ \emph{est idempotente/une projection} si et seulement si : $f^2 = f$.
+        \item On dit que $f$ \emph{est involutive/une symétrie linéaire} si et seulement si : $f^2 = id_E$.
+    \end{enumerate}
+\end{definition}
+
+\begin{proposition} 
+    Soit $p \in \mathcal{L}(E)$.
+    \begin{enumerate}
+        \item $id_E - p \text{ est une projection} \iff p \text{ est une projection}$
+        \item $2p - id_E \text{ est une symétrie} \iff p \text{ est une projection}$
+    \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+    \begin{enumerate}
+        \item Posons $f(x) = id_E(x) - p(x)$. Montrons que $f(f(x)) = id_E(x) - p(x)$ si et seulement si $p(p(x))$.
+        \begin{align*}
+            f(f(x)) &= id_E(id_E(x) - p(x)) - p(id_E(x) - p(x)) \\ 
+            &= id_E(id_E(x)) - id_E(p(x)) - p(id_E(x)) + p(p(x)) \\ 
+            &= id_E(x) - p(x) - p(x) + p(p(x)) \\ 
+            &= id_E(x) - 2p(x) + p(p(x)) \\ 
+            &= id_E(x) - [2p(x) - p(p(x))]
+        \end{align*}
+        \begin{align*}
+            id_E(x) - [2p(x) - p(p(x))] = id_E(x) - p(x) &\iff p(p(x)) = p(x) \\ 
+            &\iff 2p(x) - p(p(x)) = p(x) \\ 
+            &\iff 2p(x) = p(x) + p(p(x)) \\
+            &\iff p(x) = p(p(x))
+        \end{align*}
+        \item Posons $s(x) = 2p(x) - id_E(x)$. Montrons que $s(s(x)) = id_E(x)$ si et seulement si $p(p(x)) = p(x)$.
+        \begin{align*}
+            s(s(x)) &= s(2p(x) - id_E(x)) \\
+            &= 2p(2p(x) - id_E(x)) - id_E(2p(x) - id_E(x)) \\
+            &= 4p(p(x)) - 2p(id_E(x)) - 2id_E(p(x)) + id_E(id_E(x))
+        \end{align*}
+        \begin{align*}
+            4p(p(x)) - 4p(x) + id_E(x) = id_E(x) &\iff 4p(p(x)) - 4p(x) = 0 \\
+            &\iff 4p(p(x)) = 4p(x) \\
+            &\iff p(p(x)) = p(x)
+        \end{align*}
+    \end{enumerate}
+\end{proof}
+
+\begin{definition}
+    Soient $E = F \oplus G$, $u \in F$, $v \in G$, alors l'application 
+    \begin{align*}
+        p_F : E &\to E \\
+            x \equiv u + v &\mapsto u
+    \end{align*}    
+    est appelée un \emph{projecteur} sur $F$ \emph{parallélement} à $G$.
+\end{definition}
+
+\begin{proposition}
+    Soit $p_F$ définie comme dans la définition précédente.
+    \begin{enumerate}
+        \item $p_F$ est une projection.
+        \item Soit $p$ une projection, $p$ est un projecteur sur $\Im(p)$ parallélement à son noyau $\ker(p)$.
+    \end{enumerate}
+\end{proposition}
+
+\section{Rotations.}
+\begin{definition}
+    $\operatorname{GL}(\R, n) \coloneqq \{ A \in \mathcal{M}_n(\R) | \det(A) \neq 0 \}$
+\end{definition}
+
+\begin{definition}
+    $\operatorname{SL}(\R, n) \coloneqq \{ A \in \mathcal{M}_n(\R) | \det(A) = 1 \}$
+\end{definition}
+
+\begin{definition}
+    $\operatorname{O}(n) \coloneqq \{ R \in \mathcal{M}_n(\R) | \forall x, y \in \R^n : \langle Rx|Ry \rangle = \langle x|y \rangle \}$
+\end{definition}
+
+\begin{definition}
+    $\operatorname{SO}(n) \coloneqq \{ R \in \operatorname{O}(n) | \det(R) = 1 \}$
+\end{definition}
+
+\begin{proposition}
+    \begin{enumerate}
+        \item $R \in \mathcal{M}_n,\ R \in \operatorname{O}(n) \iff R^T \cdot R = I_n$
+        \item $R \in \operatorname{O}(n) \implies \det(R) \in \{ \pm 1 \}$
+    \end{enumerate}
+\end{proposition}
+
+\begin{corollary}
+    $\operatorname{O}(n) = \{ R \in \mathcal{M}_n | R^T \cdot R = I_n \}$
+\end{corollary}
+
+\section{Changements de bases et matrices associées aux applications linéaires.}
+
+\begin{definition}
+    Soient $E$ un espace vectoriel muni d'une base $\mathcal{B} = (b_1, \ldots, b_p)$ et $F$ un espace vectoriel muni d'une base $\mathcal{B}' = (b_1', \ldots, b_n')$ et $f \in \mathcal{L}(E, F)$.
+    \\
+    On peut définir une matrice $\operatorname{Mat}_{\mathcal{B}\mathcal{B}'} (f) \in \mathcal{M}_{n,p}$ telle que :
+    \begin{align*}
+        \hspace{0.4cm}
+        \begin{matrix}
+            f(b_1) & \cdots & f(b_p) 
+        \end{matrix}
+    \end{align*}
+    \vspace{-0.8cm}
+    \begin{align*}
+        \begin{matrix}
+            b_1' \\
+            \vdots \\ 
+            b_n'
+        \end{matrix}
+        \begin{pmatrix}
+            a_{11} & \cdots & a_{1p} \\
+            \vdots & \ddots & \vdots \\ 
+            a_{n1} & \cdots & a_{np}
+        \end{pmatrix}
+    \end{align*}
+    avec les coefficients $a_{ij}$ tels que : 
+    \[ f(b_j) = \sum_{i = 0}^n a_{ij} b_i' \]
+\end{definition}
+
+\begin{definition}[Matrice de passage]
+    Soient $E$ un espace vectoriel de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n)$ et $\mathcal{B}' = (b_1', \ldots, b_n')$ deux bases de $E$. On appelle \emph{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$.
+\end{definition}
+
+\par \noindent Concrètement, écrivons : 
+\begin{align*}
+    \hspace{0.45cm}
+    \begin{matrix}
+        b_1' & \cdots & b_n' 
+    \end{matrix}
+\end{align*}
+\vspace{-1.1cm}
+\begin{align*}
+    \begin{matrix}
+        b_1 \\
+        \vdots \\ 
+        b_n
+    \end{matrix}
+    \begin{pmatrix}
+        a_{11} & \cdots & a_{1n} \\
+        \vdots & \ddots & \vdots \\ 
+        a_{n1} & \cdots & a_{nn}
+    \end{pmatrix}
+\end{align*}
+Avec les coefficients $a_{ij}$ tels que :
+\[ b_j' = \sum_{i=1}^{n} a_{ij} b_i  \]
+
+\begin{definition}
+    Soient $A, B \in \mathcal{M}_{m,n}$.
+    \begin{enumerate}
+        \item On dit que $A$ et $B$ sont \emph{équivalentes} si et seulement si : 
+        \[ \exists P, Q \in \operatorname{GL}(n),\ B = Q A P^{-1} \]
+        \item On dit que $A$ et $B$ sont \emph{similaires} si et seulement si :
+        \[ \exists P \in \operatorname{GL}(n),\ B = P^{-1} A P \]
+    \end{enumerate}
+\end{definition}
+

@@ -1,0 +1,158 @@
+\chapter{Espaces vectoriels}\label{chap:espaces_vectoriels}
+
+\section{Définitions}
+\begin{definition}[Groupe]
+    $(G, *)$ est appelé \emph{groupe} si :
+    \begin{enumerate}
+        \item $G$ est un ensemble.
+        \item \og $*$ \fg est une application définie par :
+        \begin{align*}
+            * : G \times G &\to G \\
+            (g_1, g_2) &\mapsto g_1 * g_2
+        \end{align*}
+        telle que $\forall g_1, g_2, g_3 \in G$ :
+        \begin{multicols}{2}
+            \begin{enumerate}
+                \item $(g_1 * g_2) * g_3 = g_1 * (g_2 * g_3)$
+                \item $\exists 0_G \in G,\ g_1 * 0_G = 0_G * g_1 = g_1$
+                \item $\exists g^{-1} \in G,\ g_1 * g^{-1} = g^{-1} * g_1 = 0_G$
+            \end{enumerate}
+        \end{multicols}
+    \end{enumerate}
+\end{definition}
+
+\par Si le groupe $G$ est commutatif c'est-à-dire : $\forall g_1, g_2 \in G, g_1 * g_2 = g_2 * g_1$, alors il forme un \emph{groupe abélien}.
+
+\begin{definition}[Corps] % A redéfinir
+    (A redéfinir)
+    Un \emph{corps} est un ensemble $C$ avec deux loi internes \og $+$ \fg et \og $\cdot$ \fg telles que :
+    $(C, +)$ et $(C, \cdot)$ sont des \emph{groupes abéliens}.
+\end{definition}
+
+\begin{definition}[$\K$-espace vectoriel]
+	Soit $\K$ un corps. Un $\K$-espace vectoriel est un ensemble $E$ composé d'une loi interne \og $+$ \fg et une loi externe \og $\cdot$ \fg telles que :
+	\begin{align*}
+		+ : E \times E &\to E \\
+		(x, y) &\mapsto x + y
+	\end{align*}
+	\begin{align*}
+		\cdot : \K \times E &\to E \\
+		(\lambda, u) &\mapsto \lambda \cdot u
+	\end{align*}
+	\begin{enumerate}
+		\item $(E, +)$ est un groupe abélien.
+		\item $\forall \lambda_1, \lambda_2 \in \K,\ u, v \in E$
+		\begin{multicols}{2}
+            \begin{enumerate}
+			\item $\lambda_1 \cdot (u + v) = \lambda_1 \cdot u + \lambda_1 \cdot v$
+			\item $(\lambda_1 + \lambda_2) \cdot u = \lambda_1 \cdot u + \lambda_2 \cdot u$
+			\item $(\lambda_1 \cdot \lambda_2) \cdot u = \lambda_1 \cdot (\lambda_2 \cdot u)$
+			\item $1 \cdot u = u$
+		\end{enumerate}
+        \end{multicols}
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[Sous-espace vectoriel]
+	Soit $E$ un espace-vectoriel, $F$ est un sous-espace vectoriel de $E$ si :
+	\begin{multicols}{2}
+	    \begin{enumerate}
+    		\item $F \subseteq E$
+    		\item $F \neq \emptyset$
+    		\item $\forall u, v \in F,\ \lambda \in \K,\ u + \lambda v \in F$
+    	\end{enumerate}
+	\end{multicols}
+\end{definition}
+
+\begin{definition}[Somme directe]
+	Soient $F_1, F_2 \subseteq E$. On dit que $F_1$ et $F_2$ sont en \emph{somme directe} ou qu'ils sont \emph{supplémentaires} dans $E$ si et seulement si :
+	\begin{multicols}{2}
+	    \begin{enumerate}
+		\item $F_1 \cap F_2 = \{ 0_E \}$
+		\item $F_1 + F_2 = E$
+	\end{enumerate}
+	\end{multicols}
+	On note alors :
+	\[ F_1 \oplus F_2 = E \]
+\end{definition}
+
+\begin{nomenclature}
+    Soient $u_i,\ i \in \llbracket 1, n \rrbracket$. On dit que $(u_1, \ldots, u_n) \equiv \operatorname{Vect}\{ u_1, \ldots, u_n \}$ forme une famille de vecteurs.
+\end{nomenclature}
+
+\begin{definition}
+	Soient $E$ un espace vectoriel et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs dans $E$.
+	\begin{enumerate}
+		\item $\mathcal{F}$ est libre :
+		\begin{align*}
+			\forall \lambda_i \in \K,\ u_i \in E,\ \sum_{i = 1}^n \lambda_i u_i = 0_E \implies \lambda_1 = \cdots = \lambda_n = 0
+		\end{align*}
+		\item $\mathcal{F}$ est génératrice :
+		\begin{align*}
+			\forall x \in E,\ \exists \lambda_i \in \K,\ x = \sum_{i = 1}^n \lambda_i u_i 
+		\end{align*}
+	\end{enumerate}
+\end{definition}
+
+\section{Base et dimension}
+\begin{definition}[Base]
+	Une famille de vecteurs est une base si elle est \emph{libre} et \emph{génératrice}.
+\end{definition}
+
+\begin{proposition}
+	Soient une famille de vecteurs $\mathcal{F}$ telle que $\mathcal{F} = (u_1, \ldots, u_n)$ et un espace vectoriel $E$.
+	\[ 
+	\mathcal{F} \text{ est une base} \iff 
+	\forall x \in E,\ \exists ! \lambda_i \in \R,\ x = \sum_{i = 1}^n \lambda_i u_i
+	\]
+\end{proposition}
+
+\begin{proposition}
+	Soit $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs. $\mathcal{F}$ est une base de $\R^n$ si et seulement si :
+	\[ \det(\mathcal{F}) \neq 0 \]
+\end{proposition}
+
+\begin{definition}[Dimension d'un espace vectoriel]
+	Soit $E$ un espace vectoriel, on appelle dimension de $E$, notée $\dim(E)$, le nombre d'éléments d'une base de $E$. 
+\end{definition}
+
+
+\begin{proposition}
+	Soient $E$ un espace vectoriel de dimension $n$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de $n$ vecteurs dans $E$. Alors on a :
+	\begin{multicols}{3}
+	    \begin{enumerate}
+		\item $\mathcal{F}$ est une base.
+		\item $\mathcal{F}$ est libre.
+		\item $\mathcal{F}$ est génératrice.
+	\end{enumerate}
+	\end{multicols}
+	\noindent Ainsi il suffit de montrer que $\mathcal{F}$ est libre pour montrer les deux autres propriétés.
+\end{proposition}
+
+\begin{theorem}[Théorème de la base incomplète]
+	Toute famille libre peut être complétée en une base.
+\end{theorem}
+
+\begin{theorem}[Théorème de la base extraite]
+    De toute famille génératrice, on peut extraire une base.
+\end{theorem}
+
+\begin{theorem}
+    Chaque espace vectoriel admet une base.
+\end{theorem}
+
+\begin{proposition}
+	Soient $E$ un espace vectoriel et $F, G\subseteq E$.
+	\begin{multicols}{2}
+	    \begin{enumerate}
+    		\item $\dim(F \oplus G) = \dim(F) + \dim(G)$ 
+    		\item $\dim(F + G) \leq \dim(E)$
+    	\end{enumerate}
+	\end{multicols}
+\end{proposition}
+
+\begin{theorem}[Théorème de Grassman]
+	Soient $F, G$ des espaces vectoriels.
+	\[ \dim(F+G) = \dim(F) + \dim(G) - \dim(F\cap G) \]
+\end{theorem}
+

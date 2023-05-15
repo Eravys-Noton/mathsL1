@@ -1,0 +1,49 @@
+\chapter{Ensembles}
+Nous allons tout d'abord donner une définition intuitive d'un ensemble : Un ensemble $E$ est une collection d'objets appelés éléments. Si $E$ contient un élément $x$, on dit que $x$ appartient à $E$, noté $x \in E$.
+
+\begin{definition}[Ensemble vide]
+  L'ensemble vide noté $\emptyset$ est l'ensemble ne contenant aucun élément.
+\end{definition}
+
+\begin{definition}[Inclusion]
+  Soient $E, F$ deux ensembles.
+  $$F \subset E \equiv F \subseteq E \iff \forall x \in F,\ x \in E$$
+  On dit que $F$ est inclu dans $E$.
+\end{definition}
+
+\begin{definition}[\'Egalité d'ensembles]
+  Soient $E, F$ deux ensembles.
+  $$E = F \iff E \subset F \text{ et } F \subset E$$
+\end{definition}
+
+\begin{definition}[Singleton]
+  Un singleton est un ensemble ne contenant qu'un seul élément.
+\end{definition}
+
+\begin{definition}[Réunion d'ensembles]
+  Soient $E, F$ deux ensembles.
+  \[ E \cup F = \{ \forall x \in E \cup F,\ x \in E \text{ ou } x \in F \} \]
+\end{definition}
+
+\begin{definition}[Intersection d'ensembles]
+  Soient $E, F$ deux ensembles.
+  \[ E \cap F = \{ \forall x \in E \cap F,\ x \in E \text{ et } x \in F \} \]
+\end{definition}
+
+\begin{definition}[Complémentaire d'un ensemble]
+  Soient $E, F$ deux ensembles.
+  \[ E \backslash F = \{ \forall x \in E \backslash F,\ x \in E,\ x \notin F \} \]
+\end{definition}
+
+\begin{proposition}[Lois de Morgan]
+  Soient $A, B$ deux ensembles.
+  \begin{align*}
+    (A \cup B)^{C} &= A^{C} \cap B^{C} & (A \cap B)^{C} &= A^{C} \cup B^{C}
+  \end{align*}
+\end{proposition}
+
+\begin{definition}[Produit cartésien]
+    Soient $E$ et $F$ des ensembles. On définit le produit cartésien :
+    \[ E \times F \coloneqq \{ (x, y),\ x \in E,\ y \in F \} \]
+    Par convention : $\underbrace{E \times \cdots \times E}_{n \text{ fois}} = E^n$.
+\end{definition}

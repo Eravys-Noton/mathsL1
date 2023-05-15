@@ -1,0 +1,69 @@
+\part{Introduction}
+
+\def\arraystretch{1.5}
+\par Avant toute chose, nous tenons à préciser que cette mise en page est destinée à une impression sous la forme d'un livre. Ainsi pour profiter d'une bonne lecture sur la version numérique, nous vous recommandons de la lire en mode \og double pages \fg avec les plus grandes marges orientées vers le centre. 
+\\
+\par \noindent Ce document repose principalement sur les enseignements de nos professeurs Guillaume AUBRUN, Kenji IOHARA et Thomas STROBL
+mais il peut contenir des formulations d'autres sources telles que \emph{Bibmath  \cite{bibmath}, Wikipédia \cite{wikipedia}, Exo7 \cite{exo7}} ou encore le livre destiné aux élèves de CPGE recommandé sur le site de la licence Mathématiques \cite{livre_prepa}.
+
+\par \noindent Il regroupe l'essentiel des compétences mathématiques à maîtriser à la fin de la première année de Licence. Vous y trouverez les définitions et les théorèmes à connaître accompagnés d'exercices à savoir refaire. Nous essaierons de démontrer le plus de théorèmes possibles, cependant les preuves ne sont pas toute à retenir (cela dépend également de votre orientation : mathématiques ou informatique).
+Il se peut également que les outils mathématiques ne soient pas présentées scrupuleusement comme aux cours magistraux, nous avons éventuellement paraphrasé certains passages. Par exemple, il se peut que les notations utilisées ne soient pas les mêmes que celles vues en cours, nous avons préféré utiliser des notations plus courantes en France.
+\\
+\par \noindent Nous pensons qu'il est intéressant de définir certains mots de vocabulaires définis ci-dessous :
+\begin{itemize}
+    \item \emph{Assertion} : Une assertion est une affirmation mathématique qui est soit vraie soit fausse. 
+    \item \emph{Axiome} : Un axiome est une assertion que l'on considère vraie sans démonstration.
+    \item \emph{Définition} : Une définition énonce comment un objet mathématique est construit.
+    \item \emph{Théorème} : Un théorème est une assertion d'importance particulière ayant été démontrée.
+    \item \emph{Corollaire} : Un corollaire est un résultat découlant d'un théorème.
+    \item \emph{Lemme} : Un lemme est un résultat intermédiaire sur lequel on s'appuie pour démontrer un théorème.
+    \item \emph{Proposition} : Une proposition est un résultat simple qui n'est pas associé à un théorème.
+    \item \emph{Conjecture} : Une conjecture est une proposition dont on ignore la véracité.
+\end{itemize}
+\par \noindent Rappelons également les ensembles de nombres étudiés au lycée :
+\[ \text{L'ensemble des entiers naturels : } \N = \{0, 1, \ldots \} \]
+\[ \text{L'ensemble des entiers relatifs : } \Z = \{ \ldots, -1, 0, 1, \ldots \} \]
+\[ \text{L'ensemble des nombres décimaux : } \D = \left\{ \frac{a}{10^n} : a \in \Z, n \in \N \right\} \]
+\[ \text{L'ensemble des nombres rationnels : } \Q = \left\{ \frac{a}{b}  : a \in \Z, b \in \Z^* \right\} \]
+\[ \text{L'ensemble des nombres réels : } \R = ]-\infty, +\infty[ \]
+\par \noindent Nous définirons l'ensemble des nombres réels plus rigoureusement dans le \autoref{chap:nb_reels}.
+\\
+\par \noindent Pour désigner un ensemble privé de 0, nous pouvons lui ajouter \og * \fg en exposant. 
+\\ 
+Par exemple $\N^* = \{1, 2, \ldots\}$.
+\\
+\par \noindent Définissons également certaines notations qui seront utilisées dans ce document :
+\begin{itemize}
+    \item $\forall$ : \og Pour tout \fg ou \og Quelque soit \fg.
+    \item $\exists$ : \og Il existe \fg.
+    \item $\exists!$ : \og Il existe un unique \fg.
+    \item $\in$ : \og Appartient à \fg.
+    \item $\subset$ : \og Inclus dans \fg.
+    \item $\subsetneq$ : \og Inclus dans mais pas égal à \fg.
+    \item $P \implies Q$ : \og Si $P$ alors $Q$ \fg.
+    \item $P \iff Q$ : \og $P$ équivaut à $Q$ \fg. Autrement dit : \og $P$ si et seulement si $Q$ \fg.
+    \item $x \coloneqq y$ : \og $x$ est défini par $y$ \fg. Pour les lecteurs informaticiens, \og $\coloneqq$ \fg se comporte comme le \og = \fg en programmation.
+    \item $\equiv$ : Selon le contexte, il peut désigner plusieurs choses \cite{symbole_congru_wikipedia}:
+    \begin{itemize}
+        \item En arithmétique, il désigne une congruence sur des entiers.
+        \item En logique, il désigne une équivalence.
+        \item Sinon il désigne une \og identité \fg. C'est-à-dire une égalité qui est vraie quelque soient les valeurs des variables employées.
+    \end{itemize}
+    \item $\square$ : Quand il est utilisé à la fin d'une démonstration, il signifie : \og Ce qu'il fallait démontrer \fg.
+    \item $\llbracket a, b \rrbracket$ : Désigne l'intervalle d'entiers entre $a$ et $b$ inclus.
+    \item $[a, b]$ : Désigne l'intervalle de réels entre $a$ et $b$ inclus.
+\end{itemize}
+\par \noindent Pour finir nous jugeons bon de rappeler quelques raisonnements usuels.
+
+\begin{definition}[Raisonnement par récurrence]
+    Il existe plusieurs variantes du raisonnement par récurrence, définissons d'abord la récurrence simple. L'objectif est de montrer qu'une propriété $P_n$ est vraie pour tout entier naturel $n$. 
+    \begin{enumerate}
+        \item \emph{Initialisation} : On montre que $P_0$ est vraie.
+        \item \emph{Hérédité} : On suppose que pour un $k$ tel que $0 < k < n,\ P_k$ est vraie et on montre que $P_{k+1}$ est vraie.
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}[Raisonnement par l'absurde]
+    Soit $P$ une assertion. Le raisonnement par l'absurde consiste à montrer que la assertion contraire de $P$, que l'on note $\overline{P}$ dans cette définition, est fausse impliquant que $P$ est vraie.
+    Pour ce faire, on suppose que $\overline{P}$ est vraie et on commence à raisonner, s'il l'on arrive à une absurdité ou une contradiction, on a montré que $\overline{P}$ est fausse, impliquant que $P$ est vraie.
+\end{definition}
