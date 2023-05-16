@@ -4,10 +4,44 @@
     \[ a \text{ est un multiple de } b \iff b \text{ est un diviseur de } a \iff b \mid a \iff \exists q \in \Z, a = bq \]
 \end{definition}
 
+\section{Divisibilité}
+
 \begin{theorem}[Division euclidienne]
     Soient $a \in \Z, b \in \Z^*$.
     \[ \exists ! (q, r) \in \Z^2, a = bq + r, (0 \leq r < \abs{b}) \]
 \end{theorem}
+
+\begin{proof}\cite{livre_prepa}
+	\leavevmode
+	\begin{enumerate}
+		\item \emph{Existence :} Supposons $a \in \N$ et considérons M = $\{n \in \N : nb \leq a\}$ l'ensemble des multiples de $b$ inférieurs à $a$. $M$ est une partie de $\N$. Nous avons deux propriétés : 
+		\begin{enumerate}
+			\item $M$ est non vide car 0 est un multiple de $b$ inférieur à $a$.
+			\item $M$ est majoré par $a$ d'après sa définition.
+		\end{enumerate}
+		Ainsi $M$ admet un plus grand élément que l'on note $q$, vérifiant :
+		\begin{enumerate}
+			\item $qb \leq a$ car $q \in M$ 
+			\item $(q + 1)b > a$ car $q + 1 > q$ sachant que $q$ est le plus grand élément de $M$, $q + 1 \notin M$.
+		\end{enumerate}
+		Posons : $r \coloneqq a - bq$. Sachant que $a \geq bq,\ r \geq 0$. On a $r < b$ car $b = (q + 1)b - qb > a - bq = r$. Supposons que $a \in \Z$. 
+		\begin{enumerate}
+			\item Si $a$ est positif, on se ramène au cas précédent.
+			\item Dans le cas où $a < 0,\ -a \geq 0$, ainsi il existe $(q', r') \in \Z^2$ tel que :
+		\[ -a = bq' + r',\ 0 \leq r' < \abs{b} \]
+		\[a = b(-q') - r' \]
+			\begin{enumerate}
+				\item Si $r' = 0$, on pose $q = -q'$ et $r = 0$ et on obtient le couple recherché.
+				\item Si $r' \neq 0$, $r' \in \llbracket 1, b-1 \rrbracket$ et $a = b(-q' -1) + (b - r')$, on pose $q = -q' - 1$ et $r = b - r'$ et on obtient le couple recherché. 
+			\end{enumerate}
+		\end{enumerate}
+		\item \emph{Unicité :} Soit $(q, q', r, r') \in \Z^4$. \\
+	On a d'une part : $a = bq + r$ et d'autre part : $a = bq' + r'$.
+	On sait que $0 \leq r < b$ et $0 \leq r' < b$ donc :
+	\[ b \abs{q' - q} = \abs{r' - r} < b \]
+	ce qui n'est possible que si $\abs{q' - q} = 0$ ce qui impliquerait $q = q'$. Ceci entraîne donc $r = r'$.
+	\end{enumerate}
+\end{proof}
 
 \begin{nomenclature}
     Pour $a, b, c, d$ définis comme dans le théorème précédent.
@@ -20,3 +54,41 @@
     \end{itemize}
     \end{multicols}
 \end{nomenclature}
+
+\section{PGCD et PPCM}
+
+\begin{definition}
+	Soit $(a, b) \in (\Z^*)^2$. 
+	\begin{enumerate}
+		\item L'ensemble des diviseurs de $\N^*$ commun à $a$ et $b$ admet un plus grand élément. C'est le \emph{plus grand commun diviseur} des entiers $a$ et $b$. On le note $\pgcd(a,b)$.
+		\item L'nesemble des diviseurs de $\N^*$ commun à $a$ et $b$ admet un plus petit élément. C'est le \emph{plus petit commun multiple} des entiers $a$ et $b$. On le note $\ppcm(a, b)$.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+	Soit $(a, b, d) \in (\Z^*)^2 \times \Z$.
+	\begin{enumerate}
+		\item $a \mid d \text{ et } b \mid d \implies \ppcm(a, b) \mid d$
+		\item $d \mid a \text{ et } d \mid b \implies d \mid \pgcd(a, b)$
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+		\item Posons $\ell \coloneqq \ppcm(a,b)$. 
+		\[ \exists ! (q,r) \in \Z^2,\ d \coloneqq q \ell + R,\ 0 \leq r < \ell \]
+		\[ r \coloneqq d - q \ell,\ d \text{ et } \ell \text{ sont multiples de } a \text{ et } r \text{ est aussi un multiple de } a \text{ et } b \]
+		Par la minimalité de $\ell,\ r = 0 \implies m = q \ell$.
+		\item Posons $m = \pgcd(a, b)$. Montrons que :
+		\[ \pgcd(m, d) = m \]
+		Soit $\ell \coloneqq \ppcm(m,d)$, $\ell \geq m$, $a$ et $b$ sont multiples de $m$ et $d$. D'après 1. :
+		\[ \ell \mid a \text{ et } \ell \mid b,\ \ell \leq m \]
+		Sachant que $\ell \geq m$ et $\ell \leq m$, $\ell = m$.
+	\end{enumerate}
+\end{proof}
+
+\begin{definition}
+	Soit $(a,b) \in (\Z^*)^2$. On dit que $a$ et $b$ sont \emph{premiers entre eux} si et seulement si $\pgcd(a, b) = 1$.
+\end{definition}
+
