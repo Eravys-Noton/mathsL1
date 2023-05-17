@@ -92,3 +92,135 @@
 	Soit $(a,b) \in (\Z^*)^2$. On dit que $a$ et $b$ sont \emph{premiers entre eux} si et seulement si $\pgcd(a, b) = 1$.
 \end{definition}
 
+\section{Algorithme d'Euclide}
+\begin{proposition}[Algorithme d'Euclide]
+	Soit $(a, b) \in (\Z^*)^2$ tel que $\abs{a} > \abs{b}$.
+	\[ \exists ! (q,r) \in \Z^2,\ a = bq + r,\ 0 \leq r < \abs{b} \]
+	\[ \pgcd(a, b) = \pgcd(b, a) = \pgcd(b, a - qb) = \pgcd(b, r) \]
+	\begin{enumerate}
+		\item Si $r = 0$ alors $a = qb$ et donc $\pgcd(a, b) = b$.
+		\item Si $r \neq 0$ alors :
+		\[ \exists ! (q_1, r_1) \in \Z^2,\ b = q_1 r + r_1,\ 0 \leq r_1 < r \]
+		Ensuite : 
+		\begin{enumerate}
+			\item Si $r_1 = 0$ alors $b = q_1 r$ et donc $\pgcd(a, b) = r$.
+			\item Si $r_1 \neq 0$ alors :
+			\[ \exists ! (q_2, r_2) \in \Z^2,\ r = q_2 r_1 + r_2,\ 0 \leq r_2 < r_1 \]
+		\end{enumerate}
+	\end{enumerate}
+	
+	On procède de cette manière jusqu'à obtenir un reste nul, le $\pgcd$ de $a$ et $b$ est le dernier reste non nul.
+\end{proposition}
+
+\begin{theorem}[Identité de Bézout]
+	Soit $(a, b) \in \Z^2$.
+	\[ \exists (u, v) \in \Z^2,\ au + bv = \pgcd(a, b) \]
+\end{theorem}
+
+\begin{corollary}
+	Soient $(a, b) \in (\Z^*)^2$ et $d \in \Z$.
+	\[ \exists (u, v) \in \Z^2,\ au + bv = d \iff \pgcd(a,b) \mid d \]
+\end{corollary}
+
+\begin{lemma}[Lemme de Gauss]
+	Soit $(a, b) \in (\Z^*)^2$ tel que $\pgcd(a, b) = 1$.
+	\[ \forall c \in \Z,\ a \mid bc \implies a \mid c \]
+\end{lemma}
+
+\begin{proof}
+	\begin{align*}
+		\pgcd(a, b) = 1 &\implies \exists(u, v) \in \Z^2,\ au + bv = 1 \\
+		&\implies a(cu) + b(cv) = c \\ 
+		&\implies \pgcd(a, bc) \mid c
+	\end{align*}
+\end{proof}
+
+\section{Nombres premiers}
+\begin{definition}[Nombre premier]
+	Soit $p \in \N^*$. On dit que $p$ est \emph{premier} si et seulement s'il admet exactement deux diviseurs : $1$ et $p$.
+\end{definition}
+
+\begin{theorem}[Théorème d'Euclide]
+	Il existe une infinité de nombres premiers.
+\end{theorem}
+
+\begin{proof}
+	Supposons qu'il existe $k$ nombres premiers $p_1, \ldots, p_k$.
+	\[ N \coloneqq p_1 \cdots p_k + 1 \implies p_i \nmid N \]
+\end{proof}
+
+\begin{lemma}
+	Soit $n \in \N$ tel que $n \geq 2$.
+	\\
+	Si $p$ est le plus petit diviseur de $n$ tel que $p > 2$ alors $p$ est premier.
+\end{lemma}
+
+\begin{theorem}[Décomposition en facteurs premiers]
+	Soit $n \in \N^*$ tel que $n \geq 2$. 
+	\\
+	Il existe une unique écriture de $n$ sous la forme de :
+	\[ p_1^{\alpha_1} \cdots p_k^{\alpha_k} \]
+	\begin{enumerate}
+		\item Pour $1 \leq i \leq k$, les $p_i$ sont premiers.
+		\item $\alpha_i \in \N^*$.
+		\item $p_1 < p_2 < \cdots < p_k$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proposition}
+	Soient $(a, b) \in \Z^2$ et $(i, k) \in \N^2$. Pour déterminer $\pgcd(a, b)$ on peut utiliser leurs décompositions en facteurs premiers.
+	\[ a = p_1^{\alpha_1} \cdots p_k^{\alpha_k} \]
+	\[ b = n_1^{\beta_1} \cdots n_i^{\beta_i} \]
+	$\pgcd(a, b)$ correspond au produit des facteurs premiers communs.
+\end{proposition}
+
+\section{Congruences}
+\begin{definition}
+	Soient $(a,b) \in \Z^2$ et $n \in \N$ tel que $n \geq 2$.
+	\\
+	On dit que $a$ et $b$ sont \emph{congrus} modulo $n$ s'il existe un $k$ tel que :
+	\[ a - b = k n \]
+	On écrit généralement :
+	\begin{enumerate}
+		\item $a \equiv b \mod n$
+		\item $a \equiv b \ [n]$
+	\end{enumerate}
+\end{definition}
+
+\begin{proposition}
+	Soient $(a, b, c, d) \in \Z^4$ et $(k, n) \in \N^2$ tel que $n \geq 2$.
+	\begin{enumerate}
+		\item $a \equiv a \mod n$ 
+		\item $a \equiv b \mod n \iff b \equiv a \mod n$ 
+		\item $a \equiv b \mod n \text{ et } b \equiv c \mod n \implies a \equiv c \mod n$
+		\item $a \equiv b \mod n \text{ et } c \equiv d \mod n \implies a + c \equiv b + d \mod n \text{ et } ac \equiv bd \mod n$
+		\item $a \equiv b \mod n \implies a^k \equiv b^k \mod n$
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	Immédiate en utilisant la définition de la congruence.
+\end{proof}
+
+\begin{theorem}
+	Soient $(m_1, m_2) \in \N^2$ tel que :
+	\begin{enumerate}
+		\item $m_1 > 1$
+		\item $\pgcd(m_1, m_2) = 1$
+	\end{enumerate}
+	Soient $(a_1, a_2) \in \Z^2$ tel que pour $x \in \Z$ :
+	\begin{enumerate}
+		\item $x \equiv a_1 \mod m_1$
+		\item $x \equiv a_2 \mod m_2$
+	\end{enumerate}
+	Notons $\mathcal{S}$ l'ensemble des solutions :
+	$\exists (k_0, k) \in \Z^2$ tel que :
+	\begin{enumerate}
+		\item $\mathcal{S} = k_0 + k m_1 m_2$ 
+		\item $0 \leq k_0 < m_1 m_2$
+	\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+	Ce théorème est un cas particulier du théorème des restes chinois.
+\end{remark}

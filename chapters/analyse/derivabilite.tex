@@ -87,7 +87,7 @@
 \end{definition}
 
 \begin{proposition}
-	$f, g \in \mathcal{C}^n \implies f + g, f \cdot g, f \circ g \in \mathcal{C}^n$
+	$\forall (f, g) \in (\mathcal{C}^n(I, \R))^2 \implies f + g, f \cdot g, f \circ g \in \mathcal{C}^n(I,\R)$
 \end{proposition}
 
 \section{Convexité}
@@ -95,16 +95,16 @@
     Soit $f : I \to \R$.
     \begin{enumerate}
         \item On dit que $f$ est \emph{convexe} si et seulement si : 
-        \[ \forall x, y \in I,\ \forall \lambda \in [0, 1],\ f(\lambda x + (1 - \lambda)y) \leq \lambda f(x) + (1 - \lambda) f(y) \]
+        \[ \forall (x, y) \in I^2,\ \lambda \in [0, 1],\ f(\lambda x + (1 - \lambda)y) \leq \lambda f(x) + (1 - \lambda) f(y) \]
         \item On dit que $f$ est \emph{concave} si et seulement si : 
-        \[ \forall x, y \in I,\ \forall \lambda \in [0, 1],\ f(\lambda x + (1 - \lambda)y) \geq \lambda f(x) + (1 - \lambda) f(y) \]
+        \[ \forall (x, y) \in I^2,\ \lambda \in [0, 1],\ f(\lambda x + (1 - \lambda)y) \geq \lambda f(x) + (1 - \lambda) f(y) \]
     \end{enumerate}
 \end{definition}
 
 \par Géométriquement, $f$ est convexe signifie que son graphe passe sous les cordes de $f$ et que les tangentes passent sous le graphe. $f$ est concave signifie que son graphe au-dessus des cordes de $f$ et que les tangentes passent par-dessus le graphe.
 
 \begin{theorem}
-	Soit $f \in \mathcal{D}^2$.
+	Soit $f \in \mathcal{D}^2(I, \R)$.
         \begin{multicols}{2}
             \begin{enumerate}
                 \item $f \text{ convexe} \iff f'' \geq 0$.
@@ -119,13 +119,13 @@
 \end{proposition}
 
 \begin{proposition}
-	Soient $a < b,\ f : [a, b] \to \R$.
+	Soient $(a, b) \in \R^2$ tel que $a < b,\ f : [a, b] \to \R$.
 	La corde $c$ reliant les points $(a, f(a))$ et $(b, f(b))$ est définie par l'équation suivante :
 	\[ c = \frac{f(b) - f(a)}{b - a} (x - a) + f(a) \]
 \end{proposition}
 
 \begin{proposition}
-	$f \in \mathcal{D}^2(I, \R),\ a \in I$.
+	Soient $f \in \mathcal{D}^2(I, \R),\ a \in I$.
 	\begin{align*}
 		\begin{cases}
 			f'(a) = 0 \\
@@ -148,7 +148,7 @@
 
 \begin{definition}
 	Soit $f : I \to \R$. On dit que $f$ est stable sur $I$ si et seulement si : 
-	\[ f(I) \subseteq I \]
+	\[ f(I) \subset I \]
 \end{definition}
 
 \begin{proposition}
@@ -199,7 +199,7 @@
 	Soit $u_{n+2} = a u_{n+1} + b u_n$ pour $a, b$ des réels.
 	On pose l'équation suivante pour $r \in \R$ :
 	\[ r^2 - ar - b = 0 \qquad \Delta = (-a)^2 + 4b \]
-	Pour $\lambda, \mu, \alpha \in \R$ :
+	Pour $(\lambda, \mu, \alpha) \in \R^3$ :
 	\begin{itemize}
         \item $\Delta > 0 \implies u_n = \lambda r_1^n + \mu r_2^n$ avec $r_1, r_2$ tels que :
         \begin{align*}

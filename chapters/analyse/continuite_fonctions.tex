@@ -29,12 +29,12 @@
 \end{definition}
 
 \begin{theorem}
-	Soit $I \subseteq \R,\ f : I \to \R,\ a \in I,\ \ell \in \R \cup \{-\infty, +\infty\}$
+	Soit $I \subset \R,\ f : I \to \R,\ a \in I,\ \ell \in \R \cup \{-\infty, +\infty\}$
 	\[ \lim_{x \to a} f(x) = \ell \iff \forall (u_n)_{n \in \N},\ \lim_{n \to +\infty} u_n = a \implies \lim_{n \to +\infty} f(u_n) = \ell \]
 \end{theorem}
 
 \begin{definition}[Limite à gauche et à droite]
-    Soit $I \subseteq \R,\ a \in I,\ f : I \to \R $.
+    Soient $I \subset \R,\ a \in I,\ f : I \to \R $.
     \begin{enumerate}
         \item $ \lim_{\substack{x \to a \\ x < a}} f(x) \equiv \lim_{x \to a^-} f(x) = \ell \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ a - \delta < x < a \implies \abs{f(x) - \ell} \leq \varepsilon $.
         \item $\lim_{\substack{x \to a \\ x > a}} f(x) \equiv \lim_{x \to a^+} f(x) = \ell \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ a < x < a + \delta \implies \abs{f(x) - \ell} \leq \varepsilon$.
@@ -42,7 +42,7 @@
 \end{definition}
 
 \begin{definition}[Continuité]
-	Soit $I$ un intervalle, $a \in I,\ f : I \to \R$.
+	Soient $I$ un intervalle, $a \in I,\ f : I \to \R$.
         \\ 
         On dit que $f$ est \emph{continue} si et seulement si :
         \[\lim_{x \to a} f(x) = f(a).\] 
@@ -51,12 +51,12 @@
 \end{definition}
 
 \begin{theorem}[Théorème des valeurs intermédiaires]
-	$\forall a, b \in \R,\ a < b,\ f : [a, b] \to \R$ une fonction continue.
+	$\forall (a, b) \in \R^2,\ a < b,\ f : [a, b] \to \R$ une fonction continue.
 	\[ \forall y \in [f(a), f(b)],\ \exists c \in [a, b],\ f(c) = y \]
 \end{theorem}
 
 \begin{theorem}
-	$\forall a, b \in \R,\ a < b,\ f : ]a, b[ \to \R$. 
+	$\forall (a, b) \in \R^2,\ a < b,\ f : ]a, b[ \to \R$. 
 	Si $f$ est croissante.
 	\begin{enumerate}
 		\item $f$ admet une limite en $b$, qui est finie si et seulement si $f$ est \emph{majorée}.
@@ -72,7 +72,7 @@
 \end{theorem}
 
 \begin{theorem}
-	$\forall a, b \in \R,\ a < b,\ f : [a, b] \to \R$ une fonction continue.
+	$\forall (a, b) \in \R^2,\ a < b,\ f : [a, b] \to \R$ une fonction continue.
 	\begin{enumerate}
 	    \item $ f \text{ strictement croissante} \implies f : [a, b] \to [f(a), f(b)] \text{ est une bijection} $.
             \item $ f \text{ strictement décroissante} \implies f : [a, b] \to [f(b), f(a)] \text{ est une bijection} $.
