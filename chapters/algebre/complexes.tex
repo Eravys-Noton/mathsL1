@@ -11,7 +11,7 @@ Cette extension introduit un nouvel élément, noté $i$, appelé \emph{nombre i
 \end{definition}
 
 \begin{definition}[Module d'un nombre complexe]
-    Soit $z = a + ib$ avec $a, b \in \R$. 
+    Soit $z = a + ib$ avec $(a, b) \in \R^2$. 
     \\
     On définit $\abs{z}$ tel que :
     \[ \abs{z} = \sqrt{a^2 + b^2} \]
@@ -19,18 +19,160 @@ Cette extension introduit un nouvel élément, noté $i$, appelé \emph{nombre i
 \end{definition}
 
 \begin{definition}[Conjugué d'un nombre complexe]
-    Soit $z = a + ib$ avec $a, b \in \R$. On appelle conjugué de $z$ qu'on note $\overline{z}$ tel que :
+    Soit $z = a + ib$ avec $(a, b) \in \R^2$. On appelle conjugué de $z$ qu'on note $\overline{z}$ tel que :
     \[ \overline{z} = a - ib \]
 \end{definition}
 
 \begin{proposition}
-    Soient $z_1, z_2 \in \C$.
+    Soient $(z_1, z_2) \in \C^2$.
     \begin{multicols}{3}
         \begin{enumerate}
             \item $\abs{z_1 + z_2} \leq \abs{z_1} + \abs{z_2}$.
             \item $\abs{z_1 - z_2} \geq \abs{z_1} - \abs{z_2}$.
             \item $\abs{z_1 \cdot z_2} = \abs{z_1} \cdot \abs{z_2}$.
+            \item Si $z_2 \neq 0$ : $\abs{\frac{1}{z_2}} = \frac{1}{\abs{z_2}}$.
+            \item $\abs{z}^2 = z \cdot \overline{z}$.
+            \item $\abs{z} \geq 0$.
+            \item $\abs{z} = 0 \iff z = 0$.
+            \item $\abs{z} = \abs{\overline{z}}$.
         \end{enumerate}
     \end{multicols}
 \end{proposition}
 
+\section{Vision géométrique des nombres complexes}
+Il est possible de représenter les nombres complexes sur un plan complexe avec l'axe des ordonnées représentant la partie imaginaire et l'axe des abscisses la partie réelle.
+
+\begin{definition}
+	Soit $z \in \C$, on appelle l'argument de $z$, noté $\arg(z)$, l'angle entre l'axe de la partie réelle et la droite issue de l'origine passant par $z$. 
+\end{definition}
+
+\begin{proposition}
+	Soient $(z, z_1, z_2) \in \C^3$ et $n \in \N$.
+	\begin{enumerate}
+		\item $\arg(z_1 \cdot z_2) = \arg(z_1) + \arg(z_2)$.
+		\item $\arg(z^n) = n \arg(z)$.
+		\item Si $z_2 \neq 0$ : $\arg(\frac{1}{z_2}) = - \arg(z_2)$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{figure}[!ht]
+	\centering
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+			x=1.85cm,y=1.85cm,
+			axis lines=middle,
+			xmin=-1,
+			xmax=5,
+			ymin=-1,
+			ymax=3,
+			xtick={-1,0,...,5},
+			ytick={-3,-2,...,6},]
+			\clip(-1.4725109228142914,-3.6020142531794552) rectangle (5.3902234350649305,6.061762219150244);
+			\draw [line width=0pt,color=qqwuqq,fill=qqwuqq,fill opacity=1] (0,0) -- (0:1.0092256408645914) arc (0:26.56505117707799:1.0092256408645914) -- cycle;
+			\draw [line width=2pt] (0,0)-- (4,2);
+			\draw [line width=2pt,dash dot] (0,2)-- (4,2);
+			\draw [line width=2pt,dash dot] (4,2)-- (4,0);
+			\draw [color=qqwuqq](0.96981512807802,0.4020581817220694) node[anchor=north west] {$\arg(z_1)$};
+			\begin{scriptsize}
+				\draw [fill=qqqqff] (4,2) circle (2.5pt);
+				\draw[color=qqqqff] (4.1085068711669,2.2457835389154512) node {$z_{1}$};
+				\draw[color=black] (2.0,1.3) node {|z|};
+				\draw [fill=xdxdff] (0,2) circle (2.5pt);
+				\draw[dash dot, color=xdxdff] (0.34494358814519,2.2457835389154512) node {$Im(z_1)$};
+				\draw [fill=xdxdff] (4,0) circle (2.5pt);
+				\draw[dash dot, color=xdxdff] (4.3982973705234,0.24429008544130865) node {$Re(z_1)$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Vision géométrique des nombres complexes}
+\end{figure}
+
+\needspace{5cm}
+
+\begin{definition}
+	Soient $z \in \C,\ r = \abs{z}$ et $\theta = \arg(z)$, il est possible d'exprimer $z$ dans sa forme trigonométrique :
+	\[ z = r \left( \cos(\theta) + i \sin(\theta) \right) \]
+\end{definition}
+
+\begin{proposition}
+	Soient $z_1 = r_1 \left( \cos(\theta_1) + i \sin(\theta_1) \right)$ et $z_2 = r_2 \left( \cos(\theta_2) + i \sin(\theta_2) \right)$ deux nombres complexes tels que :
+	\begin{multicols}{4}
+		\begin{enumerate}
+			\item $r_1 = \abs{z_1}$.
+			\item $r_2 = \abs{z_2}$.
+			\item $\theta_1 = \arg(z_1)$.
+			\item $\theta_2 = \arg(z_2)$.
+		\end{enumerate}
+	\end{multicols}
+	\[ z_1 z_2 = r_1 r_2 \left( \cos(\theta_1+\theta_2) + i \sin(\theta_1+ \theta_2) \right) \]
+\end{proposition}
+
+\begin{proof}
+	En utilisant les formules d'additions de $\cos$ et $\sin$.
+\end{proof}
+
+\begin{definition}
+	Soient $z \in \C,\ r = \abs{z}$ et $\theta = \arg(z)$ tels que :
+	\[ z = r (\cos(\theta) + i \sin(\theta)) \]
+	On peut écrire $z$ sous une forme utilisant l'exponentielle :
+	\[ z = re^{i \theta} \]
+\end{definition}
+
+\begin{proposition}[Formule de Moivre]
+	Soient $\theta \in \R$ et $n \in \N$.
+	\[ (\cos(\theta) + i \sin(\theta))^n = \cos(n \theta) + i \sin(n \theta) \]
+\end{proposition}
+
+\begin{proposition}[Identité d'Euler]
+	\[ e^{i\pi} + 1 = 0 \]
+\end{proposition}
+
+\begin{proposition}[Formules d'Euler]
+	Soit $\theta \in \R$.
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $\cos(\theta) = \frac{e^{i\theta} + e^{-i\theta}}{2}$.
+			\item $\sin(\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i}$.
+		\end{enumerate}
+	\end{multicols}
+\end{proposition}
+
+\begin{definition}
+	Soient $z \in \C$ et $n \in \N$. On appelle \emph{racine $n$-ième} de $z$ tout $\omega \in \C$ tel que :
+	\[ \omega^n = z \] 
+\end{definition}
+
+\begin{proposition}
+	Soient $z \in \C^*$, $\theta \in \R$ et $\rho = \abs{z}$ tels que :
+	\[ z = \rho e^{i\theta} \]
+	$z$ admet $n$ racines $n$-ièmes de la forme :
+	\[ \omega_k = \rho^{\frac{1}{n}} e^{i \left( \frac{\theta}{n} + \frac{2 k \pi}{n} \right)},\ k \in \llbracket 0, n - 1 \rrbracket \]
+\end{proposition}
+
+\begin{proof}
+	En utilisant la forme exponentielle.
+\end{proof}
+
+\section{Géométrie des nombres complexes}
+\begin{proposition}
+	Soit :
+	\begin{align*}
+		f : \C &\to \C \\ 
+		z &\mapsto f(z)
+	\end{align*}
+	\begin{enumerate}
+		\item Soit $a \in \C,\ f(z) = z + a$ : translation d'affixe $a$.
+		\item Soit $a \in \R^*,\ f(z) = az$ : homothétie de rapport $a$.
+		\item Soient $a \in \C$ et $\theta \in \R,\ f(z) = (z-a)e^{i\theta} + a$ : rotation d'angle $\theta$ et de centre $a$.
+		\item Soit $\theta \in \R,\ f(z) = \overline{z} e^{2i\theta}$ : réflexion par rapport à la droite formant un angle $\theta$ avec l'axe des réels.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+	\leavevmode
+	\begin{enumerate}
+		\item L'axe des réels : $\overline{z} = z$.
+		\item Un axe formant une angle $\theta$ avec l'axe des réels : $\overline{e^{-i \theta}z} = e^{-i \theta} z$.
+		\item L'asymptote verticale de partie réelle $a$ : $z + \overline{z} = 2a$.
+	\end{enumerate}
+\end{proposition}
