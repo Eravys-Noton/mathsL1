@@ -38,30 +38,45 @@
 \end{proposition}
 
 \section{Fonctions trigonométriques}
-\noindent $\forall x \in \R$.
-\begin{table}[!h]
-	\centering
-	\begin{tabular}{cccc}
-		\toprule 
-		$f$ & $x \mapsto \cos(x)$ & $x \mapsto \sin(x)$ & $x \mapsto \tan(x) = \frac{\sin(x)}{\cos(x)}$ \\
-		\midrule
-		Domaine de définition & $[0, \pi] \to [-1, 1]$ & $[-\frac{\pi}{2}, \frac{\pi}{2}] \to [-1, 1]$ & $]-\frac{\pi}{2}, \frac{\pi}{2}[ \to \R$ \\
-		Parité & Paire & Impaire & Impaire \\
-		Périodicité & $2\pi$ & $2\pi$ & $\pi$ \\
-		\bottomrule
-	\end{tabular}
-	\caption{Fonctions trigonométriques}
-\end{table}
+\begin{definition}[Fonctions trigonométriques]
+	\begin{align*}
+		\cos : \R &\to [-1, 1] \\
+		        x &\mapsto \cos(x)
+	\end{align*}
+	\begin{align*}
+		\sin : \R &\to [-1, 1] \\
+		        x &\mapsto \sin(x)
+	\end{align*}
+	Pour tout $k \in \Z$ :
+	\begin{align*}
+		\tan : \R \backslash \left\{ \frac{k \pi}{2} \right\} &\to \R \\
+		                                   					x &\mapsto \frac{\sin(x)}{\cos(x)}
+	\end{align*}
+\end{definition}
+
+\begin{proposition}
+	$\forall x \in \R,\ k \in \Z$.
+	\begin{enumerate}
+		\item $\cos(-x) = \cos(x)$.
+		\item $\sin(-x) = -\sin(x)$.
+		\item $\tan(-x) = -\tan(x)$.
+		\item $\cos(x + 2k\pi) = \cos(x)$.
+		\item $\sin(x + 2k\pi) = \sin(x)$.
+		\item $\tan(x + k\pi) = \tan(x)$.
+		\item $\cos$ est bijective sur $[0, \pi]$.
+		\item $\sin$ est bijective sur $[-\frac{\pi}{2}, \frac{\pi}{2}]$.
+		\item $\tan$ est bijective sur $]-\frac{\pi}{2}, \frac{\pi}{2}[$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{definition}
+	On définit $\arccos,\ \arcsin$ et $\arctan$ comme étant les bijections réciproques des fonctions $\cos,\ \sin$ et $\tan$.
+\end{definition}
 
 \begin{proposition}\leavevmode
     \begin{enumerate}
-        \item $\forall x \in ]-\frac{\pi}{2}, \frac{\pi}{2}[$ :
-        \begin{multicols}{2}
-            \begin{enumerate}
-                \item $\arcsin(\sin(x)) = x$.
-                \item $\arctan(\tan(x)) = x$.
-            \end{enumerate}
-        \end{multicols}
+    	\item $\forall x \in [-\frac{\pi}{2}, \frac{\pi}{2}],\ \arcsin(\sin(x)) = x$.
+        \item $\forall x \in ]-\frac{\pi}{2}, \frac{\pi}{2}[,\ \arctan(\tan(x)) = x$.
         \item $\forall x \in [0, \pi],\ \arccos(\cos(x)) = x$.
         \item $\forall x \in [-1, 1]$ :
         \begin{multicols}{2}
