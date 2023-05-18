@@ -14,8 +14,10 @@
 \end{definition}
 
 \begin{definition}[Groupe]
-	Soit $G$ un ensemble muni d'une loi de composition interne \og $*$ \fg telle que :
-    $\forall (g_1, g_2, g_3) \in G^3$ :
+	Soit $(G, *)$ un magma.
+	\\ 
+	On dit que $(G, *)$ est un groupe si et seulement si :
+    $\forall (g_1, g_2, g_3) \in G^3,$
     \begin{multicols}{2}
     	\begin{enumerate}
     		\item $(g_1 * g_2) * g_3 = g_1 * (g_2 * g_3)$
@@ -23,7 +25,7 @@
     		\item $\exists g^{-1} \in G,\ g_1 * g^{-1} = g^{-1} * g_1 = 0_G$
     	\end{enumerate}
     \end{multicols}
-    \noindent On dit que $(G, *)$ est un groupe. De plus, si et seulement :
+    \noindent De plus, si et seulement :
     \[ \forall (g_1, g_2) \in G^2,\ g_1 * g_2 = g_2* g_1 \]
     on dit que $(G, *)$ est un groupe \emph{commutatif} ou \emph{abélien}.
 \end{definition}
@@ -127,7 +129,7 @@
 	Soient une famille de vecteurs $\mathcal{F}$ telle que $\mathcal{F} = (u_1, \ldots, u_n)$ et un espace vectoriel $E$.
 	\[ 
 	\mathcal{F} \text{ est une base} \iff 
-	\forall x \in E,\ \exists ! \lambda_i \in \R,\ x = \sum_{i = 1}^n \lambda_i u_i
+	\forall x \in E,\ \exists ! \lambda_i \in \K,\ x = \sum_{i = 1}^n \lambda_i u_i
 	\]
 \end{proposition}
 
@@ -148,7 +150,7 @@
 \end{proof}
 
 \begin{proposition}
-	Soit $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs. $\mathcal{F}$ est une base de $\R^n$ si et seulement si :
+	Soit $\mathcal{F} = (u_1, \ldots, u_n) \in (\R^n)^n$. $\mathcal{F}$ est une base de $\R^n$ si et seulement si :
 	\[ \det(\mathcal{F}) \neq 0 \]
 \end{proposition}
 
@@ -182,7 +184,7 @@
 \end{theorem}
 
 \begin{proposition}
-	Soient $E$ un espace vectoriel et $F, G\subseteq E$.
+	Soient $E$ un espace vectoriel et $F, G\subset E$.
 	\begin{multicols}{2}
 	    \begin{enumerate}
     		\item $\dim(F \oplus G) = \dim(F) + \dim(G)$ 

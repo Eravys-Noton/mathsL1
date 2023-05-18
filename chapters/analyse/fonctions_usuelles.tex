@@ -196,20 +196,30 @@
 \end{proposition}
 
 \section{Fonctions hyperboliques}
-\noindent $\forall x \in \R$.
-\begin{table}[!ht]
-	\centering
-	\begin{tabular}{cccc}
-		\toprule
-		Fonction & $x \mapsto \cosh(x)$ & $x \mapsto \sinh(x)$ & $x \mapsto \tanh(x)$ \\
-		\midrule
-		Domaine de définition & $\R$ & $\R$ & $\R$ \\
-		Parité & Paire & Impaire & Impaire \\
-		Définition & $\frac{e^x + e^{-x}}{2}$ & $\frac{e^x - e^{-x}}{2}$ & $\frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}$ \\
-		\bottomrule
-	\end{tabular}
-	\caption{Fonctions hyperboliques}
-\end{table}
+
+\begin{definition}[Fonctions hyperboliques]
+	\begin{align*}
+		\cosh : \R &\to \R \\
+		         x &\mapsto \frac{e^x + e^{-x}}{2}
+	\end{align*}
+	\begin{align*}
+		\sinh : \R &\to \R \\ 
+			     x &\mapsto \frac{e^x - e^{-x}}{2}
+	\end{align*}
+	\begin{align*}
+		\tanh : \R &\to \R \\ 
+				 x &\mapsto \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
+	\end{align*}
+\end{definition}
+
+\begin{proposition}
+	$\forall x \in \R,\ k \in \Z$.
+	\begin{enumerate}
+		\item $\cosh(-x) = \cosh(x)$.
+		\item $\sinh(-x) = \sinh(x)$.
+		\item $\tanh(-x) = \tanh(x)$.
+	\end{enumerate}
+\end{proposition}
 
 \begin{proposition}
 	$\forall (x, y) \in \R^2$.
