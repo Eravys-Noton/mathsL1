@@ -131,6 +131,22 @@
 	\]
 \end{proposition}
 
+\begin{proof}
+	L'existence est évidente car $\mathcal{F}$ est génératrice. 
+	\\
+	Montrons l'unicité : Soient $(\lambda_1, \ldots, \lambda_n) \in \K^n$ et $(\mu_1, \ldots, \mu_n) \in \K^n$.
+	On a d'une part :
+	\[ \forall x \in E,\ x = \sum_{i=1}^{n} \lambda_i u_i \]
+	puis d'autre part :
+	\[ \forall x \in E,\ x = \sum_{i=1}^{n} \mu_i u_i \]
+	Donc on a :
+	\begin{align*}
+		&\sum_{i=1}^{n} \lambda_i u_i = \sum_{i=1}^{n} \mu_i u_i \\
+		\iff &\sum_{i=1}^{n} (\lambda_i - \mu_i) u_i = 0 
+	\end{align*}
+	Or $\mathcal{F}$ est libre, donc pour tout $i \in \llbracket 1, n \rrbracket,\ \lambda_i - \mu_i = 0 \implies \lambda_i = \mu_i$.
+\end{proof}
+
 \begin{proposition}
 	Soit $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs. $\mathcal{F}$ est une base de $\R^n$ si et seulement si :
 	\[ \det(\mathcal{F}) \neq 0 \]
