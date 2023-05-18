@@ -25,10 +25,57 @@
 
 \begin{proposition}[Opérations sur les fractions]
     $\forall (a, c) \in \Z^2,\ (b, d) \in (\Z^*)^2$.
-    \begin{align*}
-        \frac{a}{b} + \frac{c}{d} &= \frac{ad + bc}{bd} & \frac{a}{b} \cdot \frac{c}{d} &= \frac{a \cdot c}{b \cdot d}
-    \end{align*}
+    \begin{multicols}{2}
+    	\begin{enumerate}
+    		\item $\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}$.
+    		\item $\frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}$.
+    	\end{enumerate}
+    \end{multicols}
 \end{proposition}
+
+\begin{proof}
+	Soient $(a, a', c, c') \in \N^4$ et $(b, b', d, d') \in (\N^*)^4$ tels que :
+	\begin{align*}
+		\frac{a}{b} &= \frac{a'}{b'} & \frac{c}{d} &= \frac{c'}{d'}
+	\end{align*}
+	ce qui revient à dire :
+	\begin{align*}
+		ab' &= a'b & cd' &= c'd
+	\end{align*}
+	\begin{enumerate}
+		\item Montrons que :
+		\[  \]
+		ce qui revient à montrer que :
+		\begin{align*}
+			&\frac{ad + bc}{bd} = \frac{a'd' + b'c'}{b'd'} \\
+			\iff &(ad + bc)(b'd') = (a'd' + b'c')(bd)
+			\\
+			\iff &(ad + bc)(b'd') - (a'd' + b'c')(bd) = 0
+		\end{align*}
+		\begin{align*}
+			(ad + bc)(b'd') - (a'd' + b'c')(bd) &= adb'd' + bcb'd' - a'd'bd - b'c'bd \\
+			&= (ab' - a'b)(dd') + (cd' - c'd)(bb')
+		\end{align*}
+		Sachant que $ab' = a'b$ et $cd' = c'd$, on a $ab' - a'b = 0$ et $cd' - c'd = 0$.
+		\\
+		Ainsi :
+		\[ (ab' - a'b)(dd') + (cd' - c'd)(bb') = 0 \]
+		\item Montrons que :
+		\begin{align*}
+			&\frac{ac}{bd} = \frac{a'c'}{b'd'} \\
+			\iff &(ac)(b'd') = (a'c')(bd) \\
+			\iff &(ac)(b'd') - (a'c')(bd) = 0
+		\end{align*}
+		\begin{align*}
+			(ac)(b'd') - (a'c')(bd) &= acb'd' - a'c'bd + a'bcd' - a'bcd' \\
+			&= (ab' - a'b)(cd') + (cd' - c'd)(a'b) 
+		\end{align*}
+		Sachant que $ab' = a'b$ et $cd' = c'd$, on a $ab' - a'b = 0$ et $cd' - c'd = 0$.
+		\\
+		Ainsi :
+		\[ (ab' - a'b)(cd') + (cd' - c'd)(a'b) = 0 \]
+	\end{enumerate}
+\end{proof}
 
 \begin{definition}[Somme]
     $\forall (m, n) \in \N^2,\ a_k \in \R,\ m \leq k \leq n$.
