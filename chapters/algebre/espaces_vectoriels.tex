@@ -31,7 +31,7 @@
 \end{definition}
 
 \begin{definition}[Anneau]
-	Soit $A$ un ensemble muni de deux lois de compositions \emph{internes} \og + \fg et \og $\cdot$ \fg sur $A$ tel que : 
+	Soit $A$ un ensemble muni de deux lois de compositions \emph{internes} \og + \fg et \og $\cdot$ \fg sur $A$ telles que : 
 	\begin{enumerate}
 		\item $(A, +)$ est un groupe \emph{commutatif}.
 		\item $\forall (a, b, c) \in A^3,\ a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
@@ -54,7 +54,9 @@
 \end{definition}
 
 \begin{definition}[$\K$-espace vectoriel]
-	Soit $\K$ un corps. Un $\K$-espace vectoriel est un ensemble $E$ composé d'une loi interne \og $+$ \fg et une loi externe \og $\cdot$ \fg telles que :
+	Soit $\K$ un corps. 
+	\\
+	Un $\K$-espace vectoriel est un ensemble $E$ composé d'une loi de composition \emph{interne} \og $+$ \fg et une loi de composition \emph{externe} \og $\cdot$ \fg telles que :
 	\begin{align*}
 		+ : E \times E &\to E \\
 		(x, y) &\mapsto x + y
@@ -64,8 +66,8 @@
 		(\lambda, u) &\mapsto \lambda \cdot u
 	\end{align*}
 	\begin{enumerate}
-		\item $(E, +)$ est un groupe abélien.
-		\item $\forall \lambda_1, \lambda_2 \in \K,\ u, v \in E$
+		\item $(E, +)$ est un groupe commutatif.
+		\item $\forall (\lambda_1, \lambda_2) \in \K^2,\ (u, v) \in E^2$
 		\begin{multicols}{2}
             \begin{enumerate}
 			\item $\lambda_1 \cdot (u + v) = \lambda_1 \cdot u + \lambda_1 \cdot v$
@@ -81,15 +83,15 @@
 	Soit $E$ un espace-vectoriel, $F$ est un sous-espace vectoriel de $E$ si :
 	\begin{multicols}{2}
 	    \begin{enumerate}
-    		\item $F \subseteq E$
+    		\item $F \subset E$
     		\item $F \neq \emptyset$
-    		\item $\forall u, v \in F,\ \lambda \in \K,\ u + \lambda v \in F$
+    		\item $\forall (u, v) \in F^2,\ \lambda \in \K,\ u + \lambda v \in F$
     	\end{enumerate}
 	\end{multicols}
 \end{definition}
 
 \begin{definition}[Somme directe]
-	Soient $F_1, F_2 \subseteq E$. On dit que $F_1$ et $F_2$ sont en \emph{somme directe} ou qu'ils sont \emph{supplémentaires} dans $E$ si et seulement si :
+	Soient $F_1, F_2 \subset E$. On dit que $F_1$ et $F_2$ sont en \emph{somme directe} ou qu'ils sont \emph{supplémentaires} dans $E$ si et seulement si :
 	\begin{multicols}{2}
 	    \begin{enumerate}
 		\item $F_1 \cap F_2 = \{ 0_E \}$
@@ -99,10 +101,6 @@
 	On note alors :
 	\[ F_1 \oplus F_2 = E \]
 \end{definition}
-
-\begin{nomenclature}
-    Soient $u_i,\ i \in \llbracket 1, n \rrbracket$. On dit que $(u_1, \ldots, u_n) \equiv \operatorname{Vect}\{ u_1, \ldots, u_n \}$ forme une famille de vecteurs.
-\end{nomenclature}
 
 \begin{definition}
 	Soient $E$ un espace vectoriel et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs dans $E$.
