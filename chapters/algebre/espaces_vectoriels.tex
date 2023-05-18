@@ -105,16 +105,20 @@
 \begin{definition}
 	Soient $E$ un espace vectoriel et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs dans $E$.
 	\begin{enumerate}
-		\item $\mathcal{F}$ est libre :
+		\item On dit que $\mathcal{F}$ est \emph{libre} si et seulement si :
 		\begin{align*}
 			\forall \lambda_i \in \K,\ u_i \in E,\ \sum_{i = 1}^n \lambda_i u_i = 0_E \implies \lambda_1 = \cdots = \lambda_n = 0
 		\end{align*}
-		\item $\mathcal{F}$ est génératrice :
+		\item On dit que $\mathcal{F}$ est \emph{génératrice} si et seulement si :
 		\begin{align*}
 			\forall x \in E,\ \exists \lambda_i \in \K,\ x = \sum_{i = 1}^n \lambda_i u_i 
 		\end{align*}
 	\end{enumerate}
 \end{definition}
+
+\begin{remark}
+	Si une famille n'est pas libre, on dit qu'elle est liée.
+\end{remark}
 
 \section{Base et dimension}
 \begin{definition}[Base]
@@ -122,7 +126,7 @@
 \end{definition}
 
 \begin{proposition}
-	Soient une famille de vecteurs $\mathcal{F}$ telle que $\mathcal{F} = (u_1, \ldots, u_n)$ et un espace vectoriel $E$.
+	Soient un espace vectoriel $E$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de $n$ vecteurs de $E$.
 	\[ 
 	\mathcal{F} \text{ est une base} \iff 
 	\forall x \in E,\ \exists ! \lambda_i \in \K,\ x = \sum_{i = 1}^n \lambda_i u_i
@@ -146,7 +150,7 @@
 \end{proof}
 
 \begin{proposition}
-	Soit $\mathcal{F} = (u_1, \ldots, u_n) \in (\R^n)^n$. $\mathcal{F}$ est une base de $\R^n$ si et seulement si :
+	Soit $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de $n$ vecteurs de $\R^n$. $\mathcal{F}$ est une base de $\R^n$ si et seulement si :
 	\[ \det(\mathcal{F}) \neq 0 \]
 \end{proposition}
 
