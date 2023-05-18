@@ -95,7 +95,7 @@
 
 \section{Opérations sur les matrices}
 \begin{definition}[Opérations sur les matrices]
-	Soient $(m,n) \in (\N^*)^2$, $(p,q) \in (\N^*)^2$, $A \in \mathcal{M}_{m, n}(\K)$, $B \in \mathcal{M}_{p, q}(\K)$, $\lambda \in \K$, $(a_{11}, \ldots, a_{mn}) \in \K^{mn}$ et $(b_{11}, \ldots, b_{pq}) \in \K^{pq}$ tels que :
+	Soient $(m,n,p,q) \in (\N^*)^4$, $A \in \mathcal{M}_{m, n}(\K)$, $B \in \mathcal{M}_{p, q}(\K)$, $\lambda \in \K$, $(a_{11}, \ldots, a_{mn}) \in \K^{mn}$ et $(b_{11}, \ldots, b_{pq}) \in \K^{pq}$ tels que :
 	\begin{align*}
 		A &=
 		\begin{pmatrix}
@@ -174,7 +174,8 @@
 	\end{enumerate}
 \end{definition}
 
-\begin{proposition}\leavevmode
+\begin{proposition}
+	Soit $(m, n, k, l) \in (\N^*)^4$.
 	\begin{enumerate}
 		\item Soient $A, B, C \in \mathcal{M}_{m,n} (\K)$.
 		\[A + B = B + A\]
@@ -208,7 +209,8 @@
     La matrice identité est parfois notée : $\mathds{1}_n$.
 \end{remark}
 
-\begin{lemma}\leavevmode
+\begin{lemma}
+	Soit $(m,n) \in (\N^*)^2$.
 	\begin{multicols}{2}
 	    \begin{enumerate}
     		\item $\forall A \in \mathcal{M}_{m, n}(\K),\ A + 0_{m,n} = A$
@@ -218,13 +220,15 @@
 \end{lemma}
 
 \begin{definition}[Transposée]
-	Soit $A \in \mathcal{M}_{m, n}(\K)$. On définit $A^T \in \mathcal{M}_{n, m}(\K)$ la transposée de $A$ par :
+	Soient $(m,n) \in (\N^*)^2$, $A \in \mathcal{M}_{m, n}(\K)$.
+	\\
+	On définit $A^T \in \mathcal{M}_{n, m}(\K)$ la transposée de $A$ par :
 	\[(A^T)_{ij} = A_{ji}\]
     Autrement dit, les colonnes de $A$ deviennent ses lignes et réciproquement.
 \end{definition}
 
 \begin{definition}
-	Soit $M \in \mathcal{M}_n$.
+	Soient $n \in \N^*$ et $M \in \mathcal{M}_n$.
 	\begin{multicols}{2}
 	    \begin{enumerate}
     		\item $M$ est symétrique $\iff M^T = M$
@@ -267,7 +271,7 @@
 \end{proposition}
 
 \begin{proposition}
-	Soient $A, B \in \mathcal{M}_n,\ \forall \lambda \in \K$.
+	Soient $n \in \N^*$, $A, B \in \mathcal{M}_n,\ \forall \lambda \in \K$.
 	\begin{multicols}{2}
 	    \begin{enumerate}
 		\item $\det(A \cdot B) = \det(A) \cdot \det(B)$
