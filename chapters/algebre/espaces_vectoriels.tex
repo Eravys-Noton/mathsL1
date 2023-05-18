@@ -14,24 +14,17 @@
 \end{definition}
 
 \begin{definition}[Groupe]
-    $(G, *)$ est appelé \emph{groupe} si :
-    \begin{enumerate}
-        \item $G$ est un ensemble.
-        \item \og $*$ \fg est une application définie par :
-        \begin{align*}
-            * : G \times G &\to G \\
-            (g_1, g_2) &\mapsto g_1 * g_2
-        \end{align*}
-        $\forall (g_1, g_2, g_3) \in G^3$ :
-        \begin{multicols}{2}
-            \begin{enumerate}
-                \item $(g_1 * g_2) * g_3 = g_1 * (g_2 * g_3)$
-                \item $\exists 0_G \in G,\ g_1 * 0_G = 0_G * g_1 = g_1$
-                \item $\exists g^{-1} \in G,\ g_1 * g^{-1} = g^{-1} * g_1 = 0_G$
-            \end{enumerate}
-        \end{multicols}
-    \end{enumerate}
-	On dit que $G$ est un groupe \emph{commutatif} ou \emph{abélien} si et seulement si : $\forall (g_1, g_2) \in G^2,\ g_1 * g_2 = g_2 * g_1$.
+	Soit $G$ un ensemble muni d'une loi de composition interne \og $*$ \fg telle que :
+    $\forall (g_1, g_2, g_3) \in G^3$ :
+    \begin{multicols}{2}
+    	\begin{enumerate}
+    		\item $(g_1 * g_2) * g_3 = g_1 * (g_2 * g_3)$
+    		\item $\exists 0_G \in G,\ g_1 * 0_G = 0_G * g_1 = g_1$
+    		\item $\exists g^{-1} \in G,\ g_1 * g^{-1} = g^{-1} * g_1 = 0_G$
+    	\end{enumerate}
+    \end{multicols}
+    \noindent On dit que $(G, *)$ est un groupe. De plus, si et seulement :
+    $\forall (g_1, g_2) \in G^2,\ g_1 * g_2 = g_2* g_1$, on dit que $(G, *)$ est un groupe \emph{commutatif} ou \emph{abélien}.
 \end{definition}
 
 \begin{definition}[Anneau]
