@@ -124,7 +124,7 @@
 		\item Si $n = p$ alors on peut définir la multiplication entre $A$ et $B$.\\
 		Soit $C = AB$. Chaque coefficient $C_{ij}$ est défini par :
 		\begin{align*}
-			C_{ij} = \sum_{k=1}^{n} A_{ik} B_{kj}
+			C_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}
 		\end{align*}
         Autrement dit, soient $A, B$ deux matrices telles que :
         \begin{align*}
@@ -177,12 +177,12 @@
 \begin{proposition}
 	Soit $(m, n, k, l) \in (\N^*)^4$.
 	\begin{enumerate}
-		\item Soient $A, B, C \in \mathcal{M}_{m,n} (\K)$.
+		\item Soit $(A, B, C) \in (\mathcal{M}_{m,n} (\K))^3$.
 		\[A + B = B + A\]
 		\[A + (B + C) = (A + B) + C\]
 		\item Soient $A \in \mathcal{M}_{m, k}(\K),\ B \in \mathcal{M}_{k, l}(\K),\ C \in \mathcal{M}_{l, n}(\K)$.
 		\[A \cdot (B \cdot C) = (A \cdot B) \cdot C\]
-		\item Soient $A \in \mathcal{M}_{m, k}(\K),\ B, C \in \mathcal{M}_{k, n}(\K),\ \lambda \in \K$.
+		\item Soient $A \in \mathcal{M}_{m, k}(\K),\ (B, C) \in (\mathcal{M}_{k, n}(\K))^2,\ \lambda \in \K$.
 		\[A \cdot (B + \lambda C) = A \cdot B + \lambda \cdot A \cdot C\]
 		\[(A + \lambda B) \cdot C = A \cdot C + \lambda \cdot B \cdot C\]
 	\end{enumerate}
