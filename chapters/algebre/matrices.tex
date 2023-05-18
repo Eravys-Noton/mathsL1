@@ -60,18 +60,13 @@
 	Opérations analogues sur les colonnes.
 \end{definition}
 
+\begin{definition}
+	Une matrice est \emph{échelonnée} en lignes si et seulement si le nombre de zéros commençant une ligne croît strictement ligne par ligne jusqu'à ce qu'il ne reste plus que des zéros.
+\end{definition}
+
 \begin{proposition}[Pivot de Gauss]
-    L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est analogue sauf qu'on applique les opérations sur les colonnes. \\
-	Soit un système ou une matrice. On applique les opérations élémentaires pour obtenir un système ou une matrice équivalente de la forme :
-	\begin{align*}
-		\begin{pmatrix}
-			a_{11} & a_{12} & \cdots & a_{1n} \\
-			0 & a_{22} & \cdots & a_{2n} \\
-			\vdots & \vdots & \ddots & \vdots \\
-			0 & 0 & \ldots & a_{mn}
-		\end{pmatrix}
-	\end{align*}
-	On appelle cela échelonner.
+    L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est analogue sauf qu'on applique les opérations sur les colonnes.
+   	On applique les opérations élémentaires afin d'échelonner le système ou la matrice.
     \\
     Ensuite le but est d'appliquer les opérations élémentaires pour \og remonter \fg dans l'algorithme et d'obtenir une matrice ou un système de cette forme :
     \begin{align*}
@@ -85,7 +80,7 @@
 \end{proposition}
 
 \begin{definition}[Rang d'une matrice]
-	Le rang d'une matrice $A$ est son nombre de lignes non nulles après échelonnage. Il est noté $\rg{A}$.
+	Le rang d'une matrice $A$ est son nombre de lignes non nulles après échelonnage. Il est noté $\rg(A)$.
 \end{definition}
 
 \begin{theorem}
