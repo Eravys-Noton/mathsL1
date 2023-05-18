@@ -1,5 +1,13 @@
 \chapter{Espaces vectoriels}\label{chap:espaces_vectoriels}
 
+\begin{definition}[Loi de composition]
+	Soient $E$, $F$ deux ensembles et $f$ une application.
+	\begin{enumerate}
+		\item On dit que $f$ est une loi de composition \emph{interne} si et seulement si : $f : E \times E \to E$.
+		\item On dit que $f$ est une loi de composition \emph{externe} si et seulement si : $f : E \times F \to E$.
+	\end{enumerate}
+\end{definition}
+
 \section{Définitions}
 \begin{definition}[Groupe]
     $(G, *)$ est appelé \emph{groupe} si :
@@ -10,7 +18,7 @@
             * : G \times G &\to G \\
             (g_1, g_2) &\mapsto g_1 * g_2
         \end{align*}
-        telle que $\forall g_1, g_2, g_3 \in G$ :
+        $\forall (g_1, g_2, g_3) \in G^3$ :
         \begin{multicols}{2}
             \begin{enumerate}
                 \item $(g_1 * g_2) * g_3 = g_1 * (g_2 * g_3)$
@@ -19,13 +27,30 @@
             \end{enumerate}
         \end{multicols}
     \end{enumerate}
-    Si le groupe $G$ est commutatif c'est-à-dire : $\forall g_1, g_2 \in G, g_1 * g_2 = g_2 * g_1$, alors on dit que $G$ est un groupe \emph{commutatif} ou \emph{abélien}.
+	On dit que $G$ est un groupe \emph{commutatif} ou \emph{abélien} si et seulement si : $\forall (g_1, g_2) \in G^2,\ g_1 * g_2 = g_2 * g_1$.
 \end{definition}
 
-\begin{definition}[Corps] % A redéfinir
-    (A redéfinir)
-    Un \emph{corps} est un ensemble $C$ avec deux loi internes \og $+$ \fg et \og $\cdot$ \fg telles que :
-    $(C, +)$ et $(C, \cdot)$ sont des \emph{groupes abéliens}.
+\begin{definition}[Anneau]
+	Soit $A$ un ensemble muni de deux lois de compositions \emph{internes} \og + \fg et \og $\cdot$ \fg sur $A$ tel que : 
+	\begin{enumerate}
+		\item $(A, +)$ est un groupe \emph{commutatif}.
+		\item $\forall (a, b, c) \in A^3,\ a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
+		\item \og $\cdot$ \fg possède un \emph{élément neutre}.
+		\item $\forall (a, b, c ) \in A^3$ : 
+		\begin{enumerate}
+			\item $a \cdot (b + c) = a \cdot b + a \cdot c$.
+			\item $(b + c) \cdot a = b \cdot a + c \cdot a$.
+		\end{enumerate}
+	\end{enumerate}
+	On dit que $A$ est \emph{intègre} si $\forall (a, b) \in A^2$ :
+	\begin{enumerate}
+		\item $A$ est commutatif : $a \cdot b = b \cdot a$.
+		\item $a \cdot b = 0 \implies a = 0 \lor b = 0$.
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}[Corps]
+    Un corps est un anneau commutatif dans lequel tout élément non nul est inversible.
 \end{definition}
 
 \begin{definition}[$\K$-espace vectoriel]
