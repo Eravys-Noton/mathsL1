@@ -4,7 +4,7 @@
 \begin{definition}[Loi de composition]
 	Soient $E$, $F$ deux ensembles et $f$ une application.
 	\begin{enumerate}
-		\item On dit que $f$ est une loi de composition \emph{interne} si et seulement si : $f : E \times E \to E$.
+		\item On dit que $f$ est une loi de composition \emph{interne} si et seulement si : $f : E^2 \to E$.
 		\item On dit que $f$ est une loi de composition \emph{externe} si et seulement si : $f : E \times F \to E$.
 	\end{enumerate}
 \end{definition}
@@ -58,7 +58,7 @@
 	\\
 	Un $\K$-espace vectoriel est un ensemble $E$ composé d'une loi de composition \emph{interne} \og $+$ \fg et une loi de composition \emph{externe} \og $\cdot$ \fg telles que :
 	\begin{align*}
-		+ : E \times E &\to E \\
+		+ : E^2 &\to E \\
 		(x, y) &\mapsto x + y
 	\end{align*}
 	\begin{align*}
@@ -103,15 +103,15 @@
 \end{definition}
 
 \begin{definition}
-	Soient $E$ un espace vectoriel et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs dans $E$.
+	Soient $n \in \N^*$, $E$ un espace vectoriel et $\mathcal{F} = (u_1, \ldots, u_n) \in E^n$.
 	\begin{enumerate}
 		\item On dit que $\mathcal{F}$ est \emph{libre} si et seulement si :
 		\begin{align*}
-			\forall \lambda_i \in \K,\ u_i \in E,\ \sum_{i = 1}^n \lambda_i u_i = 0_E \implies \lambda_1 = \cdots = \lambda_n = 0
+			\forall (\lambda_1, \ldots, \lambda_n) \in \K^n,\ u_i \in E,\ \sum_{i = 1}^n \lambda_i u_i = 0_E \implies \lambda_1 = \cdots = \lambda_n = 0
 		\end{align*}
 		\item On dit que $\mathcal{F}$ est \emph{génératrice} si et seulement si :
 		\begin{align*}
-			\forall x \in E,\ \exists \lambda_i \in \K,\ x = \sum_{i = 1}^n \lambda_i u_i 
+			\forall x \in E,\ \exists (\lambda_1, \ldots, \lambda_n) \in \K^n,\ x = \sum_{i = 1}^n \lambda_i u_i 
 		\end{align*}
 	\end{enumerate}
 \end{definition}
@@ -126,10 +126,10 @@
 \end{definition}
 
 \begin{proposition}
-	Soient un espace vectoriel $E$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de $n$ vecteurs de $E$.
+	Soient un espace vectoriel $E$ et $\mathcal{F} = (u_1, \ldots, u_n) \in E^n$.
 	\[ 
 	\mathcal{F} \text{ est une base} \iff 
-	\forall x \in E,\ \exists ! \lambda_i \in \K,\ x = \sum_{i = 1}^n \lambda_i u_i
+	\forall x \in E,\ \exists ! (\lambda_1, \ldots, \lambda_n) \in \K^n,\ x = \sum_{i = 1}^n \lambda_i u_i
 	\]
 \end{proposition}
 

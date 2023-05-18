@@ -11,7 +11,7 @@
 \end{definition}
 
 \begin{proposition}
-	$\forall \lambda \in \K^*,\ P, Q \in \K[X]$. 
+	$\forall \lambda \in \K^*,\ (P, Q) \in (\K[X])^2$. 
 	\begin{multicols}{2}
         \begin{enumerate}
     		\item $\operatorname{deg}(\lambda) = 0$.
@@ -34,11 +34,11 @@
 \end{theorem}
 
 \begin{definition}[Polynôme irréductible]
-	Un polynôme $P \in \K[X]$ non constant est dit irréductible, s'il n'existe pas $P_1, P_2 \in \K[X]^2$ tel que $P = P_1 P_2$ et $\operatorname{deg}(P_1) < \operatorname{deg}(P_2)$.
+	Un polynôme $P \in \K[X]$ non constant est dit irréductible, s'il n'existe pas $(P_1, P_2) \in (\K[X])^2$ tel que $P = P_1 P_2$ et $\operatorname{deg}(P_1) < \operatorname{deg}(P_2)$.
 \end{definition}
 
 \begin{definition}\label{def:ordre_mult}
-	Soit $P$ un polynôme non constant. Soit $\alpha \in \K$ et $m \in \N^*$ $\alpha$ est une racine d'ordre de multiplicité $m$ de $P$ si et seulement si
+	Soit $P$ un polynôme non constant. Soient $\alpha \in \K$ et $m \in \N^*$ $\alpha$ est une racine d'ordre de multiplicité $m$ de $P$ si et seulement si
 	\begin{align*}
 		(X - \alpha)^m \mid P \text{ et } (X - \alpha)^{m+1} \nmid P.
 	\end{align*}
