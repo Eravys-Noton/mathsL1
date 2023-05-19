@@ -4,13 +4,13 @@
 \begin{definition}[Loi de composition]
 	Soient $E$, $F$ deux ensembles et $f$ une application.
 	\begin{enumerate}
-		\item On dit que $f$ est une loi de composition \emph{interne} si et seulement si : $f : E^2 \to E$.
-		\item On dit que $f$ est une loi de composition \emph{externe} si et seulement si : $f : E \times F \to E$.
+		\item On dit que $f$ est une loi de composition \textbf{interne} si et seulement si : $f : E^2 \to E$.
+		\item On dit que $f$ est une loi de composition \textbf{externe} si et seulement si : $f : E \times F \to E$.
 	\end{enumerate}
 \end{definition}
 
 \begin{definition}[Magma]
-	On appelle \emph{magma} un ensemble $M$ muni d'une loi de composition \emph{interne} \og $*$ \fg. On note $(M, *)$.
+	On appelle \textbf{magma} un ensemble $M$ muni d'une loi de composition \textbf{interne} \og $*$ \fg. On note $(M, *)$.
 \end{definition}
 
 \begin{definition}[Groupe]
@@ -26,21 +26,21 @@
     \end{multicols}
     \noindent De plus, si et seulement :
     \[ \forall (g_1, g_2) \in G^2,\ g_1 * g_2 = g_2* g_1 \]
-    on dit que $(G, *)$ est un groupe \emph{commutatif} ou \emph{abélien}.
+    on dit que $(G, *)$ est un groupe \textbf{commutatif} ou \textbf{abélien}.
 \end{definition}
 
 \begin{definition}[Anneau]
-	Soit $A$ un ensemble muni de deux lois de compositions \emph{internes} \og $+$ \fg et \og $\cdot$ \fg sur $A$ telles que pour tout $(a, b, c) \in A^3$ : 
+	Soit $A$ un ensemble muni de deux lois de compositions \textbf{internes} \og $+$ \fg et \og $\cdot$ \fg sur $A$ telles que pour tout $(a, b, c) \in A^3$ : 
 	\begin{multicols}{2}
 		\begin{enumerate}
-			\item $(A, +)$ est un groupe \emph{commutatif}.
+			\item $(A, +)$ est un groupe \textbf{commutatif}.
 			\item $a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
 			\item $a \cdot (b + c) = a \cdot b + a \cdot c$.
 			\item $(b + c) \cdot a = b \cdot a + c \cdot a$.
-			\item \og $\cdot$ \fg possède un \emph{élément neutre}.
+			\item \og $\cdot$ \fg possède un \textbf{élément neutre}.
 		\end{enumerate}
 	\end{multicols}
-	\noindent On dit que $A$ est \emph{intègre} si $\forall (a, b) \in A^2$ :
+	\noindent On dit que $A$ est \textbf{intègre} si $\forall (a, b) \in A^2$ :
 	\begin{multicols}{2}
 		\begin{enumerate}
 			\item $A$ est commutatif : $a \cdot b = b \cdot a$.
@@ -50,13 +50,13 @@
 \end{definition}
 
 \begin{definition}[Corps]
-    Un corps est un anneau \emph{commutatif} dans lequel tout élément non nul est inversible.
+    Un corps est un anneau \textbf{commutatif} dans lequel tout élément non nul est inversible.
 \end{definition}
 
 \begin{definition}[$\K$-espace vectoriel]
 	Soit $\K$ un corps. 
 	\\
-	Un $\K$-espace vectoriel est un ensemble $E$ composé d'une loi de composition \emph{interne} \og $+$ \fg et une loi de composition \emph{externe} \og $\cdot$ \fg telles que :
+	Un $\K$-espace vectoriel est un ensemble $E$ composé d'une loi de composition \textbf{interne} \og $+$ \fg et une loi de composition \textbf{externe} \og $\cdot$ \fg telles que :
 	\begin{align*}
 		+ : E^2 &\to E \\
 		(x, y) &\mapsto x + y
@@ -91,7 +91,7 @@
 \end{definition}
 
 \begin{definition}[Somme directe]
-	Soient $F_1, F_2 \subset E$. On dit que $F_1$ et $F_2$ sont en \emph{somme directe} ou qu'ils sont \emph{supplémentaires} dans $E$ si et seulement si :
+	Soient $F_1, F_2 \subset E$. On dit que $F_1$ et $F_2$ sont en \textbf{somme directe} ou qu'ils sont \textbf{supplémentaires} dans $E$ si et seulement si :
 	\begin{multicols}{2}
 	    \begin{enumerate}
 		\item $F_1 \cap F_2 = \{ 0_E \}$
@@ -105,11 +105,11 @@
 \begin{definition}
 	Soient $n \in \N^*$, $E$ un espace vectoriel et $\mathcal{F} = (u_1, \ldots, u_n) \in E^n$.
 	\begin{enumerate}
-		\item On dit que $\mathcal{F}$ est \emph{libre} si et seulement si :
+		\item On dit que $\mathcal{F}$ est \textbf{libre} si et seulement si :
 		\begin{align*}
 			\forall (\lambda_1, \ldots, \lambda_n) \in \K^n,\ u_i \in E,\ \sum_{i = 1}^n \lambda_i u_i = 0_E \implies \lambda_1 = \cdots = \lambda_n = 0
 		\end{align*}
-		\item On dit que $\mathcal{F}$ est \emph{génératrice} si et seulement si :
+		\item On dit que $\mathcal{F}$ est \textbf{génératrice} si et seulement si :
 		\begin{align*}
 			\forall x \in E,\ \exists (\lambda_1, \ldots, \lambda_n) \in \K^n,\ x = \sum_{i = 1}^n \lambda_i u_i 
 		\end{align*}
@@ -122,7 +122,7 @@
 
 \section{Base et dimension}
 \begin{definition}[Base]
-	Une famille de vecteurs est une base si elle est \emph{libre} et \emph{génératrice}.
+	Une famille de vecteurs est une base si elle est \textbf{libre} et \textbf{génératrice}.
 \end{definition}
 
 \begin{proposition}

@@ -2,7 +2,7 @@
 
 \section{Définitions}
 \begin{definition}[Polynôme]
-    Un \emph{polynôme} est un élément de l'ensemble 
+    Un \textbf{polynôme} est un élément de l'ensemble 
     \begin{align*}
         \K[X] = \{ a_0 1 + a_1 X + a_2 X^2 + \cdots a_n X^n \mid a_i \in \K,\ n \in \N \}
     \end{align*}
@@ -62,7 +62,7 @@
 		F(X) = \frac{P(X)}{Q(X)},\ Q(X) \neq 0
 	\end{align*}
 	avec $\deg(F) = \deg(P) - \deg(Q)$. \\
-	Si $\deg(P) > \deg(Q)$, alors il existe $E(X)$ appelée la \emph{partie entière} et des polynômes $R(X), S(X)$ tels que $\deg(R) < \deg(S)$ et : 
+	Si $\deg(P) > \deg(Q)$, alors il existe $E(X)$ appelée la \textbf{partie entière} et des polynômes $R(X), S(X)$ tels que $\deg(R) < \deg(S)$ et : 
 	\begin{align*}
 		F(X) = E(X) + \frac{R(X)}{S(X)}.
 	\end{align*}
@@ -104,7 +104,7 @@
     La stratégie de la démonstration consiste à montrer une égalité de deux ensembles :
     \[ E = \left\{ \frac{P(X)}{Q(X)} : P \in \C[X],\ \deg(P) < \deg(Q) \right\} \]
     \[ F = \left\{ \sum_{i = 1}^{n} \sum_{j = 1}^{m_i} \frac{a_{ij}}{(X - \alpha_i)^{j}} : a_{ij} \in \C \right\} \]
-    \emph{\'Etude de $E$ :} Posons $d \coloneqq \deg(Q)$
+    \textbf{\'Etude de $E$ :} Posons $d \coloneqq \deg(Q)$
     \begin{align*}
         E &= \left\{ \frac{P(X)}{Q(X)} : P \in \C[X],\ \deg(P) < d \right\} \\
           &= \left\{ \frac{a_0 + a_1X + \cdots + a_{d - 1} X^{d - 1}}{Q(X)} : a_0, \ldots, a_{d - 1} \in \C \right\} \\
@@ -122,7 +122,7 @@
     \[ \lambda_0 = \cdots = \lambda_{d-1} = 0 \]
     Ainsi $\mathcal{F}$ est libre. $\mathcal{F}$ est libre et génératrice, elle forme donc une base de $E$ et ainsi : 
     \[ \dim(E) = d \]
-    \emph{\'Etude de F :}
+    \textbf{\'Etude de F :}
     \[ F = \left\{ \sum_{i = 1}^{n} \sum_{j = 1}^{m_i} \frac{a_{ij}}{(X - \alpha_i)^{j}} : a_{ij} \in \C \right\} \]
     On peut ainsi écrire $F$ ainsi : 
     \begin{align*}
@@ -161,7 +161,7 @@
     Mais aussi : 
     \[ \deg(Q) = \deg \left( \prod_{i=1}^{n} (X - \alpha_i)^{m_i} \right) = m_1 + \cdots + m_n \]
     Ainsi : \[ \dim(F) = \deg(Q) = d \]
-    \emph{Inclusion de $F$ dans $E$ :}
+    \textbf{Inclusion de $F$ dans $E$ :}
     \\
     Un élément de $F$ est de la forme suivante : 
     \[ \frac{a_{11}}{(X - \alpha_1)} + \cdots + \frac{a_{1m_1}}{(X - \alpha_1)^{m_1}} + \cdots + \frac{a_{n1}}{(X - \alpha_n)} + \cdots + \frac{a_{nm_n}}{(X - \alpha_n)^{m_n}} \]

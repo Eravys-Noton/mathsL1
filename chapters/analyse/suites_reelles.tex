@@ -1,6 +1,6 @@
 \chapter{Suites réelles}
 \begin{definition}[Suite réelle]
-    On appelle \emph{suite réelle} une fonction de $\N \to \R$. 
+    On appelle \textbf{suite réelle} une fonction de $\N \to \R$. 
     On note $(u_n)_{n \in \N}$ la fonction $x \mapsto u_n$.
 \end{definition}
 
@@ -12,7 +12,7 @@
 \begin{definition}[Suite arithmétique]
     $\forall (r, u_0) \in \R^2$. 
     \\
-    On définit une \emph{suite arithmétique} $(u_n)_{n \in \N}$ de la manière suivante :
+    On définit une \textbf{suite arithmétique} $(u_n)_{n \in \N}$ de la manière suivante :
     \begin{align*}
         (u_n)_{n \in \N} \coloneqq
         \begin{cases}
@@ -32,7 +32,7 @@
 \begin{definition}[Suite géométrique]
     $\forall (q, u_0) \in \R^* \times \R$. 
     \\
-    On définit une \emph{suite géométrique} $(u_n)_{n \in \N}$ de la manière suivante : 
+    On définit une \textbf{suite géométrique} $(u_n)_{n \in \N}$ de la manière suivante : 
     \begin{align*}
         (u_n)_{n \in \N} \coloneqq 
         \begin{cases}
@@ -56,7 +56,7 @@
 \begin{definition}[Suite arithmético-géométrique]
     $\forall (r, u_0, q) \in \R^2 \times \R^*$. 
     \\
-    On définit une \emph{suite arithmético-géométrique} $(u_n)_{n \in \N}$ de la manière suivante :
+    On définit une \textbf{suite arithmético-géométrique} $(u_n)_{n \in \N}$ de la manière suivante :
     \begin{align*}
         (u_n)_{n \in \N} \coloneqq 
         \begin{cases}
@@ -72,7 +72,7 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 \begin{definition}
     Soient $(u_n)_{n \in \N}$ une suite et $\ell \in \R$. 
     \\
-    On dit que $(u_n)_{n \in \N}$ \emph{tend} vers $\ell$ si et seulement si :
+    On dit que $(u_n)_{n \in \N}$ \textbf{tend} vers $\ell$ si et seulement si :
     \[ \forall \varepsilon > 0,\ \exists N \in \N,\ \forall n \geq N,\ \abs{u_n - \ell} \leq \varepsilon \]
     On note alors :
     \begin{align*}
@@ -83,9 +83,9 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 \begin{definition}
     Soit $(u_n)_{n \in \N}$ une suite réelle. On dit que :
     \begin{enumerate}
-        \item $(u_n)_{n \in \N}$ \emph{converge} si et seulement si : $\exists \ell \in \R,\ \varepsilon > 0,\ \exists N \in \N,\ \abs{u_n - \ell} \leq \varepsilon$.
-        \item $(u_n)_{n \in \N}$ \emph{diverge} si et seulement si : $\forall \ell \in \R,\ \varepsilon > 0,\ \forall N \in \N,\ \exists n \geq N,\ \abs{u_n - \ell} > \varepsilon$.
-        \item $(u_n)_{n \in \N}$ \emph{ne converge pas vers} $\ell \in \R$ si et seulement si : $\exists \varepsilon > 0,\ \forall N \in \N,\ \exists n \geq N,\ \abs{u_n - \ell} > \varepsilon$.
+        \item $(u_n)_{n \in \N}$ \textbf{converge} si et seulement si : $\exists \ell \in \R,\ \varepsilon > 0,\ \exists N \in \N,\ \abs{u_n - \ell} \leq \varepsilon$.
+        \item $(u_n)_{n \in \N}$ \textbf{diverge} si et seulement si : $\forall \ell \in \R,\ \varepsilon > 0,\ \forall N \in \N,\ \exists n \geq N,\ \abs{u_n - \ell} > \varepsilon$.
+        \item $(u_n)_{n \in \N}$ \textbf{ne converge pas vers} $\ell \in \R$ si et seulement si : $\exists \varepsilon > 0,\ \forall N \in \N,\ \exists n \geq N,\ \abs{u_n - \ell} > \varepsilon$.
     \end{enumerate}
 \end{definition}
 
@@ -358,9 +358,9 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 \begin{proof}
     Soit $(u_n)_{n \in \N}$ une suite. Soit $E = \{ n \in \N,\ \forall m \geq n,\ u_m \leq u_n \}$.
     \\ 
-    \emph{Cas 1 :} $E$ est fini, donc majoré par un entier $N,\ \forall n \leq N,\ n \notin E$ donc $\exists m > n,\ u_m > u_n$. On définit alors par récurrence une extraction $\varphi : \N \to \N$ en posant $\varphi(0) = N + 1$, puis, étant donnés $\varphi(0) < \varphi(1) < \cdots < \varphi(K)$, on choisit $\varphi(K + 1)$ tel que $u_{\varphi(K+1)} > u_{\varphi(K)}$ et la suite extraite $(u_{\varphi(n)})_{n \in \N}$ est croissante.
+    \textbf{Cas 1 :} $E$ est fini, donc majoré par un entier $N,\ \forall n \leq N,\ n \notin E$ donc $\exists m > n,\ u_m > u_n$. On définit alors par récurrence une extraction $\varphi : \N \to \N$ en posant $\varphi(0) = N + 1$, puis, étant donnés $\varphi(0) < \varphi(1) < \cdots < \varphi(K)$, on choisit $\varphi(K + 1)$ tel que $u_{\varphi(K+1)} > u_{\varphi(K)}$ et la suite extraite $(u_{\varphi(n)})_{n \in \N}$ est croissante.
     \\ 
-    \emph{Cas 2 :} $E$ est infini. On pose $E = \{ \varphi(n) : n \in \N \}$ avec $\varphi : \N \to \N$.
+    \textbf{Cas 2 :} $E$ est infini. On pose $E = \{ \varphi(n) : n \in \N \}$ avec $\varphi : \N \to \N$.
     \[ \forall k \in \N,\ \varphi(k) \in E, \text{ comme } \varphi(K + 1) > \varphi(K),\ u_{\varphi(K+1)} \leq u_{\varphi(K)} \]
     et la sous-suite $(u_{\varphi(n)})_{n \in \N}$ est décroissante.
 \end{proof}
@@ -386,14 +386,14 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 \begin{theorem}
     Soit $(u_n)_{n \in \N}$ une suite. \\
     \begin{enumerate}
-        \item Si elle est \emph{croissante} alors :
+        \item Si elle est \textbf{croissante} alors :
         \begin{multicols}{2}
             \begin{itemize}
                 \item ou bien elle converge.
                 \item ou bien elle tend vers $+\infty$.
             \end{itemize}
         \end{multicols}
-        \item Si elle est \emph{décroissante} alors :
+        \item Si elle est \textbf{décroissante} alors :
         \begin{multicols}{2}
             \begin{itemize}
                 \item ou bien elle diverge.

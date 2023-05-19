@@ -17,19 +17,19 @@
 \end{definition}
 
 \begin{proposition}
-	Soient $f : I \to \R$ et $a \in I$, si $f$ est \emph{dérivable} en $a$ alors elle est \emph{continue} en $a$.
+	Soient $f : I \to \R$ et $a \in I$, si $f$ est \textbf{dérivable} en $a$ alors elle est \textbf{continue} en $a$.
 \end{proposition}
 
 \begin{definition}[Maximum, minimum]
     Soient $f : I \to \R$ et $a \in I$.
     \begin{enumerate}
-        \item On dit que $a$ est un \emph{maximum} si et seulement si : $\forall x \in I,\ f(a) \geq f(x)$.
-        \item On dit que $a$ est un \emph{minimum} si et seulement si : $\forall x \in I,\ f(a) \leq f(x)$.
+        \item On dit que $a$ est un \textbf{maximum} si et seulement si : $\forall x \in I,\ f(a) \geq f(x)$.
+        \item On dit que $a$ est un \textbf{minimum} si et seulement si : $\forall x \in I,\ f(a) \leq f(x)$.
     \end{enumerate}
     On appelle extremum un point qui est soit un maximum soit un minimum.
     \begin{enumerate}
-        \item On dit que $a$ est un \emph{maximum local} si et seulement si : $\exists \varepsilon > 0,\ a \text{ est un maximum de } f_{|]a - \varepsilon, a + \varepsilon[}$.
-        \item On dit que $a$ est un \emph{minimum local} si et seulement si : $\exists \varepsilon > 0,\ a \text{ est un minimum de } f_{|]a - \varepsilon, a + \varepsilon[}$.
+        \item On dit que $a$ est un \textbf{maximum local} si et seulement si : $\exists \varepsilon > 0,\ a \text{ est un maximum de } f_{|]a - \varepsilon, a + \varepsilon[}$.
+        \item On dit que $a$ est un \textbf{minimum local} si et seulement si : $\exists \varepsilon > 0,\ a \text{ est un minimum de } f_{|]a - \varepsilon, a + \varepsilon[}$.
     \end{enumerate}
 \end{definition}
 
@@ -82,7 +82,7 @@
 	\begin{enumerate}
 		\item $f \in \mathcal{D}^n(I, \R)$ signifie que $f$ est $n$ fois dérivable sur $I$.
 		\item $f \in \mathcal{C}^n(I, \R)$ signifie que $f$ est $n$ fois dérivable et que sa dérivée $n$-ième est continue.
-		\item $f \in \mathcal{C}^{\infty}(I, \R) = \mathcal{D}^{\infty}(I, \R)$ signifie que $f \in \mathcal{C}^n(I, \R),\ \forall n \in \N$. On dit que les fonctions $\mathcal{C}^{\infty}$ sont des \emph{fonctions lisses}.
+		\item $f \in \mathcal{C}^{\infty}(I, \R) = \mathcal{D}^{\infty}(I, \R)$ signifie que $f \in \mathcal{C}^n(I, \R),\ \forall n \in \N$. On dit que les fonctions $\mathcal{C}^{\infty}$ sont des \textbf{fonctions lisses}.
 	\end{enumerate}
 \end{definition}
 
@@ -94,9 +94,9 @@
 \begin{definition}
     Soit $f : I \to \R$.
     \begin{enumerate}
-        \item On dit que $f$ est \emph{convexe} si et seulement si : 
+        \item On dit que $f$ est \textbf{convexe} si et seulement si : 
         \[ \forall (x, y) \in I^2,\ \lambda \in [0, 1],\ f(\lambda x + (1 - \lambda)y) \leq \lambda f(x) + (1 - \lambda) f(y) \]
-        \item On dit que $f$ est \emph{concave} si et seulement si : 
+        \item On dit que $f$ est \textbf{concave} si et seulement si : 
         \[ \forall (x, y) \in I^2,\ \lambda \in [0, 1],\ f(\lambda x + (1 - \lambda)y) \geq \lambda f(x) + (1 - \lambda) f(y) \]
     \end{enumerate}
 \end{definition}
@@ -152,7 +152,7 @@
 \end{definition}
 
 \begin{proposition}
-	Si $f$ est \emph{croissante} sur $I$ alors 
+	Si $f$ est \textbf{croissante} sur $I$ alors 
 	$
 	(u_n)_{n \in \N} = 
 	\begin{cases}
@@ -163,26 +163,26 @@
 	est monotone.
 	\[ u_1 \geq u_0 \iff (u_n) \text{ croissante} \]
 	\[ u_1 \leq u_0 \iff (u_n) \text{ décroissante} \]
-	Si $f$ est \emph{décroissante} sur $I$, alors les suites extraites $(v_n)_{n \in \N} \coloneqq u_{2n}$ et $(w_n)_{n \in \N} \coloneqq u_{2n + 1}$ sont monotones, l'une est \emph{croissante}, l'autre est \emph{décroissante}.
+	Si $f$ est \textbf{décroissante} sur $I$, alors les suites extraites $(v_n)_{n \in \N} \coloneqq u_{2n}$ et $(w_n)_{n \in \N} \coloneqq u_{2n + 1}$ sont monotones, l'une est \textbf{croissante}, l'autre est \textbf{décroissante}.
 \end{proposition}
 
 \begin{definition}[Point fixe]
-	Soient $f : \mathcal{D}_f \to \R$ et $x \in \mathcal{D}_f,\ f(x) = x$. On dit que $x$ est un \emph{point fixe} de $f$.
+	Soient $f : \mathcal{D}_f \to \R$ et $x \in \mathcal{D}_f,\ f(x) = x$. On dit que $x$ est un \textbf{point fixe} de $f$.
 \end{definition}
 
 \begin{definition}[Coefficient de convergence]
     Soient $(u_n)_{n \in \N}$ tel que $\lim_{n \to +\infty} u_n = \ell \in \R$, $\varepsilon_n \coloneqq \abs{u_n - \ell}$ et supposons que $\lim_{n \to +\infty} \frac{\varepsilon_{n + 1}}{\varepsilon_n} = K \in \R_+$. 
     On appelle $K$ coefficient de la convergence.
     \begin{itemize}
-        \item Si $K = 1$ la convergence est \emph{lente}.
-        \item Si $K = 0$ la convergence est \emph{rapide}.
-        \item Si $0 < K < 1$ la convergence est \emph{géométrique}.
+        \item Si $K = 1$ la convergence est \textbf{lente}.
+        \item Si $K = 0$ la convergence est \textbf{rapide}.
+        \item Si $0 < K < 1$ la convergence est \textbf{géométrique}.
     \end{itemize}
 \end{definition}
 
 \begin{definition}[Fonction contractante]
 	Soit $f : I \to \R$.
-    On dit que $f$ est \emph{contractante} si et seulement si :
+    On dit que $f$ est \textbf{contractante} si et seulement si :
     \[ \exists k \in ]0, 1[,\ \forall (x, y) \in I^2 : \abs{f(x) - f(y)} \leq k \abs{x - y} \]
 \end{definition}
 

@@ -3,28 +3,28 @@
 \section{Définitions}
 \begin{definition}[Application linéaire]
     Soient $E$ et $F$ deux $\K$-espaces vectoriels et $f : E \to F$.
-    On dit que $f$ est une \emph{application linéaire} si et seulement si $\forall (x_1, x_2) \in E^2,\ \lambda \in \K$ :
+    On dit que $f$ est une \textbf{application linéaire} si et seulement si $\forall (x_1, x_2) \in E^2,\ \lambda \in \K$ :
     \[ f(x_1 + \lambda x_2) = f(x_1) + \lambda f(x_2) \]
 \end{definition}
 
 \begin{definition}
     Soient $E$ et $F$ deux espaces vectoriels et $f : E \to F$ une application linéaire.
     \\
-    On définit le \emph{noyau} de $f$, noté $\ker(f)$ tel que :
+    On définit le \textbf{noyau} de $f$, noté $\ker(f)$ tel que :
     \[ \ker(f) \coloneqq \{ \forall x \in E : f(x) = 0_E \} \] 
-    On définit l'\emph{image} de $f$, notée $\Im(f)$ telle que :
+    On définit l'\textbf{image} de $f$, notée $\Im(f)$ telle que :
     \[ \Im(f) \coloneqq \{ \forall y \in F : \exists x \in E,\ y = f(x) \} \]
 \end{definition}
 
 \begin{definition}
     \par \noindent Soient $E$ et $F$ deux espaces vectoriels et $f$ une application linéaire de $E$ vers $F$.
     \begin{enumerate}
-        \item On dit que $f$ est un \emph{morphisme} de $E$ vers $F$, on note $f \in \mathcal{L}(E, F)$.
-        \item Si $E = F$, on dit que $f$ est un \emph{endomorphisme} de $E$, on note $f \in \mathcal{L}(E)$.
-        \item Si $f \in \mathcal{L}(E, F)$ est une \emph{bijection}, alors $f$ est un \emph{isomorphisme}. On note parfois $f : E \overset{\sim}{\to} F$.
-        \item Si $f \in \mathcal{L}(E)$ est un \emph{isomorphisme}, on dit que $f$ est un \emph{automorphisme} de $E$.
+        \item On dit que $f$ est un \textbf{morphisme} de $E$ vers $F$, on note $f \in \mathcal{L}(E, F)$.
+        \item Si $E = F$, on dit que $f$ est un \textbf{endomorphisme} de $E$, on note $f \in \mathcal{L}(E)$.
+        \item Si $f \in \mathcal{L}(E, F)$ est une \textbf{bijection}, alors $f$ est un \textbf{isomorphisme}. On note parfois $f : E \overset{\sim}{\to} F$.
+        \item Si $f \in \mathcal{L}(E)$ est un \textbf{isomorphisme}, on dit que $f$ est un \textbf{automorphisme} de $E$.
         \\
-        $E$ et $F$ sont appelés \emph{isomorphes} s'il existe un \emph{isomorphisme} de l'un vers l'autre, on écrit parfois $E \cong F$.
+        $E$ et $F$ sont appelés \textbf{isomorphes} s'il existe un \textbf{isomorphisme} de l'un vers l'autre, on écrit parfois $E \cong F$.
     \end{enumerate}
 \end{definition}
 
@@ -115,8 +115,8 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 \begin{definition}
     Soit $f \in \mathcal{L}(E)$. Notons $f^2 \equiv f \circ f$.
     \begin{enumerate}
-        \item On dit que $f$ \emph{est idempotente/une projection} si et seulement si : $f^2 = f$.
-        \item On dit que $f$ \emph{est involutive/une symétrie linéaire} si et seulement si : $f^2 = id_E$.
+        \item On dit que $f$ \textbf{est idempotente/une projection} si et seulement si : $f^2 = f$.
+        \item On dit que $f$ \textbf{est involutive/une symétrie linéaire} si et seulement si : $f^2 = id_E$.
     \end{enumerate}
 \end{definition}
 
@@ -166,7 +166,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
         p_F : E &\to E \\
             x \equiv u + v &\mapsto u
     \end{align*}    
-    est appelée un \emph{projecteur} sur $F$ \emph{parallélement} à $G$.
+    est appelée un \textbf{projecteur} sur $F$ \textbf{parallélement} à $G$.
 \end{definition}
 
 \begin{proposition}
@@ -241,7 +241,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 \end{definition}
 
 \begin{definition}[Matrice de passage]
-    Soient $n \in \N^*$, $E$ et $F$ deux $\K$-espaces vectoriels de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n) \in E^n$ et $\mathcal{B}' = (b_1', \ldots, b_n') \in E^n$ deux bases de $E$. On appelle \emph{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$.
+    Soient $n \in \N^*$, $E$ et $F$ deux $\K$-espaces vectoriels de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n) \in E^n$ et $\mathcal{B}' = (b_1', \ldots, b_n') \in E^n$ deux bases de $E$. On appelle \textbf{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$.
 \end{definition}
 
 \par \noindent Concrètement, écrivons : 
@@ -270,9 +270,9 @@ Avec les coefficients $(a_{11}, \ldots, a_{nn}) \in \K^{nn}$ tels que :
 \begin{definition}
     Soient $A, B \in \mathcal{M}_{m,n}$.
     \begin{enumerate}
-        \item On dit que $A$ et $B$ sont \emph{équivalentes} si et seulement si : 
+        \item On dit que $A$ et $B$ sont \textbf{équivalentes} si et seulement si : 
         \[ \exists (P, Q) \in (\operatorname{GL}(n))^2,\ B = Q A P^{-1} \]
-        \item On dit que $A$ et $B$ sont \emph{similaires} si et seulement si :
+        \item On dit que $A$ et $B$ sont \textbf{similaires} si et seulement si :
         \[ \exists P \in \operatorname{GL}(n),\ B = P^{-1} A P \]
     \end{enumerate}
 \end{definition}
