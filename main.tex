@@ -39,6 +39,7 @@
 
 % ------------ Boxes -------------- %
 \usepackage{framed}
+\usepackage[most]{tcolorbox}
 % ------------- Boxes -------------- %
 
 % ---------------- Maths -------------- %
@@ -52,14 +53,27 @@
 
 % ------------- Théorèmes ------------ %
 \theoremstyle{plain}
-\newtheorem{theorem}{Théorème}[chapter]
-\newtheorem{lemma}{Lemme}[chapter]
-\newtheorem{corollary}{Corollaire}[theorem]
-\newtheorem{proposition}{Proposition}[chapter]
+%\newtheorem{theorem}{Théorème}[chapter]
+\newtcolorbox{theorem}[1][]{enhanced, colback=white, colframe=green!60!black, title=\textbf{Théorème} : {#1}, breakable, attach boxed title to top text left={yshift*=-3mm}, boxed title style={size=small, colback=green!60!black, sharpish corners}, sharpish corners}
+
+
+%\newtheorem{lemma}{Lemme}[chapter]
+\newtcolorbox{lemma}[1][]{enhanced, colback=white, colframe=red!60!black, title=\textbf{Lemme} : {#1}, breakable, attach boxed title to top text left={yshift*=-3mm}, boxed title style={size=small, colback=red!60!black, sharpish corners}, sharpish corners}
+
+%\newtheorem{corollary}{Corollaire}[chapter]
+\newtcolorbox{corollary}[1][]{enhanced, colback=white, colframe=green!60!black, title=\textbf{Corollaire} : {#1}, breakable, attach boxed title to top text left={yshift*=-3mm}, boxed title style={size=small, colback=green!60!black, sharpish corners}, sharpish corners}
+
+%\newtheorem{proposition}{Proposition}[chapter]
+\newtcolorbox{proposition}[1][]{enhanced, colback=white, colframe=red!60!black, title=\textbf{Proposition} : {#1}, breakable, attach boxed title to top text left={yshift*=-3mm}, boxed title style={size=small, colback=red!60!black, sharpish corners}, sharpish corners}
+
+
 
 \theoremstyle{definition}
-\newtheorem{definition}{Définition}[chapter]
+%\newtheorem{definition}{Définition}[chapter]
+\newtcolorbox{definition}[1][]{enhanced, colback=white, colframe=blue!60!black, title=\textbf{Définition} : {#1}, breakable, attach boxed title to top text left={yshift*=-3mm}, boxed title style={size=small, colback=blue!60!black, sharpish corners}, sharpish corners}
+
 \newtheorem{axiom}{Axiome}[chapter]
+
 \newtheorem{example}{Exemple}[chapter]
 \newtheorem{exercise}{Exercice}[chapter]
 
