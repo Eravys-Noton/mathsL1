@@ -64,8 +64,7 @@
 	Une matrice est \textbf{échelonnée} en lignes si et seulement si le nombre de zéros commençant une ligne croît strictement ligne par ligne jusqu'à ce qu'il ne reste plus que des zéros.
 \end{definition}
 
-\begin{proposition}[Pivot de Gauss]
-    L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est analogue sauf qu'on applique les opérations sur les colonnes.
+L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est analogue sauf qu'on applique les opérations sur les colonnes.
    	On applique les opérations élémentaires afin d'échelonner le système ou la matrice.
     \\
     Ensuite le but est d'appliquer les opérations élémentaires pour \og remonter \fg dans l'algorithme et d'obtenir une matrice ou un système de cette forme :
@@ -77,7 +76,6 @@
             0 & 0 & \cdots & a_{mn}
         \end{pmatrix}
     \end{align*}
-\end{proposition}
 
 \begin{definition}[Rang d'une matrice]
 	Le rang d'une matrice $A$ est son nombre de lignes non nulles après échelonnage. Il est noté $\rg(A)$.
@@ -213,8 +211,7 @@
 	\end{multicols}
 \end{definition}
 
-\begin{proposition}[Calculer le déterminant d'une matrice carrée]
-    Pour calculer le déterminant d'une matrice carrée, il existe plusieurs méthodes.
+Pour calculer le déterminant d'une matrice carrée, il existe plusieurs méthodes.
     Soit $A$ une matrice carrée de taille $n \times n$. 
     \begin{itemize}
         \item $n = 2$. 
@@ -244,7 +241,6 @@
             \det(A) = \sum_{j = 1}^{n} A_{ij} = (-1)^{i+j} \cdot \det(A^{ij})
         \end{align*}
     \end{itemize}
-\end{proposition}
 
 \begin{proposition}
 	Soient $n \in \N^*$, $(A, B) \in (\mathcal{M}_n(\K))^2,\ \lambda \in \K$.
@@ -276,8 +272,7 @@
 	$$
 \end{definition}
 
-\begin{proposition}[Calculer l'inverse d'une matrice]
-    Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibles.
+Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibles.
     Si on a une matrice
     $A =
     \begin{pmatrix}
@@ -301,7 +296,6 @@
     \\
     Une autre méthode générale est d'utiliser la comatrice de $A$.
     \[ A^{-1} = \frac{1}{\det(A)} \left( \com(A) \right)^T \]
-\end{proposition}
 
 \begin{definition}[Trace d'une matrice]
 	Soit $A \in \mathcal{M}_n(\K)$, la trace de $A$, notée $\tr(A)$ est définie par l'application suivante.

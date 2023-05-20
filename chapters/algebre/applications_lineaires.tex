@@ -268,10 +268,10 @@ Avec les coefficients $(a_{11}, \ldots, a_{nn}) \in \K^{nn}$ tels que :
 \[ b_j' = \sum_{i=1}^{n} a_{ij} b_i  \]
 
 \begin{definition}
-    Soient $A, B \in \mathcal{M}_{m,n}$.
+    Soient $A, B \in \mathcal{M}_{m,n}(\K)$.
     \begin{enumerate}
         \item On dit que $A$ et $B$ sont \textbf{équivalentes} si et seulement si : 
-        \[ \exists (P, Q) \in (\operatorname{GL}(n))^2,\ B = Q A P^{-1} \]
+        \[ \exists P \in \operatorname{GL}(n),\ Q \in \operatorname{GL}(m),\ B = Q^{-1} A P \]
         \item On dit que $A$ et $B$ sont \textbf{similaires} si et seulement si :
         \[ \exists P \in \operatorname{GL}(n),\ B = P^{-1} A P \]
     \end{enumerate}
