@@ -17,6 +17,8 @@
 	\end{align*}
 \end{definition}
 
+
+
 \begin{definition}[Fonction puissance]
 	Soit $a \in \R$.
 	\begin{align*}
@@ -54,6 +56,104 @@
 	\end{align*}
 \end{definition}
 
+\begin{figure}[h!]
+	\centering
+	%\includegraphics{images/cos.png}
+	\begin{subfigure}{0.3\textwidth}
+\begin{tikzpicture}
+            \begin{axis}[domain=-5:5, axis lines=middle, grid=both, xlabel=$x$, ylabel=$\cos(x)$, width=6cm]
+                \addplot[color=green, samples=100] {cos(deg(x))};
+            \end{axis}
+    \end{tikzpicture}
+		
+		\caption{Fonction $\cos{x}$}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+\begin{tikzpicture}
+            \begin{axis}[domain=-5:5, axis lines=middle, grid=both, xlabel=$x$, ylabel=$\sin(x)$, width=6cm]
+                \addplot[color=green, samples=100] {sin(deg(x))};
+            \end{axis}
+    \end{tikzpicture}
+		\caption{Fonction $\sin{x}$}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+\begin{tikzpicture}
+            \begin{axis}[domain=-10:10, restrict y to domain=-10:10, axis lines=middle, grid=both, xlabel=$x$, ylabel=$\tan(x)$, width=6cm]
+                \addplot[color=green, samples=100] {tan(deg(x))};
+            \end{axis}
+    \end{tikzpicture}
+		\caption{Fonction $\tan{x}$}
+	\end{subfigure}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}[scale=3,cap=round,>=latex]
+		% draw the coordinates
+		\draw[->] (-1.5cm,0cm) -- (1.5cm,0cm) node[right,fill=white] {$x$};
+		\draw[->] (0cm,-1.5cm) -- (0cm,1.5cm) node[above,fill=white] {$y$};
+		
+		% draw the unit circle
+		\draw[thick] (0cm,0cm) circle(1cm);
+		
+		\foreach \x in {0,30,...,360} {
+			% lines from center to point
+			\draw[gray] (0cm,0cm) -- (\x:1cm);
+			% dots at each point
+			\filldraw[black] (\x:1cm) circle(0.4pt);
+			% draw each angle in degrees
+			\draw (\x:0.6cm) node[fill=white] {$\x^\circ$};
+		}
+		
+		% draw each angle in radians
+		\foreach \x/\xtext in {
+			30/\frac{\pi}{6},
+			45/\frac{\pi}{4},
+			60/\frac{\pi}{3},
+			90/\frac{\pi}{2},
+			120/\frac{2\pi}{3},
+			135/\frac{3\pi}{4},
+			150/\frac{5\pi}{6},
+			180/\pi,
+			210/\frac{7\pi}{6},
+			225/\frac{5\pi}{4},
+			240/\frac{4\pi}{3},
+			270/\frac{3\pi}{2},
+			300/\frac{5\pi}{3},
+			315/\frac{7\pi}{4},
+			330/\frac{11\pi}{6},
+			360/2\pi}
+		\draw (\x:0.85cm) node[fill=white] {$\xtext$};
+		
+		\foreach \x/\xtext/\y in {
+			% the coordinates for the first quadrant
+			30/\frac{\sqrt{3}}{2}/\frac{1}{2},
+			45/\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+			60/\frac{1}{2}/\frac{\sqrt{3}}{2},
+			% the coordinates for the second quadrant
+			150/-\frac{\sqrt{3}}{2}/\frac{1}{2},
+			135/-\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+			120/-\frac{1}{2}/\frac{\sqrt{3}}{2},
+			% the coordinates for the third quadrant
+			210/-\frac{\sqrt{3}}{2}/-\frac{1}{2},
+			225/-\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+			240/-\frac{1}{2}/-\frac{\sqrt{3}}{2},
+			% the coordinates for the fourth quadrant
+			330/\frac{\sqrt{3}}{2}/-\frac{1}{2},
+			315/\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+			300/\frac{1}{2}/-\frac{\sqrt{3}}{2}}
+		\draw (\x:1.25cm) node[fill=white] {$\left(\xtext,\y\right)$};
+		
+		% draw the horizontal and vertical coordinates
+		% the placement is better this way
+		\draw (-1.25cm,0cm) node[above=1pt] {$(-1,0)$}
+		(1.25cm,0cm)  node[above=1pt] {$(1,0)$}
+		(0cm,-1.25cm) node[fill=white] {$(0,-1)$}
+		(0cm,1.25cm)  node[fill=white] {$(0,1)$};
+	\end{tikzpicture}
+	\caption{Cercle trigonométrique}
+\end{figure}
+
 \begin{proposition}
 	$\forall x \in \R,\ k \in \Z$.
 	\begin{enumerate}
@@ -72,6 +172,40 @@
 \begin{definition}
 	On définit $\arccos,\ \arcsin$ et $\arctan$ comme étant les bijections réciproques des fonctions $\cos,\ \sin$ et $\tan$.
 \end{definition}
+
+\begin{figure}[h!]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[domain=-1:1, axis lines=middle, grid=both, xlabel=$x$, ylabel=$y$, samples=100, legend pos=north west]
+			\addplot[color=green]{x};
+			\addlegendentry{$x$}
+			\addplot[color=red]  {cos(deg(x))};
+			\addlegendentry{$\cos(x)$}
+			\addplot[color=blue]  {rad(acos(x))};
+			\addlegendentry{$\arccos(x)$}
+		\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}
+		\begin{axis}[domain=-1:1, axis lines=middle, grid=both, xlabel=$x$, ylabel=$y$, samples=100, legend pos=north west]
+			\addplot[color=green]{x};
+			\addlegendentry{$x$};
+			\addplot[color=red]  {sin(deg(x))};
+			\addlegendentry{$\sin(x)$};
+			\addplot[color=blue]  {deg(asin(x))};
+			\addlegendentry{$\arcsin(x)$};
+		\end{axis}
+	\end{tikzpicture}
+	\begin{tikzpicture}
+		\begin{axis}[xmin=-5, xmax=5, ymin=-10, ymax=10, axis lines=middle, grid=both, xlabel=$x$, ylabel=$y$, samples=100, legend pos=north west]
+			\addplot[color=green]{x};
+			\addlegendentry{$x$};
+			\addplot[color=red]  {tan(deg(x))};
+			\addlegendentry{$\tan(x)$};
+			\addplot[color=blue]  {rad(atan(x))};
+			\addlegendentry{$\arctan(x)$};
+		\end{axis}
+	\end{tikzpicture}
+\end{figure}
 
 \begin{proposition}
     \begin{enumerate}
@@ -166,6 +300,26 @@
 	\end{align*}
 \end{definition}
 
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{0.45\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}[domain=0:5, axis lines=middle, grid=both, xlabel=$x$, ylabel=$e^x$, width=7cm]
+				\addplot[color=red, samples=50]{e^x};
+			\end{axis}
+		\end{tikzpicture}  
+		\caption{Fonction exponentielle}
+	\end{subfigure}
+	\begin{subfigure}{0.45\textwidth}
+		\begin{tikzpicture}
+			\begin{axis}[domain=0:10, axis lines=middle, grid=both, xlabel=$x$, ylabel=$\ln(x)$, width=7.5cm]
+				\addplot[color=red, samples=100]{ln(x)};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Fonction logarithme népérien}
+	\end{subfigure}
+\end{figure}
+
 \begin{proposition}
 	$\forall (x, y) \in \R_+^* \times \R$.
     \begin{multicols}{2}
@@ -211,6 +365,38 @@
 				 x &\mapsto \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
 	\end{align*}
 \end{definition}
+
+\begin{figure}[!h]
+	\centering
+	\begin{subfigure}{0.3\textwidth}
+		%\includegraphics[width=\textwidth, height=3.5cm]{images/ch.png}
+		
+		\begin{tikzpicture}
+			\begin{axis}[domain=-5:5, axis lines=middle, grid=both, xlabel=$x$, ylabel=$\cosh(x)$, width=5cm]
+				\addplot[color=red, samples=100]  {cosh(x)};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Fonction cosh}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		%\includegraphics[width=\textwidth, height=3.5cm]{images/sh.png}
+		\begin{tikzpicture}
+			\begin{axis}[domain=-5:5, axis lines=middle, grid=both, xlabel=$x$, ylabel=$\sinh(x)$, width=5cm]
+				\addplot[color=red, samples=100]  {sinh(x)};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Fonction sinh}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		%\includegraphics[width=\textwidth, height=3.5cm]{images/tanh.png}
+		\begin{tikzpicture}
+			\begin{axis}[domain=-5:5, axis lines=middle, grid=both, xlabel=$x$, ylabel=$\tanh(x)$, width=5cm]
+				\addplot[color=red, samples=100]  {tanh(x)};
+			\end{axis}
+		\end{tikzpicture}
+		\caption{Fonction tanh}
+	\end{subfigure}
+\end{figure}
 
 \begin{proposition}
 	$\forall (x,k) \in \R \times \Z$.
