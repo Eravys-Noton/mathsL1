@@ -298,10 +298,12 @@ Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibl
     \[ A^{-1} = \frac{1}{\det(A)} \left( \com(A) \right)^T \]
 
 \begin{definition}[Trace d'une matrice]
-	Soit $A \in \mathcal{M}_n(\K)$, la trace de $A$, notée $\tr(A)$ est définie par l'application suivante.
+	Soient $A \in \mathcal{M}_n(\K)$ et $a_{11}, \ldots, a_{nn}$ les coefficients de A. 
+	\\
+	La trace de $A$, notée $\tr(A)$ est définie par l'application suivante.
 	\begin{align*}
 		\tr : \mathcal{M}_n(\K) &\to \K \\
-		A &\mapsto \sum_{i = 1}^{n} A_{ii}
+		A &\mapsto \sum_{i = 1}^{n} a_{ii}
 	\end{align*}
     Autrement dit, c'est la somme des coefficients de la diagonale principale (celle allant du premier au dernier coefficient).
 \end{definition}
@@ -310,7 +312,7 @@ Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibl
 	\begin{multicols}{2}
 	    \begin{enumerate}
     		\item $\tr(A^T) = \tr(A)$
-    		\item $\tr(A \cdot B) = \tr(B \cdot A)$
+    		\item $\tr(A B) = \tr(B A)$
     	\end{enumerate}
 	\end{multicols}
 \end{lemma}
@@ -319,23 +321,17 @@ Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibl
 	\leavevmode
     \begin{enumerate}
         \item Par application directe de la définition de la trace et de la transposée.
-        \item On utilise la définition du produit matriciel.
+        \item Les coefficients $a_{11}, \ldots, a_{nn}$ et $b_{11}, \ldots, b_{nn}$ sont respectivement les coefficients des matrices $A$ et $B$. Les coefficients $(ab)_{11}, \ldots, (ab)_{nn}$ et $(ba)_{11}, \ldots, (ba)_{nn}$ sont respectivement ceux des matrices $AB$ et $BA$.
         \begin{align*}
-            \tr(AB) = \tr(BA) \iff \tr(AB) - \tr(BA) = 0
-        \end{align*}
-        \begin{align*}
-            \tr(AB) - \tr(BA) &=\sum_{i=1}^n (AB)_{ii} - \sum_{i=1}^n (BA)_{ii} \\ 
-            &= \sum_{i=1}^n [(AB)_{ii} - (BA)_{ii}] \\ 
-            &= \sum_{k=1}^n \left[ \sum_{i=1}^n \left( A_{ik} B_{ki} - B_{ik}A_{ki} \right) \right] \\ 
-            = 
-            \begin{split}
-                &[(\cancel{a_{11} b_{11}} - \cancel{b_{11} a_{11}}) +  (\cancel{a_{12} b_{21}} - \cancel{b_{12} a_{21}}) + \cdots + (\cancel{a_{1n} b_{n1}} - \cancel{b_{1n} a_{n1}})] \\
-                + &[(\cancel{a_{21} b_{12}} - \cancel{b_{21}a_{12}}) + (\cancel{a_{22} b_{22}} - \cancel{b_{22} a_{22}}) + \cdots + (\cancel{a_{2n}b_{n2}} - \cancel{b_{2n}a_{n2}})] \\
-                + &\cdots + \\ 
-                + &[(\cancel{a_{n1} b_{1n}} - \cancel{b_{n1} a_{1n}}) + (\cancel{a_{n2} b_{2n}} - \cancel{b_{n2} a_{2n}}) + \cdots + (\cancel{a_{nn} b_{nn}} - \cancel{b_{nn} a_{nn}})]
-            \end{split}
-            \\
-            &= 0
+        	\tr(AB) &= \sum_{i=1}^n (ab)_{ii} \\
+        			&= \sum_{i=1}^n \left( \sum_{k=1}^n a_{ik} b_{ki} \right) \\
+        			&= \sum_{i=1}^n (a_{i1} b_{1i} + \cdots + a_{in} b_{ni}) \\
+        			&= (a_{11} b_{11} + \cdots + a_{1n} b_{n1}) + \cdots + (a_{n1} b_{1n} + \cdots + a_{nn} b_{nn}) \\
+        			&= (b_{11}a_{11} + \cdots + b_{1n}a_{n1}) + \cdots + (b_{n1} a_{1n} + \cdots + b_{nn} a_{nn}) \\
+        			&= \sum_{i=1}^n \left( b_{i1} a_{1i} + \cdots + b_{in} a_{ni} \right) \\
+        			&= \sum_{i=1}^n \left( \sum_{k=1}^n b_{ik} a_{ki} \right) \\
+        			&= \sum_{i=1}^n (ba)_{ii} \\
+        			&= \tr(BA)
         \end{align*}
     \end{enumerate}
 \end{proof}
