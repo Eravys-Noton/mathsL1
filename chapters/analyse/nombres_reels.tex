@@ -5,24 +5,37 @@
 \end{definition}
 
 \begin{proposition}[Addition et multiplication sur $\R$]
-    On peut définir sur $\R$ une addition (notée \og + \fg) et une multiplication (notée \og $\times$ \fg ou \og $\cdot$ \fg) qui prolonge l'addition et la multiplication de $\N$ et vérifie les règles suivantes :
+    On peut définir sur $\R$ une addition (notée \og + \fg) et une multiplication (notée \og $\times$ \fg ou \og $\cdot$ \fg) qui prolonge l'addition et la multiplication de $\N$ et vérifie les règles suivantes pour $(a, b, c) \in \R^3$ :
     \begin{enumerate}
-        \item Commutativité : $\forall (a, b) \in \R^2,\ a + b = b + a \text{ et } a \cdot b = b \cdot a$.
-        \item Associativité : $\forall (a, b, c) \in \R^3,\ a + (b + c) = (a + b) + c \text{ et } a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
-        \item Distributivité : $\forall (a, b, c) \in \R^3,\ a \cdot (b + c) = a \cdot b + a \cdot b$.
-        \item \'Elements neutres ou absorbants : $\forall a \in \R : a + 0 = 0,\ a \cdot 1 = a,\ a \cdot 0 = 0$.
+        \item Commutativité : 
+        \[ a + b = b + a \text{ et } a \cdot b = b \cdot a \].
+        \item Associativité : 
+        \[ a + (b + c) = (a + b) + c \]
+        \[ a \cdot (b \cdot c) = (a \cdot b) \cdot c \]
+        \item Distributivité : 
+        \[ a \cdot (b + c) = a \cdot b + a \cdot b \]
+        \item \'Elements neutres ou absorbants :
+        \[ a + 0 = a \]
+        \[ a \cdot 1 = a \]
+        \[a \cdot 0 = 0 \]
     \end{enumerate}
 \end{proposition}
 
 \begin{proposition}[Relation d'ordre sur $\R$]
-    On peut définir une relation d'ordre sur $\R$, notée \og $\leq$ \fg, qui prolonge l'ordre de $\N$ et vérifie les règles suivantes :
+    On peut définir une relation d'ordre sur $\R$, notée \og $\leq$ \fg, qui prolonge l'ordre de $\N$ et vérifie les règles suivantes pour $(a, b, c) \in \R^3$ :
     \begin{enumerate}
-        \item Réflexivité : $\forall a \in \R,\ a \leq a$.
-        \item Antisymétrie : $\forall (a, b) \in \R^2,\ a \leq b$ et $b \leq a$ alors $a = b$.
-        \item Transitivité : $\forall (a, b, c) \in \R^3,\ a \leq b$ et $b \leq c$ alors $a \leq c$.
-        \item Ordre total : $\forall (a, b) \in \R^2,\ a \leq b$ ou\footnote{En mathématiques, le \og ou \fg n'est pas exclusif contrairement au français. Autrement dit, en mathématiques le \og ou \fg signifie \og soit l'un, soit l'autre, soit les deux \fg.} $b \leq a$.
-        \item Compatibilité avec l'addition : $\forall (a, b, c) \in \R^3,\ a + c \leq b + c$.
-        \item Compatibilité avec la multiplication par un réel positif : $\forall (a, b, c) \in \R^3$ : si $a \leq b$ et $c \geq 0$, alors $a \cdot c \leq b \cdot c$.
+        \item Réflexivité : 
+        \[ a \leq a \]
+        \item Antisymétrie : 
+        \[ a \leq b \land b \leq a \implies a = b \]
+        \item Transitivité : 
+        \[ a \leq b \land b \leq c \implies a \leq c \]
+        \item Ordre total : 
+        \[ a \leq b \lor b \leq a \]
+        \item Compatibilité avec l'addition :
+        \[ a + c \leq b + c \]
+        \item Compatibilité avec la multiplication par un réel positif :
+        \[ a \leq b \land c \geq 0 \implies a \cdot c \leq b \cdot c \]
     \end{enumerate}
 \end{proposition}
 
@@ -75,7 +88,7 @@
 \begin{proposition}
     Soient $A$ une partie de $\R$ non-vide, $M$ un majorant de $A$ et $m$ un minorant de $A$.  
     \begin{enumerate}
-        \item $M = \sup(A) \iff \forall \varepsilon > 0,\ ]M - \varepsilon,\ M] \cap A \neq \varnothing \iff \exists x \in A,\ M - x < \varepsilon$.
-        \item $m = \inf(A) \iff \forall \varepsilon > 0,\ [m, m + \varepsilon[ \cap A \neq \varnothing \iff \exists x \in A,\ x - m < \varepsilon$.
+        \item $M = \sup(A) \iff \forall \varepsilon > 0,\ ]M - \varepsilon,\ M] \cap A \neq \varnothing$.
+        \item $m = \inf(A) \iff \forall \varepsilon > 0,\ [m, m + \varepsilon[ \cap A \neq \varnothing $
     \end{enumerate}
 \end{proposition}

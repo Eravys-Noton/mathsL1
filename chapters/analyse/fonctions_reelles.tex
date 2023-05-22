@@ -18,9 +18,12 @@
 \begin{definition}
 	Soit $f : E \to F$ une fonction. On dit que :
     \begin{enumerate}
-        \item $f$ est \textbf{injective} si et seulement si : $\forall (x_1, x_2) \in E^2,\ f(x_1) = f(x_2) \implies x_1 = x_2$.
-        \item $f$ est \textbf{surjective} si et seulement si : $\forall y \in F,\ \exists x \in E,\ f(x) = y$.
-        \item $f$ est \textbf{bijective} si et seulement si : $\forall y \in E,\ \exists ! x \in E,\ f(x) = y$.
+        \item $f$ est \textbf{injective} si et seulement si : 
+        \[ \forall (x_1, x_2) \in E^2,\ f(x_1) = f(x_2) \implies x_1 = x_2 \]
+        \item $f$ est \textbf{surjective} si et seulement si : 
+        \[ \forall y \in F,\ \exists x \in E,\ f(x) = y \]
+        \item $f$ est \textbf{bijective} si et seulement si :
+        \[ \forall y \in E,\ \exists ! x \in E,\ f(x) = y \]
     \end{enumerate}
 \end{definition}
 
@@ -41,17 +44,22 @@
 \begin{definition}
 	Soient $I \subset \R$, $f : I \to \R$ et $T \in \R_+$. On dit que :
     \begin{enumerate}
-        \item $f$ est \textbf{paire} si et seulement si : $\forall x \in I,\ f(x) = f(-x)$.
-        \item $f$ est \textbf{impaire} si et seulement si : $\forall x \in I,\ -f(x) = f(-x)$.
-        \item $f$ est \textbf{$T$-périodique} si et seulement si : $\forall (x,n) \in \R \times \Z,\ f(x + nT) = f(x)$.
+        \item $f$ est \textbf{paire} si et seulement si : 
+        \[ \forall x \in I,\ f(x) = f(-x) \]
+        \item $f$ est \textbf{impaire} si et seulement si  :
+        \[ \forall x \in I,\ -f(x) = f(-x) \]
+        \item $f$ est \textbf{$T$-périodique} si et seulement si :
+        \[ \forall (x,n) \in \R \times \Z,\ f(x + nT) = f(x) \]
     \end{enumerate}
 \end{definition}
 
 \begin{definition}
 	Soient $I \subset \R,\ f : I \to \R$. On dit que :
 	\begin{enumerate}
-	    \item $f$ est \textbf{majorée} ou qu'elle admet un \textbf{majorant} si et seulement si : $\exists M \in \R,\ \forall x \in I,\ f(x) \leq M$.
-        \item $f$ est \textbf{minorée} ou qu'elle admet un \textbf{minorant} si et seulement si : $\exists m \in \R,\ \forall x \in I,\ f(x) \geq m$.
+	    \item $f$ est \textbf{majorée} ou qu'elle admet un \textbf{majorant} si et seulement si : 
+	    \[ \exists M \in \R,\ \forall x \in I,\ f(x) \leq M \]
+        \item $f$ est \textbf{minorée} ou qu'elle admet un \textbf{minorant} si et seulement si :
+        \[ \exists m \in \R,\ \forall x \in I,\ f(x) \geq m \]
         \item $f$ est \textbf{bornée} si et seulement si elle est \textbf{majorée} et \textbf{minorée}.
 	\end{enumerate}
 \end{definition}
@@ -59,11 +67,15 @@
 \begin{definition}
 	Soient $I \subset \R$ et $f : I \to \R$. On dit que :
     \begin{enumerate}
-        \item $f$ est \textbf{croissante} si et seulement si : $\forall (x, y) \in I^2,\ x \leq y \implies f(x) \leq f(y)$.
-        \item $f$ est \textbf{décroissante} si et seulement si : $\forall (x, y) \in I^2,\ x \leq y \implies f(x) \geq f(y)$.
+        \item $f$ est \textbf{croissante} si et seulement si :
+        \[ \forall (x, y) \in I^2,\ x \leq y \implies f(x) \leq f(y) \]
+        \item $f$ est \textbf{décroissante} si et seulement si : 
+        \[ \forall (x, y) \in I^2,\ x \leq y \implies f(x) \geq f(y) \]
         \item $f$ est \textbf{monotone} si et seulement si elle est \textbf{croissante} ou \textbf{décroissante}.
-        \item $f$ est \textbf{strictement croissante} si et seulement si : $\forall (x, y) \in I^2,\ x < y \implies f(x) < f(y)$.
-        \item $f$ est \textbf{strictement décroissante} si et seulement si : $\forall (x, y) \in I^2,\ x < y \implies f(x) > f(y)$.
+        \item $f$ est \textbf{strictement croissante} si et seulement si : 
+        \[ \forall (x, y) \in I^2,\ x < y \implies f(x) < f(y) \]
+        \item $f$ est \textbf{strictement décroissante} si et seulement si :
+        \[ \forall (x, y) \in I^2,\ x < y \implies f(x) > f(y) \]
         \item $f$ est \textbf{strictement monotone} si et seulement si elle est \textbf{strictement croissante} ou \textbf{strictement décroissante}.
     \end{enumerate}
 \end{definition}
