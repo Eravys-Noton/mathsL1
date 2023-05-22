@@ -22,7 +22,7 @@
 	\[ y = C \cdot \exp(-A(x)) \]
 \end{theorem}
 
-\begin{proof}Idée trouvée sur Bibmath pour la deuxième partie  \cite{bibmath_resolution_eq_diff}.
+\begin{proof}
     Il faut montrer l'inclusion dans les deux sens. \\
     \textbf{Inclusion réciproque :}
 	Définissons
@@ -31,7 +31,7 @@
 	\[ y' = -C a(x)e^{-A(x)} \]
 	puis
 	\[ y' + a(x)y(x) = -C a(x) e^{-A(x)} + a(x)Ce^{-A(x)} = 0 \]
-    \textbf{Inclusion directe :}
+    \textbf{Inclusion directe} \cite{bibmath_resolution_eq_diff} :
     Supposons $y$ solution de $y' + a(x) y = 0$.
     Alors il existerait un $C \in \R$ tel que $y(x) = Ce^{-A(x)}$.
     Posons $f(x) = y(x)e^{A(x)}$.
