@@ -12,14 +12,12 @@
 
 \begin{proposition}
 	$\forall \lambda \in \K^*,\ (P, Q) \in (\K[X])^2$. 
-	\begin{multicols}{2}
-        \begin{enumerate}
+	\begin{enumerate}
     		\item $\operatorname{deg}(\lambda) = 0$.
     		\item $\operatorname{deg}(P \cdot Q) = \operatorname{deg}(P) + \operatorname{deg}(Q)$.
     		\item $\operatorname{deg}(P + Q) = \mathrm{max}\left(\operatorname{deg}(P),\ \operatorname{deg}(Q)\right)$.
             \item $\operatorname{deg}(0) = -\infty$.
     	\end{enumerate}
-    \end{multicols}
 \end{proposition}
 
 \section{Arithmétique des polynômes}
@@ -54,6 +52,32 @@
 \begin{theorem}[Théorème fondamental de l'algèbre]
 	Soit $P(X)$ un polynôme à coefficients complexes de degré $n$. $P(X)$ admet $n$ racines complexes. 
 \end{theorem}
+
+\begin{theorem}
+	Soient $P$ un polynôme de degré $n$ et $a_0, \ldots, a_n \in \Z$ ses coefficients tels que :
+	\[ P(X) = a_n X^n + \cdots + a_1 X + a_0 \]
+	\[ \exists (p, q) \in \Z \times \Z^*,\ \pgcd(p, q) = 1,\ P\left( \frac{p}{q} \right) \implies p \mid a_0 \land q \mid a_n \]
+\end{theorem}
+
+\begin{proof}
+	\[ P \left(\frac{p}{q}\right) = 0 \]
+	\begin{align}\label{proof_racines_rationnelles_1}
+		a_n \frac{p^n}{q^n} + \cdots + a_1 \frac{p}{q} + a_0 &= 0 
+	\end{align}
+	\begin{align}\label{proof_racines_rationnelles_2}
+		(\ref{proof_racines_rationnelles_1}) \cdot q^n &\iff a_n p^n + \cdots + a_1 p q^{n-1} + a_0 q^n = 0 \\
+	&\iff a_0 q^n = -a_n p^n - \cdots - a_1 p q^{n-1} \nonumber \\
+	&\iff a_0 = -\frac{a_n}{q^n} p^n - \cdots - \frac{a_1}{q} p \nonumber \\
+	&\iff a_0 = p \left( - \frac{a_1}{q} - \cdots - \frac{a_n}{q^n} p^{n-1} \right) \nonumber \\
+	&\iff p \mid a_0 \nonumber
+	\end{align}
+	\begin{align*}
+		(\ref{proof_racines_rationnelles_2}) &\iff a_n p^n = - a_{n-1} p^{n-1} q - \cdots - a_1 p q^{n-1} - a_0 q^n \\
+		&\iff a_n = - \frac{a_{n-1}}{p} q - \cdots - \frac{a_1}{p^{n-1}} q^{n-2} - \frac{a_0}{p^n} q^n \\
+		&\iff a_n = q \left( -\frac{a_{n-1}}{p} - \cdots - \frac{a_0}{p^n} q^{n-1} \right) \\
+		&\iff q \mid a_n
+	\end{align*}
+\end{proof}
 
 \section{Fractions rationnelles}
 \begin{definition}[Fraction rationnelle]

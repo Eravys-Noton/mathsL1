@@ -295,13 +295,11 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 
 \begin{theorem}[Théorème des suites adjacentes]
     Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ deux suites telles que :
-    \begin{multicols}{3}
-        \begin{enumerate}
+    \begin{enumerate}
             \item $(u_n)_{n \in \N}$ est croissante.
             \item $(v_n)_{n \in \N}$ est décroissante.
             \item $\lim_{n \to +\infty} (v_n - u_n) = 0$
         \end{enumerate}
-    \end{multicols}
     \noindent Alors $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ convergent vers la même limite.
 \end{theorem}
 
@@ -392,19 +390,15 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
     Soit $(u_n)_{n \in \N}$ une suite. \\
     \begin{enumerate}
         \item Si elle est \textbf{croissante} alors :
-        \begin{multicols}{2}
-            \begin{itemize}
+        \begin{itemize}
                 \item ou bien elle converge.
                 \item ou bien elle tend vers $+\infty$.
             \end{itemize}
-        \end{multicols}
         \item Si elle est \textbf{décroissante} alors :
-        \begin{multicols}{2}
-            \begin{itemize}
+        \begin{itemize}
                 \item ou bien elle diverge.
                 \item ou bien elle tend vers $-\infty$.
             \end{itemize}
-        \end{multicols}
     \end{enumerate}
 \end{theorem}
 
@@ -423,8 +417,10 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 
 \begin{theorem}[Limites par comparaison]
    Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ deux suites telles que $u_n \leq v_n$.
-   \[ \lim_{n \to +\infty} u_n = +\infty \implies \lim_{n \to +\infty} v_n = +\infty \]
-   \[ \lim_{n \to +\infty} v_n = -\infty \implies \lim_{n \to +\infty} u_n = -\infty \]
+   \begin{enumerate}
+   	\item $\lim_{n \to +\infty} u_n = +\infty \implies \lim_{n \to +\infty} v_n = +\infty$.
+   	\item $\lim_{n \to +\infty} v_n = -\infty \implies \lim_{n \to +\infty} u_n = -\infty$.
+   \end{enumerate}
 \end{theorem}
 
 \begin{table}[!h]

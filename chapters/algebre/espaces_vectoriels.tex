@@ -19,13 +19,11 @@
 	Soit $(G, *)$ un magma.
 	\\ 
 	On dit que $(G, *)$ est un groupe si et seulement si pour tout $(g_1, g_2, g_3) \in G^3$ : 
-    \begin{multicols}{2}
-    	\begin{enumerate}
+    \begin{enumerate}
     		\item $(g_1 * g_2) * g_3 = g_1 * (g_2 * g_3)$
     		\item $\exists 0_G \in G,\ g_1 * 0_G = 0_G * g_1 = g_1$
     		\item $\exists g^{-1} \in G,\ g_1 * g^{-1} = g^{-1} * g_1 = 0_G$
     	\end{enumerate}
-    \end{multicols}
     \noindent De plus, si et seulement :
     \[ \forall (g_1, g_2) \in G^2,\ g_1 * g_2 = g_2* g_1 \]
     on dit que $(G, *)$ est un groupe \textbf{commutatif} ou \textbf{abélien}.
@@ -33,22 +31,18 @@
 
 \begin{definition}[Anneau \cite{bibmath_resume_groupes}]
 	Soit $A$ un ensemble muni de deux lois de compositions \textbf{internes} \og $+$ \fg et \og $\cdot$ \fg sur $A$ telles que pour tout $(a, b, c) \in A^3$ : 
-	\begin{multicols}{2}
-		\begin{enumerate}
+	\begin{enumerate}
 			\item $(A, +)$ est un groupe \textbf{commutatif}.
 			\item $a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
 			\item $a \cdot (b + c) = a \cdot b + a \cdot c$.
 			\item $(b + c) \cdot a = b \cdot a + c \cdot a$.
 			\item \og $\cdot$ \fg possède un \textbf{élément neutre}.
 		\end{enumerate}
-	\end{multicols}
 	\noindent On dit que $A$ est \textbf{intègre} si $\forall (a, b) \in A^2$ :
-	\begin{multicols}{2}
-		\begin{enumerate}
+	\begin{enumerate}
 			\item $A$ est commutatif : $a \cdot b = b \cdot a$.
 			\item $a \cdot b = 0 \implies a = 0 \lor b = 0$.
 		\end{enumerate}
-	\end{multicols}
 \end{definition}
 
 \begin{definition}[Corps \cite{bibmath_resume_groupes}]
@@ -78,26 +72,22 @@
 	\begin{enumerate}
 		\item $(E, +)$ est un groupe commutatif.
 		\item $\forall (\lambda_1, \lambda_2) \in \K^2,\ (u, v) \in E^2 :$
-		\begin{multicols}{2}
-            \begin{enumerate}
+		\begin{enumerate}
 			\item $\lambda_1 \cdot (u + v) = \lambda_1 \cdot u + \lambda_1 \cdot v$
 			\item $(\lambda_1 + \lambda_2) \cdot u = \lambda_1 \cdot u + \lambda_2 \cdot u$
 			\item $(\lambda_1 \cdot \lambda_2) \cdot u = \lambda_1 \cdot (\lambda_2 \cdot u)$
 			\item $1 \cdot u = u$
 		\end{enumerate}
-        \end{multicols}
 	\end{enumerate}
 \end{definition}
 
 \begin{definition}[Sous-espace vectoriel]
 	Soit $E$ un espace-vectoriel, $F$ est un sous-espace vectoriel de $E$ si :
-	\begin{multicols}{2}
-	    \begin{enumerate}
+	\begin{enumerate}
     		\item $F \subset E$
     		\item $F \neq \emptyset$
     		\item $\forall (u, v) \in F^2,\ \lambda \in \K,\ u + \lambda v \in F$
     	\end{enumerate}
-	\end{multicols}
 \end{definition}
 
 \begin{definition}[Somme directe]
@@ -171,13 +161,11 @@
 
 \begin{proposition}
 	Soient $E$ un espace vectoriel de dimension $n$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de $n$ vecteurs de $E$. Alors on a :
-	\begin{multicols}{3}
-	    \begin{enumerate}
+	\begin{enumerate}
 		\item $\mathcal{F}$ est une base.
 		\item $\mathcal{F}$ est libre.
 		\item $\mathcal{F}$ est génératrice.
 	\end{enumerate}
-	\end{multicols}
 	\noindent Ainsi il suffit de montrer que $\mathcal{F}$ est libre pour montrer les deux autres propriétés.
 \end{proposition}
 
