@@ -5,11 +5,7 @@
 	Soient $n \in \N,\ a_0, \ldots, a_n \in \R$.
 	\begin{center}
 		$
-		f :
-		\begin{array}{|ccc}
-			\R & \to & \R \\
-             x & \mapsto & \sum_{i = 0}^{n} a_i x^i
-		\end{array}
+		\appli{f}{\R}{\R}{x}{\sum_{i=0}^n a_i x^i}
 		$
 	\end{center}
 \end{definition}
@@ -18,11 +14,7 @@
 	\[ \forall x \in \R,\ \exists ! E(x) \in \Z,\ E(x) \leq x < E(x + 1) \]
 	\begin{center}
 		$
-		E :
-		\begin{array}{|ccc}
-			\R & \to & \Z \\
-			x & \mapsto & E(x)
-		\end{array}
+		\appli{E}{\R}{\Z}{x}{E(x)}
 		$
 	\end{center}
 \end{definition}
@@ -31,11 +23,7 @@
 	Soit $a \in \R$.
 	\begin{center}
 		$
-		f :
-		\begin{array}{|ccc}
-			\R_+^* & \to & \R \\
-			x & \mapsto & x^a
-		\end{array}
+		\appli{f}{\R_+^*}{\R}{x}{x^a}
 		$
 	\end{center}
 \end{definition}
@@ -55,23 +43,12 @@
 	Pour tout $k \in \Z$ :	
 	\begin{center}
 		$
-		\cos :
-		\begin{array}{|ccc}
-			 \R & \to & [-1, 1] \\
-		      x & \mapsto & \cos(x)
-		\end{array}
+		\appli{\cos}{\R}{[-1,1]}{x}{\cos(x)}
 		\qquad
-		\sin :
-		\begin{array}{|ccc}
-			 \R & \to & [-1, 1] \\
-		      x & \mapsto & \sin(x)
-		\end{array}
+		\appli{\sin}{\R}{[-1,1]}{x}{\sin(x)}
 		\qquad
 		\tan :
-		\begin{array}{|ccc}
-			 \R \backslash \left\{ \frac{k \pi}{2} \right\} & \to & \R \\ 
-			  x & \mapsto & \frac{\sin(x)}{\cos(x)}
-		\end{array}
+		\appli{\tan}{\R \backslash \left\{ \frac{k \pi}{2} \right\}}{\R}{x}{\frac{\sin(x)}{\cos(x)}}
 		$
 	\end{center}	
 \end{definition}
@@ -287,11 +264,7 @@
 \begin{definition}[Fonction exponentielle]
 	\begin{center}
 		$
-		\exp : 
-		\begin{array}{|ccc}
-			\R & \to & \R_+^* \\
-			x & \mapsto & \exp(x) \equiv e^x
-		\end{array}
+		\appli{\exp}{\R}{\R_+^*}{x}{\exp(x) \equiv e^x}
 		$
 	\end{center}
 \end{definition}
@@ -313,11 +286,7 @@
 \begin{definition}[Logarithme néperien]
 	\begin{center}
 		$
-		\ln : 
-		\begin{array}{|ccc}
-			\R_+^* & \to & \R \\
-			x & \mapsto & \ln(x)
-		\end{array}
+		\appli{\ln}{\R_+^*}{\R}{x}{\ln(x)}
 		$
 	\end{center}
 \end{definition}
@@ -354,21 +323,17 @@
 
 \begin{proposition}
 	La fonction logarithme néperien est \textbf{bijective} et \textbf{strictement croissante} et $\ln(1) = 0$.
-    \begin{multicols}{2}
-        \begin{enumerate}
+    \begin{enumerate}
             \item $\lim_{x \to 0} \ln(x) = -\infty$.
             \item $\lim_{x \to +\infty} \ln(x) = +\infty$.
         \end{enumerate}
-    \end{multicols}
     \noindent $\forall (x, y) \in \R^2$.
-    \begin{multicols}{2}
-        \begin{enumerate}
+    \begin{enumerate}
             \item $\ln(xy) = \ln(x) + \ln(y)$.
             \item $\ln(\frac{1}{x}) = -\ln(x)$.
             \item $\ln(\frac{x}{y}) = \ln(x) - \ln(y)$.
             \item $\ln(x^n) = n\ln(x)$.
         \end{enumerate}
-    \end{multicols}
 \end{proposition}
 
 \section{Fonctions hyperboliques}
@@ -377,23 +342,11 @@
 	
 	\begin{center}
 		$
-		\cosh :
-		\begin{array}{|ccc}
-			\R & \to & \R \\
-		         x & \mapsto & \frac{e^x + e^{-x}}{2}
-		\end{array}
+		\appli{\cosh}{\R}{\R}{x}{\frac{e^x + e^{-x}}{2}}
 		\qquad 
-		\sinh :
-		\begin{array}{|ccc}
-			\R & \to & \R \\ 
-			     x & \mapsto & \frac{e^x - e^{-x}}{2}
-		\end{array}
+		\appli{\sinh}{\R}{\R}{x}{\frac{e^x - e^{-x}}{2}}
 		\qquad
-		\tanh : 
-		\begin{array}{|ccc}
-			\R & \to & \R \\ 
-				 x & \mapsto & \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}
-		\end{array}
+		\appli{\tanh}{\R}{\R}{x}{\frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^x + e^{-x}}}
 		$
 	\end{center}
 \end{definition}

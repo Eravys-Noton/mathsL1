@@ -86,17 +86,9 @@
 	Soient $f, g$ deux fonctions et $A \subset \R$.
 	\begin{center}
 		$
-		f + g :
-		\begin{array}{|ccc}
-			A & \to & \R \\
-		    x & \mapsto & f(x) + g(x)
-		\end{array}
+		\appli{f+g}{A}{\R}{x}{f(x)+g(x)}
 		\qquad
-		f \cdot g :
-		\begin{array}{|ccc}
-			A & \to & \R \\
-		    x & \mapsto & f(x) \cdot g(x)
-		\end{array}
+		\appli{fg}{A}{\R}{x}{f(x)g(x)}
 		$
 	\end{center}
 \end{definition}
@@ -105,11 +97,7 @@
 	Soient $E, F, G, H \subset \R,\ F \subset G,\ f : E \to F,\ g : G \to H$.
 	\begin{center}
 		$
-		g \circ f :
-		\begin{array}{|ccc}
-			E & \to & H \\
-		            x & \mapsto & g(f(x))
-		\end{array}
+		\appli{g \circ f}{E}{H}{x}{g(f(x))}
 		$
 	\end{center}
 \end{definition}
@@ -118,11 +106,7 @@
     Soient $E, F \subset \R$.
 	\begin{center}
 		$
-		id_E : 
-		\begin{array}{|ccc}
-			E & \to & F \\
-			x & \mapsto & x
-		\end{array}
+		\appli{id_E}{E}{F}{x}{x}
 		$
 	\end{center}
 \end{definition}

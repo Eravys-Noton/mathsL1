@@ -96,12 +96,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
     Soient $\mathcal{B} = (b_1, \ldots, b_n)$ une base de $E$, $(\lambda_1, \ldots, \lambda_n) \in \K^n$ et $\varphi \in \mathcal{L}(E, \K^n)$  alors :
     \begin{center}
     	$
-    	\varphi :
-    	\begin{array}{|ccc}
-    		E & \to & \K^n \\
-        	\sum_{i = 1}^{n} \lambda_i b_i & \mapsto & 
-            (\lambda_i)_{1 \leq i \leq n}
-    	\end{array}
+    	\appli{\varphi}{E}{\K^n}{\sum_{i = 1}^{n} \lambda_i b_i}{(\lambda_i)_{1 \leq i \leq n}}
     	$
     \end{center}
     est une bijection, alors c'est un isomorphisme.
@@ -165,11 +160,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
     Soient $E = F \oplus G$, $u \in F$, $v \in G$, alors l'application 
     \begin{center}
     	$
-    	p_F :
-    	\begin{array}{|ccc}
-    		  E & \to & E \\
-    		 u + v & \mapsto & u
-    	\end{array}
+    	\appli{p_F}{E}{E}{u+v}{u}
     	$
     \end{center}
     est appelée un \textbf{projecteur} sur $F$ \textbf{parallélement} à $G$.
