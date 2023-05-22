@@ -117,9 +117,9 @@ L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est 
 			\end{pmatrix}
 		\end{align*}
 		\item Si $n = p$ alors on peut définir la multiplication entre $A$ et $B$.\\
-		Soit $C = AB$. Chaque coefficient $C_{ij}$ est défini par :
+		Soit $C = AB$. Chaque coefficient $c_{ij}$ est défini par :
 		\begin{align*}
-			C_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}
+			c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}
 		\end{align*}
         Autrement dit, le coefficient $c_{ij}$ pour $C = AB$ est donné par :
         \begin{align*}
@@ -196,53 +196,102 @@ L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est 
 \end{lemma}
 
 \begin{definition}[Transposée]
-	Soient $(m,n) \in (\N^*)^2$, $A \in \mathcal{M}_{m, n}(\K)$.
+	Soient $(m,n) \in (\N^*)^2$, $A \in \mathcal{M}_{m, n}(\K)$ de coefficients $a_{11}, \ldots, a_{mn} \in \K$.
 	\\
-	On définit $A^T \in \mathcal{M}_{n, m}(\K)$ la transposée de $A$ par :
-	\[(A^T)_{ij} = A_{ji}\]
+	La transposée de $A$ est notée $A^T$. $A^T \in \mathcal{M}_{n,m}(\K)$ et pour $a^T_{11}, \ldots, a^T_{nm} \in \K$ ses coefficients :
+	\[ (a^T_{ji})_{\substack{1 \leq i \leq m \\ 1 \leq j \leq n}} = (a_{ij})_{\substack{1 \leq i \leq m \\ 1 \leq j \leq n}} \]
     Autrement dit, les colonnes de $A$ deviennent ses lignes et réciproquement.
 \end{definition}
 
 \begin{definition}
 	Soient $n \in \N^*$ et $M \in \mathcal{M}_n(\K)$.
-	\begin{multicols}{2}
 	    \begin{enumerate}
     		\item $M$ est symétrique $\iff M^T = M$
     		\item $M$ est anti-symétrique $\iff M^T = -M$
     	\end{enumerate}
-	\end{multicols}
 \end{definition}
 
-Pour calculer le déterminant d'une matrice carrée, il existe plusieurs méthodes.
-    Soit $A$ une matrice carrée de taille $n \times n$. 
-    \begin{itemize}
+Pour calculer le déterminant d'une matrice carrée noté $\det(A)$ ou s'il n'y a pas d'ambiguïté $\abs{A}$, il existe plusieurs méthodes.
+	\\
+    Soit $A$ une matrice carrée de taille $n \times n$ de coefficients $a_{11},\ldots,a_{nn} \in \K$. 
+    \begin{enumerate}
         \item $n = 2$. 
         \[ 
         A = 
         \begin{pmatrix}
-            a & b \\
-            c & d
+            a_{11} & a_{12} \\
+            a_{21} & a_{22}
         \end{pmatrix}
-        \quad 
-        \det(A) = ad - bc 
         \]
+        \[ \det(A) = a_{11} a_{22} - a_{12} a_{21} \]
         \item $n = 3$
         \[
         A = 
         \begin{pmatrix}
-            a & b & c \\
-            d & e & f \\
-            g & h & i
+            a_{11} & a_{12} & a_{13} \\
+            a_{21} & a_{22} & a_{23} \\
+            a_{31} & a_{32} & a_{33}
         \end{pmatrix}
-        \quad 
-        \det(A) = (aei + bfg + cdh) - (ceg + bdi + afh)
         \]
-        \item $n \geq 3$.
-        (Meilleure rédaction prévue)
+        \[ \det(A) = (a_{11} a_{22} a_{33} + a_{12} a_{23} a_{31} + a_{13} a_{21} a_{32} ) - (a_{13} a_{22} a_{31} + a_{12} a_{21} a_{33} + a_{11} a_{23} a_{32}) \]
+        \item $n \geq 3$ \cite{wikipedia_determinant}.
+        On peut calculer le déterminant d'une matrice en calculant à l'aide des déterminants des matrices de taille $n-1$. Pour se faire on développe en lignes ou en colonnes.
+        Notons $A_{i,j}$ ma matrice obtenue en enlevant à $A$ sa $i$-ème ligne et sa $j$-ème colonne.
         \begin{align*}
-            \det(A) = \sum_{j = 1}^{n} A_{ij} = (-1)^{i+j} \cdot \det(A^{ij})
+        	A_{i,j} = 
+        	\begin{pmatrix}
+        		a_{1,1} & \cdots & a_{1, j-1} & a_{1, j+1} & \cdots & a_{1,n} \\
+        		\vdots & & \vdots & \vdots & & \vdots \\
+        		a_{i-1, 1} & \ldots & a_{i-1, j-1} & a_{i-1, j+1} & \cdots & a_{i-1,n} \\
+        		a_{i+1, 1} & \cdots & a_{i+1, j-1} & a_{i+1, j+1} & \cdots & a_{i+1, n} \\
+        		\vdots & & \vdots & \vdots & & \vdots \\
+        		a_{n,1} & \cdots & a_{n,j-1} & a_{n,j+1} & \cdots & a_{n,n}
+        	\end{pmatrix}
         \end{align*}
-    \end{itemize}
+        On peut alors développer le calcul du déterminant  suivant une ligne ou une colonne : 
+        \begin{enumerate}
+        	\item Suivant la ligne $i$ : 
+        	\[ \det(A) = \sum_{j=1}^n a_{i,j} (-1)^{i+j} \det(A_{i,j}) \]
+        	\item Suivant la colonne $j$ : 
+        	\[ \det(A) = \sum_{i=1}^n a_{i,j} (-1)^{i+j} \det(A_{i,j}) \]
+        \end{enumerate}
+    \end{enumerate}
+
+\begin{example}
+	Calculons le déterminant de la matrice 
+	\begin{align*}
+		A = 
+		\begin{pmatrix}
+		2 & 1 & -2 \\
+		1 & 1 & -2 \\
+		1 & 2 & -1
+		\end{pmatrix}
+	\end{align*}
+	en développant suivant la première ligne.
+	\begin{align*}
+		\det(A) &= 2 (-1)^{1+1} 
+		\begin{vmatrix}
+			1 & -2 \\
+			2 & -1	
+		\end{vmatrix}			
+		+ 1 (-1)^{1 + 2}
+		\begin{vmatrix}
+			1 & -2 \\
+			1 & -1
+		\end{vmatrix}
+		+ (-2) (-1)^{1 + 3}
+		\begin{vmatrix}
+			1 & 1 \\
+			1 & 2
+		\end{vmatrix}
+		\\
+		&=
+		2[1 \cdot (-1) - (-2) \cdot 2] -1[1 \cdot (-1) - (-2) \cdot 1] -2 [1 \cdot 2 - 1 \cdot 1]
+		\\
+		&= 6 - 1 - 2 \\
+		&= 3
+	\end{align*}
+\end{example}
 
 \begin{proposition}
 	Soient $n \in \N^*$, $(A, B) \in (\mathcal{M}_n(\K))^2,\ \lambda \in \K$.
