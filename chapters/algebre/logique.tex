@@ -20,14 +20,14 @@
 Soient $P$ et $Q$ deux prédicats.
 \begin{table}[!h]
 	\centering
-	\begin{tabular}{cccccc}
+	\begin{tabular}{ccccccc}
 		\toprule
-		$P$ & $Q$ & $P \land Q$ & $P \veebar Q$ & $\neg P$ & $P \implies Q$ \\
+		$P$ & $Q$ & $P \land Q$ & $P \lor Q$ & $\neg P$ & $P \implies Q$ & $P \veebar Q$ \\
 		\midrule
-		$V$ & $V$ & $V$ & $V$ & $F$ & $V$ \\
-		$V$ & $F$ & $F$ & $V$ & $F$ & $F$ \\
-		$F$ & $V$ & $F$ & $V$ & $V$ & $V$ \\
-		$F$ & $F$ & $F$ & $F$ & $V$ & $V$ \\
+		$V$ & $V$ & $V$ & $V$ & $F$ & $V$ & $F$ \\
+		$V$ & $F$ & $F$ & $V$ & $F$ & $F$ & $V$ \\
+		$F$ & $V$ & $F$ & $V$ & $V$ & $V$ & $V$ \\
+		$F$ & $F$ & $F$ & $F$ & $V$ & $V$ & $F$ \\
 		\bottomrule
 	\end{tabular}
 	\caption{Table de vérité}
