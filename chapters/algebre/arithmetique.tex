@@ -1,13 +1,13 @@
 \chapter{Arithmétique}
 \begin{definition}
-    Soient $a \in \Z, b \in \Z^*$.
+    Soit $(a,b) \in \Z \times \Z^*$.
     \[ a \text{ est un multiple de } b \iff b \text{ est un diviseur de } a \iff b \mid a \iff \exists q \in \Z, a = bq \]
 \end{definition}
 
 \section{Divisibilité}
 
 \begin{theorem}[Division euclidienne]
-    Soient $a \in \Z, b \in \Z^*$.
+    Soit $(a,b \in \Z \times \Z^*$.
     \[ \exists ! (q, r) \in \Z^2, a = bq + r, (0 \leq r < \abs{b}) \]
 \end{theorem}
 
@@ -74,7 +74,7 @@
 \end{theorem}
 
 \begin{proof}
-	
+	\leavevmode
 	\begin{enumerate}
 		\item Posons $\ell \coloneqq \ppcm(a,b)$. 
 		\[ \exists ! (q,r) \in \Z^2,\ d \coloneqq q \ell + R,\ 0 \leq r < \ell \]

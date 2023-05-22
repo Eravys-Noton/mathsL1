@@ -97,7 +97,7 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 \begin{theorem}[Formule de Taylor-Young]
     Soient $f \in \mathcal{C}^{n}(I, \R),\ x_0 \in I$.
     \begin{align*}
-        f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + o((x - x_0)^n) 
+        f(x) = T_{n, x_0}^f(x) + o((x - x_0)^n) 
     \end{align*}
 \end{theorem}
 
@@ -109,7 +109,7 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
             ]x_0, x[ \text{ si } x > x_0 \\
             ]x, x_0[ \text{ si } x < x_0
         \end{cases},\
-        f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + 
+        f(x) = T_{n, x_0}^f(x) + 
         \frac{f^{(n+1)}(c)}{(n+1)!} (x - x_0)^{n+1}
     \end{align*}
 \end{theorem}
@@ -117,7 +117,7 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 \begin{theorem}[Formule de Taylor avec reste intégral]
     Soient $f \in \mathcal{C}^{n+1}(I, \R),\ x_0 \in I$.
     \begin{align*}
-        f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k + \int_{x_0}^{x} \frac{f^{(n+1)}(t)}{n!} (x - t)^n \diffd t
+        f(x) = T_{n, x_0}^f(x) + \int_{x_0}^{x} \frac{f^{(n+1)}(t)}{n!} (x - t)^n \diffd t
     \end{align*}
 \end{theorem}
 
