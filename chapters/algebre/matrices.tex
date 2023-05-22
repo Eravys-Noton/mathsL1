@@ -199,9 +199,28 @@ L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est 
 	Soient $(m,n) \in (\N^*)^2$, $A \in \mathcal{M}_{m, n}(\K)$ de coefficients $a_{11}, \ldots, a_{mn} \in \K$.
 	\\
 	La transposée de $A$ est notée $A^T$. $A^T \in \mathcal{M}_{n,m}(\K)$ et pour $a^T_{11}, \ldots, a^T_{nm} \in \K$ ses coefficients :
-	\[ (a^T_{ji})_{\substack{1 \leq i \leq m \\ 1 \leq j \leq n}} = (a_{ij})_{\substack{1 \leq i \leq m \\ 1 \leq j \leq n}} \]
-    Autrement dit, les colonnes de $A$ deviennent ses lignes et réciproquement.
+	\[ (a^T_{ij})_{\substack{1 \leq i \leq m \\ 1 \leq j \leq n}} = (a_{ji})_{\substack{1 \leq i \leq m \\ 1 \leq j \leq n}} \]
 \end{definition}
+
+\begin{example}
+	Soit $A$ une matrice telle que :
+	\[ 
+	A = 
+	\begin{pmatrix}
+	1 & 2 & 3 \\
+	4 & 5 & 6 \\
+	7 & 8 & 9
+	\end{pmatrix}
+	\]
+	\[
+	A^T =
+	\begin{pmatrix}
+	1 & 4 & 7 \\
+	2 & 5 & 8 \\
+	3 & 6 & 9
+	\end{pmatrix}
+	\]
+\end{example}
 
 \begin{definition}
 	Soient $n \in \N^*$ et $M \in \mathcal{M}_n(\K)$.
