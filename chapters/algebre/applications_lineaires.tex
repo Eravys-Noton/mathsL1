@@ -94,15 +94,20 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 
 \begin{lemma}
     Soient $\mathcal{B} = (b_1, \ldots, b_n)$ base de $E$ et $\varphi \in \mathcal{L}(E, \K^n)$  alors :
-    \begin{align*}
-        \varphi : E &\to \K^n \\
-        x \equiv \sum_{i = 1}^{n} \lambda_i b_i &\mapsto 
+    \begin{center}
+    	$
+    	\varphi :
+    	\begin{array}{|ccc}
+    		E & \to & \K^n \\
+        x \equiv \sum_{i = 1}^{n} \lambda_i b_i & \mapsto & 
             \begin{pmatrix}
                 \lambda_1 \\
                 \vdots \\
                 \lambda_n
             \end{pmatrix}
-    \end{align*}
+    	\end{array}
+    	$
+    \end{center}
     est une bijection, alors c'est un isomorphisme.
 \end{lemma}
 
@@ -162,10 +167,15 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 
 \begin{definition}
     Soient $E = F \oplus G$, $u \in F$, $v \in G$, alors l'application 
-    \begin{align*}
-        p_F : E &\to E \\
-            x \equiv u + v &\mapsto u
-    \end{align*}    
+    \begin{center}
+    	$
+    	p_F :
+    	\begin{array}{|ccc}
+    		  E & \to & E \\
+    		 u + v & \mapsto & u
+    	\end{array}
+    	$
+    \end{center}
     est appelée un \textbf{projecteur} sur $F$ \textbf{parallélement} à $G$.
 \end{definition}
 

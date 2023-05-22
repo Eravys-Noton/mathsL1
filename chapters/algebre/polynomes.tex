@@ -73,24 +73,18 @@
 	\\
 	Sur $\R$ :
 	\begin{align*}
-		Q(X) &= (X - a_1)^{\alpha_1} \ldots (X - a_n)^{\alpha_n} (X^2 + b_1 X + c_1)^{\beta_1} \ldots (X^2 + b_m X + c_m)^{\beta_m} \\ 
-            &= \prod_{i = 0}^{n} (X - a_i)^{\alpha_i} \cdot \prod_{k = 0}^{m} (X^2 + b_k X + c_k)^{\beta_k}
+		Q(X) &= \prod_{i = 0}^{n} (X - a_i)^{\alpha_i} \cdot \prod_{k = 0}^{m} (X^2 + b_k X + c_k)^{\beta_k}
 	\end{align*}
 	Alors $\forall A, B, C \in \R$, $F$ s'écrit de manière unique sous la forme :
 	\begin{align*}
-		F(X) &= \left[ \left( \frac{A_{11}}{(X - a_1)^1} + \cdots + \frac{A_{1n}}{(X - a_1)^{\alpha_1}} \right) + \cdots + \left( \frac{A_{n1}}{(X - a_n)^1} + \cdots + \frac{A_{nn}}{(X - a_n)^{\alpha_n}}  \right) \right] \\
-		+ &\left[ \left( \frac{B_{11}X + C_{11}}{(X^2 + b_1 X + c_1)^1} + \cdots + \frac{B_{1m}X + C_{1m}}{(X^2 + b_1 X + c_1)^{\beta_1}} \right) + \cdots + \right. \\
-		&\left. \left( \frac{B_{m1}X + C_{m1}}{(X^2 + b_m X + c_m)^1} + \cdots + \frac{B_{mm}X + C_{mm}}{(X^2 + b_m X + c_m)^{\beta_m}}  \right) \right] \\
-        F(X) &=  \sum_{i = 1}^{n} \sum_{j = 1}^{\alpha_i} \frac{A_{ij}}{\left(X - a_i\right)^{j} } + \sum_{k = 1}^{m} \sum_{l = 1}^{\beta_k} \frac{B_{kl}X + C_{kl}}{(X^2 + b_kX + c_k)^{l}}
+        F(X) &=  \sum_{i = 1}^{n} \sum_{j = 1}^{\alpha_i} \frac{A_{ij}}{\left(X - a_i\right)^{j} } + \sum_{i = 1}^{m} \sum_{j = 1}^{\beta_i} \frac{B_{ij}X + C_{ij}}{(X^2 + b_iX + c_i)^{j}}
 	\end{align*}
 	Sur $\C$ :
 	\begin{align*}
-		Q(X) &= (X - a_1)^{\alpha_1} \ldots (X - a_n)^{\alpha_n} \\
-            &= \prod_{i = 0}^{n} (X - a_i)^{n}
+		Q(X) &= \prod_{i = 0}^{n} (X - a_i)^{n}
 	\end{align*}
 	Alors $\forall A, B, C \in \C, \ \forall \alpha \in \N^*$  $F$ s'écrit de manière unique sous la forme :
 	\begin{align*}
-		F(X) &= \left[ \left( \frac{A_{11}}{(X - a_1)^1} + \cdots + \frac{A_{1n}}{(X - a_1)^{\alpha_1}} \right) + \cdots + \left( \frac{A_{n1}}{(X - a_n)^1} + \cdots + \frac{A_{nn}}{(X - a_n)^{\alpha_n}}  \right) \right] \\
         F(X) &=  \sum_{i = 1}^{n} \sum_{j = 1}^{\alpha_i} \frac{A_{ij}}{\left(X - a_i\right)^{j} }
 	\end{align*}    
 \end{theorem}
