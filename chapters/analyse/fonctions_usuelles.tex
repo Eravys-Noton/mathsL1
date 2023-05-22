@@ -1,23 +1,31 @@
 \chapter{Fonctions usuelles}
-
+\def\arraystretch{1}
 
 \begin{definition}[Fonction polynomiale]
 	Soient $n \in \N,\ a_0, \ldots, a_n \in \R$.
-	\begin{align*}
-		f : \R &\to \R \\
-            x &\mapsto \sum_{i = 0}^{n} a_i x^i
-	\end{align*}
+	\begin{center}
+		$
+		f :
+		\begin{array}{|ccc}
+			\R & \to & \R \\
+             x & \mapsto & \sum_{i = 0}^{n} a_i x^i
+		\end{array}
+		$
+	\end{center}
 \end{definition}
 
 \begin{definition}[Fonction partie entière]
 	\[ \forall x \in \R,\ \exists ! E(x) \in \Z,\ E(x) \leq x < E(x + 1) \]
-	\begin{align*}
-		E : \R &\to \Z \\
-        x &\mapsto E(x)
-	\end{align*}
+	\begin{center}
+		$
+		E :
+		\begin{array}{|ccc}
+			\R & \to & \Z \\
+			x & \mapsto & E(x)
+		\end{array}
+		$
+	\end{center}
 \end{definition}
-
-
 
 \begin{definition}[Fonction puissance]
 	Soit $a \in \R$.
@@ -41,19 +49,28 @@
 
 \section{Fonctions trigonométriques}
 \begin{definition}[Fonctions trigonométriques]
-	\begin{align*}
-		\cos : \R &\to [-1, 1] \\
-		        x &\mapsto \cos(x)
-	\end{align*}
-	\begin{align*}
-		\sin : \R &\to [-1, 1] \\
-		        x &\mapsto \sin(x)
-	\end{align*}
-	Pour tout $k \in \Z$ :
-	\begin{align*}
-		\tan : \R \backslash \left\{ \frac{k \pi}{2} \right\} &\to \R \\
-		                                   					x &\mapsto \frac{\sin(x)}{\cos(x)}
-	\end{align*}
+	Pour tout $k \in \Z$ :	
+	\begin{center}
+		$
+		\cos :
+		\begin{array}{|ccc}
+			 \R & \to & [-1, 1] \\
+		      x & \mapsto & \cos(x)
+		\end{array}
+		\qquad
+		\sin :
+		\begin{array}{|ccc}
+			 \R & \to & [-1, 1] \\
+		      x & \mapsto & \sin(x)
+		\end{array}
+		\qquad
+		\tan :
+		\begin{array}{|ccc}
+			 \R \backslash \left\{ \frac{k \pi}{2} \right\} & \to & \R \\ 
+			  x & \mapsto & \frac{\sin(x)}{\cos(x)}
+		\end{array}
+		$
+	\end{center}	
 \end{definition}
 
 \begin{figure}[h!]

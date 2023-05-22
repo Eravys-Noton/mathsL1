@@ -1,4 +1,5 @@
 \chapter{Fonctions réelles}
+\def\arraystretch{1}
 
 \section{Définitions}
 \begin{definition}[Fonction]
@@ -83,41 +84,47 @@
 \section{Opérations sur les fonctions}
 \begin{definition}[Opérations sur les fonctions]
 	Soient $f, g$ deux fonctions et $A \subset \R$.
-	\begin{align*}
-		&f + g : 
-        \begin{cases}
-            A &\to \R \\
-		        x &\mapsto f(x) + g(x)
-        \end{cases}
-        &
-        &f \cdot g : 
-        \begin{cases}
-            A &\to \R \\
-		            x &\mapsto f(x) \cdot g(x)
-        \end{cases}
-	\end{align*}
+	\begin{center}
+		$
+		f + g :
+		\begin{array}{|ccc}
+			A & \to & \R \\
+		    x & \mapsto & f(x) + g(x)
+		\end{array}
+		\qquad
+		f \cdot g :
+		\begin{array}{|ccc}
+			A & \to & \R \\
+		    x & \mapsto & f(x) \cdot g(x)
+		\end{array}
+		$
+	\end{center}
 \end{definition}
 
 \begin{definition}[Composition de fonctions]
 	Soient $E, F, G, H \subset \R,\ F \subset G,\ f : E \to F,\ g : G \to H$.
-	\begin{align*}
-		g \circ f : 
-        \begin{cases}
-            E &\to H \\
-		            x &\mapsto g(f(x))
-        \end{cases}
-	\end{align*}
+	\begin{center}
+		$
+		g \circ f :
+		\begin{array}{|ccc}
+			E & \to & H \\
+		            x & \mapsto & g(f(x))
+		\end{array}
+		$
+	\end{center}
 \end{definition}
 
 \begin{definition}[Fonction identité]
     Soient $E, F \subset \R$.
-	\begin{align*}
+	\begin{center}
+		$
 		id_E : 
-        \begin{cases}
-            E &\to F \\
-		       x &\mapsto x
-        \end{cases}
-	\end{align*}
+		\begin{array}{|ccc}
+			E & \to & F \\
+			x & \mapsto & x
+		\end{array}
+		$
+	\end{center}
 \end{definition}
 
 \begin{proposition}
