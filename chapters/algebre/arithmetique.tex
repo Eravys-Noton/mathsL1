@@ -2,15 +2,15 @@
 \def\arraystretch{1}
 
 \begin{definition}
-    Soit $(a,b) \in \Z \times \Z^*$.
+    Soient $a \in \Z$ et $b \in \Z^*$.
     \[ a \text{ est un multiple de } b \iff b \text{ est un diviseur de } a \iff b \mid a \iff \exists q \in \Z, a = bq \]
 \end{definition}
 
 \section{Divisibilité}
 
 \begin{theorem}[Division euclidienne]
-    Soit $(a,b \in \Z \times \Z^*$.
-    \[ \exists ! (q, r) \in \Z^2, a = bq + r, (0 \leq r < \abs{b}) \]
+    Soient $a \in \Z,\ b \in \Z^*$.
+    \[ \exists ! (q,\ r) \in \Z^2, a = bq + r, (0 \leq r < \abs{b}) \]
 \end{theorem}
 
 \begin{proof}\cite{livre_prepa}
@@ -29,7 +29,7 @@
 		Posons : $r \coloneqq a - bq$. Sachant que $a \geq bq,\ r \geq 0$. On a $r < b$ car $b = (q + 1)b - qb > a - bq = r$. Supposons que $a \in \Z$. 
 		\begin{enumerate}
 			\item Si $a$ est positif, on se ramène au cas précédent.
-			\item Dans le cas où $a < 0,\ -a \geq 0$, ainsi il existe $(q', r') \in \Z^2$ tel que :
+			\item Dans le cas où $a < 0,\ -a \geq 0$, ainsi il existe $(q',\ r') \in \Z^2$ tel que :
 		\[ -a = bq' + r',\ 0 \leq r' < \abs{b} \]
 		\[a = b(-q') - r' \]
 			\begin{enumerate}
@@ -37,7 +37,7 @@
 				\item Si $r' \neq 0$, $r' \in \llbracket 1, b-1 \rrbracket$ et $a = b(-q' -1) + (b - r')$, on pose $q = -q' - 1$ et $r = b - r'$ et on obtient le couple recherché. 
 			\end{enumerate}
 		\end{enumerate}
-		\item \textbf{Unicité :} Soit $(q, q', r, r') \in \Z^4$. \\
+		\item \textbf{Unicité :} Soient $q,\ q',\ r,\ r' \in \Z$. \\
 	On a d'une part : $a = bq + r$ et d'autre part : $a = bq' + r'$.
 	On sait que $0 \leq r < b$ et $0 \leq r' < b$ donc :
 	\[ b \abs{q' - q} = \abs{r' - r} < b \]
@@ -46,7 +46,7 @@
 \end{proof}
 
 \begin{nomenclature}
-    Pour $a, b, c, d$ définis comme dans le théorème précédent.
+    Pour $a,\ b,\ c,\ d$ définis comme dans le théorème précédent.
     \begin{multicols}{2}
         \begin{itemize}
         \item $a$ est appelé le \textbf{dividende}
@@ -60,15 +60,15 @@
 \section{PGCD et PPCM}
 
 \begin{definition}
-	Soit $(a, b) \in (\Z^*)^2$. 
+	Soient $a,\ b \in \Z^*$. 
 	\begin{enumerate}
-		\item L'ensemble des diviseurs de $\N^*$ commun à $a$ et $b$ admet un plus grand élément. C'est le \textbf{plus grand commun diviseur} des entiers $a$ et $b$. On le note $\pgcd(a,b)$.
-		\item L'ensemble des diviseurs de $\N^*$ commun à $a$ et $b$ admet un plus petit élément. C'est le \textbf{plus petit commun multiple} des entiers $a$ et $b$. On le note $\ppcm(a, b)$.
+		\item L'ensemble des diviseurs de $\N^*$ commun à $a$ et $b$ admet un plus grand élément. C'est le \textbf{plus grand commun diviseur} des entiers $a$ et $b$. On le note $\pgcd(a,\ b)$.
+		\item L'ensemble des diviseurs de $\N^*$ commun à $a$ et $b$ admet un plus petit élément. C'est le \textbf{plus petit commun multiple} des entiers $a$ et $b$. On le note $\ppcm(a,\ b)$.
 	\end{enumerate}
 \end{definition}
 
 \begin{theorem}
-	Soit $(a, b, d) \in (\Z^*)^2 \times \Z$.
+	Soient $a,\ b \in \Z^*,\ d \in \Z$.
 	\begin{enumerate}
 		\item $a \mid d \text{ et } b \mid d \implies \ppcm(a, b) \mid d$
 		\item $d \mid a \text{ et } d \mid b \implies d \mid \pgcd(a, b)$
@@ -91,23 +91,25 @@
 \end{proof}
 
 \begin{definition}
-	Soit $(a,b) \in (\Z^*)^2$. On dit que $a$ et $b$ sont \textbf{premiers entre eux} si et seulement si $\pgcd(a, b) = 1$.
+	Soient $a,\ b \in \Z^*$. 
+	\\	
+	On dit que $a$ et $b$ sont \textbf{premiers entre eux} si et seulement si $\pgcd(a, b) = 1$.
 \end{definition}
 
 \section{Algorithme d'Euclide}
 \begin{proposition}[Algorithme d'Euclide]
-	Soit $(a, b) \in (\Z^*)^2$ tel que $\abs{a} > \abs{b}$.
-	\[ \exists ! (q,r) \in \Z^2,\ a = bq + r,\ 0 \leq r < \abs{b} \]
-	\[ \pgcd(a, b) = \pgcd(b, a) = \pgcd(b, a - qb) = \pgcd(b, r) \]
+	Soient $a,\ b \in \Z^*$ tels que $\abs{a} > \abs{b}$.
+	\[ \exists ! (q,\ r) \in \Z^2,\ a = bq + r,\ 0 \leq r < \abs{b} \]
+	\[ \pgcd(a,\ b) = \pgcd(b,_ a) = \pgcd(b,\ a - qb) = \pgcd(b,\ r) \]
 	\begin{enumerate}
 		\item Si $r = 0$ alors $a = qb$ et donc $\pgcd(a, b) = b$.
 		\item Si $r \neq 0$ alors :
-		\[ \exists ! (q_1, r_1) \in \Z^2,\ b = q_1 r + r_1,\ 0 \leq r_1 < r \]
+		\[ \exists ! (q_1,\ r_1) \in \Z^2,\ b = q_1 r + r_1,\ 0 \leq r_1 < r \]
 		Ensuite : 
 		\begin{enumerate}
 			\item Si $r_1 = 0$ alors $b = q_1 r$ et donc $\pgcd(a, b) = r$.
 			\item Si $r_1 \neq 0$ alors :
-			\[ \exists ! (q_2, r_2) \in \Z^2,\ r = q_2 r_1 + r_2,\ 0 \leq r_2 < r_1 \]
+			\[ \exists ! (q_2,\ r_2) \in \Z^2,\ r = q_2 r_1 + r_2,\ 0 \leq r_2 < r_1 \]
 		\end{enumerate}
 	\end{enumerate}
 	
@@ -115,23 +117,23 @@
 \end{proposition}
 
 \begin{theorem}[Identité de Bézout]
-	Soit $(a, b) \in \Z^2$.
-	\[ \exists (u, v) \in \Z^2,\ au + bv = \pgcd(a, b) \]
+	Soit $(a,\ b) \in \Z^2$.
+	\[ \exists (u,\ v) \in \Z^2,\ au + bv = \pgcd(a, b) \]
 \end{theorem}
 
 \begin{corollary}
-	Soient $(a, b) \in (\Z^*)^2$ et $d \in \Z$.
-	\[ \exists (u, v) \in \Z^2,\ au + bv = d \iff \pgcd(a,b) \mid d \]
+	Soient $(a,\ b) \in (\Z^*)^2$ et $d \in \Z$.
+	\[ \exists (u,\ v) \in \Z^2,\ au + bv = d \iff \pgcd(a,b) \mid d \]
 \end{corollary}
 
 \begin{lemma}[Lemme de Gauss]
-	Soit $(a, b) \in (\Z^*)^2$ tel que $\pgcd(a, b) = 1$.
+	Soit $(a,\ b) \in (\Z^*)^2$ tel que $\pgcd(a,\ b) = 1$.
 	\[ \forall c \in \Z,\ a \mid bc \implies a \mid c \]
 \end{lemma}
 
 \begin{proof}
 	\begin{align*}
-		\pgcd(a, b) = 1 &\implies \exists(u, v) \in \Z^2,\ au + bv = 1 \\
+		\pgcd(a,\ b) = 1 &\implies \exists(u,\ v) \in \Z^2,\ au + bv = 1 \\
 		&\implies a(cu) + b(cv) = c \\ 
 		&\implies \pgcd(a, bc) \mid c
 	\end{align*}
@@ -170,15 +172,15 @@
 \end{theorem}
 
 \begin{proposition}
-	Soient $(a, b) \in \Z^2$ et $(i, k) \in \N^2$. Pour déterminer $\pgcd(a, b)$ on peut utiliser leurs décompositions en facteurs premiers.
+	Soient $(a,\ b) \in \Z^2$ et $(i,\ k) \in \N^2$. Pour déterminer $\pgcd(a, b)$ on peut utiliser leurs décompositions en facteurs premiers.
 	\[ a = p_1^{\alpha_1} \cdots p_k^{\alpha_k} \]
 	\[ b = n_1^{\beta_1} \cdots n_i^{\beta_i} \]
-	$\pgcd(a, b)$ correspond au produit des facteurs premiers communs.
+	$\pgcd(a,\ b)$ correspond au produit des facteurs premiers communs.
 \end{proposition}
 
 \section{Congruences}
 \begin{definition}
-	Soient $(a,b) \in \Z^2$ et $n \in \N$ tel que $n \geq 2$.
+	Soient $(a,\ b) \in \Z^2$ et $n \in \N$ tel que $n \geq 2$.
 	\\
 	On dit que $a$ et $b$ sont \textbf{congrus modulo} $n$ s'il existe un $k$ tel que :
 	\[ a - b = k n \]
@@ -186,7 +188,7 @@
 \end{definition}
 
 \begin{proposition}
-	Soient $(a, b, c, d) \in \Z^4$ et $(k, n) \in \N^2$ tel que $n \geq 2$.
+	Soient $(a,\ b,\ c,\ d) \in \Z^4$ et $(k,\ n) \in \N^2$ tel que $n \geq 2$.
 	\begin{enumerate}
 		\item $a \equiv a \mod n$ 
 		\item $a \equiv b \mod n \iff b \equiv a \mod n$ 
@@ -201,18 +203,18 @@
 \end{proof}
 
 \begin{theorem}
-	Soient $(m_1, m_2) \in \N^2$ tel que :
+	Soient $(m_1,\ m_2) \in \N^2$ tel que :
 	\begin{enumerate}
 		\item $m_1 > 1$
-		\item $\pgcd(m_1, m_2) = 1$
+		\item $\pgcd(m_1,\ m_2) = 1$
 	\end{enumerate}
-	Soient $(a_1, a_2) \in \Z^2$ tel que pour $x \in \Z$ :
+	Soient $(a_1,\ a_2) \in \Z^2$ tel que pour $x \in \Z$ :
 	\begin{enumerate}
 		\item $x \equiv a_1 \mod m_1$
 		\item $x \equiv a_2 \mod m_2$
 	\end{enumerate}
 	Notons $\mathcal{S}$ l'ensemble des solutions :
-	$\exists (k_0, k) \in \Z^2$ tel que :
+	$\exists (k_0,\ k) \in \Z^2$ tel que :
 	\begin{enumerate}
 		\item $\mathcal{S} = k_0 + k m_1 m_2$ 
 		\item $0 \leq k_0 < m_1 m_2$

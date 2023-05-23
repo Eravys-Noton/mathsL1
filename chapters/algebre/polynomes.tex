@@ -5,14 +5,14 @@
 \begin{definition}[Polynôme]
     Un \textbf{polynôme} est un élément de l'ensemble 
     \begin{align*}
-        \K[X] = \{ a_0 1 + a_1 X + a_2 X^2 + \cdots a_n X^n \mid a_0, \ldots, a_n \in \K,\ n \in \N \}
+        \K[X] = \{ a_0 1 + a_1 X + a_2 X^2 + \cdots + a_n X^n \mid a_0,\ \ldots,\ a_n \in \K,\ n \in \N \}
     \end{align*}
     Soit $P \in \K[X]$, si $a_n \neq 0$, $n$ est le degré du polynôme, on le note 
     $ \deg(P) = n. $
 \end{definition}
 
 \begin{proposition}
-	$\forall \lambda \in \K^*,\ (P, Q) \in (\K[X])^2$. 
+	$\forall \lambda \in \K^*,\ P,\ Q \in \K[X]$. 
 	\begin{enumerate}
     		\item $\operatorname{deg}(\lambda) = 0$.
     		\item $\operatorname{deg}(P \cdot Q) = \operatorname{deg}(P) + \operatorname{deg}(Q)$.
@@ -24,16 +24,16 @@
 \section{Arithmétique des polynômes}
 
 \begin{theorem}[Division euclidienne de polynômes]
-	Soient $P_1, P_2$ deux polynômes non nuls.
+	Soient $P_1,\ P_2$ deux polynômes non nuls.
 	\begin{align*}
-		\exists ! (Q, R) \in (\K[X])^2 \text{ tel que } P_1 = P_2 Q + R 
+		\exists ! (Q,\ R) \in (\K[X])^2 \text{ tel que } P_1 = P_2 Q + R 
 	\end{align*}
 	Vérifiant :
 	$\operatorname{deg}(R) = -\infty$ ou $0 \leq \operatorname{deg}(R) < \operatorname{deg}(Q)$.
 \end{theorem}
 
 \begin{definition}[Polynôme irréductible]
-	Un polynôme $P \in \K[X]$ non constant est dit irréductible, s'il n'existe pas $(P_1, P_2) \in (\K[X])^2$ tel que $P = P_1 P_2$ et $\operatorname{deg}(P_1) < \operatorname{deg}(P_2)$.
+	Un polynôme $P \in \K[X]$ non constant est dit irréductible, s'il n'existe pas $(P_1,\ P_2) \in (\K[X])^2$ tel que $P = P_1 P_2$ et $\operatorname{deg}(P_1) < \operatorname{deg}(P_2)$.
 \end{definition}
 
 \begin{definition}\label{def:ordre_mult}
@@ -57,7 +57,7 @@
 \begin{theorem}
 	Soient $P$ un polynôme de degré $n$ et $a_0, \ldots, a_n \in \Z$ ses coefficients tels que :
 	\[ P(X) = a_n X^n + \cdots + a_1 X + a_0 \]
-	\[ \exists (p, q) \in \Z \times \Z^*,\ \pgcd(p, q) = 1,\ P\left( \frac{p}{q} \right) \implies p \mid a_0 \land q \mid a_n \]
+	\[ \exists (p,\ q) \in \Z \times \Z^*,\ \pgcd(p,\ q) = 1,\ P\left( \frac{p}{q} \right) \implies p \mid a_0 \land q \mid a_n \]
 \end{theorem}
 
 \begin{proof}
