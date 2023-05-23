@@ -3,22 +3,24 @@
 
 \section{Définitions et opérations élémentaires}
 \begin{definition}[Matrice]
-	Soient $(m,n) \in (\N^*)^2$ et $(a_{11}, \ldots, a_{mn}) \in \K^{mn}$. \\
+	Soient $m,n \in \N^*$ et $a_{1,1}, \ldots, a_{m,n} \in \K$. 
+	\\
     Une \textbf{matrice} est un tableau de données appartenant à $\mathcal{M}_{m,n} (\K)$ :
     \begin{align*}
         \begin{pmatrix}
-            a_{11} & a_{12} & \cdots & a_{1n} \\
-            a_{21} & a_{22} & \cdots & a_{2n} \\
+            a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+            a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
             \vdots & \vdots & \ddots & \vdots \\
-            a_{m1} & a_{m2} & \cdots & a_{mn}
+            a_{m,1} & a_{m,2} & \cdots & a_{m,n}
         \end{pmatrix}
         \equiv 
-        (a_{ij})_{\substack{1 \leq i \leq m \\ 1 \leq j \leq n}}
+        (a_{i,j})_{\substack{i \in \llbracket 1, m \rrbracket \\ j \in \llbracket 1, n \rrbracket}}
     \end{align*}
 \end{definition}
 
 \begin{definition}[Système linéaire]
-    Soient $(m,n) \in (\N^*)^2$, $(x_1, \ldots, x_n) \in \K^n$, $(a_{11}, \ldots, a_{mn}) \in \K^{mn}$ et $(b_1, \ldots, b_m) \in \K^m$.
+    Soient $m,n \in \N^*$, $x_1, \ldots, x_n \in \K$ $n$ inconnues, $a_{1,1}, \ldots, a_{m,n} \in \K$ et $b_1, \ldots, b_n \in \K$.
+    \\
     Un \textbf{système linéaire} est décrit par :
     \begin{align*}
         \begin{cases}
@@ -334,10 +336,8 @@ Pour calculer le déterminant d'une matrice carrée noté $\det(A)$ ou s'il n'y 
 \end{proposition}
 
 \begin{definition}[Comatrice]
-	La comatrice $\com(A)$ d'une matrice $A \in \mathcal{M}_n(\K)$.
-	$$
-	[\com(A)]_{ij} = (-1)^{i + j} \det(A^{(ij)}) 
-	$$
+	La comatrice $\com(A)$ d'une matrice $A \in \mathcal{M}_n(\K)$ est une matrice est définie ainsi :
+	\[ (\com(A))_{i,j} = (-1)^{i+j} \det(A_{i,j}) \]
 \end{definition}
 
 Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibles.

@@ -5,7 +5,7 @@
 \end{definition}
 
 \begin{proposition}[Addition et multiplication sur $\R$]
-    On peut définir sur $\R$ une addition (notée \og + \fg) et une multiplication (notée \og $\times$ \fg ou \og $\cdot$ \fg) qui prolonge l'addition et la multiplication de $\N$ et vérifie les règles suivantes pour $(a, b, c) \in \R^3$ :
+    On peut définir sur $\R$ une addition (notée \og + \fg) et une multiplication (notée \og $\times$ \fg ou \og $\cdot$ \fg) qui prolonge l'addition et la multiplication de $\N$ et vérifie les règles suivantes pour $(a,\ b,\ c) \in \R^3$ :
     \begin{enumerate}
         \item Commutativité : 
         \[ a + b = b + a \text{ et } a \cdot b = b \cdot a \]
@@ -22,7 +22,7 @@
 \end{proposition}
 
 \begin{proposition}[Relation d'ordre sur $\R$]
-    On peut définir une relation d'ordre sur $\R$, notée \og $\leq$ \fg, qui prolonge l'ordre de $\N$ et vérifie les règles suivantes pour $(a, b, c) \in \R^3$ :
+    On peut définir une relation d'ordre sur $\R$, notée \og $\leq$ \fg, qui prolonge l'ordre de $\N$ et vérifie les règles suivantes pour $a,\ b,\ c \in \R$ :
     \begin{enumerate}
         \item Réflexivité : 
         \[ a \leq a \]
@@ -51,7 +51,7 @@
 \end{definition}
 
 \begin{proposition}
-    $\forall (a, b) \in \R^2$.
+   	Soient $a,\ b \in \R$.
     \begin{enumerate}
             \item $\abs{a + b} \leq \abs{a} + \abs{b}$
             \item $\abs{a \cdot b} = \abs{a} \cdot \abs{b}$
@@ -68,7 +68,7 @@
 \end{definition}
 
 \begin{definition}
-    Soient $A$ une partie de $\R$ et $m \in \R$.
+    Soient $A \subseteq \R$ et $m \in \R$.
     \begin{enumerate}
         \item On dit que $m$ est un \textbf{majorant} de $A$ si et seulement si : $A \iff \forall x \in A,\ x \leq m$.
         \item On dit que $m$ est un \textbf{minorant} de $A$ si et seulement si : $\forall x \in A,\ x \geq m$.
@@ -77,14 +77,14 @@
 \end{definition}
 
 \begin{theorem}
-    Soit $A$ une partie non-vide de $\R$. \\
+    Soit $A \subseteq \R,\ A \neq \varnothing$. \\
     Si $A$ est \textbf{majorée}, elle admet un \textbf{plus petit majorant} appelé la \textbf{borne supérieure} de $A$, notée : $\sup(A)$.
     \\
     Si $A$ est \textbf{minorée}, elle admet un \textbf{plus grand minorant} appelé la \textbf{borne inférieure} de $A$, notée : $\inf(A)$.
 \end{theorem}
 
 \begin{proposition}
-    Soient $A$ une partie de $\R$ non-vide, $M$ un majorant de $A$ et $m$ un minorant de $A$.  
+    Soient $A \subseteq \R,\ A \neq \varnothing$, $M$ un majorant de $A$ et $m$ un minorant de $A$.  
     \begin{enumerate}
         \item $M = \sup(A) \iff \forall \varepsilon > 0,\ ]M - \varepsilon,\ M] \cap A \neq \varnothing$.
         \item $m = \inf(A) \iff \forall \varepsilon > 0,\ [m, m + \varepsilon[ \cap A \neq \varnothing $

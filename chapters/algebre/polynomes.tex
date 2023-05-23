@@ -93,21 +93,21 @@
 \end{definition}
 
 \begin{theorem}[Décomposition en éléments simples]
-	Soient $F(X) = \frac{P(X)}{Q(X)}$ et $m, n, \alpha, \beta \in \N^*$.
+	Soient $P,\ Q \in \K[X],\ F(X) = \frac{P(X)}{Q(X)},\ m,\ n,\ \alpha_i,\ \beta_i \in \N^*$.
 	\\
-	Sur $\R$ :
+	Sur $\R$ : Soient $a_i,\ b_i,\ c_i \in \R$.
 	\begin{align*}
-		Q(X) &= \prod_{i = 0}^{n} (X - a_i)^{\alpha_i} \cdot \prod_{k = 0}^{m} (X^2 + b_k X + c_k)^{\beta_k}
+		Q(X) &= \prod_{i = 1}^{n} (X - a_i)^{\alpha_i} \cdot \prod_{i = 1}^{m} (X^2 + b_i X + c_i)^{\beta_i}
 	\end{align*}
-	Alors $\forall A, B, C \in \R$, $F$ s'écrit de manière unique sous la forme :
+	Soient $A_{i,j},\ B_{i,j},\ C_{i,j} \in \R$. $F$ s'écrit de manière unique sous la forme :
 	\begin{align*}
-        F(X) &=  \sum_{i = 1}^{n} \sum_{j = 1}^{\alpha_i} \frac{A_{ij}}{\left(X - a_i\right)^{j} } + \sum_{i = 1}^{m} \sum_{j = 1}^{\beta_i} \frac{B_{ij}X + C_{ij}}{(X^2 + b_iX + c_i)^{j}}
+        F(X) &=  \sum_{i = 1}^{n} \sum_{j = 1}^{\alpha_i} \frac{A_{ij}}{\left(X - a_i\right)^{j} } + \sum_{i = 1}^{m} \sum_{j = 1}^{\beta_i} \frac{B_{ij}X + C_{ij}}{(X^2 + b_iX + c_i)^{j}} 
 	\end{align*}
-	Sur $\C$ :
+	Sur $\C$ : Soient $a_i \in \C$.
 	\begin{align*}
-		Q(X) &= \prod_{i = 0}^{n} (X - a_i)^{n}
+		Q(X) &= \prod_{i = 1}^{n} (X - a_i)^{n}
 	\end{align*}
-	Alors $\forall A, B, C \in \C, \ \forall \alpha \in \N^*$  $F$ s'écrit de manière unique sous la forme :
+	Soient $A_{i,j} \in \C$. $F$ s'écrit de manière unique sous la forme :
 	\begin{align*}
         F(X) &=  \sum_{i = 1}^{n} \sum_{j = 1}^{\alpha_i} \frac{A_{ij}}{\left(X - a_i\right)^{j} }
 	\end{align*}    

@@ -13,14 +13,14 @@
 	Soient $E$ et $F$ deux ensembles et $f : E \to F$ une fonction.
 	\\
 	Le graphe de $f$ est défini comme :
-	\[ \operatorname{Gr}(f) \equiv \operatorname{Gph}(f) = \{ (x, f(x)), x \in E \} \subset E \times F \] 
+	\[ \operatorname{Gr}(f) \equiv \operatorname{Gph}(f) = \{ (x,\ f(x)),\ x \in E \} \subset E \times F \] 
 \end{definition}
 
 \begin{definition}
 	Soit $f : E \to F$ une fonction. On dit que :
     \begin{enumerate}
         \item $f$ est \textbf{injective} si et seulement si : 
-        \[ \forall (x_1, x_2) \in E^2,\ f(x_1) = f(x_2) \implies x_1 = x_2 \]
+        \[ \forall x_1,\ x_2 \in E,\ f(x_1) = f(x_2) \implies x_1 = x_2 \]
         \item $f$ est \textbf{surjective} si et seulement si : 
         \[ \forall y \in F,\ \exists x \in E,\ f(x) = y \]
         \item $f$ est \textbf{bijective} si et seulement si :
@@ -43,14 +43,14 @@
 \end{proposition}
 
 \begin{definition}
-	Soient $I \subset \R$, $f : I \to \R$ et $T \in \R_+$. On dit que :
+	Soient $I \subseteq \R$, $f : I \to \R$ et $T \in \R_+$. On dit que :
     \begin{enumerate}
         \item $f$ est \textbf{paire} si et seulement si : 
         \[ \forall x \in I,\ f(x) = f(-x) \]
         \item $f$ est \textbf{impaire} si et seulement si  :
         \[ \forall x \in I,\ -f(x) = f(-x) \]
         \item $f$ est \textbf{$T$-périodique} si et seulement si :
-        \[ \forall (x,n) \in \R \times \Z,\ f(x + nT) = f(x) \]
+        \[ \forall (x,\ n) \in \R \times \Z,\ f(x + nT) = f(x) \]
     \end{enumerate}
 \end{definition}
 
@@ -83,7 +83,7 @@
 
 \section{Opérations sur les fonctions}
 \begin{definition}[Opérations sur les fonctions]
-	Soient $f, g$ deux fonctions et $A \subset \R$.
+	Soient $f,\ g$ deux fonctions et $A \subset \R$.
 	\begin{center}
 		$
 		\appli{f+g}{A}{\R}{x}{f(x)+g(x)}
