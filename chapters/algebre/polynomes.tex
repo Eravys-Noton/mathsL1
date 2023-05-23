@@ -114,7 +114,7 @@
     \[ \C(X) \coloneqq \left\{ \frac{P(X)}{Q(X)} : P, Q \in \C[X],\ Q \neq 0_{\C[X]} \right\} \]
     La stratégie de la démonstration consiste à montrer une égalité de deux espaces vectoriels :
     \[ E = \left\{ \frac{P(X)}{Q(X)} : P \in \C[X],\ \deg(P) < \deg(Q) \right\} \]
-    \[ F = \left\{ \sum_{i = 1}^{n} \sum_{j = 1}^{m_i} \frac{a_{ij}}{(X - \alpha_i)^{j}} : a_{ij} \in \C \right\} \]
+    \[ F = \left\{ \sum_{i = 1}^{n} \sum_{j = 1}^{m_i} \frac{a_{i, j}}{(X - \alpha_i)^{j}} : a_{ij} \in \C \right\} \]
     \textbf{\'Etude de $E$ :} Posons $d \coloneqq \deg(Q)$
     \begin{align*}
         E &= \left\{ \frac{P(X)}{Q(X)} : P \in \C[X],\ \deg(P) < d \right\} \\
@@ -134,39 +134,39 @@
     Ainsi $\mathcal{F}$ est libre. $\mathcal{F}$ est libre et génératrice, elle forme donc une base de $E$ et ainsi : 
     \[ \dim(E) = d \]
     \textbf{\'Etude de} $F$ :
-    \[ F = \left\{ \sum_{i = 1}^{n} \sum_{j = 1}^{m_i} \frac{a_{ij}}{(X - \alpha_i)^{j}} : a_{ij} \in \C \right\} \]
+    \[ F = \left\{ \sum_{i = 1}^{n} \sum_{j = 1}^{m_i} \frac{a_{i, j}}{(X - \alpha_i)^{j}} : a_{ij} \in \C \right\} \]
     On peut ainsi écrire $F$ ainsi : 
     \begin{align*}
-        F &= \left\{ \frac{a_{11}}{(X - \alpha_1)} + \cdots + \frac{a_{1m_1}}{(X - a_1)^{m_1}} + \cdots + \frac{a_{n1}}{(X - \alpha_n)} + \cdots + \frac{a_{nm_n}}{(X - \alpha_n)^{m_n}} : a_{ij} \in \C \right\} \\
+        F &= \left\{ \frac{a_{1, 1}}{(X - \alpha_1)} + \cdots + \frac{a_{1, m_1}}{(X - a_1)^{m_1}} + \cdots + \frac{a_{n, 1}}{(X - \alpha_n)} + \cdots + \frac{a_{n, m_n}}{(X - \alpha_n)^{m_n}} : a_{ij} \in \C \right\} \\
         &= \operatorname{Vect} \left\{ \frac{1}{(X - \alpha_1)}, \ldots, \frac{1}{(X - \alpha_1)^{m_1}}, \ldots, \frac{1}{(X - \alpha_n)}, \ldots, \frac{1}{(X - \alpha_n)^{m_n}}  \right\}
     \end{align*}
-    Notons $\mathcal{F}_2 \coloneqq \operatorname{Vect} \left\{ \frac{1}{(X - \alpha_1)}, \ldots, \frac{1}{(X - \alpha_1)^{m_1}}, \ldots, \frac{1}{(X - \alpha_n)}, \ldots, \frac{1}{(X - \alpha_n)^{m_n}}  \right\}$. Nous en déduisons que $F$ est un espace vectoriel admettant $\mathcal{F}_2$ comme famille génératrice, montrons que $\mathcal{F}_2$ est libre : Soient $a_{ij} \in \C$ tels que :
+    Notons $\mathcal{F}_2 \coloneqq \operatorname{Vect} \left\{ \frac{1}{(X - \alpha_1)}, \ldots, \frac{1}{(X - \alpha_1)^{m_1}}, \ldots, \frac{1}{(X - \alpha_n)}, \ldots, \frac{1}{(X - \alpha_n)^{m_n}}  \right\}$. Nous en déduisons que $F$ est un espace vectoriel admettant $\mathcal{F}_2$ comme famille génératrice, montrons que $\mathcal{F}_2$ est libre : Soient $a_{i,j} \in \C$ tels que :
     \begin{align*}
         \begin{split}
-            a_{11} \frac{1}{(X - \alpha_1)} + a_{12} \frac{1}{(X - \alpha_1)^2} + \cdots + a_{1(m_1 -1)} \frac{1}{(X - \alpha_1)^{m_1 - 1}} + \cdots \\
-            + a_{n1} \frac{1}{(X - \alpha_n)} + a_{n2} \frac{1}{(X - \alpha_n)^2} + \cdots + a_{nm_n} \frac{1}{(X - \alpha_n)^{m_n}} = 0_{\C(X)}
+            a_{1,1} \frac{1}{(X - \alpha_1)} + a_{1,2} \frac{1}{(X - \alpha_1)^2} + \cdots + a_{1,m_1-1} \frac{1}{(X - \alpha_1)^{m_1 - 1}} + \cdots \\
+            + a_{n,1} \frac{1}{(X - \alpha_n)} + a_{n,2} \frac{1}{(X - \alpha_n)^2} + \cdots + a_{n,m_n} \frac{1}{(X - \alpha_n)^{m_n}} = 0_{\C(X)}
         \end{split}
     \end{align*}
     En multipliant l'équation par $(X - \alpha_1)^{m_1}$ :
     \begin{align*}
         \begin{split}
-            a_{11} (X - \alpha_1)^{m_1 - 1} + a_{12} (X - \alpha_1)^{m_1 - 2} + \cdots + a_{1m_1} + \\
+            a_{1,1} (X - \alpha_1)^{m_1 - 1} + a_{1,2} (X - \alpha_1)^{m_1 - 2} + \cdots + a_{1,m_1} + \\
             (X - \alpha_1)^{m_1}
             \left( 
-            a_{21} \frac{1}{(X - \alpha_2)} + \cdots + a_{n1} \frac{1}{(X - \alpha_n)} + \cdots + a_{nm_n} \frac{1}{(X - \alpha_n)^{m_n}}
+            a_{2,1} \frac{1}{(X - \alpha_2)} + \cdots + a_{n1} \frac{1}{(X - \alpha_n)} + \cdots + a_{n,m_n} \frac{1}{(X - \alpha_n)^{m_n}}
             \right)
             = 0_{\C(X)}
          \end{split}
     \end{align*}
-    En posant $X = \alpha_1$, on trouve que $a_{1m_1} = 0$.
-    En remplaçant $a_{1m_1}$ par sa valeur dans l'équation initiale, celle-ci devient : 
+    En posant $X = \alpha_1$, on trouve que $a_{1,m_1} = 0$.
+    En remplaçant $a_{1,m_1}$ par sa valeur dans l'équation initiale, celle-ci devient : 
     \begin{align*}
         \begin{split}
-            a_{11} \frac{1}{(X - \alpha_1)} + a_{12} \frac{1}{(X - \alpha_1)^2} + \cdots + a_{1(m_1 - 1)} \frac{1}{(X - \alpha_1)^{m_1 - 1}} + \cdots \\
-            + a_{n1} \frac{1}{(X - \alpha_n)} + a_{n2} \frac{1}{(X - \alpha_n)^2} + \cdots + a_{nm_n} \frac{1}{(X - \alpha_n)^{m_n}} = 0_{\C(X)}
+            a_{1,1} \frac{1}{(X - \alpha_1)} + a_{1,2} \frac{1}{(X - \alpha_1)^2} + \cdots + a_{1,m_1 - 1} \frac{1}{(X - \alpha_1)^{m_1 - 1}} + \cdots \\
+            + a_{n,1} \frac{1}{(X - \alpha_n)} + a_{n,2} \frac{1}{(X - \alpha_n)^2} + \cdots + a_{n,m_n} \frac{1}{(X - \alpha_n)^{m_n}} = 0_{\C(X)}
         \end{split}
     \end{align*}
-    En multipliant l'équation par $(X - \alpha_1)^{m_1 - 1}$ et en posant $X = \alpha_1$, on trouve que $a_{1(m_1 - 1)} = 0$. On procède de la même manière jusqu'à prouver $a_{11} = \cdots = a_{1m_1} = 0$.
+    En multipliant l'équation par $(X - \alpha_1)^{m_1 - 1}$ et en posant $X = \alpha_1$, on trouve que $a_{1,m_1 - 1} = 0$. On procède de la même manière jusqu'à prouver $a_{1,1} = \cdots = a_{1,m_1} = 0$.
     On continue ainsi de suite pour montrer que tous les coefficients sont nuls et donc que $\mathcal{F}_2$ est libre. $\mathcal{F}_2$ est libre et génératrice, elle forme donc une base de $F$.
     \[ \dim(F) = m_1 + \cdots + m_n \]
     Mais aussi : 
@@ -175,9 +175,9 @@
     \textbf{Inclusion de $F$ dans $E$ :}
     \\
     Un élément de $F$ est de la forme suivante : 
-    \[ \frac{a_{11}}{(X - \alpha_1)} + \cdots + \frac{a_{1m_1}}{(X - \alpha_1)^{m_1}} + \cdots + \frac{a_{n1}}{(X - \alpha_n)} + \cdots + \frac{a_{nm_n}}{(X - \alpha_n)^{m_n}} \]
+    \[ \frac{a_{1,1}}{(X - \alpha_1)} + \cdots + \frac{a_{1,m_1}}{(X - \alpha_1)^{m_1}} + \cdots + \frac{a_{n,1}}{(X - \alpha_n)} + \cdots + \frac{a_{n,m_n}}{(X - \alpha_n)^{m_n}} \]
     En mettant toutes les fractions sur le même dénominateur, on obtient :
-    \[ \frac{a_{11}(X - \alpha_1)^{m_1 - 1} \prod_{i = 2}^{n}(X - \alpha_i)^{m_i} + \cdots + a_{1m_1} \prod_{i = 2}^{n}(X - \alpha_i)^{m_i} + \cdots + a_{nm_n} \prod_{i = 1}^{n - 1}(X - \alpha_i)^{m_i}}{Q(X)} \]
+    \[ \frac{a_{1,1}(X - \alpha_1)^{m_1 - 1} \prod_{i = 2}^{n}(X - \alpha_i)^{m_i} + \cdots + a_{1m_1} \prod_{i = 2}^{n}(X - \alpha_i)^{m_i} + \cdots + a_{n,m_n} \prod_{i = 1}^{n - 1}(X - \alpha_i)^{m_i}}{Q(X)} \]
     Le degré du numérateur est strictement inférieur à celui de $Q$. Donc c'est un élément de $E$. Ainsi :
     \[ F \subset E \]
     Nous avons montré que $\dim(E) = \dim(F)$ et que $F \subset E$, ainsi $E = F$.
@@ -187,7 +187,7 @@
     \end{align*}
     s'exprime sous la forme 
     \begin{align*}
-        \sum_{i=1}^n \sum_{j = 1}^{m_i} \frac{a_{ij}}{(X - \alpha_i)^j}
+        \sum_{i=1}^n \sum_{j = 1}^{m_i} \frac{a_{i,j}}{(X - \alpha_i)^j}
     \end{align*}
     L'unicité de la décomposition découle du fait que tout élément d'un espace vectoriel s'exprime par une unique combinaison linéaire des vecteurs d'une de ses bases.
 \end{proof}
