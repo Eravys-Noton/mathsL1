@@ -34,10 +34,10 @@
     \begin{align*}
         \left(
         \begin{matrix}    
-            a_{11} & a_{12} & \cdots & a_{1n} \\
-            a_{21} & a_{22} & \cdots & a_{2n} \\
+            a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\
+            a_{2,1} & a_{2,2} & \cdots & a_{2,n} \\
             \vdots & \vdots & \ddots & \vdots \\
-            a_{m1} & a_{m2} & \cdots & a_{mn}
+            a_{m,1} & a_{m,2} & \cdots & a_{m,n}
         \end{matrix}
         \
         \middle|
@@ -72,10 +72,10 @@ L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est 
     Ensuite le but est d'appliquer les opérations élémentaires pour \og remonter \fg dans l'algorithme et d'obtenir une matrice ou un système de cette forme :
     \begin{align*}
         \begin{pmatrix}
-            a_{11} & 0 & \cdots & 0 \\
-            0 & a_{22} & \cdots & 0 \\ 
+            a_{1,1} & 0 & \cdots & 0 \\
+            0 & a_{2,2} & \cdots & 0 \\ 
             \vdots & \vdots & \ddots & \vdots \\ 
-            0 & 0 & \cdots & a_{mn}
+            0 & 0 & \cdots & a_{m,n}
         \end{pmatrix}
     \end{align*}
 
@@ -90,7 +90,7 @@ L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est 
 
 \section{Opérations sur les matrices}
 \begin{definition}[Opérations sur les matrices]
-	Soient $(m,n,p,q) \in (\N^*)^4$, $A \in \mathcal{M}_{m, n}(\K)$, $B \in \mathcal{M}_{p, q}(\K)$, $\lambda \in \K$, $(a_{11}, \ldots, a_{mn}) \in \K^{mn}$ et $(b_{11}, \ldots, b_{pq}) \in \K^{pq}$ tels que :
+	Soient $m,\ n,\ p,\ q \in \N^*$, $A \in \mathcal{M}_{m, n}(\K)$, $B \in \mathcal{M}_{p, q}(\K)$, $\lambda,\ a_{1,1},\ \ldots,\ a_{m,n},\ b_{1,1},\ \ldots,\ b_{p,q} \in \K$ tels que :
 	\begin{align*}
 		A &=
 		\begin{pmatrix}
@@ -111,41 +111,41 @@ L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est 
 		\begin{align*}
 			A + \lambda B &= 
 			\begin{pmatrix}
-				(a_{11} + \lambda b_{11}) & \cdots & (a_{1n} + \lambda b_{1q}) \\
+				(a_{1,1} + \lambda b_{1,1}) & \cdots & (a_{1,n} + \lambda b_{1,q}) \\
 				\vdots & \ddots & \vdots \\
-				(a_{m1} + \lambda b_{p1}) & \cdots & (a_{mn} + \lambda b_{pq})
+				(a_{m,1} + \lambda b_{p,1}) & \cdots & (a_{m,n} + \lambda b_{p,q})
 			\end{pmatrix}
 		\end{align*}
 		\item Si $n = p$ alors on peut définir la multiplication entre $A$ et $B$.\\
-		Soit $C = AB$. Chaque coefficient $c_{ij}$ est défini par :
+		Soit $C = AB$. Chaque coefficient $c_{i,j}$ est défini par :
 		\begin{align*}
-			c_{ij} = \sum_{k=1}^{n} a_{ik} b_{kj}
+			c_{i,j} = \sum_{k=1}^{n} a_{i,k} b_{k,j}
 		\end{align*}
-        Autrement dit, le coefficient $c_{ij}$ pour $C = AB$ est donné par :
+        Autrement dit, le coefficient $c_{i,j}$ pour $C = AB$ est donné par :
         \begin{align*}
             &\begin{pmatrix}
-                b_{11} & \cdots & \color{red}b_{1j} & \cdots & b_{1q} \\
-                b_{21} & \cdots & \color{green}b_{2j} & \cdots & b_{2q} \\
+                b_{1,1} & \cdots & \color{red}b_{1,j} & \cdots & b_{1,q} \\
+                b_{2,1} & \cdots & \color{green}b_{2,j} & \cdots & b_{2,q} \\
                 \vdots & \cdots & \vdots & \cdots & \vdots \\
-                b_{p1} & \cdots & \color{blue}b_{pj} & \cdots & b_{pq}
+                b_{p,1} & \cdots & \color{blue}b_{pj} & \cdots & b_{p,q}
             \end{pmatrix}
             \\
             \begin{pmatrix}
-                a_{11} & a_{12} & \cdots & a_{1n} \\ 
+                a_{1,1} & a_{1,2} & \cdots & a_{1,n} \\ 
                 \vdots & \vdots & \vdots & \vdots \\
-                \color{red}a_{i1} & \color{green}a_{i2} & \cdots & \color{blue}a_{in} \\ 
+                \color{red}a_{i,1} & \color{green}a_{i,2} & \cdots & \color{blue}a_{i,n} \\ 
                 \vdots & \vdots & \vdots & \vdots \\
-                a_{m1} & a_{m2} & \cdots & a_{mn}
+                a_{m,1} & a_{m,2} & \cdots & a_{m,n}
             \end{pmatrix}
             &\begin{pmatrix}
-                c_{11} & c_{12} & \cdots & \cdots & c_{1q} \\
+                c_{1,1} & c_{1,2} & \cdots & \cdots & c_{1,q} \\
                 \vdots & \vdots & \vdots & \vdots & \vdots \\
-                \cdots & \cdots & \boxed{c_{ij}} & \cdots & c_{iq} \\
+                \cdots & \cdots & \boxed{c_{i,j}} & \cdots & c_{i,q} \\
                 \vdots & \vdots & \vdots & \vdots & \vdots \\
-                c_{m1} & \cdots & \cdots & \cdots & c_{mq}
+                c_{m,1} & \cdots & \cdots & \cdots & c_{m,q}
             \end{pmatrix}
         \end{align*}
-        \[ \boxed{c_{ij}} = \color{red}a_{i1} \cdot b_{1j} \color{black}+ \color{green} a_{i2} \cdot b_{2j} \color{black}+ \color{blue}\cdots + a_{in} \cdot b_{pj} \]
+        \[ \boxed{c_{i,j}} = \color{red}a_{i,1} \cdot b_{1,j} \color{black}+ \color{green} a_{i,2} \cdot b_{2,j} \color{black}+ \color{blue}\cdots + a_{i,n} \cdot b_{p,j} \]
 		Attention, la multiplication n'est pas commutative $(AB \neq BA)$.
 	\end{enumerate}
 \end{definition}
