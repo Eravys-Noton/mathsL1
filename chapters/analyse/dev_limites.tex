@@ -11,7 +11,7 @@ Dans cette partie, en l'absence de précisions supplémentaires, $I$ désigne un
 Plus tard dans ce chapitre, nous pourrons également utiliser les développements limités pour lever les indéterminations.
 \section{Règle de l'Hôpital}
 \begin{theorem}[Règle de l'Hôpital \cite{regle_hopital_bibmath}]
-    Soient $(a, b) \in \R^2,\ \ell \in \overline{\R}$ tels que $a < b$ et $f, g : ]a, b[ \to \R$ deux fonctions dérivables telles que $g'$ ne s'annule pas. 
+    Soient $a,\ b \in \R,\ \ell \in \overline{\R}$ tels que $a < b$ et $f, g : \ ]a,\ b[ \to \R$ deux fonctions dérivables telles que $g'$ ne s'annule pas. 
     \begin{enumerate}
         \item Si $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$ et si $\lim_{x \to a} \frac{f'(x)}{g'(x)} = \ell$, alors $\lim_{x \to a} \frac{f(x)}{g(x)} = \ell$.
         \item Si $\lim_{x \to a} g(x) = \pm \infty$ et si $\lim_{x \to a} \frac{f'(x)}{g'(x)} = \ell$, alors $\lim_{x \to a} \frac{f(x)}{g(x)} = \ell$.
@@ -38,7 +38,7 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 
 \section{Relations de négligeabilité, domination, d'équivalence}
 \begin{definition}
-    Soient $I \subset \R$, $f, g : I \to \R$, $a \in \overline{I}$ et $\varepsilon$ telle que $\lim_{x \to a} \varepsilon(x) = 0$.
+    Soient $I \subseteq \R$, $f,\ g : I \to \R$, $a \in \overline{I}$ et $\varepsilon$ telle que $\lim_{x \to a} \varepsilon(x) = 0$.
     \begin{enumerate}
         \item On dit que $f$ est \textbf{dominée} par $g$ au voisinage de $a$ s'il existe un $B \in \R_+$ tel que $\abs{f(x)} \leq B \abs{g(x)}$ au voisinage de $a$. 
         On écrit alors $f \underset{a}{=} O(g)$ ou $f = O_a(g)$.
@@ -74,8 +74,8 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 \begin{proposition}
 	\begin{enumerate}
         \item $\ln(x) \underset{+\infty}{\sim} o(x)$
-        \item $\forall \alpha, \beta \in \R_+^*,\ (\ln(x))^{\beta} = o(x^{\alpha})$
-        \item $\forall \alpha, \beta \in \R_+^*,\ x^{\beta} = o(e^{\alpha x})$
+        \item $\forall \alpha,\ \beta \in \R_+^*,\ (\ln(x))^{\beta} = o(x^{\alpha})$
+        \item $\forall \alpha,\ \beta \in \R_+^*,\ x^{\beta} = o(e^{\alpha x})$
     \end{enumerate}
 \end{proposition}
 
@@ -90,19 +90,19 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 \section{Développements limités}
 
 \begin{definition}[Polynôme de Taylor]
-    Soit $f \in \mathcal{D}^n(I, \R)$ alors son polynôme de Taylor en $x_0$ est :
+    Soit $f \in \mathcal{D}^n(I,\ \R)$ alors son polynôme de Taylor en $x_0$ est :
     \[ T_{n, x_0}^f(x) = \sum_{k = 0}^{n} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k \]
 \end{definition}
 
 \begin{theorem}[Formule de Taylor-Young]
-    Soient $f \in \mathcal{C}^{n}(I, \R),\ x_0 \in I$.
+    Soient $f \in \mathcal{C}^{n}(I,\ \R),\ x_0 \in I$.
     \begin{align*}
         f(x) = T_{n, x_0}^f(x) + o((x - x_0)^n) 
     \end{align*}
 \end{theorem}
 
 \begin{theorem}[Formue de Taylor-Lagrange]
-    Soient $f \in \mathcal{C}^{n+1}(I, \R),\ x_0 \in I$. 
+    Soient $f \in \mathcal{C}^{n+1}(I,\ \R),\ x_0 \in I$. 
     \begin{align*}
         \exists c \in 
         \begin{cases}
@@ -115,7 +115,7 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 \end{theorem}
 
 \begin{theorem}[Formule de Taylor avec reste intégral]
-    Soient $f \in \mathcal{C}^{n+1}(I, \R),\ x_0 \in I$.
+    Soient $f \in \mathcal{C}^{n+1}(I,\ \R),\ x_0 \in I$.
     \begin{align*}
         f(x) = T_{n, x_0}^f(x) + \int_{x_0}^{x} \frac{f^{(n+1)}(t)}{n!} (x - t)^n \diffd t
     \end{align*}
@@ -142,7 +142,7 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 
 \subsection{Opérations sur les développements limités}
 \begin{proposition}[\cite{exo7_analyse1}]
-    Soient $(c_0, \ldots, c_n) \in \R^{n+1}, (d_0, \ldots, d_n) \in \R^{n+1}$ et $f, g$ deux fonctions admettant des développements limités en 0 telles que :
+    Soient $c_0,\ \ldots,\ c_n,\ d_0,\ \ldots,\ d_n \in \R$ et $f,\ g$ deux fonctions admettant des développements limités en 0 telles que :
     \[ f(x) = c_0 + c_1x + \cdots + c_n x^n + o(x^n) \]
     \[ g(x) = d_0 + d_1x + \cdots + d_n x^n + o(x^n) \]
     \begin{enumerate}
