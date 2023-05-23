@@ -4,7 +4,7 @@
 \par \noindent Dans cette partie, $\K$ désigne soit $\N$, soit $\Z$, soit $\Q$, soit $\R$.
 
 \begin{axiom}[Loi de composition \og $+$ \fg]
-    $\forall a,\ b,\ c \in \K$.
+    $\forall a, b, c \in \K$.
     \begin{enumerate}
     	\item $a + (b + c) = (a + b) + c$.
     	\item $a + b = b + a$.
@@ -14,7 +14,7 @@
 \end{axiom}
 
 \begin{axiom}[Loi de composition \og $\cdot$ \fg]
-    $\forall a,\ b,\ c \in \K$. 
+    $\forall a, b, c \in \K$. 
     \begin{enumerate}
     	\item $a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
     	\item $a \cdot b = b \cdot a$.
@@ -26,7 +26,7 @@
 \end{axiom}
 
 \begin{proposition}[Opérations sur les fractions]
-    $\forall a,\ c \in \Z,\ b,\ d \in \Z^*$.
+    $\forall a, c \in \Z,\ b, d \in \Z^*$.
     \begin{multicols}{2}
     	\begin{enumerate}
     		\item $\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}$.
@@ -36,7 +36,7 @@
 \end{proposition}
 
 \begin{proof}
-	Soient $a,\ a',\ c,\ c' \in \N$ et $b,\ b',\ d,\ d' \in \N^*$ tels que :
+	Soient $a, a', c, c' \in \N$ et $b, b', d, d' \in \N^*$ tels que :
 	\begin{align*}
 		\frac{a}{b} &= \frac{a'}{b'} & \frac{c}{d} &= \frac{c'}{d'}
 	\end{align*}
@@ -80,12 +80,12 @@
 \end{proof}
 
 \begin{definition}[Somme]
-    $\forall m,\ n \in \N,\ a_k \in \R,\ m \leq k \leq n$.
+    $\forall m, n \in \N,\ a_k \in \R,\ m \leq k \leq n$.
     \[ \sum_{k = m}^n a_k \equiv \sum_{m \leq k \leq n} = a_m + a_{m + 1} + \cdots + a_n \]
 \end{definition}
 
 \begin{proposition}[Linéarité de la somme]
-    $\forall m,\ n \in \N^2,\ a_k,\ b_k,\ \lambda \in \R,\ m \leq k \leq n$.
+    $\forall m, n \in \N^2,\ a_k, b_k, \lambda \in \R,\ m \leq k \leq n$.
     \[ \sum_{k = m}^{n} (a_k + \lambda b_k) = \sum_{k = m}^n a_k + \lambda \sum_{k = m}^n b_k \]
 \end{proposition}
 
@@ -94,7 +94,7 @@
 \end{proof}
 
 \begin{proposition}[Somme téléscopique]
-    $\forall m,\ n \in \N^2,\ a_k \in \R,\ m \leq k \leq n$.
+    $\forall m, n \in \N,\ a_k \in \R,\ m \leq k \leq n$.
     \[ \sum_{k = m}^n (a_k - a_{k - 1}) = a_n - a_{m - 1} \]
 \end{proposition}
 
@@ -103,7 +103,7 @@
 \end{proof}
 
 \begin{proposition}
-	$\forall n,\ p \in \N,\ n \geq p$.
+	$\forall n, p \in \N,\ n \geq p$.
 	\[ \binom{n}{p} = \frac{n!}{p!(n - p)!} \]
 	$\forall n \in \N$.
 	\begin{align*}
@@ -111,7 +111,7 @@
 		\sum_{k = 0}^{n} k^2 &= \frac{n(n+1)(2n+1)}{6} &
 		\sum_{k = 0}^{n} k^3 &= \frac{n^2(n+1)^2}{4}
 	\end{align*}
-	$\forall a,\ b \in \K,\ n \in \N$.
+	$\forall a, b \in \K,\ n \in \N$.
 	\begin{align*}
 		(a + b)^n = \sum_{k = 0}^{n} \binom{n}{k} a^kb^{n-k}
 	\end{align*}
@@ -121,6 +121,6 @@
 \end{proof}
 
 \begin{definition}[Produit]
-    $\forall m,\ n \in \N,\ m \leq n,\ a_k \in \R,\ m \leq k \leq n$
+    $\forall m, n \in \N,\ m \leq n,\ a_k \in \R,\ m \leq k \leq n$
     \[ \prod_{k = m}^{n} \equiv \prod_{m \leq k \leq n} = a_1 \cdot a_2 \cdot \ldots \cdot a_n \]
 \end{definition}

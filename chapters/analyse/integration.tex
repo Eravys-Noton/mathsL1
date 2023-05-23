@@ -2,22 +2,22 @@
 \def\arraystretch{1}
 
 \begin{theorem}[Théorème fondamental de l'analyse]
-	Soit $f \in \mathcal{C}^0([a,\ b])$ et 
+	Soit $f \in \mathcal{C}^0([a, b])$ et 
 	\begin{align*}
-		\forall x \in [a,\ b],\ F(x) \coloneqq \int_a^x f(t) \ \diffd t
+		\forall x \in [a, b],\ F(x) \coloneqq \int_a^x f(t) \ \diffd t
 	\end{align*}
-	alors $F \in \mathcal{C}^1(]a,\ b[)$ et $\forall x \in ]a,\ b[,\ F'(x) = f(x)$.    
+	alors $F \in \mathcal{C}^1(]a, b[)$ et $\forall x \in ]a, b[,\ F'(x) = f(x)$.    
 \end{theorem}
 
 \begin{corollary}
-    Si $F \in \mathcal{C}^1(]a,\ b[)$ tel que $\forall x \in ]a,\ b[,\ F'(x) = f(x)$ alors
+    Si $F \in \mathcal{C}^1(]a, b[)$ tel que $\forall x \in ]a, b[,\ F'(x) = f(x)$ alors
 	\begin{align*}
 		\int_a^b f(x) \ \diffd x = [F(x)]_a^b \equiv F(b) - F(a) 
 	\end{align*}
 \end{corollary}
 
 \begin{proposition}
-	Soient $\lambda,\ a,\ b \in \R$ et $f,\ g \in \mathcal{C}^0([a,\ b])$.
+	Soient $\lambda, a, b \in \R$ et $f, g \in \mathcal{C}^0([a, b])$.
 	\begin{align*}
 		\int_a^b f(x) + \lambda g(x) \ \diffd x = \int_a^b f(x) \ \diffd x + \lambda \int_a^b g(x) \ \diffd x 
 	\end{align*}
@@ -33,19 +33,19 @@
 \end{proof}
 
 \begin{proposition}
-	Soient $a,\ b \in \R$ et $c \in ]a,\ b[$.
+	Soient $a, b \in \R$ et $c \in ]a, b[$.
 	\begin{align*}
 		\int_a^b f(x) \ \diffd x = \int_a^c f(x) \ \diffd x + \int_c^b f(x) \ \diffd x
 	\end{align*}
 \end{proposition}
 
 \begin{theorem}[Théorème de la moyenne]
-    Soit $f \in \mathcal{C}^0([a,\ b])$. $\exists c \in ]a, b[$  tel que :
+    Soit $f \in \mathcal{C}^0([a, b])$. $\exists c \in ]a, b[$  tel que :
     \[ \frac{\int_{a}^{b} f(x) \ \diffd x}{b - a} = f(c) \]
 \end{theorem}
 
 \begin{theorem}[Intégration par parties]
-	Soient $u,\ v \in \mathcal{C}^1([a,\ b])$ alors
+	Soient $u,\ v \in \mathcal{C}^1([a, b])$ alors
 	\begin{align*}
 		\int_a^b u'(x) v(x) \ \diffd x = [u(x)v(x)]_a^b - \int_a^b u(x) v'(x) \ \diffd x
 	\end{align*}
@@ -64,7 +64,7 @@
 \end{proof}
 
 \begin{theorem}[Intégration par changement de variable]
-	Soit $f \in \mathcal{C}^0(I)$ et $\varphi \in \mathcal{C}^1([a,\ b])$ tel que $\varphi ([a,\ b]) \subseteq I$ alors 
+	Soit $f \in \mathcal{C}^0(I)$ et $\varphi \in \mathcal{C}^1([a, b])$ tel que $\varphi ([a, b]) \subseteq I$ alors 
 	\begin{align*}
 		\int_a^b f(\varphi(x)) \cdot \varphi'(x) \ \diffd x = \int_{\varphi(a)}^{\varphi(b)} f(x) \ \diffd x
 	\end{align*}

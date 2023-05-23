@@ -13,14 +13,14 @@
 	Soient $E$ et $F$ deux ensembles et $f : E \to F$ une fonction.
 	\\
 	Le graphe de $f$ est défini comme :
-	\[ \operatorname{Gr}(f) \equiv \operatorname{Gph}(f) = \{ (x,\ f(x)),\ x \in E \} \subset E \times F \] 
+	\[ \operatorname{Gr}(f) \equiv \operatorname{Gph}(f) = \{ (x, f(x)),\ x \in E \} \subset E \times F \] 
 \end{definition}
 
 \begin{definition}
 	Soit $f : E \to F$ une fonction. On dit que :
     \begin{enumerate}
         \item $f$ est \textbf{injective} si et seulement si : 
-        \[ \forall x_1,\ x_2 \in E,\ f(x_1) = f(x_2) \implies x_1 = x_2 \]
+        \[ \forall x_1, x_2 \in E,\ f(x_1) = f(x_2) \implies x_1 = x_2 \]
         \item $f$ est \textbf{surjective} si et seulement si : 
         \[ \forall y \in F,\ \exists x \in E,\ f(x) = y \]
         \item $f$ est \textbf{bijective} si et seulement si :
@@ -50,7 +50,7 @@
         \item $f$ est \textbf{impaire} si et seulement si  :
         \[ \forall x \in I,\ -f(x) = f(-x) \]
         \item $f$ est \textbf{$T$-périodique} si et seulement si :
-        \[ \forall (x,\ n) \in \R \times \Z,\ f(x + nT) = f(x) \]
+        \[ \forall (x, n) \in \R \times \Z,\ f(x + nT) = f(x) \]
     \end{enumerate}
 \end{definition}
 
@@ -69,21 +69,21 @@
 	Soient $I \subset \R$ et $f : I \to \R$. On dit que :
     \begin{enumerate}
         \item $f$ est \textbf{croissante} si et seulement si :
-        \[ \forall (x, y) \in I^2,\ x \leq y \implies f(x) \leq f(y) \]
+        \[ \forall x, y \in I,\ x \leq y \implies f(x) \leq f(y) \]
         \item $f$ est \textbf{décroissante} si et seulement si : 
-        \[ \forall (x, y) \in I^2,\ x \leq y \implies f(x) \geq f(y) \]
+        \[ \forall x, y \in I,\ x \leq y \implies f(x) \geq f(y) \]
         \item $f$ est \textbf{monotone} si et seulement si elle est \textbf{croissante} ou \textbf{décroissante}.
         \item $f$ est \textbf{strictement croissante} si et seulement si : 
-        \[ \forall (x, y) \in I^2,\ x < y \implies f(x) < f(y) \]
+        \[ \forall x, y \in I,\ x < y \implies f(x) < f(y) \]
         \item $f$ est \textbf{strictement décroissante} si et seulement si :
-        \[ \forall (x, y) \in I^2,\ x < y \implies f(x) > f(y) \]
+        \[ \forall x, y \in I,\ x < y \implies f(x) > f(y) \]
         \item $f$ est \textbf{strictement monotone} si et seulement si elle est \textbf{strictement croissante} ou \textbf{strictement décroissante}.
     \end{enumerate}
 \end{definition}
 
 \section{Opérations sur les fonctions}
 \begin{definition}[Opérations sur les fonctions]
-	Soient $f,\ g$ deux fonctions et $A \subset \R$.
+	Soient $f, g$ deux fonctions et $A \subset \R$.
 	\begin{center}
 		$
 		\appli{f+g}{A}{\R}{x}{f(x)+g(x)}
@@ -94,7 +94,7 @@
 \end{definition}
 
 \begin{definition}[Composition de fonctions]
-	Soient $E,\ F,\ G,\ H \subseteq \R,\ F \subseteq G,\ f : E \to F,\ g : G \to H$.
+	Soient $E, F, G, H \subseteq \R,\ F \subseteq G,\ f : E \to F,\ g : G \to H$.
 	\begin{center}
 		$
 		\appli{g \circ f}{E}{H}{x}{g(f(x))}
@@ -103,7 +103,7 @@
 \end{definition}
 
 \begin{definition}[Fonction identité]
-    Soient $E,\ F \subseteq \R$.
+    Soient $E, F \subseteq \R$.
 	\begin{center}
 		$
 		\appli{id_E}{E}{F}{x}{x}
@@ -132,7 +132,7 @@
 \end{definition}
 
 \begin{proposition}
-    Soient $f : E \to F,\ A_1,\ A_2 \subseteq E,\ B_1,\ B_2 \subseteq F$.
+    Soient $f : E \to F,\ A_1, A_2 \subseteq E,\ B_1, B_2 \subseteq F$.
     \begin{enumerate}
         \item $f(A_1 \cup A_2) = f(A_1) \cup f(A_2)$.
         \item $f^{-1} (B_1 \cup B_2) = f^{-1} (B_1) \cup f^{-1} (B_2)$.

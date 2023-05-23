@@ -11,13 +11,13 @@
 \section{\'Equations différentielles d'ordre 1}
 
 \begin{definition}[\'Equation différentielle d'ordre 1]
-	Soient $y \in \mathcal{C}^1(\R,\ \R)$ et $a,\ b \in \mathcal{C}^0(\R,\R)$. \\
+	Soient $y \in \mathcal{C}^1(\R, \R)$ et $a, b \in \mathcal{C}^0(\R, \R)$. \\
 	Une équation différentielle d'ordre 1 est une équation de la forme
 	\[ y' + a(x)y = b(x) \]
 \end{definition}
 
 \begin{theorem}
-	Soient $y \in \mathcal{C}^1(\R,\ \R)$ et $a \in \mathcal{C}^0(\R,\ \R)$, les solutions de :
+	Soient $y \in \mathcal{C}^1(\R, \R)$ et $a \in \mathcal{C}^0(\R, \R)$, les solutions de :
 	\[ y' + a(x)y = 0 \]
 	sont de la forme $C \in \R,\ A'(x) = a(x)$:
 	\[ y = C \cdot \exp(-A(x)) \]
@@ -99,13 +99,13 @@ Pour trouver une solution particulière d'une équation différentielle d'ordre 
 \section{\'Equations différentielles d'ordre 2}
 
 \begin{definition}[\'Equations différentielle d'ordre 2]
-	Soient $y \in \mathcal{C}^2(\R,\ \R)$, $b \in \mathcal{C}^0(\R,\ \R)$ et $p,\ q \in \R$. \\
+	Soient $y \in \mathcal{C}^2(\R, \R)$, $b \in \mathcal{C}^0(\R, \R)$ et $p, q \in \R$. \\
 	Une équation différentielle d'ordre 2 est une équation de la forme
 	\[ y'' + py' + q = b(x) \]
 \end{definition}
 
 \begin{theorem}
-  Soient $y \in \mathcal{C}^2(\R,\ \R),\ p,\ q \in \R$ et $(E)$ l'équation suivante :
+  Soient $y \in \mathcal{C}^2(\R, \R),\ p, q \in \R$ et $(E)$ l'équation suivante :
   \[ (E) : y'' + py' + qy = 0, \]
   On s'intéresse d'abord à cette équation associée :
   \[ \ \lambda^{2} + p\lambda + q = 0 \]
@@ -130,10 +130,10 @@ Pour trouver une solution particulière d'une équation différentielle d'ordre 
 \par La variation de la constante est difficilement applicable sur les équations différentielles de second ordre, nous devons trouver d'autres méthodes.
 Toutes les équations de second ordre qu'on étudiera dans ce chapitre auront pour second membre une composé de fonctions polynomiales, exponentielles et trigonométriques. Ainsi, nous pouvons utiliser ces propriétés.
 \\
-\par Voici une méthode pour trouver une solution particulière d'une équation de type :
+\par \noindent Voici une méthode pour trouver une solution particulière d'une équation de type :
     \[ y'' + py' + qy = b(x) \]
-    pour $p,\ q \in \R,\ b \in \mathcal{C}^0(\R,\  \R),\ y \in \mathcal{C}^2(\R,\ \R)$. \\
-    Soient $\alpha,\ \beta \in \R$, $m \in \N$, $P,\ P_1,\ P_2,\ Q_1,\ Q_2 \in \R[X]$. 
+    pour $p, q \in \R,\ b \in \mathcal{C}^0(\R, \R),\ y \in \mathcal{C}^2(\R, \R)$. \\
+    Soient $\alpha, \beta \in \R$, $m \in \N$, $P, P_1, P_2, Q_1, Q_2 \in \R[X]$. 
     \begin{itemize}
         \item \cite{exo7_analyse1} Si $b(x) = e^{\alpha x}(P_1(x) \cos(\beta x) + P_2(x) \sin(\beta x) )$
         \[y_{p} = x^{m} e^{\alpha x}(Q_1(x) \cos(\beta x) + Q_2(x) \sin(\beta x)) ,\ \deg(Q_1), \deg(Q_2) \leq \max\left\{ \deg(P_1), \deg(P_2) \right\} \]

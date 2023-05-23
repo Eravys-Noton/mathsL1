@@ -4,7 +4,7 @@
 \section{Définitions}
 \begin{definition}[Application linéaire]
     Soient $E$ et $F$ deux $\K$-espaces vectoriels et $f : E \to F$.
-    On dit que $f$ est une \textbf{application linéaire} si et seulement si $\forall (x_1, x_2) \in E^2,\ \lambda \in \K$ :
+    On dit que $f$ est une \textbf{application linéaire} si et seulement si $\forall x_1, x_2 \in E,\ \lambda \in \K$ :
     \[ f(x_1 + \lambda x_2) = f(x_1) + \lambda f(x_2) \]
 \end{definition}
 
@@ -12,9 +12,9 @@
     Soient $E$ et $F$ deux $\K$-espaces vectoriels et $f : E \to F$ une application linéaire.
     \\
     On définit le \textbf{noyau} de $f$, noté $\ker(f)$ tel que :
-    \[ \ker(f) \coloneqq \{ \forall x \in E : f(x) = 0_E \} \] 
+    \[ \ker(f) \coloneqq \{ x \in E : f(x) = 0_E \} \] 
     On définit l'\textbf{image} de $f$, notée $\Im(f)$ telle que :
-    \[ \Im(f) \coloneqq \{ \forall y \in F : \exists x \in E,\ y = f(x) \} \]
+    \[ \Im(f) \coloneqq \{ y \in F : \exists x \in E,\ y = f(x) \} \]
 \end{definition}
 
 \begin{definition}
@@ -63,7 +63,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 \end{corollary}
 
 \begin{proposition}
-    Soit $f \in \mathcal{L}(E, F)$ et $(b_1, \ldots, b_n)$ une base de $E$. Si l'on connait $f(b_i) \in F$, $\forall i = 1, \ldots, n$, on connait toute l'application $f$.
+    Soit $f \in \mathcal{L}(E, F)$ et $(b_1, \ldots, b_n)$ une base de $E$. Si l'on connait $f(b_i) \in F$, $\forall i \in \llbracket 1, n \rrbracket$, on connait toute l'application $f$.
 \end{proposition}
 
 \begin{corollary}
@@ -81,8 +81,8 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 
 \begin{definition}
     Soient $f \in \mathcal{L}(E, F)$ et $\mathcal{B} \coloneqq (b_1, \ldots, b_n)$ une base de $E$ et $\mathcal{C} \coloneqq (c_1, \ldots, c_n)$ une base de $F$.
-    Alors on peut définir une matrice $A \in \mathcal{M}_{m,n}(\mathcal{K}),\ \forall i \in \llbracket 1, n \rrbracket$. 
-    \[ f(b_i) = \sum_{j = 1}^{n} A_{ji} c_j \]
+    Alors on peut définir une matrice $A \in \mathcal{M}_{m,n}(\mathbb{K}),\ \forall i \in \llbracket 1, n \rrbracket$. 
+    \[ f(b_i) = \sum_{j = 1}^{n} a_{j,i} c_j \]
 \end{definition}
 
 \begin{lemma} Soient $\K$ un corps et $E$ un espace-vectoriel de dimension $n \in \N$.
@@ -93,7 +93,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
     Soient $\mathcal{B} = (b_1, \ldots, b_n)$ une base de $E$, $(\lambda_1, \ldots, \lambda_n) \in \K^n$ et $\varphi \in \mathcal{L}(E, \K^n)$  alors :
     \begin{center}
     	$
-    	\appli{\varphi}{E}{\K^n}{\sum_{i = 1}^{n} \lambda_i b_i}{(\lambda_i)_{1 \leq i \leq n}}
+    	\appli{\varphi}{E}{\K^n}{\sum_{i = 1}^{n} \lambda_i b_i}{(\lambda_i)_{i \in \llbracket 1, n \rrbracket}}
     	$
     \end{center}
     est une bijection, alors c'est un isomorphisme.
@@ -208,7 +208,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 \section{Changements de bases et matrices associées aux applications linéaires.}
 
 \begin{definition}
-    Soient $(n,p) \in (\N^*)^2$, $E$ et $F$ deux $\K$-espaces vectoriels, $\mathcal{B} = (b_1, \ldots, b_p) \in E^p$ une base de $E$, $\mathcal{B}' = (b_1', \ldots, b_n') \in F^n$ une base de $F$ et $f \in \mathcal{L}(E, F)$.
+    Soient $n, p \in \N^*$, $E$ et $F$ deux $\K$-espaces vectoriels, $\mathcal{B} = (b_1, \ldots, b_p)$ une base de $E$, $\mathcal{B}' = (b_1', \ldots, b_n')$ une base de $F$ et $f \in \mathcal{L}(E, F)$.
     \\
     On peut définir une matrice $\operatorname{Mat}_{\mathcal{B}\mathcal{B}'} (f) \in \mathcal{M}_{n,p}(\K)$ telle que :
     \begin{align*}
@@ -225,17 +225,17 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
             b_n'
         \end{matrix}
         \begin{pmatrix}
-            a_{11} & \cdots & a_{1p} \\
+            a_{1,1} & \cdots & a_{1,p} \\
             \vdots & \ddots & \vdots \\ 
-            a_{n1} & \cdots & a_{np}
+            a_{n,1} & \cdots & a_{n,p}
         \end{pmatrix}
     \end{align*}
-    avec les coefficients $(a_{11}, \ldots, a_{np}) \in \K^{np}$ tels que : 
-    \[ f(b_j) = \sum_{i = 0}^n a_{ij} b_i' \]
+    avec les coefficients $a_{1,1}, \ldots, a_{n,p} \in \K$ tels que : 
+    \[ f(b_j) = \sum_{i = 0}^n a_{i,j} b_i' \]
 \end{definition}
 
 \begin{definition}[Matrice de passage]
-    Soient $n \in \N^*$, $E$ et $F$ deux $\K$-espaces vectoriels de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n) \in E^n$ et $\mathcal{B}' = (b_1', \ldots, b_n') \in E^n$ deux bases de $E$. On appelle \textbf{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$.
+    Soient $n \in \N^*$, $E$ et $F$ deux $\K$-espaces vectoriels de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n)$ et $\mathcal{B}' = (b_1', \ldots, b_n')$ deux bases de $E$. On appelle \textbf{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$.
 \end{definition}
 
 \par \noindent Concrètement, écrivons : 
@@ -253,13 +253,13 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
         b_n
     \end{matrix}
     \begin{pmatrix}
-        a_{11} & \cdots & a_{1n} \\
+        a_{1,1} & \cdots & a_{1,n} \\
         \vdots & \ddots & \vdots \\ 
-        a_{n1} & \cdots & a_{nn}
+        a_{n,1} & \cdots & a_{n,n}
     \end{pmatrix}
 \end{align*}
-Avec les coefficients $(a_{11}, \ldots, a_{nn}) \in \K^{nn}$ tels que :
-\[ b_j' = \sum_{i=1}^{n} a_{ij} b_i  \]
+Avec les coefficients $a_{1,1}, \ldots, a_{n,n} \in \K$ tels que :
+\[ b_j' = \sum_{i=1}^{n} a_{i,j} b_i  \]
 
 \begin{definition}
     Soient $A, B \in \mathcal{M}_{m,n}(\K)$.

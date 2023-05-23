@@ -5,7 +5,7 @@
 \begin{definition}[Loi de composition]
 	Soient $E$, $F$ deux ensembles et $f$ une application.
 	\begin{enumerate}
-		\item On dit que $f$ est une loi de composition \textbf{interne} si et seulement si : $f : E^2 \to E$.
+		\item On dit que $f$ est une loi de composition \textbf{interne} si et seulement si : $f : E \times E \to E$.
 		\item On dit que $f$ est une loi de composition \textbf{externe} si et seulement si : $f : E \times F \to E$.
 	\end{enumerate}
 \end{definition}
@@ -19,7 +19,7 @@
 \begin{definition}[Groupe]
 	Soit $(G, *)$ un magma.
 	\\ 
-	On dit que $(G, *)$ est un groupe si et seulement si pour tout $(g_1, g_2, g_3) \in G^3$ : 
+	On dit que $(G, *)$ est un groupe si et seulement si pour $g_1, g_2, g_3 \in G$ : 
     \begin{enumerate}
     		\item $(g_1 * g_2) * g_3 = g_1 * (g_2 * g_3)$
     		\item $\exists 0_G \in G,\ g_1 * 0_G = 0_G * g_1 = g_1$
@@ -31,7 +31,7 @@
 \end{definition}
 
 \begin{definition}[Anneau \cite{bibmath_resume_groupes}]
-	Soit $A$ un ensemble muni de deux lois de compositions \textbf{internes} \og $+$ \fg et \og $\cdot$ \fg sur $A$ telles que pour tout $(a, b, c) \in A^3$ : 
+	Soit $A$ un ensemble muni de deux lois de compositions \textbf{internes} \og $+$ \fg et \og $\cdot$ \fg sur $A$ telles que pour $a, b, c \in A$ : 
 	\begin{enumerate}
 			\item $(A, +)$ est un groupe \textbf{commutatif}.
 			\item $a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
@@ -56,7 +56,7 @@
 	Un $\K$-espace vectoriel est un ensemble $E$ composé d'une loi de composition \textbf{interne} \og $+$ \fg et d'une loi de composition \textbf{externe} \og $\cdot$ \fg telles que :
 	\begin{center}
 		$
-		\appli{+}{E^2}{E}{(x,y)}{x+y}
+		\appli{+}{E \times E}{E}{(x,y)}{x+y}
 		\qquad 
 		\appli{\cdot}{\K \times E}{E}{(\lambda, u)}{\lambda \cdot u}
 		$	
@@ -64,7 +64,7 @@
 	
 	\begin{enumerate}
 		\item $(E, +)$ est un groupe commutatif.
-		\item $\forall (\lambda_1, \lambda_2) \in \K^2,\ (u, v) \in E^2 :$
+		\item $\forall \lambda_1, \lambda_2 \in \K,\ u, v \in E :$
 		\begin{enumerate}
 			\item $\lambda_1 \cdot (u + v) = \lambda_1 \cdot u + \lambda_1 \cdot v$
 			\item $(\lambda_1 + \lambda_2) \cdot u = \lambda_1 \cdot u + \lambda_2 \cdot u$
@@ -79,12 +79,12 @@
 	\begin{enumerate}
     		\item $F \subset E$
     		\item $F \neq \emptyset$
-    		\item $\forall (u, v) \in F^2,\ \lambda \in \K,\ u + \lambda v \in F$
+    		\item $\forall u, v \in F,\ \lambda \in \K,\ u + \lambda v \in F$
     	\end{enumerate}
 \end{definition}
 
 \begin{definition}[Somme directe]
-	Soient $F_1, F_2 \subset E$. On dit que $F_1$ et $F_2$ sont en \textbf{somme directe} ou qu'ils sont \textbf{supplémentaires} dans $E$ si et seulement si :
+	Soient $F_1, F_2 \subseteq E$. On dit que $F_1$ et $F_2$ sont en \textbf{somme directe} ou qu'ils sont \textbf{supplémentaires} dans $E$ si et seulement si :
 	\begin{multicols}{2}
 	    \begin{enumerate}
 		\item $F_1 \cap F_2 = \{ 0_E \}$
@@ -96,7 +96,7 @@
 \end{definition}
 
 \begin{definition}
-	Soient $n \in \N^*$, $E$ un espace vectoriel et $\mathcal{F} = (u_1, \ldots, u_n) \in E^n$.
+	Soient $n \in \N^*$, $E$ un espace vectoriel et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $E$.
 	\begin{enumerate}
 		\item On dit que $\mathcal{F}$ est \textbf{libre} si et seulement si :
 		\begin{align*}
@@ -119,7 +119,7 @@
 \end{definition}
 
 \begin{proposition}
-	Soient un espace vectoriel $E$ et $\mathcal{F} = (u_1, \ldots, u_n) \in E^n$.
+	Soient un espace vectoriel $E$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $E$.
 	\[ 
 	\mathcal{F} \text{ est une base} \iff 
 	\forall x \in E,\ \exists ! (\lambda_1, \ldots, \lambda_n) \in \K^n,\ x = \sum_{i = 1}^n \lambda_i u_i
@@ -143,7 +143,7 @@
 \end{proof}
 
 \begin{proposition}
-	Soit $\mathcal{F} = (u_1, \ldots, u_n) \in (\R^n)^n$. $\mathcal{F}$ est une base de $\R^n$ si et seulement si :
+	Soit $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $\R^n$. $\mathcal{F}$ est une base de $\R^n$ si et seulement si :
 	\[ \det(\mathcal{F}) \neq 0 \]
 \end{proposition}
 
@@ -153,7 +153,7 @@
 
 
 \begin{proposition}
-	Soient $E$ un espace vectoriel de dimension $n$ et $\mathcal{F} = (u_1, \ldots, u_n) \in E^n$. Alors on a :
+	Soient $E$ un espace vectoriel de dimension $n$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $E$. Alors on a :
 	\begin{enumerate}
 		\item $\mathcal{F}$ est une base.
 		\item $\mathcal{F}$ est libre.

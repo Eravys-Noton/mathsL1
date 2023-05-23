@@ -29,8 +29,8 @@
     \end{enumerate}
     On appelle extremum un point qui est soit un maximum soit un minimum.
     \begin{enumerate}
-        \item On dit que $a$ est un \textbf{maximum local} si et seulement si : $\exists \varepsilon > 0,\ a \text{ est un maximum de } f_{|]a - \varepsilon,\ a + \varepsilon[}$.
-        \item On dit que $a$ est un \textbf{minimum local} si et seulement si : $\exists \varepsilon > 0,\ a \text{ est un minimum de } f_{|]a - \varepsilon,\ a + \varepsilon[}$.
+        \item On dit que $a$ est un \textbf{maximum local} si et seulement si : $\exists \varepsilon > 0,\ a \text{ est un maximum de } f_{|]a - \varepsilon, a + \varepsilon[}$.
+        \item On dit que $a$ est un \textbf{minimum local} si et seulement si : $\exists \varepsilon > 0,\ a \text{ est un minimum de } f_{|]a - \varepsilon, a + \varepsilon[}$.
     \end{enumerate}
 \end{definition}
 
@@ -40,32 +40,32 @@
 \end{theorem}
 
 \begin{theorem}[Théorème de Rolle]
-    Soient $a,\ b \in \R$ tels que $a < b$ et $f : [a,\ b] \to \R$ une fonction telle que :
+    Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \to \R$ une fonction telle que :
     \begin{enumerate}
-            \item $f$ est continue sur $[a,\ b]$.
-            \item $f$ est dérivable sur $]a,\ b[$.
+            \item $f$ est continue sur $[a, b]$.
+            \item $f$ est dérivable sur $]a, b[$.
             \item $f(a) = f(b)$.
         \end{enumerate}
-    \par \noindent Il existe un $c \in ]a,\ b[$ tel que : \[ f'(c) = 0 \]
+    \par \noindent Il existe un $c \in ]a, b[$ tel que : \[ f'(c) = 0 \]
 \end{theorem}
 
 \begin{theorem}[Théorème des accroissements finis]
-    Soient $a,\ b \in \R$ tels que $a < b$ et $f : [a,\ b] \to \R$, telle que : 
+    Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \to \R$, telle que : 
     \begin{enumerate}
-            \item $f$ est continue sur $[a,\ b]$.
-            \item $f$ est dérivable sur $]a,\ b[$.
+            \item $f$ est continue sur $[a, b]$.
+            \item $f$ est dérivable sur $]a, b[$.
         \end{enumerate}
-    \par \noindent Il existe un $c \in ]a,\ b[$ tel que :
+    \par \noindent Il existe un $c \in ]a, b[$ tel que :
 	\[ f'(c) = \frac{f(b) - f(a)}{b - a} \]
 \end{theorem}
 
 \begin{corollary}[Inégalité des accroissements finis]
-	Soit $M$ tel que $\abs{f'} \leq M$ sur $]a,\ b[$.
+	Soit $M$ tel que $\abs{f'} \leq M$ sur $]a, b[$.
 	\[ \abs{\frac{f(b) - f(a)}{b - a}} \leq M \]
 \end{corollary}
 
 \begin{proposition}
-    Soient $f : [a,\ b] \to \R$ une fonction continue sur $[a,\ b]$ et dérivable sur $]a,\ b[$.
+    Soient $f : [a, b] \to \R$ une fonction continue sur $[a, b]$ et dérivable sur $]a,\ b[$.
     \begin{enumerate}
             \item $f \text{ croissante} \iff f' \geq 0$.
             \item $f \text{ décroissante} \iff f' \leq 0$
@@ -75,14 +75,14 @@
 \begin{definition}
 	Soit $f : I \to \R$ et $n \in \N$.
 	\begin{enumerate}
-		\item $f \in \mathcal{D}^n(I,\ \R)$ signifie que $f$ est $n$ fois dérivable sur $I$.
-		\item $f \in \mathcal{C}^n(I,\ \R)$ signifie que $f$ est $n$ fois dérivable et que sa dérivée $n$-ième est continue.
-		\item $f \in \mathcal{C}^{\infty}(I,\ \R) = \mathcal{D}^{\infty}(I,\ \R)$ signifie que $f \in \mathcal{C}^n(I,\ \R),\ \forall n \in \N$. On dit que les fonctions $\mathcal{C}^{\infty}$ sont des \textbf{fonctions lisses}.
+		\item $f \in \mathcal{D}^n(I, \R)$ signifie que $f$ est $n$ fois dérivable sur $I$.
+		\item $f \in \mathcal{C}^n(I, \R)$ signifie que $f$ est $n$ fois dérivable et que sa dérivée $n$-ième est continue.
+		\item $f \in \mathcal{C}^{\infty}(I, \R) = \mathcal{D}^{\infty}(I, \R)$ signifie que $f \in \mathcal{C}^n(I, \R),\ \forall n \in \N$. On dit que les fonctions $\mathcal{C}^{\infty}$ sont des \textbf{fonctions lisses}.
 	\end{enumerate}
 \end{definition}
 
 \begin{proposition}
-	$\forall f,\ g \in \mathcal{C}^n(I,\ \R) \implies f + g,\ f \cdot g,\ f \circ g \in \mathcal{C}^n(I,\ \R)$
+	$\forall f, g \in \mathcal{C}^n(I, \R) \implies f + g, f \cdot g, f \circ g \in \mathcal{C}^n(I, \R)$
 \end{proposition}
 
 \section{Convexité}
@@ -90,16 +90,16 @@
     Soit $f : I \to \R$.
     \begin{enumerate}
         \item On dit que $f$ est \textbf{convexe} si et seulement si : 
-        \[ \forall x,\ y \in I,\ \lambda \in [0,\ 1],\ f(\lambda x + (1 - \lambda)y) \leq \lambda f(x) + (1 - \lambda) f(y) \]
+        \[ \forall x, y \in I,\ \lambda \in [0, 1],\ f(\lambda x + (1 - \lambda)y) \leq \lambda f(x) + (1 - \lambda) f(y) \]
         \item On dit que $f$ est \textbf{concave} si et seulement si : 
-        \[ \forall x,\ y \in I,\ \lambda \in [0,\ 1],\ f(\lambda x + (1 - \lambda)y) \geq \lambda f(x) + (1 - \lambda) f(y) \]
+        \[ \forall x, y \in I,\ \lambda \in [0, 1],\ f(\lambda x + (1 - \lambda)y) \geq \lambda f(x) + (1 - \lambda) f(y) \]
     \end{enumerate}
 \end{definition}
 
 \par Géométriquement, $f$ est convexe signifie que son graphe passe sous les cordes de $f$ et que les tangentes passent sous le graphe. $f$ est concave signifie que son graphe au-dessus des cordes de $f$ et que les tangentes passent par-dessus le graphe.
 
 \begin{theorem}
-	Soit $f \in \mathcal{D}^2(I,\ \R)$.
+	Soit $f \in \mathcal{D}^2(I, \R)$.
         \begin{enumerate}
                 \item $f \text{ convexe} \iff f'' \geq 0$.
                 \item $f \text{ concave} \iff f'' \leq 0$.
@@ -112,13 +112,13 @@
 \end{proposition}
 
 \begin{proposition}
-	Soient $a,\ b \in \R$ tel que $a < b,\ f : [a,\ b] \to \R$.
-	La corde $c$ reliant les points $(a,\ f(a))$ et $(b,\ f(b))$ est définie par l'équation suivante :
+	Soient $a, b \in \R$ tel que $a < b,\ f : [a, b] \to \R$.
+	La corde $c$ reliant les points $(a, f(a))$ et $(b, f(b))$ est définie par l'équation suivante :
 	\[ c = \frac{f(b) - f(a)}{b - a} (x - a) + f(a) \]
 \end{proposition}
 
 \begin{proposition}
-	Soient $f \in \mathcal{D}^2(I,\ \R),\ a \in I$.
+	Soient $f \in \mathcal{D}^2(I, \R),\ a \in I$.
 	\begin{align*}
 		\begin{cases}
 			f'(a) = 0 \\
@@ -176,7 +176,7 @@
 \begin{definition}[Fonction contractante]
 	Soit $f : I \to \R$.
     On dit que $f$ est \textbf{contractante} si et seulement si :
-    \[ \exists k \in ]0,\ 1[,\ \forall x,\ y \in I : \abs{f(x) - f(y)} \leq k \abs{x - y} \]
+    \[ \exists k \in ]0, 1[,\ \forall x, y \in I : \abs{f(x) - f(y)} \leq k \abs{x - y} \]
 \end{definition}
 
 \begin{theorem}[Théorème du point fixe]
@@ -189,10 +189,10 @@
 \end{theorem}
 
 \begin{theorem}[Suites récurrentes linéaires d'ordre 2]
-	Soit $u_{n+2} = a u_{n+1} + b u_n$ pour $a,\ b \in \R$.
+	Soit $u_{n+2} = a u_{n+1} + b u_n$ pour $a, b \in \R$.
 	On pose l'équation suivante pour $r \in \R$ :
 	\[ r^2 - ar - b = 0 \qquad \Delta = (-a)^2 + 4b \]
-	Pour $\lambda,\ \mu,\ \alpha \in \R$ :
+	Pour $\lambda, \mu, \alpha \in \R$ :
 	\begin{itemize}
         \item $\Delta > 0 \implies u_n = \lambda r_1^n + \mu r_2^n$ avec $r_1, r_2$ tels que :
         \begin{align*}
