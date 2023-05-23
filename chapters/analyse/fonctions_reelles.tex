@@ -55,7 +55,7 @@
 \end{definition}
 
 \begin{definition}
-	Soient $I \subset \R,\ f : I \to \R$. On dit que :
+	Soient $I \subseteq \R,\ f : I \to \R$. On dit que :
 	\begin{enumerate}
 	    \item $f$ est \textbf{majorée} ou qu'elle admet un \textbf{majorant} si et seulement si : 
 	    \[ \exists M \in \R,\ \forall x \in I,\ f(x) \leq M \]
@@ -94,7 +94,7 @@
 \end{definition}
 
 \begin{definition}[Composition de fonctions]
-	Soient $E, F, G, H \subset \R,\ F \subset G,\ f : E \to F,\ g : G \to H$.
+	Soient $E,\ F,\ G,\ H \subseteq \R,\ F \subseteq G,\ f : E \to F,\ g : G \to H$.
 	\begin{center}
 		$
 		\appli{g \circ f}{E}{H}{x}{g(f(x))}
@@ -103,7 +103,7 @@
 \end{definition}
 
 \begin{definition}[Fonction identité]
-    Soient $E, F \subset \R$.
+    Soient $E,\ F \subseteq \R$.
 	\begin{center}
 		$
 		\appli{id_E}{E}{F}{x}{x}
@@ -122,17 +122,17 @@
 \end{proposition}
 
 \begin{definition}[Image directe]
-    Soient $f : E \to F,\ A \subset E$.
-	\[ f(A) = \{ f(x),\ x \in A \},\ f(A) \subset F \]
+    Soient $f : E \to F,\ A \subseteq E$.
+	\[ f(A) = \{ f(x),\ x \in A \},\ f(A) \subseteq F \]
 \end{definition}
 
 \begin{definition}[Image réciproque]
-	Soient $f : E \to F,\ B \subset F$.
-	\[ f^{-1}(B) = \{ \forall x \in E,\ f(x) \in B \},\ f^{-1} \subset E \]
+	Soient $f : E \to F,\ B \subseteq F$.
+	\[ f^{-1}(B) = \{ \forall x \in E,\ f(x) \in B \},\ f^{-1} \subseteq E \]
 \end{definition}
 
 \begin{proposition}
-    Soient $f : E \to F,\ A_1, A_2 \subset E,\ B_1, B_2 \subset F$.
+    Soient $f : E \to F,\ A_1,\ A_2 \subseteq E,\ B_1,\ B_2 \subseteq F$.
     \begin{enumerate}
         \item $f(A_1 \cup A_2) = f(A_1) \cup f(A_2)$.
         \item $f^{-1} (B_1 \cup B_2) = f^{-1} (B_1) \cup f^{-1} (B_2)$.
