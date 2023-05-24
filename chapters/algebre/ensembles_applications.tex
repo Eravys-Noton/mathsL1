@@ -24,19 +24,22 @@ Nous allons tout d'abord donner une définition intuitive d'un ensemble : Un ens
 
 \begin{definition}[Réunion d'ensembles]
   Soient $E$ et $F$ deux ensembles.
-  \[ E \cup F = \{ x \in E \cup F \ | \ x \in E \text{ ou } x \in F \} \]
+  \[ E \cup F = \{ x \ | \ x \in E \text{ ou } x \in F \} \]
   On lit \og $E$ union $F$ \fg.
 \end{definition}
 
 \begin{definition}[Intersection d'ensembles]
   Soient $E$ et $F$ deux ensembles.
-  \[ E \cap F = \{ x \in E \cap F \ | \ x \in E \text{ et } x \in F \} \]
+  \[ E \cap F = \{ x \ | \ x \in E \text{ et } x \in F \} \]
   On lit \og $E$ inter $F$ \fg.
 \end{definition}
 
 \begin{definition}[Complémentaire d'un ensemble]
-  Soient $E$ et $F$ deux ensembles.
-  \[ E \backslash F = \{ x \in E \backslash F \ | \ x \in E,\ x \notin F \} \]
+  Soient $E$ et $F$ deux ensembles. 
+  \\
+  Le complémentaire de $F$ dans $E$ noté $E \backslash F$ ou $\complement_E F$ est défini par :
+  \[ E \backslash F = \{ x \ | \ x \in E,\ x \notin F \} \]
+  Si on parle du complémentaire sans préciser d'ensemble, on peut se permettre de noter $E^C$ ou $\complement E$.
 \end{definition}
 
 \begin{proposition}
@@ -63,6 +66,50 @@ Nous allons tout d'abord donner une définition intuitive d'un ensemble : Un ens
     (A \cup B)^{C} &= A^{C} \cap B^{C} & (A \cap B)^{C} &= A^{C} \cup B^{C}
   \end{align*}
 \end{proposition}
+
+\begin{proof}
+	Soient $A$ et $B$ deux ensembles et $x$ un élément quelconque. 
+	\begin{enumerate}
+		\item \boxed{\subseteq} : Par définition du complémentaire :
+		\[ x \in (A \cup B)^C \iff x \notin (A \cup B) \]
+		$x \notin A$ car $A \subseteq (A \cup B)$ et $x \notin B$ car $B \subseteq (A \cup B)$, ainsi $ \in A^C$ et $x \in B^C$. 
+		\\
+		Par définition de l'intersection :
+		\[ x \in (A^C \cup B^C) \]
+		et donc :
+		\[ (A \cup B)^C \subseteq (A^C \cap B^C) \]
+		\boxed{\supseteq} : Par définition de l'intersection :
+		\begin{align*}
+			x \in (A^C \cap B^C) &\iff x \in A^C \text{ et } x \in B^C \\
+			&\iff x \notin A \text{ et } x \notin B \\
+			&\iff x \notin (A \cup B)^C
+		\end{align*}
+		d'où :
+		\[ (A^C \cap B^C) \subseteq (A \cup B)^C \]
+		\item \boxed{\subseteq} : Par définition du complémentaire :
+		\begin{align*}
+			x \in (A \cap B)^C &\iff x \notin (A \cap B) \\
+			&\iff x \notin A \text{ et } x \notin B \\
+			&\iff x \in A^C \text{ et } x \in B^C \\
+			&\iff x \in (A^C \cap B^C)
+		\end{align*}
+		Sachant que :
+		\[ (A^C \cap B^C) \subseteq (A^C \cup B^C) \]
+		On a :
+		\[ x \in (A^C \cap B^C) \implies x \in (A^C \cup B^C) \]
+		d'où :
+		\[ (A \cap B)^C \subseteq (A^C \cup B^C) \]
+		\boxed{\supseteq} : Par définition de la réunion :
+		\begin{align*}
+			x \in (A^C \cup B^C) &\iff x \in A^C \text{ ou } x \in B^C \\
+			&\iff x \notin A \text{ ou } x \notin B \\
+			&\iff x \notin (A \cap B) \\
+			&\iff x \in (A \cap B)^C
+		\end{align*}
+		Ainsi : 
+		\[ (A^C \cap B^C) \subseteq (A \cup B)^C \]
+	\end{enumerate}
+\end{proof}
 
 \begin{definition}[Produit cartésien]
     Soient $E$ et $F$ des ensembles. On définit le produit cartésien :
