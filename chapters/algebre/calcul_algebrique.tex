@@ -3,36 +3,29 @@
 
 \par \noindent Dans cette partie, $\K$ désigne soit $\N$, soit $\Z$, soit $\Q$, soit $\R$.
 
-\begin{axiom}[Loi de composition \og $+$ \fg]
-    $\forall a, b, c \in \K$.
+\begin{proposition}
+    $\forall a, b, c \in \K$ :
     \begin{enumerate}
     	\item Associativité :
     	\[ a + (b + c) = (a + b) + c \]
-    	\item Commutativité : 
-    	\[ a + b = b + a \]
-    	\item \'Elément neutre :
-    	\[ a + 0 = a \]
-    	\item Symétrie si $\K \neq \N$ :
-    	\[ \exists a' \in \K,\ a + a' = 0 \]
-    \end{enumerate}
-\end{axiom}
-
-\begin{axiom}[Loi de composition \og $\cdot$ \fg]
-    $\forall a, b, c \in \K$. 
-    \begin{enumerate}
-    	\item Associativité :
     	\[ a \cdot (b \cdot c) = (a \cdot b) \cdot c \]
     	\item Commutativité : 
+    	\[ a + b = b + a \]
     	\[ a \cdot b = b \cdot a \]
     	\item \'Elément neutre :
+    	\[ a + 0 = a \]
     	\[ a \cdot 1 = a \]
     	\item \'Elément absorbant :
     	\[ a \cdot 0 = 0 \]
+    	\item \'Elément symétrique si $\K \neq \N$ :
+    	\[ \exists a' \in \K : a + a' = 0 \]
+    	\item \'Elément inverse si $\K \in \{\Q, \R\}$ :
+    	\[ \exists a' \in \K : a \cdot a' = 1 \]
     	\item Distributivité :
     	\[ a \cdot (b + c) = a \cdot b + a \cdot c \]
     	\[ (a + b) \cdot c = a \cdot c + b \cdot c \]
     \end{enumerate}
-\end{axiom}
+\end{proposition}
 
 \begin{proposition}[Opérations sur les fractions]
     $\forall a, c \in \Z,\ b, d \in \Z^*$.

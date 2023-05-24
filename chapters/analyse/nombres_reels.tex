@@ -9,34 +9,38 @@
     On peut définir sur $\R$ une addition (notée \og + \fg) et une multiplication (notée \og $\times$ \fg ou \og $\cdot$ \fg) qui prolonge l'addition et la multiplication de $\N$ et vérifie les règles suivantes pour $a, b, c \in \R$ :
     \begin{enumerate}
         \item Commutativité : 
-        \[ a + b = b + a \text{ et } a \cdot b = b \cdot a \]
+        \begin{enumerate}
+        	\item $a + b = b + a$.
+        	\item $a \cdot b = b \cdot a$.
+        \end{enumerate}
         \item Associativité : 
-        \[ a + (b + c) = (a + b) + c \]
-        \[ a \cdot (b \cdot c) = (a \cdot b) \cdot c \]
+        \begin{enumerate}
+        	\item $a + (b + c) = (a + b) + c$.
+        	\item $a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
+        \end{enumerate}
         \item Distributivité : 
-        \[ a \cdot (b + c) = a \cdot b + a \cdot b \]
-        \item \'Elements neutres ou absorbants :
-        \[ a + 0 = a \]
-        \[ a \cdot 1 = a \]
-        \[a \cdot 0 = 0 \]
+		\begin{enumerate}
+			\item $a \cdot (b + c) = a \cdot b + a \cdot b$.
+			\item $(a + b) \cdot c = a \cdot c + b \cdot c$.
+		\end{enumerate}
+        \item \'Element neutre :
+        \begin{enumerate}
+        	\item $a + 0 = a$.
+        	\item $a \cdot 1 = a$.
+        \end{enumerate}
+        \item \'Elément absorbant : $a \cdot 0 = 0$.
     \end{enumerate}
 \end{proposition}
 
 \begin{proposition}[Relation d'ordre sur $\R$]
     On peut définir une relation d'ordre sur $\R$, notée \og $\leq$ \fg, qui prolonge l'ordre de $\N$ et vérifie les règles suivantes pour $a, b, c \in \R$ :
     \begin{enumerate}
-        \item Réflexivité : 
-        \[ a \leq a \]
-        \item Antisymétrie : 
-        \[ a \leq b \land b \leq a \implies a = b \]
-        \item Transitivité : 
-        \[ a \leq b \land b \leq c \implies a \leq c \]
-        \item Ordre total : 
-        \[ a \leq b \lor b \leq a \]
-        \item Compatibilité avec l'addition :
-        \[ a + c \leq b + c \]
-        \item Compatibilité avec la multiplication par un réel positif :
-        \[ a \leq b \land c \geq 0 \implies a \cdot c \leq b \cdot c \]
+        \item Réflexivité : $a \leq a$.
+        \item Antisymétrie : $a \leq b \land b \leq a \implies a = b$.
+        \item Transitivité : $a \leq b \land b \leq c \implies a \leq c$.
+        \item Ordre total : $a \leq b \lor b \leq a$.
+        \item Compatibilité avec l'addition : $a + c \leq b + c$.
+        \item Compatibilité avec la multiplication par un réel positif : $a \leq b \land c \geq 0 \implies a \cdot c \leq b \cdot c$.
     \end{enumerate}
 \end{proposition}
 

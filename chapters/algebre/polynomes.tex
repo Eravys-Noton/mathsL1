@@ -5,19 +5,46 @@
 \begin{definition}[Polynôme]
     Un \textbf{polynôme} est un élément de l'ensemble 
     \begin{align*}
-        \K[X] = \{ a_0 1 + a_1 X + a_2 X^2 + \cdots + a_n X^n \mid a_0, \ldots, a_n \in \K,\ n \in \N \}
+        \K[X] = \left\{ \sum_{i=0}^n a_i X^i : \ a_i \in \K,\ n \in \N \right\}
     \end{align*}
-    Soit $P \in \K[X]$, si $a_n \neq 0$, $n$ est le degré du polynôme, on le note 
-    $ \deg(P) = n. $
+    Si $a_n \neq 0$, $n$ est le degré du polynôme, on le note $ \deg(P) = n$.
 \end{definition}
+
+\begin{proposition}
+	Soient $P, Q, R \in \K[X]$.
+	\begin{enumerate}
+		\item Associativité :
+		\begin{enumerate}
+			\item $(P + Q) + R = P + (Q + R)$.
+			\item $(P \cdot Q) \cdot R = P \cdot (Q \cdot R)$.
+		\end{enumerate}
+		\item Commutativité :
+		\begin{enumerate}
+			\item $P + Q = Q + P$.
+			\item $P \cdot Q = Q \cdot P$.
+		\end{enumerate}
+		\item \'Elément neutre :
+		\begin{enumerate}
+			\item $P + 0 = P$.
+			\item $P \cdot 1 = P$.
+		\end{enumerate}
+		\item \'Elément absorbant : $P \cdot 0 = 0$.
+		\item Distributivité :
+		\begin{enumerate}
+			\item $(P + Q)R = PR + QR$.
+			\item $P(Q + R) = PQ + PR$.
+		\end{enumerate}
+	\end{enumerate}
+\end{proposition}
 
 \begin{proposition}
 	$\forall \lambda \in \K^*,\ P, Q \in \K[X]$. 
 	\begin{enumerate}
-    		\item $\operatorname{deg}(\lambda) = 0$.
-    		\item $\operatorname{deg}(P \cdot Q) = \operatorname{deg}(P) + \operatorname{deg}(Q)$.
-    		\item $\operatorname{deg}(P + Q) = \mathrm{max}\left(\operatorname{deg}(P),\ \operatorname{deg}(Q)\right)$.
-            \item $\operatorname{deg}(0) = -\infty$.
+    		\item $\deg(\lambda) = 0$.
+    		\item $\deg(P \cdot Q) = \deg(P) + \deg(Q)$.
+    		\item $\deg(P + Q) = \mathrm{max}\left(\deg(P),\ \deg(Q)\right)$.
+    		\item $\deg(P \circ Q) = \deg(P) \cdot \deg(Q)$.
+            \item $\deg(0) = -\infty$.
     	\end{enumerate}
 \end{proposition}
 
@@ -29,11 +56,11 @@
 		\exists ! (Q, R) \in (\K[X])^2 \text{ tel que } P_1 = P_2 Q + R 
 	\end{align*}
 	Vérifiant :
-	$\operatorname{deg}(R) = -\infty$ ou $0 \leq \operatorname{deg}(R) < \operatorname{deg}(Q)$.
+	$\deg(R) = -\infty$ ou $0 \leq \deg(R) < \deg(Q)$.
 \end{theorem}
 
 \begin{definition}[Polynôme irréductible]
-	Un polynôme $P \in \K[X]$ non constant est dit irréductible, s'il n'existe pas $(P_1, P_2) \in (\K[X])^2$ tel que $P = P_1 P_2$ et $\operatorname{deg}(P_1) < \operatorname{deg}(P_2)$.
+	Un polynôme $P \in \K[X]$ non constant est dit irréductible, s'il n'existe pas $(P_1, P_2) \in (\K[X])^2$ tel que $P = P_1 P_2$ et $\deg(P_1) < \deg(P_2)$.
 \end{definition}
 
 \begin{definition}\label{def:ordre_mult}
