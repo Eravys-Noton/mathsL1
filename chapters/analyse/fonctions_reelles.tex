@@ -3,9 +3,12 @@
 
 \section{Définitions}
 \begin{definition}[Fonction]
-	Une fonction $f$ est la donnée d'un \textbf{ensemble de départ} $E$ et d'un \textbf{ensemble d'arrivée} $F$ telle que 
-	$ f : E \to F $
-	associe $f(x) \in F$ à tout élément $x \in E$.
+	Une fonction $f$ est la donnée de :
+	\begin{enumerate}
+		\item Un ensemble de départ $E$.
+		\item Un ensemble d'arrivée $F$.
+		\item Une flèche : $ f : E \to F $ à tout élément $x \in E$ associe un élément $f(x) \in F$.
+	\end{enumerate}		
 	On appelle \textbf{images} les éléments de $F$ et \textbf{antécédents} les éléments de $E$.
 \end{definition}
 
@@ -13,7 +16,7 @@
 	Soient $E$ et $F$ deux ensembles et $f : E \to F$ une fonction.
 	\\
 	Le graphe de $f$ est défini comme :
-	\[ \operatorname{Gr}(f) \equiv \operatorname{Gph}(f) = \{ (x, f(x)),\ x \in E \} \subset E \times F \] 
+	\[ \operatorname{Gr}(f) \equiv \operatorname{Gph}(f) = \{ (x, f(x)),\ x \in E \} \subseteq E \times F \] 
 \end{definition}
 
 \begin{definition}
@@ -66,7 +69,7 @@
 \end{definition}
 
 \begin{definition}
-	Soient $I \subset \R$ et $f : I \to \R$. On dit que :
+	Soient $I \subseteq \R$ et $f : I \to \R$. On dit que :
     \begin{enumerate}
         \item $f$ est \textbf{croissante} si et seulement si :
         \[ \forall x, y \in I,\ x \leq y \implies f(x) \leq f(y) \]
@@ -83,7 +86,7 @@
 
 \section{Opérations sur les fonctions}
 \begin{definition}[Opérations sur les fonctions]
-	Soient $f, g$ deux fonctions et $A \subset \R$.
+	Soient $f, g$ deux fonctions et $A \subseteq \R$.
 	\begin{center}
 		$
 		\appli{f+g}{A}{\R}{x}{f(x)+g(x)}
@@ -139,3 +142,4 @@
         \item $f^{-1} (B_1 \cap B_2) = f^{-1} (B_1) \cap f^{-1} (B_2)$.
     \end{enumerate}
 \end{proposition} 
+

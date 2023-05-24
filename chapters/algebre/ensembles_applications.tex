@@ -15,7 +15,7 @@ Nous allons tout d'abord donner une définition intuitive d'un ensemble : Un ens
 
 \begin{definition}[\'Egalité d'ensembles]
   Soient $E$ et $F$ deux ensembles.
-  $$E = F \iff E \subset F \land F \subset E$$
+  $$E = F \iff E \subset F \text{ et } F \subset E$$
 \end{definition}
 
 \begin{definition}[Singleton]
@@ -24,18 +24,38 @@ Nous allons tout d'abord donner une définition intuitive d'un ensemble : Un ens
 
 \begin{definition}[Réunion d'ensembles]
   Soient $E$ et $F$ deux ensembles.
-  \[ E \cup F = \{ x \in E \cup F \ | \ x \in E \lor x \in F \} \]
+  \[ E \cup F = \{ x \in E \cup F \ | \ x \in E \text{ ou } x \in F \} \]
+  On lit \og $E$ union $F$ \fg.
 \end{definition}
 
 \begin{definition}[Intersection d'ensembles]
   Soient $E$ et $F$ deux ensembles.
-  \[ E \cap F = \{ x \in E \cap F \ | \ x \in E \land x \in F \} \]
+  \[ E \cap F = \{ x \in E \cap F \ | \ x \in E \text{ et } x \in F \} \]
+  On lit \og $E$ inter $F$ \fg.
 \end{definition}
 
 \begin{definition}[Complémentaire d'un ensemble]
   Soient $E$ et $F$ deux ensembles.
   \[ E \backslash F = \{ x \in E \backslash F \ | \ x \in E,\ x \notin F \} \]
 \end{definition}
+
+\begin{proposition}
+	Soient $A, B, C$ et $E$ des ensembles.
+	\begin{enumerate}
+		\item La réunion et l'intersection sont commutatives et assocatives.
+		\item \'Elément neutre :
+		\begin{enumerate}
+			\item $A \cup \varnothing = A$.
+			\item $A \cap A = A$.
+		\end{enumerate}
+		\item $A \subseteq E \iff A \cap E = E \cap A = A$.
+		\item Distributivité :
+		\begin{enumerate}
+			\item $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$.
+			\item $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$.
+		\end{enumerate}
+	\end{enumerate}
+\end{proposition}
 
 \begin{proposition}[Lois de Morgan]
   Soient $A$ et $B$ deux ensembles.

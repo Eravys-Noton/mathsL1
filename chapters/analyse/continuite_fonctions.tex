@@ -32,8 +32,8 @@
 \end{definition}
 
 \begin{theorem}
-	Soit $I \subseteq \R,\ f : I \to \R,\ a \in I,\ \ell \in \R \cup \{-\infty, +\infty\}$
-	\[ \lim_{x \to a} f(x) = \ell \iff \forall (u_n)_{n \in \N},\ \lim_{n \to +\infty} u_n = a \implies \lim_{n \to +\infty} f(u_n) = \ell \]
+	Soit $I \subseteq \R,\ f : I \to \R,\ a \in I \cup \{-\infty, +\infty\},\ \ell \in \R \cup \{-\infty, +\infty\}$
+	\[ \lim_{x \to a} f(x) = \ell \iff \forall (u_n)_{n \in \N} : \lim_{n \to +\infty} u_n = a \implies \lim_{n \to +\infty} f(u_n) = \ell \]
 \end{theorem}
 
 \begin{definition}[Limite à gauche et à droite]
@@ -53,10 +53,51 @@
 	On peut également définir la continuité à gauche et à droite.
 \end{definition}
 
+\begin{remark}
+	Les théorèmes d'opérations avec les limites, de comparaison et des gendarmes sont analogues à ceux vus  dans le chapitre sur les suites réelles.
+\end{remark}
+
+\begin{theorem}[Composition de limites]
+	Soient $I, J \subseteq \R$ et $f : I \to J,\ g : J \to \R,\ a \in I$ tels que :
+	\begin{enumerate}
+		\item $\lim_{x \to a} f(x) = y \in I$.
+		\item $\lim_{y \to z} g(z) = \ell$ existe.
+	\end{enumerate}
+	\[ \lim_{x \to a} g(f(x)) = \ell \]
+\end{theorem}
+
 \begin{theorem}[Théorème des valeurs intermédiaires]
 	$\forall a, b \in \R,\ a < b,\ f : [a, b] \to \R$ une fonction continue.
-	\[ \forall y \in [f(a), f(b)],\ \exists c \in [a, b],\ f(c) = y \]
+	\[ \forall y \in [f(a), f(b)],\ \exists c \in [a, b] : f(c) = y \]
 \end{theorem}
+
+\begin{proof}
+	On utilise la borne supérieure.
+	\\
+	Soit $E = \{ x \in I \mid f(x) \leq y \}$. $a \in E$ donc $E \neq \varnothing$. On sait que $E \subseteq I$ donc $E$ est majoré.
+	\\
+	Posons $c \coloneqq \sup(E)$.
+	\\
+	Puisque $c = \sup(E)$, il existe une suite $(c_n)_{n \in \N}$ d'éléments de $E$ telle que $\lim_{n \to +\infty} c_n = c$. 
+	\\
+	Comme $f$ est continue, on a :
+	\[ \lim_{n \to +\infty} f(c_n) = f(c) \] 
+	Puisque $c_n \in E,\ f(c_n) \leq y$. En passant à la limite, on a :
+	\[ f(c) \leq y \]
+	Montrons maintenant que $f(c) \geq y$.
+	\begin{itemize}
+		\item Si $c = b$, on a bien :
+		\[ f(c) = f(b) = \geq y \]
+		\item Si $c < b$, pour $n$ assez grand :
+		\[ c < c + \frac{1}{n} \leq b \]
+		Sachant que $c = \sup(E)$, $c + \frac{1}{n} \notin E$, on a donc :
+		\[ f \left( c + \frac{1}{n} \right) > y \]
+		On a $\lim_{n \to +\infty} c + \frac{1}{n} = c$ et $f$ étant continue :
+		\[ \lim_{n \to +\infty} f \left( c + \frac{1}{n} \right) = f(c) \]
+		Sachant que $f \left( c + \frac{1}{n} \right) > y$, en passant à la limite :
+		\[ f(c) \geq y \]
+	\end{itemize}
+\end{proof}
 
 \begin{theorem}
 	$\forall a, b \in \R,\ a < b,\ f :\ ]a, b[ \to \R$. 
@@ -70,7 +111,7 @@
 		\item $f$ admet une limite en $b$, qui est finie si et seulement si $f$ est \textbf{minorée}.
 		\item $f$ admet une limite en $a$, qui est finie si et seulement si $f$ est \textbf{majorée}.
 	\end{enumerate}
-	$\forall x_0 \in \ ]a, b[$
+	$\forall x_0 \in \ ]a, b[$, $f$ a une limite à gauche et à droite en $x_0$ et :
 	\[ \lim_{\substack{x \to a \\ x < x_0}} f(x) \leq f(x_0) \leq \lim_{\substack{x \to a \\ x > x_0}} f(x) \]
 \end{theorem}
 
@@ -81,3 +122,33 @@
             \item $ f \text{ strictement décroissante} \implies f : [a, b] \to [f(b), f(a)] \text{ est une bijection} $.
 	\end{enumerate}
 \end{theorem}
+
+\begin{theorem}
+	Soit $I \subseteq \R$ et $f : I \to \R$ une injection continue.
+	\\
+	Alors $f$ est strictement monotone, donc bijective. Si on pose $J = f(I)$, $f^{-1} : J \to I$ est continue.
+\end{theorem}
+
+\begin{definition}[Segment]
+	Un segment est un intervalle fermé borné.
+\end{definition}
+
+\begin{theorem}
+	Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \to \R$ une fonction continue. Alors $f$ est bornée sur $[a, b]$ et elle atteint ses bornes.
+	\[ \exists m, M \in \R,\ \forall x \in [a, b] : m \leq f(x) \leq M \text{ et } \exists x_0, x_1 \in [a, b] : f(x_0) = m \text{ et } f(x_1) = M \]
+\end{theorem}
+
+\begin{definition}[Prolongement par continuité]
+	Soient $I \subseteq \R$, $x_0 \in I,\ f : I\backslash\{x_0\} \to \R$.
+	On suppose que pour $\ell \in \R$, $\lim_{x \to x_0} f(x) = \ell$ existe. Alors la fonction :
+	\begin{center}
+		$
+		\appli{\overset{\sim}{f}}{I}{\R}{x}{
+		\begin{cases}
+			f(x) \text{ si } x \neq x_0 \\
+			\ell \text{ sinon}
+		\end{cases}		
+		}
+		$
+	\end{center}
+\end{definition}

@@ -1,9 +1,16 @@
 \chapter{Suites réelles}
 \def\arraystretch{1}
 
+\section{Définitions}
+
 \begin{definition}[Suite réelle]
     On appelle \textbf{suite réelle} une fonction de $\N \to \R$. 
     On note $(u_n)_{n \in \N}$ la fonction $x \mapsto u_n$.
+\end{definition}
+
+\begin{definition}[Suite stationnaire]
+	Une suite est dite stationnaire si elle est constante à partir d'un certain rang. 
+	\[ \exists N \in \N,\ \forall n \geq N : u_n = u_N \]
 \end{definition}
 
 \begin{remark}
@@ -242,24 +249,17 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 \end{proof}
 
 \begin{corollary}
-    Soient $(u_n)_{n \in \N}$ et $\ell \in \R$ tels que $\lim_{n \to +\infty} = \ell$.
-    \begin{multicols}{2}
-        \begin{enumerate}
-            \item Si $\forall n \in \N,\ u_n \leq M$ alors $\ell \leq M$.
-            \item Si $\forall n \in \N,\ u_n \geq m$ alors $\ell \geq m$.
-        \end{enumerate}
-    \end{multicols}
+    Soient $(u_n)_{n \in \N}$ et $\ell \in \R$ tels que $\lim_{n \to +\infty} = \ell$ et $m, M \in \R$.
+    \begin{enumerate}
+            \item Si pour tout $n \in \N,\ u_n \leq M$ alors $\ell \leq M$.
+            \item Si pour tout $n \in \N,\ u_n \geq m$ alors $\ell \geq m$.
+    \end{enumerate}
 \end{corollary}
 
 \begin{theorem}[Théorème des gendarmes]
-    Soient $\ell \in \R$, $(u_n)_{n \in \N}, (v_n)_{n \in \N}, (w_n)_{n \in \N}$ des suites telles que :
-    \begin{multicols}{2}
-        \begin{enumerate}
-            \item $\forall n \in \N,\ u_n \leq v_n \leq w_n$.
-            \item $\lim_{n \to +\infty} u_n = \ell$ et $\lim_{n \to +\infty} w_n = \ell$.
-        \end{enumerate}
-    \end{multicols} 
-    \[ \lim_{n \to + \infty} v_n = \ell \]
+    Soient $\ell \in \R$, $(u_n)_{n \in \N}, (v_n)_{n \in \N}, (w_n)_{n \in \N}$ des suites telles que pour tout $n \in \N : u_n \leq v_n \leq w_n $.
+    \\
+    Si $\lim_{n \to +\infty} u_n = \ell$ et $\lim_{n \to +\infty} w_n = \ell$ alors $\lim_{n \to + \infty} v_n = \ell$.
 \end{theorem}
 
 \begin{proof}
@@ -381,8 +381,8 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 \begin{definition}[Limites infinies]
     Soit $(u_n)_{n \in \N}$ une suite.
     \begin{enumerate}
-        \item $\lim_{n \to +\infty} u_n = +\infty \iff \forall A \in \R,\ \exists N \in \N,\ \forall n \geq N,\ u_n \geq A$.
-        \item $\lim_{n \to -\infty} u_n = -\infty \iff \forall A \in \R,\ \exists N \in \N,\ \forall n \geq N,\ u_n \leq A$.
+        \item $\lim_{n \to +\infty} u_n = +\infty \iff \forall A \in \R,\ \exists N \in \N,\ \forall n \geq N : u_n \geq A$.
+        \item $\lim_{n \to -\infty} u_n = -\infty \iff \forall A \in \R,\ \exists N \in \N,\ \forall n \geq N : u_n \leq A$.
     \end{enumerate}
 \end{definition}
 
@@ -423,6 +423,11 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
    \end{enumerate}
 \end{theorem}
 
+\begin{definition}[Suite de Cauchy]
+	Une suite $(u_n)_{n \in \N}$ est de Cauchy si :
+	\[ \forall \varepsilon > 0,\ \exists N \in \N,\ \forall n_1, n_2 \in \N : \abs{u_{n_1} - u_{n_2}} \leq \varepsilon \]
+\end{definition}
+
 \def\arraystretch{1.5}
 
 \begin{table}[!h]
@@ -433,7 +438,8 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
          \midrule
          \og $+\infty +\infty$ \fg & $+\infty$ \\ 
          \og $-\infty -\infty$ \fg & $-\infty$ \\
-         \og $\pm \infty + \ell$ \fg & $\pm \infty$ \\
+         \og $+\infty + \ell$ \fg & $+\infty$ \\
+         \og $-\infty + \ell$ \fg & $-\infty$ \\
          \og $-\infty \cdot \ell > 0$ \fg & $-\infty$ \\ 
          \og $-\infty \cdot \ell < 0$ \fg & $+\infty$ \\ 
          \og $+\infty \cdot \ell > 0$ \fg & $+\infty$ \\ 
@@ -441,6 +447,15 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
          \og $+\infty \cdot +\infty$ \fg & $+\infty$ \\ 
          \og $-\infty \cdot -\infty$ \fg & $+\infty$ \\ 
          \og $-\infty \cdot +\infty$ \fg & $-\infty$ \\  
+         \og $\frac{0}{\pm \infty}$ \fg & $0$ \\
+         \og $\frac{+\infty}{0}$ \fg & $\begin{cases}
+         	+ \infty \text{ si } 0^+ \\
+         	- \infty \text{ sinon}
+         \end{cases}$ \\
+         \og $\frac{-\infty}{0}$ \fg & $\begin{cases}
+         	- \infty \text{ si } 0^+ \\ 
+         	+ \infty \text{ sinon}
+         \end{cases}$ \\
          \og $\infty - \infty$ \fg & FI \\
          \og $0 \cdot \infty$ \fg  & FI \\
          \og $\frac{0}{0}$ \fg & FI \\ 

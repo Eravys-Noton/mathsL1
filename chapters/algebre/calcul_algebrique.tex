@@ -6,33 +6,39 @@
 \begin{axiom}[Loi de composition \og $+$ \fg]
     $\forall a, b, c \in \K$.
     \begin{enumerate}
-    	\item $a + (b + c) = (a + b) + c$.
-    	\item $a + b = b + a$.
-    	\item $a + 0 = a$.
-    	\item $\K \neq \N \implies \exists a' \in \K,\ a + a' = 0$.
+    	\item Associativité :
+    	\[ a + (b + c) = (a + b) + c \]
+    	\item Commutativité : 
+    	\[ a + b = b + a \]
+    	\item \'Elément neutre :
+    	\[ a + 0 = a \]
+    	\item Symétrie si $\K \neq \N$ :
+    	\[ \exists a' \in \K,\ a + a' = 0 \]
     \end{enumerate}
 \end{axiom}
 
 \begin{axiom}[Loi de composition \og $\cdot$ \fg]
     $\forall a, b, c \in \K$. 
     \begin{enumerate}
-    	\item $a \cdot (b \cdot c) = (a \cdot b) \cdot c$.
-    	\item $a \cdot b = b \cdot a$.
-    	\item $a \cdot 1 = a$.
-    	\item $a \cdot 0 = 0$.
-    	\item $a \cdot (b + c) = a \cdot b + a \cdot c$.
-    	\item $(a + b) \cdot c = a \cdot c + b \cdot c$.
+    	\item Associativité :
+    	\[ a \cdot (b \cdot c) = (a \cdot b) \cdot c \]
+    	\item Commutativité : 
+    	\[ a \cdot b = b \cdot a \]
+    	\item \'Elément neutre :
+    	\[ a \cdot 1 = a \]
+    	\item \'Elément absorbant :
+    	\[ a \cdot 0 = 0 \]
+    	\item Distributivité :
+    	\[ a \cdot (b + c) = a \cdot b + a \cdot c \]
+    	\[ (a + b) \cdot c = a \cdot c + b \cdot c \]
     \end{enumerate}
 \end{axiom}
 
 \begin{proposition}[Opérations sur les fractions]
     $\forall a, c \in \Z,\ b, d \in \Z^*$.
-    \begin{multicols}{2}
-    	\begin{enumerate}
-    		\item $\frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd}$.
-    		\item $\frac{a}{b} \cdot \frac{c}{d} = \frac{a \cdot c}{b \cdot d}$.
-    	\end{enumerate}
-    \end{multicols}
+    \begin{align*}
+    	\frac{a}{b} + \frac{c}{d} &= \frac{ad + bc}{bd} & \frac{a}{b} \cdot \frac{c}{d} &= \frac{a \cdot c}{b \cdot d}
+    \end{align*}
 \end{proposition}
 
 \begin{proof}
@@ -81,7 +87,7 @@
 
 \begin{definition}[Somme]
     $\forall m, n \in \N,\ a_k \in \R,\ m \leq k \leq n$.
-    \[ \sum_{k = m}^n a_k \equiv \sum_{m \leq k \leq n} = a_m + a_{m + 1} + \cdots + a_n \]
+    \[ \sum_{k = m}^n a_k = a_m + a_{m + 1} + \cdots + a_n \]
 \end{definition}
 
 \begin{proposition}[Linéarité de la somme]
@@ -122,5 +128,5 @@
 
 \begin{definition}[Produit]
     $\forall m, n \in \N,\ m \leq n,\ a_k \in \R,\ m \leq k \leq n$
-    \[ \prod_{k = m}^{n} \equiv \prod_{m \leq k \leq n} = a_1 \cdot a_2 \cdot \ldots \cdot a_n \]
+    \[ \prod_{k = m}^{n} = a_1 \cdot a_2 \cdot \ldots \cdot a_n \]
 \end{definition}

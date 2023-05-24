@@ -167,10 +167,13 @@
 
 \newcommand*{\inlineCode}{\fontfamily{pnc}\selectfont\ttfamily}
 
+\usepackage{comment}
 %-----------Bloc de code----------------%
 
 \renewcommand{\leq}{\leqslant}
 \renewcommand{\geq}{\geqslant}
+
+%\includeonly{chapters/algebre/ensembles_applications}
 
 \begin{document}
 
@@ -183,6 +186,7 @@
 \include{chapters/introduction}
 
 \part{Analyse}
+
 \include{chapters/analyse/nombres_reels}
 \include{chapters/analyse/fonctions_reelles}
 \include{chapters/analyse/fonctions_usuelles}
