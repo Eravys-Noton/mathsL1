@@ -63,8 +63,23 @@
 	Un polynôme $P \in \K[X]$ non constant est dit irréductible, s'il n'existe pas $(P_1, P_2) \in (\K[X])^2$ tel que $P = P_1 P_2$ et $\deg(P_1) < \deg(P_2)$.
 \end{definition}
 
+\begin{proposition}
+	Soit $P \in \K[X]$ non constant et irréductible.
+	\begin{enumerate}
+		\item $\K = \C \iff \deg(P) = 1$.
+		\item $\K = \R \iff \deg(P) = 1 \text{ ou } \deg(P) = 2$. 
+	\end{enumerate}
+\end{proposition}
+
+\begin{proposition}
+	Soient $P \in K[X]$ non constant et $\alpha \in \K$.
+	\\
+	On dit que $\alpha$ est une racine si et seulement si :
+	\[ P(\alpha) = 0 \iff X - \alpha \mid P(X) \]
+\end{proposition}
+
 \begin{definition}\label{def:ordre_mult}
-	Soient $P$ un polynôme non constant, $\alpha \in \K$ et $m \in \N^*$ $\alpha$ est une racine d'ordre de multiplicité $m$ de $P$ si et seulement si
+	Soient $P$ un polynôme non constant, $\alpha \in \K$ et $m \in \N^*$ $\alpha$ est une racine d'ordre de multiplicité $m$ de $P$ si et seulement si :
 	\begin{align*}
 		(X - \alpha)^m \mid P \text{ et } (X - \alpha)^{m+1} \nmid P.
 	\end{align*}
@@ -125,11 +140,11 @@
 	\\
 	Sur $\R$ : Soient $a_i, b_i, c_i \in \R$.
 	\[ Q(X) = \prod_{i = 1}^{n} (X - a_i)^{\alpha_i} \cdot \prod_{i = 1}^{m} (X^2 + b_i X + c_i)^{\beta_i} \]
-	Soient $A_{i, j},\ B_{i, j},\ C_{i, j} \in \R$. $F$ s'écrit de manière unique sous la forme :
+	Soient $A_{i, j},\ B_{i, j},\ C_{i, j} \in \R$. $F$ s'écrit de manière unique (à l'ordre des termes près) sous la forme :
 	\[ F(X) = \sum_{i = 1}^{n} \sum_{j = 1}^{\alpha_i} \frac{A_{i, j}}{\left(X - a_i\right)^{j}} + \sum_{i = 1}^{m} \sum_{j = 1}^{\beta_i} \frac{B_{i, j}X + C_{i, j}}{(X^2 + b_iX + c_i)^{j}} \]
 	Sur $\C$ : Soient $a_i \in \C$.
 	\[ Q(X) = \prod_{i = 1}^{n} (X - a_i)^{n} \]
-	Soient $A_{i, j} \in \C$. $F$ s'écrit de manière unique sous la forme :
+	Soient $A_{i, j} \in \C$. $F$ s'écrit de manière unique (à l'ordre des termes près) sous la forme :
 	\[ F(X) = \sum_{i = 1}^{n} \sum_{j = 1}^{\alpha_i} \frac{A_{i, j}}{\left(X - a_i\right)^{j}} \]
 \end{theorem}
 
