@@ -90,10 +90,16 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 \end{lemma}
 
 \begin{lemma}
-    Soient $\mathcal{B} = (b_1, \ldots, b_n)$ une base de $E$, $(\lambda_1, \ldots, \lambda_n) \in \K^n$ et $\varphi \in \mathcal{L}(E, \K^n)$  alors :
+    Soient $\mathcal{B} = (b_1, \ldots, b_n)$ une base de $E$, $\lambda_1, \ldots, \lambda_n \in \K$ et $\varphi \in \mathcal{L}(E, \K^n)$  alors :
     \begin{center}
     	$
-    	\appli{\varphi}{E}{\K^n}{\sum_{i = 1}^{n} \lambda_i b_i}{(\lambda_i)_{i \in \llbracket 1, n \rrbracket}}
+    	\appli{\varphi}{E}{\K^n}{\sum_{i = 1}^{n} \lambda_i b_i}{
+    	\begin{pmatrix}
+    		\lambda_1 \\
+    		\vdots \\
+    		\lambda_n
+    	\end{pmatrix}
+    	}
     	$
     \end{center}
     est une bijection, alors c'est un isomorphisme.
