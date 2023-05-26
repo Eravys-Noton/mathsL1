@@ -401,3 +401,31 @@ Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibl
     Pour passer d'une forme cartésienne à une forme paramétrique, on applique le pivot de Gauss sur les lignes.
     Pour passer d'une forme paramétrique à une forme cartésienne, on utilise le déterminant.
 \end{proposition}
+
+\begin{definition}[Produit scalaire dans $\R^n$] 
+	Soient $\vec{x} = \begin{pmatrix} x_1 \\ \vdots \\ x_n \end{pmatrix}$ et $\vec{y} = \begin{pmatrix} y_1 \\ \vdots \\ y_n \end{pmatrix}$ deux vecteurs de $\R^n$.
+	\\
+	On définit le produit scalaire ainsi :
+	\begin{center}
+		$
+		\appli{\langle \cdot | \cdot \rangle}{\R^n \times \R^n}{\R}{(\vec{x}, \vec{y})}{\sum_{i = 1}^n x_i y_i}
+		$
+	\end{center}
+\end{definition}
+
+\begin{definition}[Produit vectoriel dans $\R^3$]
+	Soient $\vec{x} = \begin{pmatrix} x_1 \\ x_2 \\ x_3 \end{pmatrix}$ et $\vec{y} = \begin{pmatrix} y_1 \\ y_2 \\ y_3 \end{pmatrix}$ deux vecteurs de $\R^3$.
+	\\
+	On définit le produit vectoriel ainsi :
+	\begin{center}
+		$
+		\appli{\wedge}{\R^3 \times \R^3}{\R^3}{(\vec{x}, \vec{y})}{
+		\begin{pmatrix}
+			x_2 y_3 - x_3 y_2 \\
+			x_1 y_3 - x_3 y_1 \\
+			x_1 y_2 - x_2 y_1
+		\end{pmatrix}
+		}
+		$
+	\end{center}
+\end{definition}
