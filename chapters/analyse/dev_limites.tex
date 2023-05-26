@@ -1,18 +1,11 @@
 \chapter{Développements limités et formules de Taylor}
 \def\arraystretch{1}
 
-Dans cette partie, en l'absence de précisions supplémentaires, $I$ désigne un intervalle de $\R$.
-
-\begin{notation}
-    Dans cette section, on définit la notation suivante : 
-    \[ \overline{I} = I \cup \{\pm \infty\} \]
-\end{notation}
-
 \par Il arrive parfois des situations où l'on se retrouve avec des formes indéterminées de type \og $\frac{0}{0}$ \fg ou \og $\frac{\infty}{\infty}$ \fg lorsque nous essayons de calculer les limites, le théorème suivant permet de lever l'indétermination assez simplement.
 Plus tard dans ce chapitre, nous pourrons également utiliser les développements limités pour lever les indéterminations.
 \section{Règle de l'Hôpital}
 \begin{theorem}[Règle de l'Hôpital \cite{regle_hopital_bibmath}]
-    Soient $a, b \in \R,\ \ell \in \overline{\R}$ tels que $a < b$ et $f, g : \ ]a,\ b[ \to \R$ deux fonctions dérivables telles que $g'$ ne s'annule pas. 
+    Soient $a, b \in \R,\ \ell \in \R \cup \{-\infty, +\infty\}$ tels que $a < b$ et $f, g : \ ]a, b[ \to \R$ deux fonctions dérivables telles que $g'$ ne s'annule pas. 
     \begin{enumerate}
         \item Si $\lim_{x \to a} f(x) = \lim_{x \to a} g(x) = 0$ et si $\lim_{x \to a} \frac{f'(x)}{g'(x)} = \ell$, alors $\lim_{x \to a} \frac{f(x)}{g(x)} = \ell$.
         \item Si $\lim_{x \to a} g(x) = \pm \infty$ et si $\lim_{x \to a} \frac{f'(x)}{g'(x)} = \ell$, alors $\lim_{x \to a} \frac{f(x)}{g(x)} = \ell$.
@@ -39,7 +32,7 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 
 \section{Relations de négligeabilité, domination, d'équivalence}
 \begin{definition}
-    Soient $I \subseteq \R$, $f, g : I \to \R$, $a \in \overline{I}$ et $\varepsilon$ telle que $\lim_{x \to a} \varepsilon(x) = 0$.
+    Soient $I \subseteq \R$, $f, g : I \to \R$, $a \in I \cup \{-\infty, +\infty\}$ et $\varepsilon$ telle que $\lim_{x \to a} \varepsilon(x) = 0$.
     \begin{enumerate}
         \item On dit que $f$ est \textbf{dominée} par $g$ au voisinage de $a$ s'il existe un $B \in \R_+$ tel que $\abs{f(x)} \leq B \abs{g(x)}$ au voisinage de $a$. 
         On écrit alors $f \underset{a}{=} O(g)$ ou $f = O_a(g)$.
@@ -96,14 +89,14 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 \end{definition}
 
 \begin{theorem}[Formule de Taylor-Young]
-    Soient $f \in \mathcal{C}^{n}(I, \R),\ x_0 \in I$.
+    Soient $I \subseteq \R,\ f \in \mathcal{C}^{n}(I, \R),\ x_0 \in I$.
     \begin{align*}
         f(x) = T_{n, x_0}^f(x) + o((x - x_0)^n) 
     \end{align*}
 \end{theorem}
 
 \begin{theorem}[Formue de Taylor-Lagrange]
-    Soient $f \in \mathcal{C}^{n+1}(I, \R),\ x_0 \in I$. 
+    Soient $I \subseteq \R,\ f \in \mathcal{C}^{n+1}(I, \R),\ x_0 \in I$. 
     \begin{align*}
         \exists c \in 
         \begin{cases}
@@ -116,14 +109,14 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 \end{theorem}
 
 \begin{theorem}[Formule de Taylor avec reste intégral]
-    Soient $f \in \mathcal{C}^{n+1}(I, \R),\ x_0 \in I$.
+    Soient $I \subseteq \R,\ f \in \mathcal{C}^{n+1}(I, \R),\ x_0 \in I$.
     \begin{align*}
         f(x) = T_{n, x_0}^f(x) + \int_{x_0}^{x} \frac{f^{(n+1)}(t)}{n!} (x - t)^n \diffd t
     \end{align*}
 \end{theorem}
 
 \begin{corollary}[Inégalité de Taylor-Lagrange]
-    Si $\forall x \in I,\ \abs{f^{(n+1)}(x)} \leq M$ alors
+    Si $I \subseteq \R,\ \forall x \in I,\ \abs{f^{(n+1)}(x)} \leq M$ alors
     \[ \abs{\int_{x_0}^{x} \frac{f^{(n+1)}(t)}{n!} (x - t)^n \ \diffd t} \leq M \frac{\abs{x - x_0}^{n+1}}{(n+1)!} \]
 \end{corollary}
 
