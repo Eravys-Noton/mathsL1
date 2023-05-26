@@ -63,21 +63,14 @@
 \end{definition}
 
 \begin{definition}
-	Une matrice est \textbf{échelonnée} en lignes si et seulement si le nombre de zéros commençant une ligne croît strictement ligne par ligne jusqu'à ce qu'il ne reste plus que des zéros.
+	\begin{enumerate}
+		\item Une matrice est \textbf{échelonnée} en lignes si et seulement si le nombre de zéros commençant une ligne croît strictement ligne par ligne jusqu'à ce qu'il ne reste plus que des zéros.
+		\item Une matrice est dite dite \textbf{échelonnée réduite} en lignes si les pivots valent 1 et si les autres coefficients dans les colonnes des pivots sont nuls.
+	\end{enumerate}
 \end{definition}
 
-L'algorithme sera décrit ici pour les lignes, l'énoncé pour les colonnes est analogue sauf qu'on applique les opérations sur les colonnes.
-   	On applique les opérations élémentaires afin d'échelonner le système ou la matrice.
-    \\
-    Ensuite le but est d'appliquer les opérations élémentaires pour \og remonter \fg dans l'algorithme et d'obtenir une matrice ou un système de cette forme :
-    \begin{align*}
-        \begin{pmatrix}
-            a_{1,1} & 0 & \cdots & 0 \\
-            0 & a_{2,2} & \cdots & 0 \\ 
-            \vdots & \vdots & \ddots & \vdots \\ 
-            0 & 0 & \cdots & a_{m,n}
-        \end{pmatrix}
-    \end{align*}
+\par Décrivons maintenant l'algorithme du pivot de Gauss utilisé pour résoudre des systèmes. On expliquera la méthode sur les lignes mais les principes sont analogues pour les colonnes.
+\par \noindent La méthode consiste à appliquer les opérations élémentaires sur le système ou la matrice afin d'en faire un système ou une matrice échelonnée réduite.
 
 \begin{definition}[Rang d'une matrice]
 	Le rang d'une matrice $A$ est son nombre de lignes non nulles après échelonnage. Il est noté $\rg(A)$.
