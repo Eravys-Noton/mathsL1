@@ -12,9 +12,9 @@
     Soient $E$ et $F$ deux $\K$-espaces vectoriels et $f : E \to F$ une application linéaire.
     \\
     On définit le \textbf{noyau} de $f$, noté $\ker(f)$ tel que :
-    \[ \ker(f) \coloneqq \{ x \in E : f(x) = 0_E \} \] 
+    \[ \ker(f) = \{ x \in E : f(x) = 0_E \} \] 
     On définit l'\textbf{image} de $f$, notée $\Im(f)$ telle que :
-    \[ \Im(f) \coloneqq \{ y \in F : \exists x \in E,\ y = f(x) \} \]
+    \[ \Im(f) = \{ y \in F : \exists x \in E,\ y = f(x) \} \]
 \end{definition}
 
 \begin{definition}
@@ -29,7 +29,7 @@
     \end{enumerate}
 \end{definition}
 
-Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} + \cdots + a_1 f' + a_0 f = 0 \},\ n, N \in \N^*,\ a_i \in \mathcal{C}^0(I),\ I$ un intervalle ouvert.
+Soit $\varepsilon = \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} + \cdots + a_1 f' + a_0 f = 0 \},\ n, N \in \N^*,\ a_i \in \mathcal{C}^0(I),\ I$ un intervalle ouvert.
 
 \begin{proposition}
     Soit $n \in \N$.
@@ -42,7 +42,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 \end{proposition}
 
 \begin{definition}[Rang d'un morphisme]
-    Soit $f \in \mathcal{L}(E, F)$. On appelle $\rg(f) \coloneqq \dim(\Im(f))$ le rang de $f$.
+    Soit $f \in \mathcal{L}(E, F)$. On appelle $\rg(f) = \dim(\Im(f))$ le rang de $f$.
 \end{definition}
 
 \begin{theorem}[Théorème du rang]
@@ -69,7 +69,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 \begin{corollary}
     Soit $(b_1, \ldots, b_n)$ une base de $E$. Alors $\varphi \in \mathcal{L}(E, \R^n)$ est un isomorphisme donné par :
     \[ \varphi(b_i) = e_i,\ \forall i \in \llbracket 1, n \rrbracket \]
-    \[ \varphi \left( \sum_{i = 1}^{n} x_i b_i \right) = \sum_{i = 1}^{n} x_i e_i \equiv 
+    \[ \varphi \left( \sum_{i = 1}^{n} x_i b_i \right) = \sum_{i = 1}^{n} x_i e_i = 
     \begin{pmatrix}
         x_1 \\
         \vdots \\
@@ -80,7 +80,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 \end{corollary}
 
 \begin{definition}
-    Soient $f \in \mathcal{L}(E, F)$ et $\mathcal{B} \coloneqq (b_1, \ldots, b_n)$ une base de $E$ et $\mathcal{C} \coloneqq (c_1, \ldots, c_n)$ une base de $F$.
+    Soient $f \in \mathcal{L}(E, F)$ et $\mathcal{B} = (b_1, \ldots, b_n)$ une base de $E$ et $\mathcal{C} = (c_1, \ldots, c_n)$ une base de $F$.
     Alors on peut définir une matrice $A \in \mathcal{M}_{m,n}(\mathbb{K}),\ \forall i \in \llbracket 1, n \rrbracket$. 
     \[ f(b_i) = \sum_{j = 1}^{n} a_{j,i} c_j \]
 \end{definition}
@@ -112,7 +112,7 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 
 \section{Projecteurs et symétries}
 \begin{definition}
-    Soit $f \in \mathcal{L}(E)$. Notons $f^2 \equiv f \circ f$.
+    Soit $f \in \mathcal{L}(E)$. Notons $f^2 = f \circ f$.
     \begin{enumerate}
         \item On dit que $f$ \textbf{est idempotente/une projection} si et seulement si : $f^2 = f$.
         \item On dit que $f$ \textbf{est involutive/une symétrie linéaire} si et seulement si : $f^2 = id_E$.
@@ -181,22 +181,22 @@ Soit $\varepsilon \coloneqq \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(
 \section{Rotations.}
 \begin{definition}
 	Soit $n \in \N^*$.
-    \[ \operatorname{GL}(\R, n) \coloneqq \{ A \in \mathcal{M}_n(\R) : \det(A) \neq 0 \} \]
+    \[ \operatorname{GL}(\R, n) = \{ A \in \mathcal{M}_n(\R) : \det(A) \neq 0 \} \]
 \end{definition}
 
 \begin{definition}
 	Soit $n \in \N^*$.
-    \[ \operatorname{SL}(\R, n) \coloneqq \{ A \in \mathcal{M}_n(\R) : \det(A) = 1 \} \]
+    \[ \operatorname{SL}(\R, n) = \{ A \in \mathcal{M}_n(\R) : \det(A) = 1 \} \]
 \end{definition}
 
 \begin{definition}
 	Soit $n \in \N^*$.
-    \[ \operatorname{O}(n) \coloneqq \{ R \in \mathcal{M}_n(\R) : \forall (x, y) \in (\R^n)^2,\ \langle Rx|Ry \rangle = \langle x|y \rangle \} \]
+    \[ \operatorname{O}(n) = \{ R \in \mathcal{M}_n(\R) : \forall (x, y) \in (\R^n)^2,\ \langle Rx|Ry \rangle = \langle x|y \rangle \} \]
 \end{definition}
 
 \begin{definition}
     Soit $n \in \N^*$.
-    \[ \operatorname{SO}(n) \coloneqq \{ R \in \operatorname{O}(n) : \det(R) = 1 \} \]
+    \[ \operatorname{SO}(n) = \{ R \in \operatorname{O}(n) : \det(R) = 1 \} \]
 \end{definition}
 
 \begin{proposition}

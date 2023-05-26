@@ -31,8 +31,8 @@
 		\item \'Elément absorbant : $P \cdot 0 = 0$.
 		\item Distributivité :
 		\begin{enumerate}
-			\item $(P + Q)R = PR + QR$.
-			\item $P(Q + R) = PQ + PR$.
+			\item $(P + Q) \cdot R = P \cdot R + Q \cdot R$.
+			\item $P \cdot (Q + R) = P \cdot Q + P \cdot R$.
 		\end{enumerate}
 	\end{enumerate}
 \end{proposition}
@@ -151,20 +151,20 @@
 \begin{proof}\cite{math-sup.fr_decomp}
     Sur $\C$ : il est recommandé de consulter la section sur les espaces vectoriels avant (voir \autoref{chap:espaces_vectoriels}).
     Rappelons tout d'abord :
-    \[ \C[X] \coloneqq \left\{ \sum_{k = 0}^{n} a_k X^k : n \in \N,\ a_k \in \C \right\} \]
+    \[ \C[X] = \left\{ \sum_{k = 0}^{n} a_k X^k : n \in \N,\ a_k \in \C \right\} \]
     Notons l'espace des fractions rationnelles :
-    \[ \C(X) \coloneqq \left\{ \frac{P(X)}{Q(X)} : P, Q \in \C[X],\ Q \neq 0_{\C[X]} \right\} \]
+    \[ \C(X) = \left\{ \frac{P(X)}{Q(X)} : P, Q \in \C[X],\ Q \neq 0_{\C[X]} \right\} \]
     La stratégie de la démonstration consiste à montrer une égalité de deux espaces vectoriels :
     \[ E = \left\{ \frac{P(X)}{Q(X)} : P \in \C[X],\ \deg(P) < \deg(Q) \right\} \]
     \[ F = \left\{ \sum_{i = 1}^{n} \sum_{j = 1}^{m_i} \frac{a_{i, j}}{(X - \alpha_i)^{j}} : a_{ij} \in \C \right\} \]
-    \textbf{\'Etude de $E$ :} Posons $d \coloneqq \deg(Q)$
+    \textbf{\'Etude de $E$ :} Posons $d = \deg(Q)$
     \begin{align*}
         E &= \left\{ \frac{P(X)}{Q(X)} : P \in \C[X],\ \deg(P) < d \right\} \\
           &= \left\{ \frac{a_0 + a_1X + \cdots + a_{d - 1} X^{d - 1}}{Q(X)} : a_0, \ldots, a_{d - 1} \in \C \right\} \\
           &= \left\{ a_0 \frac{1}{Q(X)} + a_1 \frac{X}{Q(X)} + \cdots + a_{d - 1} \frac{X^{d-1}}{Q(X)} : a_0, \ldots, a_{d - 1} \in \C \right\} \\
           &= \operatorname{Vect}\left\{ \frac{1}{Q(X)}, \frac{X}{Q(X)}, \ldots, \frac{X^{d-1}}{Q(X)} \right\}
     \end{align*}
-    Notons : $\mathcal{F} \coloneqq \operatorname{Vect}\left\{ \frac{1}{Q(X)}, \frac{X}{Q(X)}, \ldots, \frac{X^{d-1}}{Q(X)} \right\}$
+    Notons : $\mathcal{F} = \operatorname{Vect}\left\{ \frac{1}{Q(X)}, \frac{X}{Q(X)}, \ldots, \frac{X^{d-1}}{Q(X)} \right\}$
     Nous avons réussi à exprimer $E$ sous la forme d'une famille de vecteurs, nous en déduisons que $E$ est un espace vectoriel admettant $\mathcal{F}$ comme famille génératrice, montrons ensuite que $\mathcal{F}$ est libre :
     Soient $ \lambda_0,\ldots,\lambda_{d-1} \in \C$
     \begin{align*}
@@ -182,7 +182,7 @@
         F &= \left\{ \frac{a_{1, 1}}{(X - \alpha_1)} + \cdots + \frac{a_{1, m_1}}{(X - a_1)^{m_1}} + \cdots + \frac{a_{n, 1}}{(X - \alpha_n)} + \cdots + \frac{a_{n, m_n}}{(X - \alpha_n)^{m_n}} : a_{ij} \in \C \right\} \\
         &= \operatorname{Vect} \left\{ \frac{1}{(X - \alpha_1)}, \ldots, \frac{1}{(X - \alpha_1)^{m_1}}, \ldots, \frac{1}{(X - \alpha_n)}, \ldots, \frac{1}{(X - \alpha_n)^{m_n}}  \right\}
     \end{align*}
-    Notons $\mathcal{F}_2 \coloneqq \operatorname{Vect} \left\{ \frac{1}{(X - \alpha_1)}, \ldots, \frac{1}{(X - \alpha_1)^{m_1}}, \ldots, \frac{1}{(X - \alpha_n)}, \ldots, \frac{1}{(X - \alpha_n)^{m_n}}  \right\}$. Nous en déduisons que $F$ est un espace vectoriel admettant $\mathcal{F}_2$ comme famille génératrice, montrons que $\mathcal{F}_2$ est libre : Soient $a_{i,j} \in \C$ tels que :
+    Notons $\mathcal{F}_2 = \operatorname{Vect} \left\{ \frac{1}{(X - \alpha_1)}, \ldots, \frac{1}{(X - \alpha_1)^{m_1}}, \ldots, \frac{1}{(X - \alpha_n)}, \ldots, \frac{1}{(X - \alpha_n)^{m_n}}  \right\}$. Nous en déduisons que $F$ est un espace vectoriel admettant $\mathcal{F}_2$ comme famille génératrice, montrons que $\mathcal{F}_2$ est libre : Soient $a_{i,j} \in \C$ tels que :
     \begin{align*}
         \begin{split}
             a_{1,1} \frac{1}{(X - \alpha_1)} + a_{1,2} \frac{1}{(X - \alpha_1)^2} + \cdots + a_{1,m_1-1} \frac{1}{(X - \alpha_1)^{m_1 - 1}} + \cdots \\

@@ -39,8 +39,8 @@
 \begin{definition}[Limite à gauche et à droite]
     Soient $I \subseteq \R,\ a \in I,\ f : I \to \R $.
     \begin{enumerate}
-        \item $ \lim_{\substack{x \to a \\ x < a}} f(x) \equiv \lim_{x \to a^-} f(x) = \ell \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ a - \delta < x < a \implies \abs{f(x) - \ell} \leq \varepsilon $.
-        \item $\lim_{\substack{x \to a \\ x > a}} f(x) \equiv \lim_{x \to a^+} f(x) = \ell \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ a < x < a + \delta \implies \abs{f(x) - \ell} \leq \varepsilon$.
+        \item $ \lim_{\substack{x \to a \\ x < a}} f(x) = \lim_{x \to a^-} f(x) = \ell \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ a - \delta < x < a \implies \abs{f(x) - \ell} \leq \varepsilon $.
+        \item $\lim_{\substack{x \to a \\ x > a}} f(x) = \lim_{x \to a^+} f(x) = \ell \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ a < x < a + \delta \implies \abs{f(x) - \ell} \leq \varepsilon$.
     \end{enumerate}
 \end{definition}
 
@@ -76,7 +76,7 @@
 	\\
 	Soit $E = \{ x \in I \mid f(x) \leq y \}$. $a \in E$ donc $E \neq \varnothing$. On sait que $E \subseteq I$ donc $E$ est majoré.
 	\\
-	Posons $c \coloneqq \sup(E)$.
+	Posons $c = \sup(E)$.
 	\\
 	Puisque $c = \sup(E)$, il existe une suite $(c_n)_{n \in \N}$ d'éléments de $E$ telle que $\lim_{n \to +\infty} c_n = c$. 
 	\\

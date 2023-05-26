@@ -23,7 +23,7 @@
     \\
     On définit une \textbf{suite arithmétique} $(u_n)_{n \in \N}$ de la manière suivante :
     \begin{align*}
-        (u_n)_{n \in \N} \coloneqq
+        (u_n)_{n \in \N} =
         \begin{cases}
             u_{n+1} = u_n + r \\ 
             u_n = u_0 + nr
@@ -43,7 +43,7 @@
     \\
     On définit une \textbf{suite géométrique} $(u_n)_{n \in \N}$ de la manière suivante : 
     \begin{align*}
-        (u_n)_{n \in \N} \coloneqq 
+        (u_n)_{n \in \N} = 
         \begin{cases}
             u_{n+1} = qu_n \\
             u_n = u_0 q^n
@@ -67,7 +67,7 @@
     \\
     On définit une \textbf{suite arithmético-géométrique} $(u_n)_{n \in \N}$ de la manière suivante :
     \begin{align*}
-        (u_n)_{n \in \N} \coloneqq 
+        (u_n)_{n \in \N} = 
         \begin{cases}
             u_{n+1} = qu_n + r \\ 
             u_n = a + (u_0 - a) q^n,\ a = \frac{r}{1 - q}
@@ -108,7 +108,7 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 \begin{proof}
     Procédons à un raisonnement par l'absurde.
     \\
-    On suppose que $\ell_1 \neq \ell_2$. Posons $\varepsilon \coloneqq \frac{1}{3} \abs{\ell_1 - \ell_2} > 0$.
+    On suppose que $\ell_1 \neq \ell_2$. Posons $\varepsilon = \frac{1}{3} \abs{\ell_1 - \ell_2} > 0$.
     \\
     Par définition de la limite :
     \begin{align*}
@@ -116,7 +116,7 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
         &
         &\exists N_2 \in \N,\ \forall n \geq N_2,\ \abs{u_n - \ell_2} \leq \varepsilon
     \end{align*}
-    Posons $N \coloneqq \max(N_1, N_2)$, si $n \geq N$ alors :
+    Posons $N = \max(N_1, N_2)$, si $n \geq N$ alors :
     \begin{align*}
         \abs{u_n - \ell_1} \leq \varepsilon \text{ et } \abs{u_n - \ell_2} \leq \varepsilon
     \end{align*}
@@ -137,11 +137,11 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 
 \begin{proof}
     Supposons qu'une suite $(u_n)_{n \in \N}$ converge vers $\ell \in \R$.
-    Posons $\varepsilon \coloneqq 1$. 
+    Posons $\varepsilon = 1$. 
     \\
     Par définition de la limite :
     \[ \exists N \in \N,\ \forall n \geq N,\ \abs{u_n - \ell} \leq 1 \iff \ell - 1 \leq u_n \leq \ell + 1 \]
-    Posons $M \coloneqq \max(u_0, \ldots, u_{N-1}, \ell + 1)$ et $m = \min(u_0, \ldots, u_{N - 1}, \ell - 1)$.
+    Posons $M = \max(u_0, \ldots, u_{N-1}, \ell + 1)$ et $m = \min(u_0, \ldots, u_{N - 1}, \ell - 1)$.
     \begin{align*}
         \forall n \in \N,\ 
         \begin{cases}
@@ -171,7 +171,7 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
         &\exists N_1 \in \N,\ \forall n \geq N_1,\ \abs{u_n - \ell_1} \leq \varepsilon &
         &\exists N_2 \in \N,\ \forall n \geq N_2,\ \abs{v_n - \ell_2} \leq \varepsilon
     \end{align*}
-    Posons $N \coloneqq \max(N_1, N_2)$. Si $n \geq N$, alors :
+    Posons $N = \max(N_1, N_2)$. Si $n \geq N$, alors :
     \begin{align*}
         \abs{u_n - \ell_1} \leq \varepsilon \text{ et } \abs{v_n - \ell_2} \leq \varepsilon
     \end{align*}
@@ -180,7 +180,7 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
         \abs{u_n + v_n - (\ell_1 + \ell_2)} = \abs{u_n - \ell_1 + v_n - \ell_2} &\leq \abs{u_n - \ell_1} + \abs{v_n - \ell_2} \\
         \abs{u_n - \ell_1} + \abs{v_n - \ell_2} &\leq \varepsilon + \varepsilon = 2 \varepsilon
     \end{align*}
-    Posons $\varepsilon' \coloneqq 2\varepsilon$.
+    Posons $\varepsilon' = 2\varepsilon$.
     Ainsi : 
     \[ \abs{u_n - \ell_1} + \abs{v_n - \ell_2} \leq \varepsilon' \]
     C'est-à-dire que $\lim_{n \to +\infty} (u_n + v_n) = \ell_1 + \ell_2$.
@@ -203,7 +203,7 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
         &\exists N_1,\ \forall n \geq N_1,\ \abs{u_n - \ell_1} \leq \varepsilon &
         &\exists N_2,\ \forall n \geq N_2,\ \abs{v_n - \ell_2} \leq \varepsilon
     \end{align*}
-    Posons $N \coloneqq \max(N_1, N_2)$. Si $n \geq N$ alors :
+    Posons $N = \max(N_1, N_2)$. Si $n \geq N$ alors :
     \[ \abs{u_n - \ell_1} \leq \varepsilon \text{ et } \abs{v_n - \ell_2} \leq \varepsilon \]
     Puis : 
     \begin{align*}
@@ -212,7 +212,7 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
         &\leq \abs{u_n} \abs{v_n - \ell_2} + \abs{\ell_2} \abs{u_n - \ell_1} \\ 
         &\leq M \varepsilon + \abs{\ell_2} \varepsilon = (M + \abs{\ell_2}) \varepsilon
     \end{align*}
-    Posons $\varepsilon' \coloneqq \varepsilon$. Ainsi :
+    Posons $\varepsilon' = \varepsilon$. Ainsi :
     \[ \abs{u_n \cdot v_n - \ell_1 \cdot \ell_2} = \varepsilon' \]
     C'est-à-dire que $\lim_{n \to +\infty} (u_n \cdot v_n) = \ell_1 \cdot \ell_2$.
 \end{proof}
@@ -226,12 +226,12 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
     Soient $\ell_1, \ell_2 \in \R$.
     Posons :
     \begin{align*}
-        \ell_1 &\coloneqq \lim_{n \to +\infty} u_n & \ell_2 &\coloneqq \lim_{n \to +\infty} v_n
+        \ell_1 &= \lim_{n \to +\infty} u_n & \ell_2 &= \lim_{n \to +\infty} v_n
     \end{align*}
     On raisonne par l'absurde en supposant que $\ell_1 > \ell_2$.
     \\
     Posons : 
-    \[ \varepsilon \coloneqq \frac{\ell_1 - \ell_2}{3} > 0 \]
+    \[ \varepsilon = \frac{\ell_1 - \ell_2}{3} > 0 \]
     \begin{align*}
         &\exists N_1,\ \forall n \geq N_1,\ \abs{u_n - \ell_1} \leq \varepsilon & 
         &\exists N_2,\ \forall n \geq N_2,\ \abs{v_n - \ell_2} \leq \varepsilon
@@ -241,7 +241,7 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
         &\forall n \geq N_1,\ u_n \geq \ell_1 - \varepsilon &
         &\forall n \geq N_2,\ v_n \leq \ell_2 + \varepsilon
     \end{align*}
-    Posons $N \coloneqq \max(N_1, N_2)$. Si $n \geq N$ alors :
+    Posons $N = \max(N_1, N_2)$. Si $n \geq N$ alors :
     \begin{align*}
         v_n \leq \ell_2 + \varepsilon < \ell_1 - \varepsilon \leq u_n \implies v_n < u_n
     \end{align*}
@@ -267,7 +267,7 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
         &\exists N_1 \in \R,\ \forall n \geq N_1,\ \abs{u_n - \ell} \geq \varepsilon &
         &\exists N_2 \in \R,\ \forall n \geq N_2,\ \abs{w_n - \ell} \geq \varepsilon
     \end{align*}
-    Posons $N \coloneqq \max(N_1, N_2)$. Si $n \geq N$ alors :
+    Posons $N = \max(N_1, N_2)$. Si $n \geq N$ alors :
     \begin{align*}
         \abs{u_n - \ell} \leq \varepsilon \text{ et } \abs{w_n - \ell} \leq \varepsilon
     \end{align*}
@@ -304,7 +304,7 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
 \end{theorem}
 
 \begin{proof}
-    Posons $w_n \coloneqq v_n - u_n$.
+    Posons $w_n = v_n - u_n$.
     \\ 
     On sait que $(v_n)_{n \in \N}$ est décroissante et que $(u_n)_{n \in \N}$ est croissante. 
     \\ 

@@ -26,7 +26,7 @@
 			\item $qb \leq a$ car $q \in M$ 
 			\item $(q + 1)b > a$ car $q + 1 > q$ sachant que $q$ est le plus grand élément de $M$, $q + 1 \notin M$.
 		\end{enumerate}
-		Posons : $r \coloneqq a - bq$. Sachant que $a \geq bq,\ r \geq 0$. On a $r < b$ car $b = (q + 1)b - qb > a - bq = r$. Supposons que $a \in \Z$. 
+		Posons : $r = a - bq$. Sachant que $a \geq bq,\ r \geq 0$. On a $r < b$ car $b = (q + 1)b - qb > a - bq = r$. Supposons que $a \in \Z$. 
 		\begin{enumerate}
 			\item Si $a$ est positif, on se ramène au cas précédent.
 			\item Dans le cas où $a < 0,\ -a \geq 0$, ainsi il existe $(q', r') \in \Z^2$ tel que :
@@ -78,13 +78,13 @@
 \begin{proof}
 	\leavevmode
 	\begin{enumerate}
-		\item Posons $\ell \coloneqq \ppcm(a,b)$. 
-		\[ \exists ! (q,r) \in \Z^2,\ d \coloneqq q \ell + R,\ 0 \leq r < \ell \]
-		\[ r \coloneqq d - q \ell,\ d \text{ et } \ell \text{ sont multiples de } a \text{ et } r \text{ est aussi un multiple de } a \text{ et } b \]
+		\item Posons $\ell = \ppcm(a,b)$. 
+		\[ \exists ! (q,r) \in \Z^2,\ d = q \ell + R,\ 0 \leq r < \ell \]
+		\[ r = d - q \ell,\ d \text{ et } \ell \text{ sont multiples de } a \text{ et } r \text{ est aussi un multiple de } a \text{ et } b \]
 		Par la minimalité de $\ell,\ r = 0 \implies m = q \ell$.
 		\item Posons $m = \pgcd(a, b)$. Montrons que :
 		\[ \pgcd(m, d) = m \]
-		Soit $\ell \coloneqq \ppcm(m,d)$, $\ell \geq m$, $a$ et $b$ sont multiples de $m$ et $d$. D'après 1. :
+		Soit $\ell = \ppcm(m,d)$, $\ell \geq m$, $a$ et $b$ sont multiples de $m$ et $d$. D'après 1. :
 		\[ \ell \mid a \text{ et } \ell \mid b,\ \ell \leq m \]
 		Sachant que $\ell \geq m$ et $\ell \leq m$, $\ell = m$.
 	\end{enumerate}
@@ -150,7 +150,7 @@
 
 \begin{proof}
 	Supposons qu'il existe $k$ nombres premiers $p_1, \ldots, p_k$.
-	\[ N \coloneqq p_1 \cdots p_k + 1 \implies p_i \nmid N \]
+	\[ N = p_1 \cdots p_k + 1 \implies p_i \nmid N \]
 \end{proof}
 
 \begin{lemma}
