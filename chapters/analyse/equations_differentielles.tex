@@ -11,13 +11,13 @@
 \section{\'Equations différentielles d'ordre 1}
 
 \begin{definition}[\'Equation différentielle d'ordre 1]
-	Soient $y \in \mathcal{C}^1(\R, \R)$ et $a, b \in \mathcal{C}^0(\R, \R)$. \\
+	Soient $y \in \mathcal{C}^1(\R)$ et $a, b \in \mathcal{C}^0(\R)$. \\
 	Une équation différentielle d'ordre 1 est une équation de la forme
 	\[ y' + a(x)y = b(x) \]
 \end{definition}
 
 \begin{theorem}
-	Soient $y \in \mathcal{C}^1(\R, \R)$ et $a \in \mathcal{C}^0(\R, \R)$, les solutions de :
+	Soient $y \in \mathcal{C}^1(\R)$ et $a \in \mathcal{C}^0(\R)$, les solutions de :
 	\[ y' + a(x)y = 0 \]
 	sont de la forme $C \in \R,\ A'(x) = a(x)$:
 	\[ y = C \cdot \exp(-A(x)) \]
@@ -25,14 +25,14 @@
 
 \begin{proof}
     Il faut montrer l'inclusion dans les deux sens. \\
-    \textbf{Inclusion réciproque :}
+    \boxed{\supseteq} :
 	Définissons
 	\[ y = C e^{-A(x)} \]
 	on aurait donc
 	\[ y' = -C a(x)e^{-A(x)} \]
 	puis
 	\[ y' + a(x)y(x) = -C a(x) e^{-A(x)} + a(x)Ce^{-A(x)} = 0 \]
-    \textbf{Inclusion directe} \cite{bibmath_resolution_eq_diff} :
+    \boxed{\subseteq} : \cite{bibmath_resolution_eq_diff} :
     Supposons $y$ solution de $y' + a(x) y = 0$.
     Alors il existerait un $C \in \R$ tel que $y(x) = Ce^{-A(x)}$.
     Posons $f(x) = y(x)e^{A(x)}$.
@@ -99,13 +99,13 @@ Pour trouver une solution particulière d'une équation différentielle d'ordre 
 \section{\'Equations différentielles d'ordre 2}
 
 \begin{definition}[\'Equations différentielle d'ordre 2]
-	Soient $y \in \mathcal{C}^2(\R, \R)$, $b \in \mathcal{C}^0(\R, \R)$ et $p, q \in \R$. \\
+	Soient $y \in \mathcal{C}^2(\R)$, $b \in \mathcal{C}^0(\R)$ et $p, q \in \R$. \\
 	Une équation différentielle d'ordre 2 est une équation de la forme
 	\[ y'' + py' + q = b(x) \]
 \end{definition}
 
 \begin{theorem}
-  Soient $y \in \mathcal{C}^2(\R, \R),\ p, q \in \R$ et $(E)$ l'équation suivante :
+  Soient $y \in \mathcal{C}^2(\R),\ p, q \in \R$ et $(E)$ l'équation suivante :
   \[ (E) : y'' + py' + qy = 0, \]
   On s'intéresse d'abord à cette équation associée :
   \[ \ \lambda^{2} + p\lambda + q = 0 \]
@@ -132,7 +132,7 @@ Toutes les équations de second ordre qu'on étudiera dans ce chapitre auront po
 \\
 \par \noindent Voici une méthode pour trouver une solution particulière d'une équation de type :
     \[ y'' + py' + qy = b(x) \]
-    pour $p, q \in \R,\ b \in \mathcal{C}^0(\R, \R),\ y \in \mathcal{C}^2(\R, \R)$. \\
+    pour $p, q \in \R,\ b \in \mathcal{C}^0(\R),\ y \in \mathcal{C}^2(\R)$. \\
     Soient $\alpha, \beta \in \R$, $m \in \N$, $P, P_1, P_2, Q_1, Q_2 \in \R[X]$. 
     \begin{itemize}
         \item \cite{exo7_analyse1} Si $b(x) = e^{\alpha x}(P_1(x) \cos(\beta x) + P_2(x) \sin(\beta x) )$
