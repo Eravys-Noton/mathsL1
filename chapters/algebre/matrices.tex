@@ -14,7 +14,7 @@
             a_{m,1} & a_{m,2} & \cdots & a_{m,n}
         \end{pmatrix}
         \equiv 
-        (a_{i,j})_{\substack{i \in \llbracket 1,\ m \rrbracket \\ j \in \llbracket 1,\ n \rrbracket}}
+        (a_{i,j})_{\substack{1 \leq i \leq m \\ 1 \leq j \leq n}}
     \end{align*}
 \end{definition}
 
@@ -161,6 +161,16 @@
 	La matrice nulle est la matrice dont tous les coefficients sont $0$. On la note $0_{m,n}$, $m$ étant le nombre de lignes, $n$ le nombre de colonnes. 
 \end{definition}
 
+\begin{definition}[Symbole de Kronecker]
+	On définit le symbole de Kronecker ainsi pour $i, j \in \N^*$ :
+	\[ \delta_{i,j} = 
+	\begin{cases}
+		1 \text{ si } i = j \\
+		0 \text{ si } i \neq j
+	\end{cases}
+	\]
+\end{definition}
+
 \begin{definition}[Matrice identité]
 	La matrice identité est la matrice dont tous les coefficients sont $0$ à l'exception de ceux de la diagonale principale à $1$. On la note $I_n$, $n$ étant le nombre de lignes.
 	\begin{align*}
@@ -172,6 +182,8 @@
 			0 & \cdots & 0 & 1
 		\end{pmatrix}
 	\end{align*}
+	On peut également dire que :
+	\[ I_n = (\delta_{i,j})_{\substack{1 \leq i \leq n \\ 1 \leq j \leq n}} \]
 \end{definition}
 
 \begin{remark}
@@ -436,7 +448,6 @@ Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibl
 	\begin{tikzpicture}
 		\draw[->] (-3, 0) -- (3, 0) node[anchor=west]{$x$};
 		\draw[->] (0, -3) -- (0, 3) node[anchor=south]{$y$};
-		\draw 
 	\end{tikzpicture}
 	\caption{Une droite dans $\R^2$}
 \end{figure}
