@@ -1,6 +1,14 @@
 \chapter{Intégration}
 \def\arraystretch{1}
 
+\begin{definition}[Fonction en escalier]
+	Soient $a, b \in \R$ tels que $a < b$, $n \in \N$ et $f : [a, b] \to \R$.
+	\\
+	$f$ est une fonction en escalier s'il existe une division de $[a, b]$ :
+	\[ a = a_0 < a_1 < \cdots < a_{n-1} < a_n = b \]
+	telle que $f_{| ]a, a_{i+1}[}$ est constante.
+\end{definition}
+
 \begin{theorem}[Théorème fondamental de l'analyse]
 	Soit $f \in \mathcal{C}^0([a, b])$ et 
 	\begin{align*}
