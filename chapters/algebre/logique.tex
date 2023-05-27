@@ -64,15 +64,27 @@ Soient $P$ et $Q$ deux prédicats.
     \end{enumerate}
 \end{definition}
 
-\begin{definition}[Raisonnement par l'absurde]
-    Soit $P$ une assertion. Le raisonnement par l'absurde consiste à montrer que la assertion contraire de $P$, que l'on note $\overline{P}$ dans cette définition, est fausse impliquant que $P$ est vraie.
-    Pour ce faire, on suppose que $\overline{P}$ est vraie et on commence à raisonner, s'il l'on arrive à une absurdité ou une contradiction, on a montré que $\overline{P}$ est fausse, impliquant que $P$ est vraie.
-\end{definition}
-
 \begin{definition}[Raisonnement par analyse-synthèse \cite{analyse_synthese_bibmath}]
 	Raisonnement utilisé pour démontrer l'\textbf{existence} et l'\textbf{unicité} d'un objet.
 	\begin{enumerate}
 		\item \textbf{Analyse} : On suppose que l'objet existe et on cherche les conditions nécessaires que doit vérifier l'objet. Cette partie démontre l'\textbf{unicité}.
 		\item \textbf{Synthèse} : On considère l'objet identifié dans la partie analyse et on vérifie qu'il a les propriétés souhaitées. Cette partie démontre l'\textbf{existence}.
 	\end{enumerate}
+\end{definition}
+
+Voici quelques types de raisonnements utilisés pour démontrer une proposition du type \og Si $P$ alors $Q$ \fg.
+
+\begin{definition}[Raisonnement direct]
+	Il suffit de raisonner à partir de l'hypothèse \og $P$ vrai \fg pour montrer que \og $Q$ vrai \fg . 
+\end{definition}
+
+\begin{definition}[Raisonnement par contraposition]
+	Parfois il est plus simple de montrer que $\neg Q \implies \neg P$.
+	Donc on suppose que $\neg Q$ est vrai et on démontrer que $\neg P$ est vrai.
+\end{definition}
+
+\begin{definition}[Raisonnement par l'absurde]
+	Pour montrer que $P \implies Q$, il est possible de montrer que $P \implies \neg Q$ est absurde.
+	\\
+	On suppose que $P$ vrai mais que $Q$ faux, on raisonne jusqu'à aboutir à une contradiction.
 \end{definition}
