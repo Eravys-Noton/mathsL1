@@ -178,17 +178,17 @@
 	\\
 	On dit que $a$ et $b$ sont \textbf{congrus modulo} $n$ s'il existe un $k$ tel que :
 	\[ a - b = k n \]
-	On écrit généralement $a \equiv b \mod n$ ou $a \equiv b \ [n]$.
+	On écrit généralement $a \equiv b \pmod n$ ou $a \equiv b \ [n]$.
 \end{definition}
 
 \begin{proposition}
 	Soient $a, b, c, d \in \Z$ et $k, n \in \N$ tel que $n \geq 2$.
 	\begin{enumerate}
-		\item $a \equiv a \mod n$ 
-		\item $a \equiv b \mod n \iff b \equiv a \mod n$ 
-		\item $a \equiv b \mod n \text{ et } b \equiv c \mod n \implies a \equiv c \mod n$
-		\item $a \equiv b \mod n \text{ et } c \equiv d \mod n \implies a + c \equiv b + d \mod n \text{ et } ac \equiv bd \mod n$
-		\item $a \equiv b \mod n \implies a^k \equiv b^k \mod n$
+		\item $a \equiv a \ [n]$ 
+		\item $a \equiv b \ [n] \iff b \equiv a \ [n]$ 
+		\item $a \equiv b \ [n] \text{ et } b \equiv c  \ [n] \implies a \equiv c \ [n]$
+		\item $a \equiv b \ [n] \text{ et } c \equiv d     \ [n] \implies a + c \equiv b + d \ [n] \text{ et } ac \equiv bd \ [n]$
+		\item $a \equiv b \ [n] \implies a^k \equiv b^k \ [n]$
 	\end{enumerate}
 \end{proposition}
 
@@ -202,13 +202,13 @@
 		\item $m_1 > 1$
 		\item $\pgcd(m_1, m_2) = 1$
 	\end{enumerate}
-	Soient $(a_1,\ a_2) \in \Z^2$ tel que pour $x \in \Z$ :
+	Soient $a_1, a_2 \in \Z$ tel que pour $x \in \Z$ :
 	\begin{enumerate}
-		\item $x \equiv a_1 \mod m_1$
-		\item $x \equiv a_2 \mod m_2$
+		\item $x \equiv a_1 \ [m_1]$
+		\item $x \equiv a_2 \ [m_2]$
 	\end{enumerate}
 	Notons $\mathcal{S}$ l'ensemble des solutions :
-	$\exists (k_0,\ k) \in \Z^2$ tel que :
+	$\exists k_0,\ k \in \Z$ tel que :
 	\begin{enumerate}
 		\item $\mathcal{S} = k_0 + k m_1 m_2$ 
 		\item $0 \leq k_0 < m_1 m_2$
