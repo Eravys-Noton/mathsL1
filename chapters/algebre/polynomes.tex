@@ -84,6 +84,20 @@
 	\[ P(\alpha) = 0 \iff X - \alpha \mid P(X) \]
 \end{proposition}
 
+\begin{proof}
+	D'après la division euclidienne, il existe un unique couple $(Q, R) \in (\K[X])^2$ avec $0 \leq \deg(R) \leq \deg(Q)$ tel que :
+	\begin{align*}
+		P(X) &= (X - \alpha) Q(X) + R(X) \\
+		P(\alpha) &= (\alpha - \alpha) Q(X) + R(X) \\
+		P(\alpha) &= R(X)
+	\end{align*}
+	Ainsi $P(\alpha) = 0 \iff R(X) = 0$ donc :
+	\begin{align*}
+		P(\alpha) = 0 &\iff P(X) = (X - \alpha) Q(X) \\
+					  &\iff X - \alpha \mid P(X)
+	\end{align*}
+\end{proof}
+
 \begin{definition}\label{def:ordre_mult}
 	Soient $P$ un polynôme non constant, $\alpha \in \K$ et $m \in \N^*$ $\alpha$ est une racine d'ordre de multiplicité $m$ de $P$ si et seulement si :
 	\begin{align*}
