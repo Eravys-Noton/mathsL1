@@ -58,6 +58,34 @@
         \end{enumerate}
 \end{proposition}
 
+\begin{proposition}
+	La dérivée de la fonction $x^a$ est $ax^{a-1}$.
+\end{proposition}
+
+\begin{proof}
+	Dans le cas où la puissance est un entier naturel. \\
+	Procèdons par récurrence pour montrer $P_n : (x^n)' = nx^{n-1}$.
+	\begin{enumerate}
+		\item \textbf{Initialisation :} En $n = 0$, $f_0(x) = 1$ donc :
+		\begin{align*}
+			f_0'(a) &= \lim_{x \to a} \frac{f_0(x) - f_0(a)}{x - a} \\
+			 &= \lim_{x \to a} \frac{1 - 1}{x - a} \\
+			 &= 0
+		\end{align*}
+		En $n = 1$, $f_1(x) = x$ donc :
+		\begin{align*}
+			f_1'(a) &= \lim_{x \to a} \frac{x - a}{x - a} = 1
+		\end{align*}
+		\item \textbf{Hérédité :} On suppose que $P_k$ est vraie pour un $k > 2$. \\
+		On a : $f_{k+1}'(x) = (x - x^k)' = (f_1(x) f_k(x))'$.
+		\begin{align*}
+			f_{k+1}'(x) &= f_1'(x) f_k(x) + f_1(x) f_n'(x) \\
+			&= x^k + xkx^{k-1} \\
+			&= (k+1)x^k 
+		\end{align*}
+	\end{enumerate}
+\end{proof}
+
 \section{Fonctions trigonométriques}
 \begin{definition}[Fonctions trigonométriques]
 	Soit $k \in \Z$ :	
@@ -187,6 +215,35 @@
 	\end{enumerate}
 \end{proposition}
 
+\begin{proposition}
+	\begin{enumerate}
+		\item $\cos'(x) = -\sin(x)$. 
+		\item $\sin'(x) = \cos(x)$.
+		\item $\tan'(x) = \frac{1}{\cos^2(x)} = 1 + \tan^2(x)$.
+	\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+	Montrons le 3.
+	On part de $\tan(x) = \frac{\sin(x)}{\cos(x)}$.
+	\begin{align*}
+		\left( \frac{\sin(x)}{\cos(x)} \right) &= \frac{\sin'(x) \cos(x) - \sin(x) \cos'(x)}{\cos^2(x)} \\
+		&= \frac{\cos^2(x) + \sin^2(x)}{\cos^2(x)}
+	\end{align*}
+	On peut simplifier le résultat de deux manières :
+	\begin{enumerate}
+		\item On peut utiliser $\cos^2(x) + \sin^2(x) = 1$
+		donc on aurait :
+		\[ \tan'(x) = \frac{1}{\cos^2(x)} \]
+		\item On peut aussi séparer la fraction en deux :
+		\begin{align*}
+			\tan'(x) &= \frac{\cos^2(x)}{\cos^2(x)} + \frac{\sin^2(x)}{\cos^2(x)} \\
+			&= 1 + \left( \frac{\sin(x)}{\cos(x)} \right)^2 \\
+			&= 1 + \tan^2(x)
+		\end{align*}
+	\end{enumerate}
+\end{proof}
+
 \begin{definition}
 	On définit $\arccos,\ \arcsin$ et $\arctan$ comme étant les bijections réciproques des fonctions $\cos,\ \sin$ et $\tan$.
 \end{definition}
@@ -282,13 +339,17 @@
 
 \section{Exponentielle et logarithme}
 
-\begin{definition}[Fonction exponentielle]
+\begin{theorem}[Fonction exponentielle]
+	Il existe une unique fonction dérivable 
 	\begin{center}
 		$
 		\appli{\exp}{\R}{\R_+^*}{x}{\exp(x) = e^x}
 		$
 	\end{center}
-\end{definition}
+	telle que $\exp'(x) = \exp(x)$ et $\exp(0) = 1$.
+\end{theorem}
+
+
 
 \begin{proposition}
 	La fonction exponentielle est \textbf{bijective} et \textbf{strictement croissante} et $\exp(0) = 1$.
@@ -341,6 +402,23 @@
         \end{enumerate}
     \end{multicols}
 \end{proposition}
+
+\begin{proposition}
+	La dérivée de $\ln(x)$ est $\frac{1}{x}$.
+\end{proposition}
+
+\begin{proof}
+	On utilise la propriété suivante pour $y \in \R$ : $\ln(\exp(y)) = y$.
+	\begin{align*}
+		&\ln(\exp(y)) = y \\
+		&(\ln(\exp(y))' = y' \\
+		&\ln'(\exp(y)) \exp'(y) = 1 \\
+		&\ln'(\exp(y)) \exp(y) = 1 \\
+		&\ln'(\exp(y)) = \frac{1}{\exp(y)}
+	\end{align*}
+	En posant $x = \exp(y)$ :
+	\[ \ln'(x) = \frac{1}{x} \]
+\end{proof}
 
 \begin{proposition}
 	La fonction logarithme néperien est \textbf{bijective} et \textbf{strictement croissante} et $\ln(1) = 0$.

@@ -20,6 +20,18 @@
 	Soient $I \subseteq \R,\ f : I \to \R$ et $a \in I$, si $f$ est \textbf{dérivable} en $a$ alors elle est \textbf{continue} en $a$.
 \end{proposition}
 
+\begin{proof}
+	Quand $f$ est dérivable en $a$, le développement limité suivant existe :
+	\[ f(x) \underset{x \to a}{=} f(a) + f'(a)(x - a) + o(x - a) \]
+	En passant à la limite :
+	\begin{align*}
+		\lim_{x \to a} f(x) &= \lim_{x \to a} \left( f(a) + f'(a)(x - a) + o(x - a) \right) \\
+		&= \lim_{x \to a} f(a) + \underbrace{\lim_{x \to a} \left( f'(a)(x - a) + o(x - a) \right)}_{= 0} \\
+		\lim_{x \to a} f(x) &= f(a)
+	\end{align*}
+	ce qui veut dire que $f$ est continue en $a$.
+\end{proof}
+
 \begin{definition}[Maximum, minimum]
     Soient $I \subseteq \R,\ f : I \to \R$ et $a \in I$.
     \begin{enumerate}
