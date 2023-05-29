@@ -40,6 +40,26 @@
 	\end{enumerate}
 \end{theorem}
 
+\begin{proof}
+	\leavevmode
+	\begin{enumerate}
+		\item On calcule $\lim_{x \to a} \frac{f(x) + \lambda g(x) - (f(a) + \lambda g(a))}{x - a}$.
+		\begin{align*}
+			\lim_{x \to a} \frac{f(x) + \lambda g(x) - (f(a) + \lambda g(a))}{x - a} &= \lim_{x \to a} \frac{f(x) + \lambda g(x) - f(a) - \lambda g(a)}{x - a} \\
+			&= \lim_{x \to a} \frac{f(x) - f(a)}{x - a} + \lambda \lim_{x \to a} \frac{g(x) - g(a)}{x - a} \\
+			&= f'(a) + \lambda g'(a)
+		\end{align*}
+		\item On calcule $\lim_{x \to a} \frac{(fg)(x) - (fg)(a)}{x - a}$. On utilise le fait qu'une fonction dérivable en $a$ est continue en $a$ et la définition de la continuité en $a$.
+		\begin{align*}
+			\lim_{x \to a} \frac{(fg)(x) - (fg)(a)}{x - a} &= \lim_{x \to a} \frac{f(x) g(x) - f(a) g(a)}{x - a} \\
+			&= \lim_{x \to a} \left[ \frac{f(x) g(x) - f(a) g(a)}{x - a} + g(x) \frac{f(x) - f(a)}{x - a} \right] \\
+			&= \lim_{x \to a} \frac{f(x)g(x) - f(a)g(a)}{x - a} + \lim_{x \to a} g(x) \frac{f(x) - f(a)}{x - a} \\
+			&= f(a) \lim_{x \to a} \frac{g(x) - g(a)}{x - a} + g(a) \lim_{x \to a} \frac{f(x) - f(a)}{x - a} \\
+			&= f(a)g'(a) + f'(a) g(a)
+		\end{align*}
+	\end{enumerate}
+\end{proof}
+
 \begin{definition}[Maximum, minimum]
     Soient $I \subseteq \R,\ f : I \to \R$ et $a \in I$.
     \begin{enumerate}
