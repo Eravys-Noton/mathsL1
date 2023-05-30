@@ -120,6 +120,16 @@
     \par \noindent Il existe un $c \in \ ]a, b[$ tel que : \[ f'(c) = 0 \]
 \end{theorem}
 
+\begin{proof}\cite{exo7_analyse1}
+	\leavevmode
+	\begin{enumerate}
+		\item Si $f$ est constante, alors n'importe quel $c \in \ ]a, b[$ convient.
+		\item Sinon il existe $x_0 \in [a, b]$ tel que $f(x_0) \neq f(a)$. 
+		\\
+		Supposons par exemple $f(x_0) > f(a)$. Alors $f$ est continue sur $[a, b]$, donc elle admet un maximum en un point $c \in [a, b]$. Mais $f(c) \geq f(x_0) > f(a)$ donc $c \neq a$. De même comme $f(a) = f(b)$ alors $c \neq b$. Ainsi $c \in \ ]a, b[$. En $c$, $f$ est dérivable et admet un maximum local donc $f'(c) = 0$.
+	\end{enumerate}
+\end{proof}
+
 \begin{theorem}[Théorème des accroissements finis]
     Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \to \R$, telle que : 
     \begin{enumerate}
@@ -130,16 +140,27 @@
 	\[ f'(c) = \frac{f(b) - f(a)}{b - a} \]
 \end{theorem}
 
+\begin{proof}\cite{exo7_analyse1}
+	Posons $\ell = \frac{f(b) - f(a)}{b - a}$ et $g(x) = f(x) - \ell (x - a)$.
+	 \\
+	 Alors $g(a) = f(a),\ g(b) = f(b) - \frac{f(b) - f(a)}{b - a} \cdot (b - a) = f(a)$.
+	 \\
+	  Par le théorème de Rolle, il existe un $c \in \ ]a, b[$ tel que $g'(c) = 0$. Or $g'(x) = f'(x) - \ell$. Ce qui donne $f'(c) = \frac{f(b) - f(a)}{b - a}$.
+\end{proof}
+
 \begin{corollary}[Inégalité des accroissements finis]
 	Soit $M$ tel que $\abs{f'} \leq M$ sur $]a, b[$.
 	\[ \abs{\frac{f(b) - f(a)}{b - a}} \leq M \]
 \end{corollary}
 
-\begin{proposition}
-    Soient $f : [a, b] \to \R$ une fonction continue sur $[a, b]$ et dérivable sur $]a,\ b[$.
+\begin{proposition}[\cite{exo7_analyse1}]
+    Soient $f : [a, b] \to \R$ une fonction continue sur $[a, b]$ et dérivable sur $]a, b[$.
     \begin{enumerate}
-            \item $f \text{ croissante} \iff f' \geq 0$.
-            \item $f \text{ décroissante} \iff f' \leq 0$
+            \item $\forall x \in \ ]a, b[,\ f'(x) \geq 0 \iff f \text{ croissante}$.
+            \item $\forall x \in \ ]a, b[,\ f'(x) \leq 0 \iff f \text{ décroissante}$.
+            \item $\forall x \in \ ]a, b[,\ f'(x) = 0 \iff f \text{ constante}$.
+            \item $\forall x \in \ ]a, b[,\ f'(x) > 0 \implies f \text{ strictement croissante}$.
+            \item $\forall x \in \ ]a, b[,\ f'(x) < 0 \implies f \text{ strictement décroissante}$ .
         \end{enumerate}
 \end{proposition}
 
