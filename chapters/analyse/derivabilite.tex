@@ -98,6 +98,18 @@
 	\[ a \text{ est un extremum local} \implies f'(a) = 0 \]
 \end{theorem}
 
+\begin{proof}
+	Soient $a$ un extremum local et $f_{|]a - \varepsilon, a + \varepsilon[}$.
+	\\
+	\begin{enumerate}
+		\item Quand $h > 0$ : 
+		\[ \frac{f(a + h) - f(a)}{h} \leq 0,\ \lim_{h \to 0} f'(a) \leq 0 \]
+		\item Quand $h < 0$ :
+		\[ \frac{f(a + h) - f(a)}{h} \geq 0,\ \lim_{h \to 0} f'(a) \geq 0 \]
+	\end{enumerate}
+	alors $f'(a) = 0$.
+\end{proof}
+
 \begin{theorem}[Théorème de Rolle]
     Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \to \R$ une fonction telle que :
     \begin{enumerate}
