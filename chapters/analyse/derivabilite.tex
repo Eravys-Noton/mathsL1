@@ -170,24 +170,23 @@
 \end{proposition}
 
 \begin{proof}
-	\leavevmode
-	\begin{enumerate}
-		\item \boxed{\implies} : Supposons que pour $x \in \ ]a, b[,\ f'(x) \geq 0$. \\
-		Soient $x, y \in \ ]a, b[$ tels que $x \leq y$. D'après le théorème des accroissements finis, il existe un $c \in \ ]x, y[$ tel que $\frac{f(x) - f(y)}{x - y} = f'(c)$.
-		\[ f(x) - f(y) = f'(c)(x - y) \]
-		Or $f'(x) \geq 0$ pour $x \in \ ]a, b[$ donc $f'(c) \geq 0$ et $x \leq y$ donc $x - y \leq 0$ et $f(x) - f(y) \leq 0$ donc  $f(x) \leq f(y)$.
-		\\
-		\boxed{\impliedby} : Supposons que pour $x, y \in \ ]a, b[$ tels que $x \leq y$ et $f(x) \leq f(y)$. \\
-		On a donc :
-		\begin{align*}
-			f(y) - f(x) &\geq 0 \\
-			\frac{f(y) - f(x)}{y - x} &\geq 0 
-		\end{align*}
-		On sait que :
-		\[ \lim_{y \to x} \frac{f(y) - f(x)}{y - x} = f'(x) \]
-		donc :
-		\[ f'(x) \geq 0 \]
-	\end{enumerate}
+	Montrons le 1. 
+	\\
+	\boxed{\implies} : Supposons que pour $x \in \ ]a, b[,\ f'(x) \geq 0$. \\
+	Soient $x, y \in \ ]a, b[$ tels que $x \leq y$. D'après le théorème des accroissements finis, il existe un $c \in \ ]x, y[$ tel que $\frac{f(x) - f(y)}{x - y} = f'(c)$.
+	\[ f(x) - f(y) = f'(c)(x - y) \]
+	Or $f'(x) \geq 0$ pour $x \in \ ]a, b[$ donc $f'(c) \geq 0$ et $x \leq y$ donc $x - y \leq 0$ et $f(x) - f(y) \leq 0$ donc  $f(x) \leq f(y)$.
+	\\
+	\boxed{\impliedby} : Supposons que pour $x, y \in \ ]a, b[$ tels que $x \leq y$ et $f(x) \leq f(y)$. \\
+	On a donc :
+	\begin{align*}
+		f(y) - f(x) &\geq 0 \\
+		\frac{f(y) - f(x)}{y - x} &\geq 0 
+	\end{align*}
+	On sait que :
+	\[ \lim_{y \to x} \frac{f(y) - f(x)}{y - x} = f'(x) \]
+	donc :
+	\[ f'(x) \geq 0 \]
 \end{proof}
 
 \begin{definition}
