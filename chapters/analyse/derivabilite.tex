@@ -149,9 +149,14 @@
 \end{proof}
 
 \begin{corollary}[Inégalité des accroissements finis]
-	Soit $M$ tel que $\abs{f'} \leq M$ sur $]a, b[$.
+	Soient $a,b \in \R$ tels que $a < b$, $f : \ ]a, b[ \to \R$ une fonction dérivable sur $]a, b[$ et $M$ une constante telle que pour tout $x \in \ ]a, b[,\ \abs{f'(x)} \leq M$.
 	\[ \abs{\frac{f(b) - f(a)}{b - a}} \leq M \]
 \end{corollary}
+
+\begin{proof}
+	D'après le théorème des accroissements finis, il existe un $c \in \ ]a, b[$ tel que $\frac{f(b) - f(a)}{b - a}$. Or pour tout $x \in \ ]a, b[$, $\abs{f'(x)} \leq M$ donc $\abs{f'(c)} \leq M$ et donc :
+	\[ \abs{\frac{f(b) - f(a)}{b - a}} \leq M \]
+\end{proof}
 
 \begin{proposition}[\cite{exo7_analyse1}]
     Soient $f : [a, b] \to \R$ une fonction continue sur $[a, b]$ et dérivable sur $]a, b[$.
