@@ -60,9 +60,25 @@
 	\end{enumerate}
 \end{proof}
 
-\begin{theorem}
-	Soient $I, J \subseteq \R$, $f : J \to \R$ et $g : I \to \R$ telle que $g(I) \subseteq J$.
+\begin{theorem}[\cite{derivation_wikiversite}]
+	Soient $I, J \subseteq \R$, $f : I \to \R$ et $g : J \to \R$ telles que $f(I) \subseteq J$ et $a$ un point de $I$. \\
+	Si $f$ est dérivable au point $a$ et $g$ est dérivable au point $f(a)$ alors la composée $g \circ f$ est dérivable au point $a$ et :
+	\[ (g \circ f)'(a) = g'(f(a)) f'(a) \]
 \end{theorem}
+
+\begin{proof}
+	\cite{derivation_wikiversite} Notons $b = f(a)$. Puisque $g$ est dérivable en $b$, d'après la seconde définition de la dérivabilité, il existe une fonction $u : J \to \R$ telle que :
+	\[ u(b) = \lim_{y \to b} u(y) = g'(b) \]
+	et $\forall y \in J :$ 
+	\[ g(y) - g(b) = u(y) (y - b) \]
+	En particulier, $f$ est continue au point $a$ car elle y est dérivable: 
+	\[ \lim_{x \to a} u(f(x)) = g'(b) \]
+	et $\forall x \in I :$
+	\[ g(f(x)) - g(f(a)) = u(f(x)) (f(x) - f(a)) \]
+	Le taux de variation au point $a$ de la fonction $g \circ f$ s'exprime alors sous la forme :
+	\[ \frac{g(f(x)) - g(f(a))}{x - a} = u(f(x)) \cdot \frac{f(x) - f(a)}{x - a} \]
+	et quand $x$ tend vers $a$, cette expression tend vers $g'(b) \cdot f'(a) = g'(f(a)) f'(a)$.
+\end{proof}
 
 \begin{definition}[Maximum, minimum]
     Soient $I \subseteq \R,\ f : I \to \R$ et $a \in I$.
@@ -89,7 +105,7 @@
             \item $f$ est dérivable sur $]a, b[$.
             \item $f(a) = f(b)$.
         \end{enumerate}
-    \par \noindent Il existe un $c \in ]a, b[$ tel que : \[ f'(c) = 0 \]
+    \par \noindent Il existe un $c \in \ ]a, b[$ tel que : \[ f'(c) = 0 \]
 \end{theorem}
 
 \begin{theorem}[Théorème des accroissements finis]
