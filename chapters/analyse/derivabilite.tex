@@ -226,10 +226,12 @@
 \begin{theorem}[Inégalité de Jensen]
 	Soient $I \subseteq \R$, $f : I \to \R$ une fonction convexe, $x_i \in I$ et $\lambda_i \in [0, 1]$ tels que $\sum_{i=1}^n \lambda_i = 1$.
 	\[ f \left( \sum_{i=1}^{n} \lambda_i x_i \right) \leq \sum_{i=1}^{n} \lambda_i f(x_i) \]
+	Si $f$ est concave, 
+	\[ f \left( \sum_{i=1}^{n} \lambda_i x_i \right) \geq \sum_{i=1}^{n} \lambda_i f(x_i) \]
 \end{theorem}
 
 \begin{proof}\cite{inegalite_jensen_bibmath}
-	On procède par récurrence pour montrer $P_n : f \left( \sum_{i=1}^{n} \lambda_i x_i \right) \leq \sum_{i=1}^{n} \lambda_i f(x_i)$ pour $n \in \N^*$.
+	On procède par récurrence pour montrer $P(n) : f \left( \sum_{i=1}^{n} \lambda_i x_i \right) \leq \sum_{i=1}^{n} \lambda_i f(x_i)$. Le principe de la preuve est similaire pour l'autre inégalité.
 	\begin{enumerate}
 		\item \textbf{Initialisation :} Pour $n = 1$ et $n = 2$ il s'agit de la définition d'une fonction convexe.
 		\item \textbf{Hérédité :} Supposons que $P(n)$ vraie pour un $n > 2$. Soient $x_1, \ldots, x_{n+1} \in I$ et $\lambda_1, \ldots, \lambda_{n+1} \in [0,1]$ tels que $\lambda_1 + \cdots + \lambda_n + \lambda_{n+1} = 1$. On veut estimer :
