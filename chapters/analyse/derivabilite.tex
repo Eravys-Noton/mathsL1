@@ -321,7 +321,6 @@
 		\[ u_1 \leq u_0 \iff (u_n) \text{ décroissante} \]
 		\item Si $f$ est \textbf{décroissante} sur $I$, alors les suites extraites $(v_n)_{n \in \N} = u_{2n}$ et $(w_n)_{n \in \N} = u_{2n + 1}$ sont monotones, l'une est \textbf{croissante}, l'autre est \textbf{décroissante}.
 	\end{enumerate}
-	
 \end{proposition}
 
 \begin{definition}[Point fixe]
@@ -352,6 +351,26 @@
         \item La convergence de $(u_n)_{n \in \N}$ est géométrique.
     \end{enumerate}
 \end{theorem}
+
+\begin{proof}
+	Soient $a, b$ des réels tels que $a < b$.
+	\begin{enumerate}
+		\item \textbf{Existence} : Il existe un point fixe d'après le théorème des valeurs intermédiaires pour $g(x) = f(x) - x$.
+		\begin{enumerate}
+			\item $g(a) = f(a) - a \geq 0$.
+			\item $g(b) = f(b) - b \leq 0$.
+		\end{enumerate}
+		\[ \exists c \in [a, b] : g(c) = f(c) - c = 0 \iff f(c) = c \]
+		\item \textbf{Unicité} : Soient $\ell_1, \ell_2$ des points fixes.
+		Supposons que $\ell_1 \neq \ell_2$ .
+		\begin{align*}
+			\abs{\ell_1 - \ell_2} &= \abs{f(\ell_1) - f(\ell_2)} \\
+								  &\leq k \abs{\ell_1 - \ell_2} \\
+								  &< \abs{\ell_1 - \ell_2}
+		\end{align*}
+		ce qui est contradictoire.
+	\end{enumerate}
+\end{proof}
 
 \begin{theorem}[Suites récurrentes linéaires d'ordre 2]
 	Soit $u_{n+2} = a u_{n+1} + b u_n$ pour $a, b \in \R$.
