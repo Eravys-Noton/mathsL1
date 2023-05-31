@@ -379,30 +379,30 @@ Pour calculer le déterminant d'une matrice carrée noté $\det(A)$ ou s'il n'y 
 	\[ (\com(A))_{i,j} = (-1)^{i+j} \det(A_{i,j}) \]
 \end{definition}
 
-Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibles.
-    Si on a une matrice
-    $A =
-    \begin{pmatrix}
-        a & b \\
-        c & d
-    \end{pmatrix}
-    $.
-    \[
-    A^{-1} = \frac{1}{\det(A)} 
-    \begin{pmatrix}
-        d & -b \\
-        -c & a
-    \end{pmatrix}
-    \]
-    Une méthode générale pour calculer l'inverse d'une matrice $A$ est d'utiliser l'algorithme de Gauss-Jordan.
-    On part de la matrice 
-    \[ A|I_n \]
-    et on applique les opérations élémentaires pour avoir une matrice de la forme
-    \[I_n|B\]
-    $B = A^{-1}$ est l'inverse de $A$.
-    \\
-    Une autre méthode générale est d'utiliser la comatrice de $A$.
-    \[ A^{-1} = \frac{1}{\det(A)} \left( \com(A) \right)^T \]
+\par Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibles.
+Si on a une matrice
+$A =
+\begin{pmatrix}
+	a & b \\
+	c & d
+\end{pmatrix}
+$.
+\[
+A^{-1} = \frac{1}{\det(A)} 
+\begin{pmatrix}
+	d & -b \\
+	-c & a
+\end{pmatrix}
+\]
+Une méthode générale pour calculer l'inverse d'une matrice $A$ est d'utiliser l'algorithme de Gauss-Jordan.
+On part de la matrice 
+\[ A|I_n \]
+et on applique les opérations élémentaires pour avoir une matrice de la forme
+\[I_n|B\]
+$B = A^{-1}$ est l'inverse de $A$.
+\\
+Une autre méthode générale est d'utiliser la comatrice de $A$.
+\[ A^{-1} = \frac{1}{\det(A)} \left( \com(A) \right)^T \]
 
 \begin{example}
 	Soit 

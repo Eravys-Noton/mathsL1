@@ -57,7 +57,7 @@
     \end{enumerate}
 \end{definition}
 
-Soit $\varepsilon = \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} + \cdots + a_1 f' + a_0 f = 0 \},\ n, N \in \N^*,\ a_i \in \mathcal{C}^0(I),\ I$ un intervalle ouvert.
+Soit $\varepsilon = \{ f \in \mathcal{C}^n(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} + \cdots + a_1 f' + a_0 f = 0 \},\ n \in \N,\ a_i \in \mathcal{C}^0(I),\ I$ un intervalle ouvert.
 
 \begin{proposition}
     Soit $n \in \N$.
@@ -68,6 +68,15 @@ Soit $\varepsilon = \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} 
         \end{enumerate}
     \end{multicols}
 \end{proposition}
+
+\begin{proof}
+	Montrons 1. \\
+	On définit :
+	\begin{center}
+		$\appli{\Psi}{\mathcal{C}^n(I)}{\mathcal{C}^0(I)}{f}{f^{(n)} + a_{n-1}f^{(n-1)} + \cdots + a_1 f' + a_0 f}$
+	\end{center}
+	Alors on voit que $\varepsilon = \ker(\Psi)$.
+\end{proof}
 
 \begin{definition}[Rang d'un morphisme]
     Soit $f \in \mathcal{L}(E, F)$. On appelle $\rg(f) = \dim(\Im(f))$ le rang de $f$.
@@ -219,7 +228,7 @@ Soit $\varepsilon = \{ f \in \mathcal{C}^N(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} 
 
 \begin{definition}
 	Soit $n \in \N^*$.
-    \[ \operatorname{O}(n) = \{ R \in \mathcal{M}_n(\R) : \forall (x, y) \in (\R^n)^2,\ \langle Rx|Ry \rangle = \langle x|y \rangle \} \]
+    \[ \operatorname{O}(n) = \{ R \in \mathcal{M}_n(\R) : \forall (x, y) \in (\R^n)^2 : \langle Rx|Ry \rangle = \langle x|y \rangle \} \]
 \end{definition}
 
 \begin{definition}
