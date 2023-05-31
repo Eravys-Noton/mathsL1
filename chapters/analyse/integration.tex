@@ -6,12 +6,12 @@
 	\\
 	$f$ est une fonction en escalier s'il existe une division de $[a, b]$ :
 	\[ a = x_0 < \cdots < x_n = b \]
-	telle que pour $0 \leq i \leq n,\ x_i \in \R,\  f_{| ]x, x_{i+1}[}$ est constante.
+	telle que pour $0 \leq i \leq n,\ x_i \in \R,\  f_{| ]x, x_{i+1}[}$ est constante. On appelle ça une \textbf{subdivision}.
 	Autrement dit c'est une fonction constante par morceaux.
 \end{definition}
 
 \begin{definition}[Intégrale d'une fonction en escalier]
-	Soient $f : [a, b] \to \R$ une fonction en escalier et $a_i$ les subdivisions.
+	Soient $f : [a, b] \to \R$ une fonction en escalier et $a_i$ les morceaux de la subdivision.
 	\\
 	Alors on définit :
 	\[ \int_{a}^{b} f(x) \ \diffd x = \sum_{i = 1}^{n} f(a_i) (a_{i+1} - a_i) \]
