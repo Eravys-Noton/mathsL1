@@ -472,8 +472,45 @@ Lorsque nous devons calculer l'inverse d'une matrice, plusieurs cas sont possibl
 			1 & 1 & 0 \\
 			0 & -1 & \frac{1}{2}
 		\end{matrix}
+		\right) \\
+		\overset{\substack{L_2 \leftarrow L_2 - 3 L_3}}{\iff}
+		&\left(
+		\begin{matrix}
+			1 & 2 & 1 \\
+			0 & 1 & 0 \\
+			0 & 0 & 1
+		\end{matrix}
+		\ \middle| \
+		\begin{matrix}
+			1 & 0 & 0 \\
+			1 & 4 & -\frac{3}{2} \\
+			0 & -1 & \frac{1}{2}
+		\end{matrix}
+		\right) \\
+		\overset{\substack{L_1 \leftarrow L_1 - 2 L_2 - L_3}}{\iff}
+		&\left(
+		\begin{matrix}
+			1 & 0 & 0 \\
+			0 & 1 & 0 \\
+			0 & 0 & 1
+		\end{matrix}
+		\ \middle| \
+		\begin{matrix}
+			-1 & -7 & \frac{5}{2} \\
+			1 & 4 & -\frac{3}{2} \\
+			0 & -1 & \frac{1}{2}
+		\end{matrix}
 		\right)
 	\end{align*}
+	Ainsi on a :
+	\[
+	A^{-1} = 
+	\begin{pmatrix}
+		-1 & -7 & \frac{5}{2} \\
+		1 & 4 & -\frac{3}{2} \\
+		0 & -1 & \frac{1}{2}
+	\end{pmatrix}
+	\]
 \end{example}
 
 \begin{definition}[Trace d'une matrice]
