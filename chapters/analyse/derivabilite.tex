@@ -307,18 +307,21 @@
 
 \begin{proposition}
 	Soit $I \subseteq \R$.
-	Si $f$ est \textbf{croissante} sur $I$ alors 
-	$
-	(u_n)_{n \in \N} = 
-	\begin{cases}
-		u_0 \in I \\
-		u_{n + 1} = f(u_n)
-	\end{cases}
-	$
-	est monotone.
-	\[ u_1 \geq u_0 \iff (u_n) \text{ croissante} \]
-	\[ u_1 \leq u_0 \iff (u_n) \text{ décroissante} \]
-	Si $f$ est \textbf{décroissante} sur $I$, alors les suites extraites $(v_n)_{n \in \N} = u_{2n}$ et $(w_n)_{n \in \N} = u_{2n + 1}$ sont monotones, l'une est \textbf{croissante}, l'autre est \textbf{décroissante}.
+	\begin{enumerate}
+		\item Si $f$ est \textbf{croissante} sur $I$ alors 
+		$
+		(u_n)_{n \in \N} = 
+		\begin{cases}
+			u_0 \in I \\
+			u_{n + 1} = f(u_n)
+		\end{cases}
+		$
+		est monotone.
+		\[ u_1 \geq u_0 \iff (u_n) \text{ croissante} \]
+		\[ u_1 \leq u_0 \iff (u_n) \text{ décroissante} \]
+		\item Si $f$ est \textbf{décroissante} sur $I$, alors les suites extraites $(v_n)_{n \in \N} = u_{2n}$ et $(w_n)_{n \in \N} = u_{2n + 1}$ sont monotones, l'une est \textbf{croissante}, l'autre est \textbf{décroissante}.
+	\end{enumerate}
+	
 \end{proposition}
 
 \begin{definition}[Point fixe]
