@@ -69,7 +69,7 @@
 	\end{center}		
 	
 	\begin{enumerate}
-		\item $(E, +)$ est un groupe commutatif.
+		\item $(E, +)$ est un \textbf{groupe commutatif}.
 		\item $\forall \lambda_1, \lambda_2 \in \K,\ u, v \in E :$
 		\begin{enumerate}
 			\item $\lambda_1 \cdot (u + v) = \lambda_1 \cdot u + \lambda_1 \cdot v$
@@ -204,10 +204,53 @@
 	\[ \det(\mathcal{F}) \neq 0 \]
 \end{proposition}
 
+\begin{proof}
+	$\mathcal{F} = (u_1, \ldots, u_n)$ est une base $\iff \forall x \in \R^n,\ \exists ! (\lambda_1, \ldots, \lambda_n) \in \R^n : x = \sum_{i=1}^{n} \lambda_i u_i$.
+	\begin{align*}
+		x = \sum_{i=1}^{n} \lambda_i u_i &= 
+		\begin{pmatrix}
+			\lambda_1 u_{1,1} + \cdots + \lambda_n u_{1,n} \\
+			\vdots \\
+			\lambda_1 u_{n,1} + \cdots + \lambda_n u_{n,n}
+		\end{pmatrix}
+		\\
+		&= 
+		\begin{pmatrix}
+			u_{1,1} & \cdots & u_{1,n} \\
+			\vdots & \ddots & \vdots \\
+			u_{n,1} & \cdots & u_{n,n}
+		\end{pmatrix}
+		\begin{pmatrix}
+			\lambda_1 \\
+			\vdots \\
+			\lambda_n
+		\end{pmatrix}
+	\end{align*}
+	Posons 
+	$
+	A =
+	\begin{pmatrix}
+		u_{1,1} & \cdots & u_{1,n} \\
+		\vdots & \ddots & \vdots \\
+		u_{n,1} & \cdots & u_{n,n}
+	\end{pmatrix}
+	$
+	et 
+	$\lambda =
+	\begin{pmatrix}
+		\lambda_1 \\
+		\vdots \\
+		\lambda_n
+	\end{pmatrix}
+	$\\
+	On a donc :
+	\[ x = A \cdot \lambda \]
+	Il existe une solution unique si et seulement s'il existe l'inverse de $A$, c'est-à-dire que $\det(A) \neq 0$.
+\end{proof}
+
 \begin{definition}[Dimension d'un espace vectoriel]
 	Soit $E$ un espace vectoriel, on appelle dimension de $E$, notée $\dim(E)$, le nombre d'éléments d'une base de $E$. 
 \end{definition}
-
 
 \begin{proposition}
 	Soient $E$ un espace vectoriel de dimension $n$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $E$. Alors on a :
@@ -230,6 +273,14 @@
 \begin{theorem}
     Chaque espace vectoriel admet une base.
 \end{theorem}
+
+\begin{corollary}
+	Soient $n, N \in \N^*,\ \mathcal{F} = (u_1, \ldots, u_N)$, $E$ un espace vectoriel tel que $\dim(E) = n$.
+	\begin{enumerate}
+		\item Si $N > n$ alors $\mathcal{F}$ n'est pas libre.
+		\item Si $N < n$ alors $\mathcal{F}$ n'est pas génératrice.
+	\end{enumerate}
+\end{corollary}
 
 \begin{proposition}
 	Soient $E$ un espace vectoriel et $F, G\subset E$.

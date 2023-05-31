@@ -14,8 +14,36 @@
     On définit le \textbf{noyau} de $f$, noté $\ker(f)$ tel que :
     \[ \ker(f) = \{ x \in E : f(x) = 0_E \} \] 
     On définit l'\textbf{image} de $f$, notée $\Im(f)$ telle que :
-    \[ \Im(f) = \{ y \in F : \exists x \in E,\ y = f(x) \} \]
+    \[ \Im(f) = \{ y \in F : \exists x \in E : y = f(x) \} \]
 \end{definition}
+
+\begin{theorem}
+	Soient $E, F$ des espaces vectoriels et $f : E \to F$ une application linéaire.
+	\begin{enumerate}
+		\item $\ker(f) \subseteq E$.
+		\item $\Im(f) \subseteq F$.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	\leavevmode 
+	\begin{enumerate}
+		\item $\forall x_1, x_2 \in \ker(f),\ \lambda \in \K$.
+		\begin{align*}
+			f(x_1 + \lambda x_2) &= f(x_1) + \lambda f(x_2) \\ 
+								 &= 0 + \lambda 0 \\
+								 &= 0
+		\end{align*}
+		\item $\forall y_1, y_2 \in \Im(f),\ \lambda \in \K$.
+		\[ y_1 \in \Im(f) \iff \exists x_1 : f(x_1) = y_1 \]
+		\[ y_2 \in \Im(f) \iff \exists x_2 : f(x_2) = y_2 \]
+		\begin{align*}
+			y_1 + \lambda y_2 &= f(x_1) + \lambda f(x_2) \\
+			                  &= f(x_1 + \lambda x_2)
+		\end{align*}
+		Ainsi $y_1 + \lambda y_2 \in \Im(f)$.
+	\end{enumerate}
+\end{proof}
 
 \begin{definition}
     \par \noindent Soient $E$ et $F$ deux $\K$-espaces vectoriels et $f$ une application linéaire de $E$ vers $F$.
