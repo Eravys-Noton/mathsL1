@@ -16,7 +16,7 @@
 	On le note $(M, *)$.
 \end{definition}
 
-\begin{definition}[Monoïde]
+\begin{definition}[Monoïde \cite{monoide_bibmath}]
 	On appelle \textbf{monoïde} un ensemble $M$ muni d'une loi de composition \textbf{interne} \og $*$ \fg \textbf{associative}.
 \end{definition}
 
@@ -81,7 +81,7 @@
 \end{definition}
 
 \begin{definition}[Sous-espace vectoriel]
-	Soit $E$ un espace-vectoriel, $F$ est un sous-espace vectoriel de $E$ si :
+	Soit $E$ un $\K$-espace-vectoriel, $F$ est un sous-espace vectoriel de $E$ si :
 	\begin{enumerate}
     		\item $F \subset E$
     		\item $F \neq \varnothing$
@@ -90,7 +90,7 @@
 \end{definition}
 
 \begin{definition}[Somme directe]
-	Soient $F_1, F_2 \subseteq E$. On dit que $F_1$ et $F_2$ sont en \textbf{somme directe} ou qu'ils sont \textbf{supplémentaires} dans $E$ si et seulement si :
+	Soient $E$ un $\K$-espace vectoriel et $F_1, F_2 \subseteq E$. On dit que $F_1$ et $F_2$ sont en \textbf{somme directe} ou qu'ils sont \textbf{supplémentaires} dans $E$ si et seulement si :
 	\begin{multicols}{2}
 	    \begin{enumerate}
 		\item $F_1 \cap F_2 = \{ 0_E \}$
@@ -100,6 +100,57 @@
 	On note alors :
 	\[ F_1 \oplus F_2 = E \]
 \end{definition}
+
+\begin{proposition}
+	Soient $E$ un $\K$-espace vectoriel et $F_1, F_2 \subseteq E$, on a $F_1 + F_2 \subseteq E$. 
+\end{proposition}
+
+\begin{proof}
+	Tout d'abord $0_E \in F_1$ et $0_E \in F_2$, on a donc $0_E \in F_1 + F_2$.
+	\\
+	Ensuite, soient $x, y \in F_1 + F_2,\ \lambda \in \K$, posons pour $v_1, w_1 \in F_1$ et $v_2, w_2 \in F_2$ :
+	\begin{align*}
+		\begin{cases}
+			x = v_1 + v_2 \\
+			y = w_1 + w_2
+		\end{cases}
+	\end{align*}
+	On a :
+	\begin{align*}
+		x + \lambda y &= v_1 + v_2 + \lambda (w_1 + w_2) \\
+		&= v_1 + \lambda w_1 + v_2 + \lambda w_2
+	\end{align*}
+	ce qui implique que $x + \lambda y \in F_1 + F_2$.
+\end{proof}
+
+\begin{proposition}
+	$\Vect(u_1, \ldots, u_k) \subseteq \R^n$ est un sous-espace vectoriel.
+\end{proposition}
+
+\begin{proof}
+	$0_{\R^n} \in \Vect(u_1, \ldots, u_k)$ pour $\lambda_1 = \cdots = \lambda_k = 0$.
+	\\
+	Soient $v = \sum_{i=1}^{k} \alpha_i u_i$, $w = \sum_{i=1}^{k} \beta_i u_i$ et $\lambda \in \R$ alors on a :
+	\begin{align*}
+		v + \lambda w &= \sum_{i=1}^{k} (\alpha_i u_i) + \lambda \sum_{i=1}^{k} (\beta_i u_i) \\
+		&= \sum_{i=1}^{k} (\alpha_i + \lambda \beta_i) u_i \in \Vect(u_1, \ldots, u_k)
+	\end{align*}
+\end{proof}
+
+\begin{proposition}
+	Soient $E$ un $\K$-espace vectoriel, $F_1, F_2 \subseteq E$ alors $F_1 \cap F_2 \subseteq E$.
+\end{proposition}
+
+\begin{proof}
+	Tout d'abord, $0_E \in F_1$, $0_E \in F_2$ alors $0_E \in F_1 \cap F_2$.
+	\\
+	Ensuite pour tout $u, v \in F_1 \cap F_2,\ \lambda \in \K$ on a :
+	\begin{enumerate}
+		\item $u + \lambda v \in F_1$ car $F_1 \subseteq E$. 
+		\item $u + \lambda v \in F_2$ car $F_2 \subseteq E$.
+	\end{enumerate}
+	ainsi $u + \lambda v \in F_1 \cap F_2$.
+\end{proof}
 
 \begin{definition}
 	Soient $n \in \N^*$, $E$ un espace vectoriel et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $E$.
