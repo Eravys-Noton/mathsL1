@@ -23,11 +23,11 @@
 	Soit $f : E \to F$ une fonction. On dit que :
     \begin{enumerate}
         \item $f$ est \textbf{injective} si et seulement si : 
-        \[ \forall x_1, x_2 \in E,\ f(x_1) = f(x_2) \implies x_1 = x_2 \]
+        \[ \forall x_1, x_2 \in E : f(x_1) = f(x_2) \implies x_1 = x_2 \]
         \item $f$ est \textbf{surjective} si et seulement si : 
-        \[ \forall y \in F,\ \exists x \in E,\ f(x) = y \]
+        \[ \forall y \in F,\ \exists x \in E : f(x) = y \]
         \item $f$ est \textbf{bijective} si et seulement si :
-        \[ \forall y \in E,\ \exists ! x \in E,\ f(x) = y \]
+        \[ \forall y \in E,\ \exists ! x \in E : f(x) = y \]
     \end{enumerate}
 \end{definition}
 
@@ -49,11 +49,11 @@
 	Soient $I \subseteq \R$, $f : I \to \R$ et $T \in \R_+$. On dit que :
     \begin{enumerate}
         \item $f$ est \textbf{paire} si et seulement si : 
-        \[ \forall x \in I,\ f(x) = f(-x) \]
+        \[ \forall x \in I : f(x) = f(-x) \]
         \item $f$ est \textbf{impaire} si et seulement si  :
-        \[ \forall x \in I,\ -f(x) = f(-x) \]
+        \[ \forall x \in I : -f(x) = f(-x) \]
         \item $f$ est \textbf{$T$-périodique} si et seulement si :
-        \[ \forall x \in \R,\ z \in \Z,\ f(x + nT) = f(x) \]
+        \[ \forall x \in \R,\ z \in \Z : f(x + nT) = f(x) \]
     \end{enumerate}
 \end{definition}
 
@@ -61,9 +61,9 @@
 	Soient $I \subseteq \R,\ f : I \to \R$. On dit que :
 	\begin{enumerate}
 	    \item $f$ est \textbf{majorée} ou qu'elle admet un \textbf{majorant} si et seulement si : 
-	    \[ \exists M \in \R,\ \forall x \in I,\ f(x) \leq M \]
+	    \[ \exists M \in \R,\ \forall x \in I : f(x) \leq M \]
         \item $f$ est \textbf{minorée} ou qu'elle admet un \textbf{minorant} si et seulement si :
-        \[ \exists m \in \R,\ \forall x \in I,\ f(x) \geq m \]
+        \[ \exists m \in \R,\ \forall x \in I : f(x) \geq m \]
         \item $f$ est \textbf{bornée} si et seulement si elle est \textbf{majorée} et \textbf{minorée}.
 	\end{enumerate}
 \end{definition}
@@ -72,14 +72,14 @@
 	Soient $I \subseteq \R$, $a \in \R$ et $f : I \to \R$. On dit que :
     \begin{enumerate}
         \item $f$ est \textbf{croissante} si et seulement si :
-        \[ \forall x, y \in I,\ x \leq y \implies f(x) \leq f(y) \]
+        \[ \forall x, y \in I : x \leq y \implies f(x) \leq f(y) \]
         \item $f$ est \textbf{décroissante} si et seulement si : 
-        \[ \forall x, y \in I,\ x \leq y \implies f(x) \geq f(y) \]
+        \[ \forall x, y \in I : x \leq y \implies f(x) \geq f(y) \]
         \item $f$ est \textbf{monotone} si et seulement si elle est \textbf{croissante} ou \textbf{décroissante}.
         \item $f$ est \textbf{strictement croissante} si et seulement si : 
-        \[ \forall x, y \in I,\ x < y \implies f(x) < f(y) \]
+        \[ \forall x, y \in I : x < y \implies f(x) < f(y) \]
         \item $f$ est \textbf{strictement décroissante} si et seulement si :
-        \[ \forall x, y \in I,\ x < y \implies f(x) > f(y) \]
+        \[ \forall x, y \in I : x < y \implies f(x) > f(y) \]
         \item $f$ est \textbf{strictement monotone} si et seulement si elle est \textbf{strictement croissante} ou \textbf{strictement décroissante}.
         \item $f$ est \textbf{constante} si et seulement si :
         \[ \forall x \in I : f(x) = a \]
@@ -136,12 +136,12 @@
 
 \begin{definition}[Image directe]
     Soient $f : E \to F,\ A \subseteq E$.
-	\[ f(A) = \{ f(x),\ x \in A \},\ f(A) \subseteq F \]
+	\[ f(A) = \{ f(x),\ x \in A \} : f(A) \subseteq F \]
 \end{definition}
 
 \begin{definition}[Image réciproque]
 	Soient $f : E \to F,\ B \subseteq F$.
-	\[ f^{-1}(B) = \{ \forall x \in E,\ f(x) \in B \},\ f^{-1} \subseteq E \]
+	\[ f^{-1}(B) = \{ \forall x \in E,\ f(x) \in B \} : f^{-1} \subseteq E \]
 \end{definition}
 
 \begin{proposition}
