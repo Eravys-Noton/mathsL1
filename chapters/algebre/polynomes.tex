@@ -253,3 +253,43 @@
     \end{align*}
     L'unicité de la décomposition découle du fait que tout élément d'un espace vectoriel s'exprime par une unique combinaison linéaire des vecteurs d'une de ses bases.
 \end{proof}
+
+\begin{example}
+	Décomposons $\frac{X - 1}{X^2(X^2 + 1)}$ en éléments simples sur $\R$.
+	\\ 
+	D'après le théorème de décomposition en éléments simples pour $A, B, C, D \in \R$ :
+	\begin{align*}
+		\frac{X - 1}{X^2(X^2 + 1)} = \frac{A}{X} + \frac{B}{X^2} + \frac{CX + D}{X^2 + 1}
+	\end{align*}
+	\begin{align*}
+		\frac{A}{X} + \frac{B}{X^2} + \frac{CX + D}{X^2 + 1} &= \frac{AX(X^2 + 1)}{X^2(X^2 + 1)} + \frac{B(X^2 + 1)}{X^2(X^2 + 1)} + \frac{(CX + D) X¨2}{X^2(X^2 + 1)} \\
+		&= \frac{AX(X^2 + 1) + B(X^2 + 1) + (CX + D)X^2}{X^2(X^2 + 1)} \\
+		&= \frac{(A + C)X^3 + (B + D)X^2 + AX + B}{X^2(X^2 + 1)}
+	\end{align*}
+	Par identification on a :
+	\begin{align*}
+		\systeme{
+			A + C = 0,
+			B + D = 0,
+			A = 1,
+			B = -1
+		}
+		\iff 
+		\systeme{
+			A = -C,
+			B = -D,
+			A = 1,
+			B = -1
+		}
+		\iff
+		\systeme{
+			A = 1,
+			B = -1,
+			C = -1,
+			D = 1
+		}
+	\end{align*}
+	\[  
+	\frac{X - 1}{X^2(X^2 + 1)} = \frac{1}{X} - \frac{1}{X^2} + \frac{1 - X}{X^2 + 1}
+	\]
+\end{example}
