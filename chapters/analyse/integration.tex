@@ -32,7 +32,7 @@
 \end{definition}
 
 \begin{lemma}
-	Soient $f, g : [a, b] \longrightarrow \R$ deux fonctions Riemann-intégrable telles que $f(x) \leq g(x)$, alors :
+	Soient $f, g : [a, b] \longrightarrow \R$ deux fonctions Riemann-intégrables telles que $f(x) \leq g(x)$, alors :
 	\begin{enumerate}
 		\item $\int_{a}^{b} f(x) \ \diffd x \leq \int_{a}^{b} g(x) \ \diffd x$.
 		\item $\abs{\int_{a}^{b} f(x) \ \diffd x} \leq \int_{a}^{b} \abs{f(x)} \ \diffd x$.
@@ -40,15 +40,15 @@
 \end{lemma}
 
 \begin{theorem}[Théorème fondamental de l'analyse]
-	Soit $f \in \mathcal{C}^0([a, b])$ et 
+	Soient $f \in \mathcal{C}^0([a, b])$ et $x \in [a, b]$.
 	\begin{align*}
-		\forall x \in [a, b],\ F(x) = \int_a^x f(t) \ \diffd t
+		F(x) = \int_a^x f(t) \ \diffd t
 	\end{align*}
-	alors $F \in \mathcal{C}^1(]a, b[)$ et $\forall x \in \ ]a, b[,\ F'(x) = f(x)$.    
+	alors $F \in \mathcal{C}^1(]a, b[)$ et pour tout $x \in \ ]a, b[,\ F'(x) = f(x)$.    
 \end{theorem}
 
 \begin{corollary}
-    Si $F \in \mathcal{C}^1(]a, b[)$ tel que $\forall x \in \ ]a, b[,\ F'(x) = f(x)$ alors
+    Si $F \in \mathcal{C}^1(]a, b[)$ tel que pour tout $x \in \ ]a, b[,\ F'(x) = f(x)$ alors
 	\begin{align*}
 		\int_a^b f(x) \ \diffd x = [F(x)]_a^b = F(b) - F(a) 
 	\end{align*}

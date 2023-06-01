@@ -253,7 +253,7 @@
 \end{proof}
 
 \begin{theorem}
-    Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ deux suites convergentes telles que $\forall n \in \N,\ u_n \leq v_n$. 
+    Soient $(u_n)_{n \in \N}$ et $(v_n)_{n \in \N}$ deux suites convergentes telles que pour tout $n \in \N,\ u_n \leq v_n$. 
     \[ \lim_{n \to +\infty} u_n \leq \lim_{n \to +\infty} v_n \]
 \end{theorem}
 
@@ -284,7 +284,7 @@
 \end{proof}
 
 \begin{corollary}
-    Soient $(u_n)_{n \in \N}$ et $\ell \in \R$ tels que $\lim_{n \to +\infty} = \ell$ et $m, M \in \R$.
+    Soient $(u_n)_{n \in \N}$, $\ell \in \R$ tels que $\lim_{n \to +\infty} = \ell$ et $m, M \in \R$.
     \begin{enumerate}
             \item Si pour tout $n \in \N,\ u_n \leq M$ alors $\ell \leq M$.
             \item Si pour tout $n \in \N,\ u_n \geq m$ alors $\ell \geq m$.
@@ -474,7 +474,7 @@
 \end{theorem}
 
 \begin{definition}[Suite de Cauchy]
-	Une suite $(u_n)_{n \in \N}$ est de Cauchy si :
+	Une suite $(u_n)_{n \in \N}$ est de Cauchy si et seulement si :
 	\[ \forall \varepsilon > 0,\ \exists N \in \N,\ \forall n_1, n_2 \in \N : \abs{u_{n_1} - u_{n_2}} \leq \varepsilon \]
 \end{definition}
 

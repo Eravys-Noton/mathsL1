@@ -206,7 +206,7 @@
 
 \section{Convexité}
 \begin{definition}
-    Soient $I \subseteq \R,\ f : I \longrightarrow \R$.
+    Soient $I \subseteq \R$ et $f : I \longrightarrow \R$.
     \begin{enumerate}
         \item On dit que $f$ est \textbf{convexe} si et seulement si : 
         \[ \forall x, y \in I,\ \lambda \in [0, 1] : f(\lambda x + (1 - \lambda)y) \leq \lambda f(x) + (1 - \lambda) f(y) \]
@@ -218,7 +218,7 @@
 \par Géométriquement, $f$ est convexe signifie que son graphe passe sous les cordes de $f$ et que les tangentes passent sous le graphe. $f$ est concave signifie que son graphe au-dessus des cordes de $f$ et que les tangentes passent par-dessus le graphe.
 
 \begin{theorem}
-	Soient $I \subseteq \R,\ f \in \mathcal{D}^2(I, \R)$.
+	Soient $I \subseteq \R$ et $f \in \mathcal{D}^2(I, \R)$.
         \begin{enumerate}
                 \item $f \text{ convexe} \iff f'' \geq 0$.
                 \item $f \text{ concave} \iff f'' \leq 0$.
@@ -270,18 +270,21 @@
 \end{proof}
 
 \begin{proposition}
-	Soient $I \subseteq \R,\ f : I \longrightarrow \R$ et $a \in I$, la tangente de $f$ en $a$ est :
+	Soient $I \subseteq \R,\ f : I \longrightarrow \R$ et $a \in I$.
+	\\
+	La tangente de $f$ en $a$ est :
 	\[ \mathcal{T}_a(x) = f(a) + f'(a)(x - a) \]
 \end{proposition}
 
 \begin{proposition}
-	Soient $a, b \in \R$ tels que $a < b,\ f : [a, b] \longrightarrow \R$.
+	Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \longrightarrow \R$.
+	\\
 	La corde $c$ reliant les points $(a, f(a))$ et $(b, f(b))$ est définie par l'équation suivante :
 	\[ c = \frac{f(b) - f(a)}{b - a} (x - a) + f(a) \]
 \end{proposition}
 
 \begin{proposition}
-	Soient $I \subseteq \R,\ f \in \mathcal{D}^2(I, \R),\ a \in I$.
+	Soient $I \subseteq \R,\ f \in \mathcal{D}^2(I, \R)$ et $a \in I$.
 	\begin{align*}
 		\begin{cases}
 			f'(a) = 0 \\
@@ -340,7 +343,7 @@
 \end{definition}
 
 \begin{definition}[Fonction contractante]
-	Soient $I \subseteq \R,\ f : I \longrightarrow \R$.
+	Soient $I \subseteq \R$ et $f : I \longrightarrow \R$.
     On dit que $f$ est \textbf{contractante} si et seulement si :
     \[ \exists k \in \ ]0, 1[,\ \forall x, y \in I : \abs{f(x) - f(y)} \leq k \abs{x - y} \]
 \end{definition}

@@ -6,7 +6,7 @@
 \end{definition}
 
 \begin{proposition}[Addition et multiplication sur $\R$]
-    On peut définir sur $\R$ une addition (notée \og + \fg) et une multiplication (notée \og $\times$ \fg ou \og $\cdot$ \fg) qui prolonge l'addition et la multiplication de $\N$ et vérifie les règles suivantes pour $a, b, c \in \R$ :
+    On peut définir sur $\R$ une addition (notée \og + \fg) et une multiplication (notée \og $\times$ \fg ou \og $\cdot$ \fg) qui prolonge l'addition et la multiplication de $\N$ et vérifie les règles suivantes pour tous $a, b, c \in \R$ :
     \begin{enumerate}
         \item Commutativité : 
         \begin{enumerate}
@@ -33,7 +33,7 @@
 \end{proposition}
 
 \begin{proposition}[Relation d'ordre sur $\R$]
-    On peut définir une relation d'ordre sur $\R$, notée \og $\leq$ \fg, qui prolonge l'ordre de $\N$ et vérifie les règles suivantes pour $a, b, c \in \R$ :
+    On peut définir une relation d'ordre sur $\R$, notée \og $\leq$ \fg, qui prolonge l'ordre de $\N$ et vérifie les règles suivantes pour tous $a, b, c \in \R$ :
     \begin{enumerate}
         \item Réflexivité : $a \leq a$.
         \item Antisymétrie : $a \leq b \text{ et } b \leq a \implies a = b$.
@@ -66,24 +66,30 @@
 \end{proposition}
 
 \begin{definition}[Intervalle réel]
-    On dit qu'un intervalle réel $I$ est un ensemble de nombres délimités par deux réels $a$ et $b$.
+    On dit qu'un intervalle réel $I$ est un ensemble de nombres délimité par deux réels $a$ et $b$.
     \begin{enumerate}
     	\item Pour $I = [a, b]$, on dit que $x \in I$ si et seulement si :
     	\[ a \leq x \leq b \]
+    	Ici, $I$ est un \textbf{intervalle fermé}.
     	\item Pour $I = \ ]a, b[$, on dit que $x \in I$ si et seulement si :
     	\[ a < x < b \]
+    	Ici, $I$ est un \textbf{intervalle ouvert}.
     	\item Pour $I = [a, b[$, on dit que $x \in I$ si et seulement si : 
     	\[ a \leq x < b \]
+    	Ici, $I$ est un \textbf{intervalle semi-ouvert}.
     	\item Pour $I = \ ]a, b]$, on dit que $x \in I$ si et seulement si :
     	\[ a < x \leq b \]
+    	Ici, $I$ est un \textbf{intervalle semi-ouvert}.
     \end{enumerate}
 \end{definition}
 
 \begin{definition}
     Soient $A \subseteq \R$ et $m \in \R$.
     \begin{enumerate}
-        \item On dit que $m$ est un \textbf{majorant} de $A$ si et seulement si : $A \iff \forall x \in A,\ x \leq m$.
-        \item On dit que $m$ est un \textbf{minorant} de $A$ si et seulement si : $\forall x \in A,\ x \geq m$.
+        \item On dit que $m$ est un \textbf{majorant} de $A$ si et seulement si :
+        \[ \forall x \in A,\ x \leq m \]
+        \item On dit que $m$ est un \textbf{minorant} de $A$ si et seulement si :
+        \[ \forall x \in A,\ x \geq m \]
     \end{enumerate}
     On dit que $A$ est \textbf{majorée} si elle admet un \textbf{majorant}, \textbf{minorée} si elle admet un \textbf{minorant} et \textbf{bornée} si elle est \textbf{majorée} et \textbf{minorée}.
 \end{definition}
