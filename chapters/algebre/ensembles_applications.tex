@@ -9,9 +9,14 @@ Nous allons tout d'abord donner une définition intuitive d'un ensemble : Un ens
 
 \begin{definition}[Inclusion]
   Soient $E$ et $F$ deux ensembles.
-  $$F \subseteq E \iff \forall x \in F,\ x \in E$$
+  $$F \subseteq E \iff \forall x \in F : x \in E$$
   On dit que $F$ est inclu dans $E$.
 \end{definition}
+
+\begin{example}
+	Soient $E = \{1, 2, 3, 4\}$ et $F = \{1, 2\}$.
+	\[F \subseteq E\]
+\end{example}
 
 \begin{definition}[\'Egalité d'ensembles]
   Soient $E$ et $F$ deux ensembles.
@@ -28,11 +33,21 @@ Nous allons tout d'abord donner une définition intuitive d'un ensemble : Un ens
   On lit \og $E$ union $F$ \fg.
 \end{definition}
 
+\begin{example}
+	Soient $E = \{ 1, 2, 3 \}$ et $F = \{ 4, 5, 6 \}$.
+	\[ E \cup F = \{ 1, 2, 3, 4, 5, 6 \} \]
+\end{example}
+
 \begin{definition}[Intersection d'ensembles]
   Soient $E$ et $F$ deux ensembles.
   \[ E \cap F = \{ x : x \in E \text{ et } x \in F \} \]
   On lit \og $E$ inter $F$ \fg.
 \end{definition}
+
+\begin{example}
+	Soient $E = \{ 1, 2, 3, 4, 5 \}$ et $F = \{ 3, 4, 5, 6, 7 \}$.
+	\[ E \cap F = \{ 3, 4, 5 \} \]
+\end{example}
 
 \begin{definition}[Complémentaire d'un ensemble]
   Soient $E$ et $F$ deux ensembles. 
@@ -41,6 +56,11 @@ Nous allons tout d'abord donner une définition intuitive d'un ensemble : Un ens
   \[ E \backslash F = \{ x : x \in E,\ x \notin F \} \]
   Si on parle du complémentaire sans préciser d'ensemble, on peut se permettre de noter $E^C$ ou $\complement E$.
 \end{definition}
+
+\begin{example}
+	Soient $E = \{ 1, 2, 3, 4, 5 \}$ et $F = \{ 3, 4, 5, 6, 7 \}$.
+	\[ E \backslash F = \{ 1, 2 \} \]
+\end{example}
 
 \begin{proposition}
 	Soient $A, B, C$ et $E$ des ensembles.
