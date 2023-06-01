@@ -20,13 +20,13 @@
 \begin{definition}
 	Soit $f : [a, b] \longrightarrow \R$. 
 	\begin{enumerate}
-		\item $f$ est Riemann-intégrable si :
+		\item $f$ est \textbf{Riemann-intégrable} si :
 		$\forall \varepsilon > 0,\ \exists e, E$ des fonctions en escalier telles que :
 		\begin{enumerate}
 			\item $e \leq f \leq E$.
 			\item $\int_{a}^{b} (E(x) - e(x)) \ \diffd x < \varepsilon$.
 		\end{enumerate}
-		\item Soit $f$ Riemann-intégrable sur $[a, b]$.
+		\item Soit $f$ \textbf{Riemann-intégrable} sur $[a, b]$.
 		\[ \int_{a}^{b} f(x) \ \diffd x = \underset{e \leq f}{\sup} \int_{a}^{b} e(x) \ \diffd x = \underset{E \geq f}{\inf} \int_{a}^{b} E(x) \ \diffd x \]
 	\end{enumerate}
 \end{definition}
@@ -100,6 +100,25 @@
         \int_a^b u'(x)v(x) \ \diffd x &=  [u(x)v(x)]_a^b - \int_a^b u(x)v'(x) \ \diffd x 
     \end{align*}
 \end{proof}
+
+\begin{example}
+	Soit $I = \int_{0}^{1} x e^x \ \diffd x$.
+	\\
+	Procédons par intégration par parties, posons :
+	\[
+	\begin{cases}
+		u'(x) = e^x,\ v(x) = x \\
+		u(x) = e^x,\ v'(x) = 1
+	\end{cases}
+	\]
+	On a ensuite :
+	\begin{align*}
+		I &= [xe^x]_0^1 - \int_{0}^{1} e^x \ \diffd x \\
+		  &= e - [e^x]_0^1 \\
+		  &= e - (e - 1) \\
+		  &= 1
+	\end{align*}
+\end{example}
 
 \begin{theorem}[Intégration par changement de variable]
 	Soient $I \subseteq \R,\ f \in \mathcal{C}^0(I)$ et $\varphi \in \mathcal{C}^1([a, b])$ tel que $\varphi ([a, b]) \subseteq I$ alors 
