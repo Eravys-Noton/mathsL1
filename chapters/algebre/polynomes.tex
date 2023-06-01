@@ -66,7 +66,7 @@
 \end{theorem}
 
 \begin{definition}[Polynôme irréductible]
-	Un polynôme $P \in \K[X]$ non constant est dit irréductible, s'il n'existe pas $(P_1, P_2) \in (\K[X])^2$ tel que $P = P_1 P_2$ et $\deg(P_1) < \deg(P_2)$.
+	Un polynôme $P \in \K[X]$ non constant est dit irréductible, s'il n'existe pas $P_1, P_2 \in \K[X]$ tel que $P = P_1 P_2$ et $\deg(P_1) < \deg(P_2)$.
 \end{definition}
 
 \begin{proposition}
@@ -78,7 +78,7 @@
 \end{proposition}
 
 \begin{proposition}
-	Soient $P \in K[X]$ non constant et $\alpha \in \K$.
+	Soient $P \in \K[X]$ non constant et $\alpha \in \K$.
 	\\
 	On dit que $\alpha$ est une racine si et seulement si :
 	\[ P(\alpha) = 0 \iff X - \alpha \mid P(X) \]
@@ -113,7 +113,7 @@
 \end{theorem}
 
 \begin{theorem}[Théorème fondamental de l'algèbre]
-	Soit $P(X)$ un polynôme à coefficients complexes de degré $n$. $P(X)$ admet $n$ racines complexes. 
+	Soit $P$ un polynôme à coefficients complexes de degré $n$. $P$ admet $n$ racines complexes. 
 \end{theorem}
 
 \begin{theorem}
@@ -144,12 +144,12 @@
 
 \section{Fractions rationnelles}
 \begin{definition}[Fraction rationnelle]
-	$F(X)$ est appelée fraction rationnelle s'il existe $P(X), Q(X) \in \K[X]$ tels que :
+	$F$ est appelée fraction rationnelle s'il existe $P, Q \in \K[X]$ tels que :
 	\begin{align*}
 		F(X) = \frac{P(X)}{Q(X)},\ Q(X) \neq 0
 	\end{align*}
 	avec $\deg(F) = \deg(P) - \deg(Q)$. \\
-	Si $\deg(P) > \deg(Q)$, alors il existe $E(X)$ appelée la \textbf{partie entière} et des polynômes $R(X), S(X)$ tels que $\deg(R) < \deg(S)$ et : 
+	Si $\deg(P) > \deg(Q)$, alors il existe un polynôme $E$ appelée la \textbf{partie entière} et des polynômes $R, S$ tels que $\deg(R) < \deg(S)$ et : 
 	\begin{align*}
 		F(X) = E(X) + \frac{R(X)}{S(X)}.
 	\end{align*}

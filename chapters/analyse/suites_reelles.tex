@@ -4,7 +4,7 @@
 \section{Définitions}
 
 \begin{definition}[Suite réelle]
-    On appelle \textbf{suite réelle} une fonction de $\N \to \R$. 
+    On appelle \textbf{suite réelle} une fonction de $\N \longrightarrow \R$. 
     On note $(u_n)_{n \in \N}$ la fonction $x \mapsto u_n$.
 \end{definition}
 
@@ -75,7 +75,42 @@
     \end{align*}
 \end{definition}
 
-En pratique, pour l'étude des suites arithmético-géométrique, on commence par résoudre $a = qa + r \iff a = \frac{r}{1 - q}$, puis on pose $v_n = u_n - a$ et $v_{n+1} = u_{n+1} - a$ qui est une suite géométrique, ainsi $v_n = v_0 q^n$ et finalement $u_n = v_n + a \iff u_n = v_0 q^n + a \iff u_n = (u_0 - a) q^n + a$.
+\begin{enumerate}
+	\item On commence par résoudre $a = qa + r \iff a = \frac{r}{1 - q}$.
+	\item Ensuite, on pose $v_n = u_n - a$ et $v_{n+1} = u_{n+1} - a$ qui est une suite géométrique, ainsi $v_n = v_0 q^n$.
+	\item Finalement $u_n = v_n + a \iff u_n = v_0 q^n + a \iff u_n = (u_0 - a) q^n + a$.
+\end{enumerate}
+
+\begin{example}
+	Soit $(u_n)_{n \in \N}$ définie par :
+	\[
+	\begin{cases}
+		u_0 &= 3 \\
+		u_{n+1} &= \frac{1}{4} u_n + 3
+	\end{cases}
+	\]
+	\begin{enumerate}
+		\item On cherche tout d'abord à résoudre $a = \frac{1}{4} a + 3$.
+		\begin{align*}
+			a &= \frac{1}{4} a + 3 \\
+			\frac{3}{4} a &= 3 \\
+			a &= 4
+		\end{align*}
+		\item Posons $v_n = u_n - 4$, on a $v_{n+1} = u_{n+1} - 4$.
+		\begin{align*}
+			v_{n+1} &= u_{n+1} - 4 \\
+			v_{n+1} &= \frac{1}{4} u_n + 3 - 4 \\
+			v_{n+1} &= \frac{1}{4} u_n - 1 \\
+			v_{n+1} &= \frac{1}{4} \left( u_n - 4 \right) \\
+			v_{n+1} &= \frac{1}{4} v_n
+		\end{align*}
+		Ainsi on a montré que $v_n$ est une suite géométrique de raison $\frac{1}{4}$.
+		\\
+		On a $v_0 = u_0 - 4 = 3 - 4 = -1$, puis :
+		\[ v_n = -\frac{1}{4^n} \]
+		\item Finalement, $u_n = v_n + 4 = 4 - \frac{1}{4^n}$.
+	\end{enumerate}
+\end{example}
 
 \section{Convergence d'une suite}
 \begin{definition}
@@ -285,6 +320,21 @@ En pratique, pour l'étude des suites arithmético-géométrique, on commence pa
     \[ \ell - \varepsilon \leq v_n - \ell \leq \ell + \varepsilon \iff \abs{v_n - \ell} \leq \varepsilon \]
     C'est-à-dire $\lim_{n \to +\infty} v_n = \ell$.
 \end{proof}
+
+\begin{example}
+	Cherchons à déterminer $\lim_{x \to +\infty} \frac{\sin(x)}{x}$.
+	\\
+	On sait tout d'abord que :
+	\[ -1 \leq \sin(x) \leq 1 \]
+	puis :
+	\[ \frac{-1}{x} \leq \frac{\sin(x)}{x} \leq \frac{1}{x} \]
+	On a d'une part :
+	\[ \lim_{x \to +\infty} \frac{-1}{x} = 0 \]
+	d'autre part :
+	\[ \lim_{x \to +\infty} \frac{1}{x} = 0 \]
+	par le théorème des gendarmes :
+	\[ \lim_{x \to + \infty} \frac{\sin(x)}{x} = 0 \]
+\end{example}
 
 \begin{theorem}
     \begin{enumerate}

@@ -3,7 +3,7 @@
 
 \section{Dérivabilité, théorèmes de Rolle et des accroissements finis}
 \begin{definition}
-	Soient $I \subseteq \R,\ f : I \to \R$, $f$ est dérivable en $a \in I$ si et seulement s'il existe $\ell \in \R$ tel que :
+	Soient $I \subseteq \R,\ f : I \longrightarrow \R$, $f$ est dérivable en $a \in I$ si et seulement s'il existe $\ell \in \R$ tel que :
 	\begin{align*}
 		  \lim_{x \to a} \frac{f(x) - f(a)}{x - a} &= \ell
 	\end{align*}
@@ -17,7 +17,7 @@
 \end{definition}
 
 \begin{proposition}
-	Soient $I \subseteq \R,\ f : I \to \R$ et $a \in I$, si $f$ est \textbf{dérivable} en $a$ alors elle est \textbf{continue} en $a$.
+	Soient $I \subseteq \R,\ f : I \longrightarrow \R$ et $a \in I$, si $f$ est \textbf{dérivable} en $a$ alors elle est \textbf{continue} en $a$.
 \end{proposition}
 
 \begin{proof}
@@ -61,7 +61,7 @@
 \end{proof}
 
 \begin{theorem}[\cite{derivation_wikiversite}]
-	Soient $I, J \subseteq \R$, $f : I \to \R$ et $g : J \to \R$ telles que $f(I) \subseteq J$ et $a$ un point de $I$. \\
+	Soient $I, J \subseteq \R$, $f : I \longrightarrow \R$ et $g : J \longrightarrow \R$ telles que $f(I) \subseteq J$ et $a$ un point de $I$. \\
 	Si $f$ est dérivable au point $a$ et $g$ est dérivable au point $f(a)$ alors la composée $g \circ f$ est dérivable au point $a$ et :
 	\[ (g \circ f)'(a) = g'(f(a)) f'(a) \]
 \end{theorem}
@@ -81,7 +81,7 @@
 \end{proof}
 
 \begin{definition}[Maximum, minimum]
-    Soient $I \subseteq \R,\ f : I \to \R$ et $a \in I$.
+    Soient $I \subseteq \R,\ f : I \longrightarrow \R$ et $a \in I$.
     \begin{enumerate}
         \item On dit que $a$ est un \textbf{maximum} si et seulement si : $\forall x \in I,\ f(a) \geq f(x)$.
         \item On dit que $a$ est un \textbf{minimum} si et seulement si : $\forall x \in I,\ f(a) \leq f(x)$.
@@ -94,7 +94,7 @@
 \end{definition}
 
 \begin{theorem}
-	Soient $I \subseteq \R,\ f : I \to \R$ une fonction dérivable et $a \in \overset{\circ}{I}$, $\overset{\circ}{I}$ désigne l'intérieur de $I$. 
+	Soient $I \subseteq \R,\ f : I \longrightarrow \R$ une fonction dérivable et $a \in \overset{\circ}{I}$, $\overset{\circ}{I}$ désigne l'intérieur de $I$. 
 	\[ a \text{ est un extremum local} \implies f'(a) = 0 \]
 \end{theorem}
 
@@ -111,7 +111,7 @@
 \end{proof}
 
 \begin{theorem}[Théorème de Rolle]
-    Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \to \R$ une fonction telle que :
+    Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \longrightarrow \R$ une fonction telle que :
     \begin{enumerate}
             \item $f$ est continue sur $[a, b]$.
             \item $f$ est dérivable sur $]a, b[$.
@@ -131,7 +131,7 @@
 \end{proof}
 
 \begin{theorem}[Théorème des accroissements finis]
-    Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \to \R$, telle que : 
+    Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \longrightarrow \R$, telle que : 
     \begin{enumerate}
             \item $f$ est continue sur $[a, b]$.
             \item $f$ est dérivable sur $]a, b[$.
@@ -149,7 +149,7 @@
 \end{proof}
 
 \begin{corollary}[Inégalité des accroissements finis]
-	Soient $a,b \in \R$ tels que $a < b$, $f : \ ]a, b[ \to \R$ une fonction dérivable sur $]a, b[$ et $M$ une constante telle que pour tout $x \in \ ]a, b[,\ \abs{f'(x)} \leq M$.
+	Soient $a,b \in \R$ tels que $a < b$, $f : \ ]a, b[ \ \longrightarrow \R$ une fonction dérivable sur $]a, b[$ et $M$ une constante telle que pour tout $x \in \ ]a, b[,\ \abs{f'(x)} \leq M$.
 	\[ \abs{\frac{f(b) - f(a)}{b - a}} \leq M \]
 \end{corollary}
 
@@ -159,7 +159,7 @@
 \end{proof}
 
 \begin{proposition}[\cite{exo7_analyse1}]
-    Soient $f : [a, b] \to \R$ une fonction continue sur $[a, b]$ et dérivable sur $]a, b[$.
+    Soient $f : [a, b] \longrightarrow \R$ une fonction continue sur $[a, b]$ et dérivable sur $]a, b[$.
     \begin{enumerate}
             \item $\forall x \in \ ]a, b[,\ f'(x) \geq 0 \iff f \text{ croissante}$.
             \item $\forall x \in \ ]a, b[,\ f'(x) \leq 0 \iff f \text{ décroissante}$.
@@ -190,7 +190,7 @@
 \end{proof}
 
 \begin{definition}
-	Soient $I \subseteq \R,\ f : I \to \R$ et $n \in \N$.
+	Soient $I \subseteq \R,\ f : I \longrightarrow \R$ et $n \in \N$.
 	\begin{enumerate}
 		\item $f \in \mathcal{D}^n(I, \R)$ signifie que $f$ est $n$ fois dérivable sur $I$.
 		\item $f \in \mathcal{C}^n(I, \R)$ signifie que $f$ est $n$ fois dérivable et que sa dérivée $n$-ième est continue.
@@ -204,7 +204,7 @@
 
 \section{Convexité}
 \begin{definition}
-    Soient $I \subseteq \R,\ f : I \to \R$.
+    Soient $I \subseteq \R,\ f : I \longrightarrow \R$.
     \begin{enumerate}
         \item On dit que $f$ est \textbf{convexe} si et seulement si : 
         \[ \forall x, y \in I,\ \lambda \in [0, 1] : f(\lambda x + (1 - \lambda)y) \leq \lambda f(x) + (1 - \lambda) f(y) \]
@@ -224,7 +224,7 @@
 \end{theorem}
 
 \begin{theorem}[Inégalité de Jensen]
-	Soient $I \subseteq \R$, $f : I \to \R$ une fonction convexe, $x_i \in I$ et $\lambda_i \in [0, 1]$ tels que $\sum_{i=1}^n \lambda_i = 1$.
+	Soient $I \subseteq \R$, $f : I \longrightarrow \R$ une fonction convexe, $x_i \in I$ et $\lambda_i \in [0, 1]$ tels que $\sum_{i=1}^n \lambda_i = 1$.
 	\[ f \left( \sum_{i=1}^{n} \lambda_i x_i \right) \leq \sum_{i=1}^{n} \lambda_i f(x_i) \]
 	Si $f$ est concave, 
 	\[ f \left( \sum_{i=1}^{n} \lambda_i x_i \right) \geq \sum_{i=1}^{n} \lambda_i f(x_i) \]
@@ -268,12 +268,12 @@
 \end{proof}
 
 \begin{proposition}
-	Soient $I \subseteq \R,\ f : I \to \R$ et $a \in I$, la tangente de $f$ en $a$ est :
+	Soient $I \subseteq \R,\ f : I \longrightarrow \R$ et $a \in I$, la tangente de $f$ en $a$ est :
 	\[ \mathcal{T}_a(x) = f(a) + f'(a)(x - a) \]
 \end{proposition}
 
 \begin{proposition}
-	Soient $a, b \in \R$ tels que $a < b,\ f : [a, b] \to \R$.
+	Soient $a, b \in \R$ tels que $a < b,\ f : [a, b] \longrightarrow \R$.
 	La corde $c$ reliant les points $(a, f(a))$ et $(b, f(b))$ est définie par l'équation suivante :
 	\[ c = \frac{f(b) - f(a)}{b - a} (x - a) + f(a) \]
 \end{proposition}
@@ -290,7 +290,7 @@
 \end{proposition}
 
 \begin{definition}[Suite récurrente]
-	Soient $I \subseteq \R,\ f : I \to \R$ et $u_0 \in I$.
+	Soient $I \subseteq \R,\ f : I \longrightarrow \R$ et $u_0 \in I$.
 	Si $\forall n \in \N,\ u_n \in I$ alors on peut définir :
 	\[ u_{n + 1} = f(u_n) \]
 \end{definition}
@@ -301,7 +301,7 @@
 \end{lemma}
 
 \begin{definition}
-	Soient $I \subseteq \R,\ f : I \to \R$. On dit que $f$ est stable sur $I$ si et seulement si : 
+	Soient $I \subseteq \R,\ f : I \longrightarrow \R$. On dit que $f$ est stable sur $I$ si et seulement si : 
 	\[ f(I) \subseteq I \]
 \end{definition}
 
@@ -324,7 +324,7 @@
 \end{proposition}
 
 \begin{definition}[Point fixe]
-	Soient $f : \mathcal{D}_f \to \R$ et $x \in \mathcal{D}_f,\ f(x) = x$. On dit que $x$ est un \textbf{point fixe} de $f$.
+	Soient $f : \mathcal{D}_f \longrightarrow \R$ et $x \in \mathcal{D}_f,\ f(x) = x$. On dit que $x$ est un \textbf{point fixe} de $f$.
 \end{definition}
 
 \begin{definition}[Coefficient de convergence]
@@ -338,13 +338,13 @@
 \end{definition}
 
 \begin{definition}[Fonction contractante]
-	Soient $I \subseteq \R,\ f : I \to \R$.
+	Soient $I \subseteq \R,\ f : I \longrightarrow \R$.
     On dit que $f$ est \textbf{contractante} si et seulement si :
     \[ \exists k \in \ ]0, 1[,\ \forall x, y \in I : \abs{f(x) - f(y)} \leq k \abs{x - y} \]
 \end{definition}
 
 \begin{theorem}[Théorème du point fixe]
-	Soient $I$ un intervalle fermé et $f : I \to I$ une fonction contractante et continue et $(u_n)_{n \in \N}$ sa suite récurrente associée.
+	Soient $I$ un intervalle fermé et $f : I \longrightarrow I$ une fonction contractante et continue et $(u_n)_{n \in \N}$ sa suite récurrente associée.
 	\begin{enumerate}
         \item Il existe un unique point fixe $\ell \in I$.
         \item $\lim_{n \to +\infty} u_n = \ell$.
