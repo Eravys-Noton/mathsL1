@@ -138,6 +138,24 @@
     \end{align*}
 \end{proof}
 
+\begin{example}
+	Soit $I = \int_{1}^{e} \frac{(\ln(x))^n}{x} \ \diffd x$ pour $n \in \N$.
+	\\
+	Procédons par changement de variable, posons :
+	\[
+	\begin{cases}
+		u = \ln(x) \\
+		\diffd u = \frac{1}{x} \ \diffd x
+	\end{cases}
+	\]
+	\begin{align*}
+		I &= \int_{\ln(1)}^{\ln(e)} u^n \ \diffd u \\
+		  &= \int_{0}^{1} u^n \ \diffd u \\
+		  &= \left[ \frac{u^{n+1}}{n+1} \right]_0^1 \\
+		  &= \frac{1}{n + 1}
+	\end{align*}
+\end{example}
+
 Lorsque nous sommes confrontés à une intégrale de fonctions trigonométriques, on peut se ramener à une intégrale de fraction rationnelle en posant le changement de variable suivant :
 \[ u = \tan(\frac{x}{2}) \]
 \begin{multicols}{3}
