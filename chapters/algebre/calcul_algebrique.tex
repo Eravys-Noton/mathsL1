@@ -108,16 +108,85 @@
 		\sum_{k = 0}^{n} k^2 &= \frac{n(n+1)(2n+1)}{6} &
 		\sum_{k = 0}^{n} k^3 &= \frac{n^2(n+1)^2}{4}
 	\end{align*}
+\end{proposition}
+
+\begin{proof}
+	On procède par récurrence simple.
+\end{proof}
+
+\begin{definition}
+	Pour tout $n \in \N$.
 	\[ n! = n \cdot (n - 1) \cdot \ldots \cdot 2 \cdot 1 \]
-	$\forall n, p \in \N,\ n \geq p$.
+\end{definition}
+
+\begin{proposition}
+	$\forall n, k \in \N,\ n \geq k$.
 	\[ \binom{n}{p} = \frac{n!}{p!(n - p)!} \]
+\end{proposition}
+
+\begin{proposition}
+	Soient $n, k \in \N$ tels que $n \geq k$.
+	\[
+	\binom{n}{k - 1} + \binom{n}{k} = \binom{n+1}{k}
+	\]
+\end{proposition}
+
+\begin{proof}
+	D'une part :
+	\[ \binom{n}{k - 1} = \frac{n!}{(k-1)!(n - (k - 1))!} \]
+	D'autre part :
+	\[ \binom{n}{k} = \frac{n!}{k!(n - k)!} \]
+	On a ensuite : 
+	\begin{align*}
+		\binom{n}{k - 1} + \binom{n}{k} &= 
+		\frac{n!}{(k-1)!(n - (k - 1))!} + \frac{n!}{k!(n - k)!} \\
+		&= \frac{n!}{(k-1)!(n - k + 1))!} + \frac{n!}{k!(n - k)!} \\
+		&= \frac{n!k}{k!(n-k+1)!} + \frac{n!(n-k+1)}{k!(n-k+1)!} \\
+		&= \frac{n!k + n!(n - k + 1)}{k!(n - k + 1)!} \\
+		&= \frac{n!(k + n - k + 1)}{k!(n - k + 1)!} \\
+		&= \frac{n!(n+1)}{(n - k + 1)!} \\
+		&= \frac{(n+1)!}{k!(n + 1 - k)!} \\
+		&= \binom{n+1}{k}
+	\end{align*}
+\end{proof}
+	
+\begin{proposition}[Binôme de Newton]
 	$\forall a, b \in \K,\ n \in \N$.
 	\begin{align*}
 		(a + b)^n = \sum_{k = 0}^{n} \binom{n}{k} a^kb^{n-k}
 	\end{align*}
 \end{proposition}
+
 \begin{proof}
-    Pour les démonstrations, on procède par interprétation combinatoire et par récurrence.
+	Procédons par récurrence sur $n \in \N$ pour montrer $P(n) : \forall a, b \in \K,\ n \in \N : (a + b)^n = \sum_{k = 0}^{n} \binom{n}{k} a^kb^{n-k}$.
+	\begin{enumerate}
+		\item \textbf{Initialisation} : Pour $n = 0$.
+		\\
+		D'une part :
+		\[ (a + b)^0 = 1 \]
+		D'autre part :
+		\[ \sum_{k = 0}^{0} \binom{0}{k} a^k b^{-k} = 1 \]
+		$P(0)$ est vraie.
+		\item \textbf{Hérédité} : Supposons que $P(n)$ est vraie pour un $n \geq 1$ fixé.
+		\\
+		\begin{align*}
+			(a + b)^n &= \sum_{k=0}^{n} \binom{n}{k} a^k b^{n-k} \\
+			(a + b)^{n+1} &= (a+b) \sum_{k=0}^{n} \binom{n}{k} a^k b^{n-k} \\
+			&= \sum_{k = 0}^{n} \binom{n}{k} a^{k+1} b^{n-k} + \sum_{k=0}^{n} \binom{n}{k} a^k b^{n - k + 1}
+		\end{align*}
+		Procédons à un changement de variable $j = k = 1$.
+		\begin{align*}
+			(a + b)^{n+1} &= \sum_{j = 1}^{n + 1} \binom{n}{j - 1} a^j b^{n - j + 1} + \sum_{k = 0}^{n} \binom{n}{k} a^k b^{n-k+1} \\
+			&= \sum_{k = 1}^{n + 1} \binom{n}{k - 1} a^k b^{n - k + 1} + \sum_{k = 0}^{n} \binom{n}{k} a^k b^{n - k + 1} \\
+			&= \binom{n}{n} a^{n+1} + \binom{n}{0} b^{n+1} + \sum_{k = 1}^{n} \binom{n}{k - 1} a^k b^{n - k + 1} + \sum_{k = 1}^{n} \binom{n}{k} a^k b^{n - k + 1} \\
+			&= a^{n+1} + b^{n+1} + \sum_{k = 1}^{n} \left[ \binom{n}{k - 1} + \binom{n}{k} \right] a^k b^{n - k + 1} \\
+			&= a^{n+1} + b^{n+1} + \sum_{k=1}^{n} \binom{n+1}{k} a^k b^{n - k + 1} \\
+			&= \sum_{k=0}^{n+1} \binom{n + 1}{k} a^k b^{n + 1 - k}
+		\end{align*}
+		Ce qui montre que $P(n+1)$ est vraie. 
+		\\
+		Par principe de récurrence, la propriété $P(n)$ est vraie pour tout $n \in \N$.
+	\end{enumerate}
 \end{proof}
 
 \begin{definition}[Produit]
