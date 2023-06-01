@@ -114,12 +114,17 @@ On définit :
 \end{corollary}
 
 \begin{proposition}
-    Soit $f \in \mathcal{L}(E, F)$ et $(b_1, \ldots, b_n)$ une base de $E$. Si l'on connait $f(b_i) \in F$, $\forall i \in \llbracket 1, n \rrbracket$, on connait toute l'application $f$.
+    Soit $f \in \mathcal{L}(E, F)$ et $(b_1, \ldots, b_n)$ une base de $E$. Si l'on connait $f(b_i) \in F$, $1 \leq i \leq n$, on connait toute l'application $f$.
 \end{proposition}
+
+\begin{proof}
+	$\forall x \in E,\ \exists ! (\lambda_1, \ldots, \lambda_n) \in \R^n$ tel que $x = \sum_{i=1}^{n} \lambda_i b_i$.
+	\[ f(x) = f \left( \sum_{i=1}^{n} \lambda_i b_i \right) = \sum_{i=1}^{n} \lambda_i f(b_i) \]
+\end{proof}
 
 \begin{corollary}
     Soit $(b_1, \ldots, b_n)$ une base de $E$. Alors $\varphi \in \mathcal{L}(E, \R^n)$ est un isomorphisme donné par :
-    \[ \varphi(b_i) = e_i,\ \forall i \in \llbracket 1, n \rrbracket \]
+    \[ \varphi(b_i) = e_i,\ 1 \leq i \leq n \]
     \[ \varphi \left( \sum_{i = 1}^{n} x_i b_i \right) = \sum_{i = 1}^{n} x_i e_i = 
     \begin{pmatrix}
         x_1 \\
@@ -129,12 +134,6 @@ On définit :
     \in \R^n
      \]
 \end{corollary}
-
-\begin{definition}
-    Soient $f \in \mathcal{L}(E, F)$ et $\mathcal{B} = (b_1, \ldots, b_n)$ une base de $E$ et $\mathcal{C} = (c_1, \ldots, c_n)$ une base de $F$.
-    Alors on peut définir une matrice $A \in \mathcal{M}_{m,n}(\mathbb{K}),\ \forall i \in \llbracket 1, n \rrbracket$. 
-    \[ f(b_i) = \sum_{j = 1}^{n} a_{j,i} c_j \]
-\end{definition}
 
 \begin{lemma} Soient $\K$ un corps et $E$ un espace-vectoriel de dimension $n \in \N$.
     \[ \dim(E) = n \implies E \cong \K^n \]
@@ -242,7 +241,7 @@ On définit :
 
 \begin{definition}
 	Soit $n \in \N^*$.
-    \[ \operatorname{O}(n) = \{ R \in \mathcal{M}_n(\R) : \forall (x, y) \in (\R^n)^2 : \langle Rx|Ry \rangle = \langle x|y \rangle \} \]
+    \[ \operatorname{O}(n) = \{ R \in \mathcal{M}_n(\R) : \forall x, y \in \R^n : \langle Rx|Ry \rangle = \langle x|y \rangle \} \]
 \end{definition}
 
 \begin{definition}
@@ -263,9 +262,24 @@ On définit :
     \[ \operatorname{O}(n) = \{ R \in \mathcal{M}_n(\K) : R^T \cdot R = I_n \} \]
 \end{corollary}
 
+\begin{lemma}
+	Soient $x, y \in \R^n$ et $A \in \mathcal{M}_n(\R)$.
+	\[ \langle y \mid A \cdot x \rangle = \langle A^T \cdot y \mid x \rangle \]
+\end{lemma}
+
+\begin{proof}
+	Soient $a_{1,1}, \ldots, a_{n,n} \in \R$ les coefficients de $A$.
+	\begin{align*}
+		\langle y \mid A \cdot x \rangle &= \sum_{i = 1}^{n} y_i (A \cdot x)_i \\
+		&= \sum_{i = 1}^{n} y_i \left( \sum_{j=1}^{n} a_{i,j} x_{j,i} \right) \\
+		&= \sum_{j = 1}^{n} \left( \sum_{i = 1}^{n} a_{j,i} y_i \right) \cdot x_j \\
+		&= \langle A^T \cdot y \mid x \rangle
+	\end{align*}
+\end{proof}
+
 \section{Changements de bases et matrices associées aux applications linéaires.}
 
-\begin{definition}
+\begin{definition}[Matrice d'une application linéaire]
     Soient $n, p \in \N^*$, $E$ et $F$ deux $\K$-espaces vectoriels, $\mathcal{B} = (b_1, \ldots, b_p)$ une base de $E$, $\mathcal{B}' = (b_1', \ldots, b_n')$ une base de $F$ et $f \in \mathcal{L}(E, F)$.
     \\
     On peut définir une matrice $\operatorname{Mat}_{\mathcal{B},\mathcal{B}'} (f) \in \mathcal{M}_{n,p}(\K)$ telle que :
@@ -275,7 +289,6 @@ On définit :
             f(b_1) & \cdots & f(b_p) 
         \end{matrix}
     \end{align*}
-    \vspace{-0.8cm}
     \begin{align*}
         \begin{matrix}
             b_1' \\
@@ -289,10 +302,8 @@ On définit :
         \end{pmatrix}
     \end{align*}
     avec les coefficients $a_{1,1}, \ldots, a_{n,p} \in \K$ tels que : 
-    \[ f(b_j) = \sum_{i = 0}^n a_{i,j} b_i' \]
+    \[ f(b_j) = \sum_{i = 1}^n a_{i,j} b_i' \]
 \end{definition}
-
-
 
 \begin{definition}[Matrice de passage]
     Soient $n \in \N^*$, $E$ et $F$ deux $\K$-espaces vectoriels de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n)$ et $\mathcal{B}' = (b_1', \ldots, b_n')$ deux bases de $E$. On appelle \textbf{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$.
@@ -305,7 +316,6 @@ On définit :
         b_1' & \cdots & b_n' 
     \end{matrix}
 \end{align*}
-\vspace{-1.1cm}
 \begin{align*}
     \begin{matrix}
         b_1 \\
