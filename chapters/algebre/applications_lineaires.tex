@@ -57,13 +57,13 @@
     \end{enumerate}
 \end{definition}
 
-Soit $\varepsilon = \{ f \in \mathcal{C}^n(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} + \cdots + a_1 f' + a_0 f = 0 \},\ n \in \N,\ a_i \in \mathcal{C}^0(I),\ I$ un intervalle ouvert.
+Soit $\mathcal{E} = \{ f \in \mathcal{C}^n(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} + \cdots + a_1 f' + a_0 f = 0 \},\ n \in \N,\ a_i \in \mathcal{C}^0(I),\ I$ un intervalle ouvert.
 
 \begin{proposition}
     Soit $n \in \N$.
     \begin{multicols}{2}
         \begin{enumerate}
-            \item $\varepsilon \subseteq \mathcal{C}^n(I)$.
+            \item $\mathcal{E} \subseteq \mathcal{C}^n(I)$.
             \item $\dim(\varepsilon) = n$.
         \end{enumerate}
     \end{multicols}
@@ -339,30 +339,83 @@ On définit :
 \end{example}
 
 \begin{definition}[Matrice de passage]
-    Soient $n \in \N^*$, $E$ et $F$ deux $\K$-espaces vectoriels de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n)$ et $\mathcal{B}' = (b_1', \ldots, b_n')$ deux bases de $E$. On appelle \textbf{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$.
+    Soient $n \in \N^*$, $E$ un $\K$-espace vectoriel de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n)$ et $\mathcal{B}' = (b_1', \ldots, b_n')$ deux bases de $E$. On appelle \textbf{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$. Nous la noterons $P_{\mathcal{B}, \mathcal{B}'}$.
+    \begin{align*}
+    	\hspace{0.45cm}
+    	\begin{matrix}
+    		b_1' & \cdots & b_n' 
+    	\end{matrix}
+    \end{align*}
+    \begin{align*}
+    	\begin{matrix}
+    		b_1 \\
+    		\vdots \\ 
+    		b_n
+    	\end{matrix}
+    	\begin{pmatrix}
+    		a_{1,1} & \cdots & a_{1,n} \\
+    		\vdots & \ddots & \vdots \\ 
+    		a_{n,1} & \cdots & a_{n,n}
+    	\end{pmatrix}
+    \end{align*}
+    Avec les coefficients $a_{1,1}, \ldots, a_{n,n} \in \K$ tels que :
+    \[ b_j' = \sum_{i=1}^{n} a_{i,j} b_i  \]
 \end{definition}
 
-\par \noindent Concrètement, écrivons : 
-\begin{align*}
-    \hspace{0.45cm}
-    \begin{matrix}
-        b_1' & \cdots & b_n' 
-    \end{matrix}
-\end{align*}
-\begin{align*}
-    \begin{matrix}
-        b_1 \\
-        \vdots \\ 
-        b_n
-    \end{matrix}
-    \begin{pmatrix}
-        a_{1,1} & \cdots & a_{1,n} \\
-        \vdots & \ddots & \vdots \\ 
-        a_{n,1} & \cdots & a_{n,n}
-    \end{pmatrix}
-\end{align*}
-Avec les coefficients $a_{1,1}, \ldots, a_{n,n} \in \K$ tels que :
-\[ b_j' = \sum_{i=1}^{n} a_{i,j} b_i  \]
+\begin{example}
+	Soient $\mathcal{E} = ((1, 0), (0, 1))$ et $\mathcal{B} = ((1, 2), (3, -1))$ deux bases de $\R^2$.
+	On a :
+	\[
+	\begin{pmatrix}
+		1 \\
+		2
+	\end{pmatrix}
+	= 
+	1 \cdot
+	\begin{pmatrix}
+		1 \\
+		0
+	\end{pmatrix}
+	+ 2 \cdot
+	\begin{pmatrix}
+		0 \\
+		1
+	\end{pmatrix}
+	\]
+	
+	\[
+	\begin{pmatrix}
+		3 \\
+		-1
+	\end{pmatrix}
+	=
+	3 \cdot
+	\begin{pmatrix}
+		1 \\
+		0
+	\end{pmatrix}
+	- 1 \cdot 
+	\begin{pmatrix}
+		0 \\
+		1
+	\end{pmatrix}
+	\]
+	Ainsi on a :
+	\begin{align*}
+		&\begin{matrix}
+			(1, 2) & (3, -1)
+		\end{matrix}
+		\\
+		\begin{matrix}
+			(1, 0) \\
+			(0, 1)
+		\end{matrix}
+		&\begin{pmatrix}
+			1 & 3 \\
+			2 & -1
+		\end{pmatrix} = P_{\mathcal{E},\mathcal{B}}
+	\end{align*}
+\end{example}
 
 \begin{definition}
     Soient $A, B \in \mathcal{M}_{m,n}(\K)$.
