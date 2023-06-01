@@ -64,7 +64,7 @@ Soit $\varepsilon = \{ f \in \mathcal{C}^n(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} 
     \begin{multicols}{2}
         \begin{enumerate}
             \item $\varepsilon \subseteq \mathcal{C}^n(I)$.
-            \item $\dim(E) = n$.
+            \item $\dim(\varepsilon) = n$.
         \end{enumerate}
     \end{multicols}
 \end{proposition}
@@ -77,6 +77,20 @@ Soit $\varepsilon = \{ f \in \mathcal{C}^n(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} 
 	\end{center}
 	Alors on voit que $\varepsilon = \ker(\Psi)$.
 \end{proof}
+
+Soient $E = \{ (u_n)_{n \in \N},\ u_n \in \R,\ \forall n \in \N \}$, $N \in \N$ et $a = (a_0, \ldots, a_{N-1}) \in \R^N$.
+\\
+On définit :
+\[ F = \{ (u_n)_{n \in \N} : u_{n + N} + a_{N-1} u_{n + N - 1} + \cdots + a_n u_{n+1} + a_0 u_n = 0,\ \forall n \in \N \} \]
+
+\begin{theorem}
+	\begin{multicols}{2}
+		\begin{enumerate}
+			\item $F \subseteq E$.
+			\item $\dim(F) = N$.
+		\end{enumerate}
+	\end{multicols}
+\end{theorem}
 
 \begin{definition}[Rang d'un morphisme]
     Soit $f \in \mathcal{L}(E, F)$. On appelle $\rg(f) = \dim(\Im(f))$ le rang de $f$.
@@ -277,6 +291,8 @@ Soit $\varepsilon = \{ f \in \mathcal{C}^n(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} 
     avec les coefficients $a_{1,1}, \ldots, a_{n,p} \in \K$ tels que : 
     \[ f(b_j) = \sum_{i = 0}^n a_{i,j} b_i' \]
 \end{definition}
+
+
 
 \begin{definition}[Matrice de passage]
     Soient $n \in \N^*$, $E$ et $F$ deux $\K$-espaces vectoriels de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n)$ et $\mathcal{B}' = (b_1', \ldots, b_n')$ deux bases de $E$. On appelle \textbf{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$.
