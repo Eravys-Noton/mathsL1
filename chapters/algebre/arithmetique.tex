@@ -115,11 +115,40 @@
 	On procède de cette manière jusqu'à obtenir un reste nul, le $\pgcd$ de $a$ et $b$ est le dernier reste non nul.
 \end{proposition}
 
+\begin{example}
+	Déterminons $\pgcd(216, 126)$.
+	\begin{align*}
+		216 &= 126 \cdot 1 + 90 \\
+		126 &= 90 \cdot 1 + 36 \\
+		90  &= 36 \cdot 2 + 18 \\
+		36  &= 18 \cdot 2 + 0
+	\end{align*}
+	\[ \pgcd(216, 126) = 18 \]
+\end{example}
 
 \begin{theorem}[Identité de Bézout]
 	Soient $a, b \in \Z$.
 	\[ \exists (u, v) \in \Z^2,\ au + bv = \pgcd(a, b) \]
 \end{theorem}
+
+\begin{example}
+	On cherche $u, v \in \Z$ tels que :
+	\[ 216u + 126v = 18 \]
+	On utilise l'algorithme d'Euclide :
+	\begin{align*}
+		216 &= 126 \cdot 1 + 90 \\
+		126 &= 90 \cdot 1 + 36 \\
+		90  &= 36 \cdot 2 + 18 \\
+		36  &= 18 \cdot 2 + 0
+	\end{align*}
+	\begin{align*}
+		90 - 36 \cdot 2 &= 18 \\
+		90 - (126 - 90) \cdot 2 &= 18 \\
+		90 \cdot 3 - 126 \cdot 2 &= 18 \\
+		(216 - 126) \cdot 3 - 126 \cdot 2 &= 18 \\
+		216 \cdot 3 + 126 \cdot (-5) &= 18
+	\end{align*}
+\end{example}
 
 \begin{corollary}
 	Soient $a, b \in \Z^*$ et $d \in \Z$.
