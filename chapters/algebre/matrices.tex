@@ -3,7 +3,7 @@
 
 \section{Définitions et opérations élémentaires}
 \begin{definition}[Matrice]
-	Soient $m,n \in \N^*$ et $a_{1,1}, \ldots, a_{m,n} \in \K$. 
+	Soient $m, n \in \N^*$ et $a_{1,1}, \ldots, a_{m,n} \in \K$. 
 	\\
     Une \textbf{matrice} est un tableau de données appartenant à $\mathcal{M}_{m,n} (\K)$ :
     \begin{align*}
@@ -19,7 +19,7 @@
 \end{definition}
 
 \begin{definition}[Système linéaire]
-    Soient $m,\ n \in \N^*$, $x_1, \ldots, x_n \in \K$ $n$ inconnues, $a_{1, 1}, \ldots, a_{m,n} \in \K$ et $b_1, \ldots, b_n \in \K$.
+    Soient $m, n \in \N^*$, $x_1, \ldots, x_n \in \K$ $n$ inconnues, $a_{1, 1}, \ldots, a_{m,n} \in \K$ et $b_1, \ldots, b_n \in \K$.
     \\
     Un \textbf{système linéaire} est décrit par :
     \begin{align*}
@@ -68,6 +68,26 @@
 		\item Une matrice est dite dite \textbf{échelonnée réduite} en lignes si les pivots valent 1 et si les autres coefficients dans les colonnes des pivots sont nuls.
 	\end{enumerate}
 \end{definition}
+
+\begin{example}
+	$
+	\begin{pmatrix}
+		2 & 1 & 3 \\
+		0 & 1 & 1 \\
+		0 & 0 & 0
+	\end{pmatrix}
+	$
+	est une matrice échelonnée.
+	\\
+	$
+	\begin{pmatrix}
+		1 & 1 & 0 \\
+		0 & 0 & 1 \\
+		0 & 0 & 0
+	\end{pmatrix}
+	$
+	est une matrice échelonnée réduite.
+\end{example}
 
 \par Décrivons maintenant l'algorithme du pivot de Gauss utilisé pour résoudre des systèmes. On expliquera la méthode sur les lignes mais les principes sont analogues pour les colonnes.
 \par \noindent La méthode consiste à appliquer les opérations élémentaires sur le système ou la matrice afin d'en faire un système ou une matrice échelonnée réduite.
