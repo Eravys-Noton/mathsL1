@@ -31,12 +31,12 @@
 \end{definition}
 
 \begin{theorem}
-	Soit $I \subseteq \R,\ f : I \longrightarrow \R,\ a \in I \cup \{-\infty, +\infty\},\ \ell \in \R \cup \{-\infty, +\infty\}$
+	Soient $I \subseteq \R,\ f : I \longrightarrow \R,\ a \in I \cup \{-\infty, +\infty\}$ et $\ell \in \R \cup \{-\infty, +\infty\}$
 	\[ \lim_{x \to a} f(x) = \ell \iff \forall (u_n)_{n \in \N} : \lim_{n \to +\infty} u_n = a \implies \lim_{n \to +\infty} f(u_n) = \ell \]
 \end{theorem}
 
 \begin{definition}[Limite à gauche et à droite]
-    Soient $I \subseteq \R,\ a \in I,\ f : I \longrightarrow \R $.
+    Soient $I \subseteq \R,\ a \in I$ et $f : I \longrightarrow \R $.
     \begin{enumerate}
         \item $ \lim_{\substack{x \to a \\ x < a}} f(x) = \lim_{x \to a^-} f(x) = \ell \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ a - \delta < x < a \implies \abs{f(x) - \ell} \leq \varepsilon $.
         \item $\lim_{\substack{x \to a \\ x > a}} f(x) = \lim_{x \to a^+} f(x) = \ell \iff \forall \varepsilon > 0,\ \exists \delta > 0,\ a < x < a + \delta \implies \abs{f(x) - \ell} \leq \varepsilon$.
@@ -44,7 +44,7 @@
 \end{definition}
 
 \begin{definition}[Continuité]
-	Soient $I \subseteq \R,\ a \in I,\ f : I \longrightarrow \R$.
+	Soient $I \subseteq \R,\ a \in I$ et $f : I \longrightarrow \R$.
         \\ 
         On dit que $f$ est \textbf{continue} si et seulement si :
         \[\lim_{x \to a} f(x) = f(a).\] 
@@ -57,7 +57,7 @@
 \end{remark}
 
 \begin{theorem}[Composition de limites]
-	Soient $I, J \subseteq \R$ et $f : I \longrightarrow J,\ g : J \longrightarrow \R,\ a \in I$ tels que :
+	Soient $I, J \subseteq \R$ et $f : I \longrightarrow J,\ g : J \longrightarrow \R$ et $a \in I$ tels que :
 	\begin{enumerate}
 		\item $\lim_{x \to a} f(x) = y \in I$.
 		\item $\lim_{y \to z} g(z) = \ell$ existe.
@@ -68,7 +68,7 @@
 
 
 \begin{theorem}[Théorème des valeurs intermédiaires]
-	$\forall a, b \in \R,\ a < b,\ f : [a, b] \longrightarrow \R$ une fonction continue.
+	Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \longrightarrow \R$ une fonction continue.
 	\[ \forall y \in [f(a), f(b)],\ \exists c \in [a, b] : f(c) = y \]
 \end{theorem}
 
@@ -101,7 +101,7 @@
 \end{proof}
 
 \begin{theorem}
-	$\forall a, b \in \R,\ a < b,\ f :\ ]a, b[ \ \longrightarrow \R$. 
+	Soient $a, b \in \R$ tels que $a < b$ et $f :\ ]a, b[ \ \longrightarrow \R$. 
 	Si $f$ est croissante.
 	\begin{enumerate}
 		\item $f$ admet une limite en $b$, qui est finie si et seulement si $f$ est \textbf{majorée}.
@@ -112,12 +112,12 @@
 		\item $f$ admet une limite en $b$, qui est finie si et seulement si $f$ est \textbf{minorée}.
 		\item $f$ admet une limite en $a$, qui est finie si et seulement si $f$ est \textbf{majorée}.
 	\end{enumerate}
-	$\forall x_0 \in \ ]a, b[$, $f$ a une limite à gauche et à droite en $x_0$ et :
+	Soient $x_0 \in \ ]a, b[$, $f$ a une limite à gauche et à droite en $x_0$ et :
 	\[ \lim_{x \to x_0^-} f(x) \leq f(x_0) \leq \lim_{x \to x_0^+} f(x) \]
 \end{theorem}
 
 \begin{theorem}
-	$\forall a, b \in \R,\ a < b,\ f : [a, b] \longrightarrow \R$ une fonction continue.
+	Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \longrightarrow \R$ une fonction continue.
 	\begin{enumerate}
 	    \item $ f \text{ strictement croissante} \implies f : [a, b] \longrightarrow [f(a), f(b)] \text{ est une bijection} $.
             \item $ f \text{ strictement décroissante} \implies f : [a, b] \longrightarrow [f(b), f(a)] \text{ est une bijection} $.
@@ -125,7 +125,7 @@
 \end{theorem}
 
 \begin{theorem}
-	Soit $I \subseteq \R$ et $f : I \longrightarrow \R$ une injection continue.
+	Soient $I \subseteq \R$ et $f : I \longrightarrow \R$ une injection continue.
 	\\
 	Alors $f$ est strictement monotone, donc bijective. Si on pose $J = f(I)$, $f^{-1} : J \to I$ est continue.
 \end{theorem}
@@ -135,12 +135,15 @@
 \end{definition}
 
 \begin{theorem}
-	Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \longrightarrow \R$ une fonction continue. Alors $f$ est bornée sur $[a, b]$ et elle atteint ses bornes.
+	Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \longrightarrow \R$ une fonction continue.
+	\\
+	Alors $f$ est bornée sur $[a, b]$ et elle atteint ses bornes.
 	\[ \exists m, M \in \R,\ \forall x \in [a, b] : m \leq f(x) \leq M \text{ et } \exists x_0, x_1 \in [a, b] : f(x_0) = m \text{ et } f(x_1) = M \]
 \end{theorem}
 
 \begin{definition}[Prolongement par continuité]
-	Soient $I \subseteq \R$, $x_0 \in I,\ f : I\backslash\{x_0\} \longrightarrow \R$.
+	Soient $I \subseteq \R$, $x_0 \in I$ et $f : I\backslash\{x_0\} \longrightarrow \R$.
+	\\
 	On suppose que pour $\ell \in \R$, $\lim_{x \to x_0} f(x) = \ell$ existe. Alors la fonction :
 	\begin{center}
 		$
