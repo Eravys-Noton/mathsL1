@@ -56,8 +56,8 @@
 		\item $\forall x_1, x_2 \in \ker(f),\ \lambda \in \K$.
 		\begin{align*}
 			f(x_1 + \lambda x_2) &= f(x_1) + \lambda f(x_2) \\ 
-								 &= 0 + \lambda 0 \\
-								 &= 0
+								 &= 0_F + \lambda 0_F \\
+								 &= 0_F
 		\end{align*}
 		\item $\forall y_1, y_2 \in \Im(f),\ \lambda \in \K$.
 		\[ y_1 \in \Im(f) \iff \exists x_1 : f(x_1) = y_1 \]
@@ -100,7 +100,7 @@ Soit $\mathcal{E} = \{ f \in \mathcal{C}^n(I) : f^{(n)} + a_{n - 1} f^{(n - 1)} 
 	\begin{center}
 		$\appli{\Psi}{\mathcal{C}^n(I)}{\mathcal{C}^0(I)}{f}{f^{(n)} + a_{n-1}f^{(n-1)} + \cdots + a_1 f' + a_0 f}$
 	\end{center}
-	Alors on voit que $\varepsilon = \ker(\Psi)$.
+	Alors on voit que $\mathcal{E} = \ker(\Psi)$.
 \end{proof}
 
 Soient $E = \{ (u_n)_{n \in \N},\ u_n \in \R,\ \forall n \in \N \}$, $N \in \N$ et $a = (a_0, \ldots, a_{N-1}) \in \R^N$.
