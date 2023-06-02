@@ -20,7 +20,7 @@
 \end{definition}
 
 \begin{definition}
-	Soit $f : E \to F$ une fonction. On dit que :
+	Soient $E$ et $F$ deux ensembles et $f : E \to F$ une fonction. On dit que :
     \begin{enumerate}
         \item $f$ est \textbf{injective} si et seulement si : 
         \[ \forall x_1, x_2 \in E : f(x_1) = f(x_2) \implies x_1 = x_2 \]
@@ -36,7 +36,7 @@
 \end{definition}
 
 \begin{proposition}
-	Soient $x \in E,\ y \in F$.
+	Soient $E$ et $F$ deux ensembles. Pour tous $x \in E$ et $y \in F$.
     \begin{multicols}{2}
         \begin{enumerate}
             \item $f^{-1} (f(x)) = x$
@@ -125,7 +125,7 @@
 \end{definition}
 
 \begin{proposition}
-	Soit $f : E \to F$ une bijection.
+	Soient $E$ et $F$ deux ensembles et $f : E \to F$ une bijection.
     \begin{multicols}{2}
         \begin{enumerate}
             \item $f^{-1} \circ f = id_E$.
@@ -135,17 +135,17 @@
 \end{proposition}
 
 \begin{definition}[Image directe]
-    Soient $f : E \to F,\ A \subseteq E$.
+    Soient $E$ et $F$ deux ensembles $f : E \to F$ et $A \subseteq E$.
 	\[ f(A) = \{ f(x),\ x \in A \} : f(A) \subseteq F \]
 \end{definition}
 
 \begin{definition}[Image réciproque]
-	Soient $f : E \to F,\ B \subseteq F$.
+	Soient $E$ et $F$ deux ensembles $f : E \to F$ et $B \subseteq F$.
 	\[ f^{-1}(B) = \{ \forall x \in E,\ f(x) \in B \} : f^{-1} \subseteq E \]
 \end{definition}
 
 \begin{proposition}
-    Soient $f : E \to F,\ A_1, A_2 \subseteq E,\ B_1, B_2 \subseteq F$.
+    Soient $E$ et $F$ deux ensembles $f : E \to F,\ A_1, A_2 \subseteq E$ et $B_1, B_2 \subseteq F$.
     \begin{enumerate}
         \item $f(A_1 \cup A_2) = f(A_1) \cup f(A_2)$.
         \item $f^{-1} (B_1 \cup B_2) = f^{-1} (B_1) \cup f^{-1} (B_2)$.

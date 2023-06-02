@@ -5,22 +5,32 @@
 
 \begin{definition}[Suite réelle]
     On appelle \textbf{suite réelle} une fonction de $\N \longrightarrow \R$. 
-    On note $(u_n)_{n \in \N}$ la fonction $x \mapsto u_n$.
+    On note $(u_n)_{n \in \N}$ la fonction $x \longmapsto u_n$.
 \end{definition}
 
-\begin{definition}[Suite stationnaire]
-	Une suite est dite stationnaire si elle est constante à partir d'un certain rang. 
-	\[ \exists N \in \N,\ \forall n \geq N : u_n = u_N \]
+\begin{definition}
+	Soit $(u_n)_{n \in \N}$ une suite.
+	\begin{enumerate}
+		\item $(u_n)_{n \in \N}$ est dite \textbf{croissante} si et seulement si pour tout $n \in \N$ :
+		\[ u_n \leq u_{n+1} \]
+		\item $(u_n)_{n \in \N}$ est dite \textbf{décroissante} si et seulement si pour tout $n \in \N$ :
+		\[ u_n \geq u_{n+1} \]
+		\item $(u_n)_{n \in \N}$ est dite \textbf{monotone} si et seulement si elle est \textbf{croissante} ou \textbf{décroissante}.
+		\item $(u_n)_{n \in \N}$ est dite \textbf{strictement croissante} si et seulement si pour tout $n \in \N$ :
+		\[ u_n < u_{n+1} \]
+		\item $(u_n)_{n \in \N}$ est dite \textbf{strictement décroissante} si et seulement si pour tout $n \in \N$ :
+		\[ u_n > u_{n+1} \]
+		\item $(u_n)_{n \in \N}$ est dite \textbf{strictement monotone} si et seulement si elle est \textbf{strictement croissante} ou \textbf{strictement décroissante}.
+		\item $(u_n)_{n \in \N}$ est dite \textbf{constante} si et seulement si pour tout $n \in \N$ :
+		\[ u_n = u_0 \]
+		\item $(u_n)_{n \in \N}$ est dite \textbf{stationnaire} si et seulement si elle est \textbf{constante} à partir d'un certain rang. 
+		\[ \exists N \in \N,\ \forall n \geq N : u_n = u_N \]
+	\end{enumerate}
 \end{definition}
-
-\begin{remark}
-    Ainsi les propriétés des fonctions réelles s'appliquent également aux suites.
-\end{remark}
 
 \section{Suites usuelles}
 \begin{definition}[Suite arithmétique]
-    Soient $r, u_0 \in \R$.
-    \\
+    Soit $r \in \R^*$.
     On définit une \textbf{suite arithmétique} $(u_n)_{n \in \N}$ de la manière suivante :
     \begin{align*}
         (u_n)_{n \in \N} =
@@ -32,15 +42,14 @@
 \end{definition}
 
 \begin{proposition}
-    Soit $(u_n)_{n \in \N}$ une suite arithmétique.
+    Soient $(u_n)_{n \in \N}$ une suite arithmétique et $r \in \R^*$.
     \begin{align*}
         \sum_{k = 0}^{n} u_k = (n+1)u_0 + r \frac{n(n+1)}{2}
     \end{align*}
 \end{proposition}
 
 \begin{definition}[Suite géométrique]
-    Soient $q \in \R^*$ et $u_0 \in \R$.
-    \\
+    Soit $q \in \R^*$.
     On définit une \textbf{suite géométrique} $(u_n)_{n \in \N}$ de la manière suivante : 
     \begin{align*}
         (u_n)_{n \in \N} = 
@@ -52,7 +61,7 @@
 \end{definition}
 
 \begin{proposition}
-    Soit $(u_n)_{n \in \N}$ une suite géométrique.
+    Soient $(u_n)_{n \in \N}$ une suite géométrique et $q \in \R^*$.
     \begin{align*}
         \sum_{k = 0}^{n} u_k = 
         \begin{cases}
@@ -63,7 +72,7 @@
 \end{proposition}
 
 \begin{definition}[Suite arithmético-géométrique]
-    Soient $r, u_0 \in \R$ et $q \in \R^*$. 
+    Soient $r, q \in \R^*$. 
     \\
     On définit une \textbf{suite arithmético-géométrique} $(u_n)_{n \in \N}$ de la manière suivante :
     \begin{align*}
@@ -137,7 +146,7 @@
 \end{definition}
 
 \begin{theorem}
-    La limite d'une suite convergente $(u_n)_{n \in \N}$ est unique.
+    La limite d'une suite convergente $(u_n)_{n \in \N}$ est \textbf{unique}.
 \end{theorem}
 
 \begin{proof}
@@ -167,7 +176,7 @@
 \end{proof}
 
 \begin{theorem}
-    Toute suite convergente est bornée.
+    Toute suite convergente est \textbf{bornée}.
 \end{theorem}
 
 \begin{proof}

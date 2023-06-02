@@ -50,7 +50,7 @@
 \end{definition}
 
 \begin{proposition}
-	Soient $a, b, x \in \R$.
+	Pour tous $a, b, x \in \R$.
     \begin{enumerate}
             \item $1^a = 1$.
             \item $x^0 = 1$.
@@ -66,7 +66,7 @@
 \end{proposition}
 
 \begin{proposition}
-	La dérivée de la fonction $x^a$ est $ax^{a-1}$.
+	Soit $a \in \R$. La dérivée de la fonction $x^a$ est $ax^{a-1}$.
 \end{proposition}
 
 \begin{proof}
@@ -95,7 +95,7 @@
 
 \section{Fonctions trigonométriques}
 \begin{definition}[Fonctions trigonométriques]
-	Soit $k \in \Z$ :	
+	Pour tout $k \in \Z$ :	
 	\begin{center}
 		$
 		\begin{array}{ccc}
@@ -110,14 +110,14 @@
 \end{definition}
 
 \begin{proposition}
-	Soient $x \in \R$ et $k \in \Z$.
+	Pour tous $x \in \R$ et $k \in \Z$.
 	\begin{enumerate}
 		\item $\cos(-x) = \cos(x)$.
 		\item $\sin(-x) = -\sin(x)$.
-		\item $\tan(-x) = -\tan(x)$.
+		\item $\forall x \in \R \backslash \left\{\frac{k\pi}{2}\right\}$ : $\tan(-x) = -\tan(x)$.
 		\item $\cos(x + 2k\pi) = \cos(x)$.
 		\item $\sin(x + 2k\pi) = \sin(x)$.
-		\item $\tan(x + k\pi) = \tan(x)$.
+		\item $\forall x \in \R \backslash \left\{\frac{k\pi}{2}\right\}$ : $\tan(x + k\pi) = \tan(x)$.
 		\item $\cos$ est bijective sur $[0, \pi]$.
 		\item $\sin$ est bijective sur $[-\frac{\pi}{2}, \frac{\pi}{2}]$.
 		\item $\tan$ est bijective sur $]-\frac{\pi}{2}, \frac{\pi}{2}[$.
@@ -223,10 +223,11 @@
 \end{figure}
 
 \begin{proposition}
+	Pour tout $x \in \R$.
 	\begin{enumerate}
 		\item $\cos'(x) = -\sin(x)$. 
 		\item $\sin'(x) = \cos(x)$.
-		\item $\tan'(x) = \frac{1}{\cos^2(x)} = 1 + \tan^2(x)$.
+		\item $\forall x \in \R \backslash \left\{\frac{k\pi}{2}\right\}$ : $\tan'(x) = \frac{1}{\cos^2(x)} = 1 + \tan^2(x)$.
 	\end{enumerate}
 \end{proposition}
 
@@ -292,23 +293,23 @@
 \begin{proposition}
     \begin{enumerate}
     	\item $\forall x \in [-\frac{\pi}{2}, \frac{\pi}{2}] : \arcsin(\sin(x)) = x$.
-        \item $\forall x \in ]-\frac{\pi}{2}, \frac{\pi}{2}[ ! \arctan(\tan(x)) = x$.
+        \item $\forall x \in ]-\frac{\pi}{2}, \frac{\pi}{2}[ : \arctan(\tan(x)) = x$.
         \item $\forall x \in [0, \pi] : \arccos(\cos(x)) = x$.
         \item $\forall x \in [-1, 1]$ :
         \begin{enumerate}
-                \item $\sin(\arcsin(x)) = x$.
-                \item $\cos(\arccos(x)) = x$.
-            \end{enumerate}
+            \item $\sin(\arcsin(x)) = x$.
+            \item $\cos(\arccos(x)) = x$.
+        \end{enumerate}
         \item $\forall x \in \R : \tan(\arctan(x)) = x$.
     \end{enumerate}
 \end{proposition}
 
 \begin{proposition}
-	Soient $a, b \in \R$.
-        \begin{enumerate}
-            \item $\sin(a + b) = \sin(a) \cos(b) + \sin(b) \cos(a)$.
-            \item $\cos(a + b) = \cos(a) \cos(b) - \sin(a) \sin(b)$.
-        \end{enumerate}
+	Pour tous $a, b \in \R$.
+    \begin{enumerate}
+        \item $\sin(a + b) = \sin(a) \cos(b) + \sin(b) \cos(a)$.
+        \item $\cos(a + b) = \cos(a) \cos(b) - \sin(a) \sin(b)$.
+    \end{enumerate}
 \end{proposition}
 
 \begin{proof}
@@ -329,7 +330,7 @@
 \end{proof}
 
 \begin{proposition}
-    Soit $x \in \R$.
+    Pour tout $x \in \R$.
     \[ \cos^2(x) + \sin^2(x) = 1 \]
 \end{proposition}
 
@@ -362,7 +363,7 @@
             \item $\lim_{x \to -\infty} e^x = 0$.
             \item $\lim_{x \to +\infty} e^x = +\infty$.
         \end{enumerate}
-    \noindent Soient $x, y \in \R$.
+    \noindent Pour tous $x, y \in \R$.
     \begin{enumerate}
             \item $\exp(x + y) = \exp(x) \cdot \exp(y)$.
             \item $\exp(-x) = \frac{1}{\exp(x)}$.
@@ -399,7 +400,7 @@
 \end{figure}
 
 \begin{proposition}
-	Soient $x \in \R_+^*$ et $y \in \R$.
+	Pour tous $x \in \R_+^*$ et $y \in \R$.
     \begin{multicols}{2}
         \begin{enumerate}
             \item $\exp(\ln(x)) = x$.
@@ -409,7 +410,7 @@
 \end{proposition}
 
 \begin{proposition}
-	Soit $x \in \R_+^*$.
+	Pour tout $x \in \R_+^*$.
 	\[ \ln'(x) = \frac{1}{x} \]
 \end{proposition}
 
@@ -432,7 +433,7 @@
             \item $\lim_{x \to 0} \ln(x) = -\infty$.
             \item $\lim_{x \to +\infty} \ln(x) = +\infty$.
         \end{enumerate}
-    \noindent Soient $x, y \in \R$.
+    \noindent Pour tous $x, y \in \R$.
     \begin{enumerate}
             \item $\ln(xy) = \ln(x) + \ln(y)$.
             \item $\ln(\frac{1}{x}) = -\ln(x)$.
@@ -490,7 +491,7 @@
 \end{figure}
 
 \begin{proposition}
-	Soit $x \in \R$.
+	Pour tout $x \in \R$.
 	\begin{enumerate}
 		\item $\cosh(-x) = \cosh(x)$.
 		\item $\sinh(-x) = -\sinh(x)$.
@@ -499,7 +500,7 @@
 \end{proposition}
 
 \begin{proposition}
-	Soient $x, y \in \R$.
+	Pour tous $x, y \in \R$.
     \begin{enumerate}
         \item $\cosh(x + y) = \cosh(x) \cosh(y) + \sinh(x) \sinh(y)$.
         \item $\sinh(x + y) = \cosh(x) \sinh(y) + \sinh(x) \cosh(y)$.

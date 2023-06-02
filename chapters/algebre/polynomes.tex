@@ -182,9 +182,9 @@
         E &= \left\{ \frac{P(X)}{Q(X)} : P \in \C[X],\ \deg(P) < d \right\} \\
           &= \left\{ \frac{a_0 + a_1X + \cdots + a_{d - 1} X^{d - 1}}{Q(X)} : a_0, \ldots, a_{d - 1} \in \C \right\} \\
           &= \left\{ a_0 \frac{1}{Q(X)} + a_1 \frac{X}{Q(X)} + \cdots + a_{d - 1} \frac{X^{d-1}}{Q(X)} : a_0, \ldots, a_{d - 1} \in \C \right\} \\
-          &= \operatorname{Vect}\left\{ \frac{1}{Q(X)}, \frac{X}{Q(X)}, \ldots, \frac{X^{d-1}}{Q(X)} \right\}
+          &= \Vect\left\{ \frac{1}{Q(X)}, \frac{X}{Q(X)}, \ldots, \frac{X^{d-1}}{Q(X)} \right\}
     \end{align*}
-    Notons : $\mathcal{F} = \operatorname{Vect}\left\{ \frac{1}{Q(X)}, \frac{X}{Q(X)}, \ldots, \frac{X^{d-1}}{Q(X)} \right\}$
+    Notons : $\mathcal{F} = \Vect\left\{ \frac{1}{Q(X)}, \frac{X}{Q(X)}, \ldots, \frac{X^{d-1}}{Q(X)} \right\}$
     Nous avons réussi à exprimer $E$ sous la forme d'une famille de vecteurs, nous en déduisons que $E$ est un espace vectoriel admettant $\mathcal{F}$ comme famille génératrice, montrons ensuite que $\mathcal{F}$ est libre :
     Soient $ \lambda_0,\ldots,\lambda_{d-1} \in \C$
     \begin{align*}
@@ -200,9 +200,9 @@
     On peut ainsi écrire $F$ ainsi : 
     \begin{align*}
         F &= \left\{ \frac{a_{1, 1}}{(X - \alpha_1)} + \cdots + \frac{a_{1, m_1}}{(X - a_1)^{m_1}} + \cdots + \frac{a_{n, 1}}{(X - \alpha_n)} + \cdots + \frac{a_{n, m_n}}{(X - \alpha_n)^{m_n}} : a_{ij} \in \C \right\} \\
-        &= \operatorname{Vect} \left\{ \frac{1}{(X - \alpha_1)}, \ldots, \frac{1}{(X - \alpha_1)^{m_1}}, \ldots, \frac{1}{(X - \alpha_n)}, \ldots, \frac{1}{(X - \alpha_n)^{m_n}}  \right\}
+        &= \Vect \left\{ \frac{1}{(X - \alpha_1)}, \ldots, \frac{1}{(X - \alpha_1)^{m_1}}, \ldots, \frac{1}{(X - \alpha_n)}, \ldots, \frac{1}{(X - \alpha_n)^{m_n}}  \right\}
     \end{align*}
-    Notons $\mathcal{F}_2 = \operatorname{Vect} \left\{ \frac{1}{(X - \alpha_1)}, \ldots, \frac{1}{(X - \alpha_1)^{m_1}}, \ldots, \frac{1}{(X - \alpha_n)}, \ldots, \frac{1}{(X - \alpha_n)^{m_n}}  \right\}$. Nous en déduisons que $F$ est un espace vectoriel admettant $\mathcal{F}_2$ comme famille génératrice, montrons que $\mathcal{F}_2$ est libre : Soient $a_{i,j} \in \C$ tels que :
+    Notons $\mathcal{F}_2 = \Vect \left\{ \frac{1}{(X - \alpha_1)}, \ldots, \frac{1}{(X - \alpha_1)^{m_1}}, \ldots, \frac{1}{(X - \alpha_n)}, \ldots, \frac{1}{(X - \alpha_n)^{m_n}}  \right\}$. Nous en déduisons que $F$ est un espace vectoriel admettant $\mathcal{F}_2$ comme famille génératrice, montrons que $\mathcal{F}_2$ est libre : Soient $a_{i,j} \in \C$ tels que :
     \begin{align*}
         \begin{split}
             a_{1,1} \frac{1}{(X - \alpha_1)} + a_{1,2} \frac{1}{(X - \alpha_1)^2} + \cdots + a_{1,m_1-1} \frac{1}{(X - \alpha_1)^{m_1 - 1}} + \cdots \\
@@ -241,8 +241,8 @@
     En mettant toutes les fractions sur le même dénominateur, on obtient :
     \[ \frac{a_{1,1}(X - \alpha_1)^{m_1 - 1} \prod_{i = 2}^{n}(X - \alpha_i)^{m_i} + \cdots + a_{1m_1} \prod_{i = 2}^{n}(X - \alpha_i)^{m_i} + \cdots + a_{n,m_n} \prod_{i = 1}^{n - 1}(X - \alpha_i)^{m_i}}{Q(X)} \]
     Le degré du numérateur est strictement inférieur à celui de $Q$. Donc c'est un élément de $E$. Ainsi :
-    \[ F \subset E \]
-    Nous avons montré que $\dim(E) = \dim(F)$ et que $F \subset E$, ainsi $E = F$.
+    \[ F \subseteq E \]
+    Nous avons montré que $\dim(E) = \dim(F)$ et que $F \subseteq E$, ainsi $E = F$.
     Ce qui revient à dire que toute fraction rationnelle 
     \begin{align*}
         \frac{P(X)}{Q(X)},\ \deg(P) < \deg(Q)
