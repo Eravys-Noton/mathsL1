@@ -57,7 +57,7 @@
 \end{remark}
 
 \begin{theorem}[Composition de limites]
-	Soient $I, J \subseteq \R$ et $f : I \longrightarrow J,\ g : J \longrightarrow \R$ et $a \in I$ tels que :
+	Soient $I, J \subseteq \R$ et $f : I \longrightarrow J,\ g : J \longrightarrow \R$ et $a \in I$ ou éventuellement $a \in \{ \pm \infty \}$ tels que :
 	\begin{enumerate}
 		\item $\lim_{x \to a} f(x) = y \in I$.
 		\item $\lim_{y \to z} g(z) = \ell$ existe.
@@ -65,7 +65,15 @@
 	\[ \lim_{x \to a} g(f(x)) = \ell \]
 \end{theorem}
 
-
+\begin{example}
+	Calculons $\lim_{x \to +\infty} \sin \left( \frac{1}{x} \right)$.
+	\begin{enumerate}
+		\item D'une part : $\lim_{x \to +\infty} \frac{1}{x} = 0$.
+		\item D'autre part : $\lim_{y \to 0} \sin(y) = 0$.
+	\end{enumerate}
+	Donc par composition de limites : 
+	\[ \lim_{x \to +\infty} \sin \left( \frac{1}{x} \right) = 0 \]
+\end{example}
 
 \begin{theorem}[Théorème des valeurs intermédiaires]
 	Soient $a, b \in \R$ tels que $a < b$ et $f : [a, b] \longrightarrow \R$ une fonction continue.

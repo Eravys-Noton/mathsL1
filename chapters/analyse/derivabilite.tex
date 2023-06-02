@@ -395,4 +395,45 @@
     On trouve $\lambda, \mu$ grâce aux conditions sur les deux premiers termes de la suite.
 \end{theorem}
 
+\begin{example}
+	Donnons l'expression du terme général de la suite récurrente linéaire d'ordre 2 :
+	\[
+	(u_n)_{n \in \N} :
+	\begin{cases}
+		u_0 = 1 \\
+		u_1 = -1 \\
+		2u_{n+2} = 3u_{n+1} - u_n
+	\end{cases}
+	\]
+	\[ 2u_{n+2} = 3u_{n+1} - u_n \]
+	\[ 2 u_{n+2} - 3 u_{n+1} + u_n = 0 \]
+	\[ u_{n+2} - \frac{3}{2} u_{n+1} + \frac{1}{2} u_n = 0 \]
+	On étudie l'équation caractéristique :
+	\[ r^2 - \frac{3}{2} r + \frac{1}{2} = 0 \]
+	On a $\Delta = \left( \frac{3}{2} \right)^2 - 4 \frac{1}{2} = \frac{1}{4}$.
+	\begin{align*}
+		r_1 &= \frac{\frac{3}{2} - \frac{1}{2}}{2}  & r_2 &= \frac{\frac{3}{2} + \frac{1}{2}}{2} = 1 \\
+		&= \frac{1}{2} & &= 1
+	\end{align*}
+	Ainsi on a $u_n = \lambda \frac{1}{2^n} + \mu$.
+	\begin{align*}
+		\begin{cases}
+			u_0 = \lambda \frac{1}{2^0} + \mu = 1 \\
+			u_1 = \lambda \frac{1}{2} + \mu = -1 
+		\end{cases}
+		&\iff 
+		\begin{cases}
+			\lambda + \mu = 1 \\
+			\lambda \frac{1}{2} + \mu = -1
+		\end{cases} \\
+		&\iff 
+		\begin{cases}
+			\lambda = 4 \\
+			\mu = -3
+		\end{cases}
+	\end{align*}
+	Finalement, on a :
+	\[ u_n = 4 \cdot \frac{1}{2^n} - 3 \]
+	\[ u_n = \frac{1}{2^{n-2}} - 3 \]
+\end{example}
 
