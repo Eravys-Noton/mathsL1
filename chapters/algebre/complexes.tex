@@ -75,16 +75,6 @@ Il est possible de représenter les nombres complexes sur un plan complexe avec 
 	Soit $z \in \C$, on appelle l'\textbf{argument} de $z$, noté $\arg(z)$, l'angle entre l'axe de la partie réelle et la droite issue de l'origine passant par $z$. 
 \end{definition}
 
-\begin{proposition}
-	Soient $z_1, z_2 \in \C$ et $n \in \N$.
-	\begin{enumerate}
-		\item $\arg(z_1 \cdot z_2) = \arg(z_1) + \arg(z_2)$.
-		\item $\arg(z_1^n) = n \arg(z_1)$.
-		\item Si $z_1 \neq 0$ : $\arg \left(\frac{1}{z_1} \right) = - \arg(z_1)$.
-		\item Si $z_2 \neq 0$ : $\arg \left( \frac{z_1}{z_2} \right) = \arg(z_1) - \arg(z_2)$.
-	\end{enumerate}
-\end{proposition}
-
 \begin{figure}[!h]
 	\centering
 	\begin{tikzpicture}
@@ -98,10 +88,20 @@ Il est possible de représenter les nombres complexes sur un plan complexe avec 
 		\draw[->] (O) -- (Z) node[circle, fill, inner sep=0pt, scale=0.5, label=above:$z$]{$z$};
 		\draw (1.9, 1.6) node[anchor=south]{$\abs{z}$};
 		\path[gray]
-				pic["$\arg(z)$" shift={(30pt, 5pt)}, draw, -, angle radius=1cm] {angle = X--O--Z};
+		pic["$\arg(z)$" shift={(30pt, 5pt)}, draw, -, angle radius=1cm] {angle = X--O--Z};
 	\end{tikzpicture}
 	\caption{Vision géométrique des nombres complexes}
 \end{figure}
+
+\begin{proposition}
+	Soient $z_1, z_2 \in \C$ et $n \in \N$.
+	\begin{enumerate}
+		\item $\arg(z_1 \cdot z_2) = \arg(z_1) + \arg(z_2)$.
+		\item $\arg(z_1^n) = n \arg(z_1)$.
+		\item Si $z_1 \neq 0$ : $\arg \left(\frac{1}{z_1} \right) = - \arg(z_1)$.
+		\item Si $z_2 \neq 0$ : $\arg \left( \frac{z_1}{z_2} \right) = \arg(z_1) - \arg(z_2)$.
+	\end{enumerate}
+\end{proposition}
 
 \begin{definition}
 	Soient $z \in \C,\ r = \abs{z}$ et $\theta = \arg(z)$, il est possible d'exprimer $z$ dans sa forme trigonométrique :
@@ -120,7 +120,13 @@ Il est possible de représenter les nombres complexes sur un plan complexe avec 
 \end{proposition}
 
 \begin{proof}
-	En utilisant les formules d'additions de $\cos$ et $\sin$.
+	\begin{align*}
+		z_1 z_2 &= r_1(\cos(\theta_1) + i \sin(\theta_1)) r_2(\cos(\theta_2) + i \sin(\theta_2)) \\
+		&= (r_1 \cos(\theta_1) + i r_1 \sin(\theta_1))(r_2 \cos(\theta_2) + i r_2 \sin(\theta_2)) \\
+		&= r_1 r_2 \cos(\theta_1) \cos(\theta_2) + i r_1 r_2 \cos(\theta_1) \sin(\theta_2) + i r_1 r_2 \sin(\theta_1) \cos(\theta_2) - r_1 \sin(\theta_1) \sin(\theta_2) \\
+		&= r_1 r_2 (\cos(\theta_1) \cos(\theta_2) - \sin(\theta_1) \sin(\theta_2)) + i (r_1 r_2(\cos(\theta_1) \sin(\theta_2) + \sin(\theta_1)\cos(\theta_2))) \\
+		&= r_1 r_2 (\cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2))
+	\end{align*}
 \end{proof}
 
 \begin{definition}
@@ -153,14 +159,34 @@ Il est possible de représenter les nombres complexes sur un plan complexe avec 
 \end{definition}
 
 \begin{proposition}
-	Soient $z \in \C^*$, $\theta \in \R$ et $\rho = \abs{z}$ tels que :
+	Soient $z \in \C^*$, $\theta = \arg(z)$ et $\rho = \abs{z}$ tels que :
 	\[ z = \rho e^{i\theta} \]
 	$z$ admet $n$ racines $n$-ièmes, pour $0 \leq k \leq n - 1$ :
 	\[ \omega_k = \rho^{\frac{1}{n}} e^{i \left( \frac{\theta}{n} + \frac{2 k \pi}{n} \right)} \]
 \end{proposition}
 
 \begin{proof}
-	En utilisant la forme exponentielle.
+	Soit $z = \rho e^{i \theta}$. \\
+	Les racines $n$-ièmes de $z$ sont les nombres $\omega = re^{i \theta'}$ pour $r = \abs{\omega}$ et $\theta' = \arg(\omega)$ tels que $\omega^n = z$.
+	\begin{align*}
+		(r e^{i \theta'})^n &= \rho e^{i \theta} \\
+		r^n (e^{i \theta'})^n &= \rho e^{i \theta} \\
+		r^n e^{i n \theta'} &= \rho e^{i \theta}
+	\end{align*} 
+	Par identification nous avons pour $0 \leq k \leq n - 1$:
+	\begin{align*}
+		\begin{cases}
+			r^n = \rho \\
+			n \theta' = \theta + 2 k \pi
+		\end{cases}
+		\iff 
+		\begin{cases}
+			r = \rho^{\frac{1}{n}} \\
+			\theta' = \frac{\theta}{n} + \frac{2 k \pi}{n}
+		\end{cases}
+	\end{align*}
+	On a finalement : 
+	\[ \omega_k = \rho^{\frac{1}{n}} e^{i \left( \frac{\theta}{n} + \frac{2 k \pi}{n} \right) } \]
 \end{proof}
 
 \section{Géométrie des nombres complexes}
