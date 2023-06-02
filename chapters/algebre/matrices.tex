@@ -92,7 +92,46 @@
 \par Décrivons maintenant l'algorithme du pivot de Gauss utilisé pour résoudre des systèmes. On expliquera la méthode sur les lignes mais les principes sont analogues pour les colonnes.
 \par \noindent La méthode consiste à appliquer les opérations élémentaires sur le système ou la matrice afin d'en faire un système ou une matrice échelonnée réduite.
 
+Considérons le système suivant :
+\[
+\begin{cases}
+	a_{1,1} x_1 + a_{1,2} x_2 + \cdots + a_{1,n} x_n = b_1 \\
+	a_{2,1} x_1 + a_{2,2} x_2 + \cdots + a_{2,n} x_n = b_2 \\
+	\vdots \\
+	a_{m,1} x_1 + a_{m,2} x_2 + \cdots + a_{m,n} x_n = b_n
+\end{cases}
+\]
 
+\par Le but est d'annuler tous les coefficients $a_{2,1}, a_{3,1}, \ldots, a_{m,1}$ à partir de $a_{1,1}$ puis d'annuler les coefficients $a_{3,2}, a_{4,2}, \ldots, a_{m,2}$ à partir de $a_{2,2}$ et ainsi de suite jusqu'à que $a_{m,n} = 1$.
+\\
+\par Pour annuler le coefficient $a_{i,j}$ à partir du pivot $a_{k,j}$ avec $k < i$, on applique l'opération élémentaire suivante :
+\[ L_i \leftarrow L_i - \frac{a_{i,j}}{a_{k,j}} L_k \]
+
+\`A la fin de toutes ces opérations, on obtient un système linéaire de la forme :
+
+\[
+\left\{
+\begin{array}{rrrrrrrrr}
+	a_{1,1} x_1 & + & a_{1,2} x_2  & + & \cdots & + & a_{1,n} x_n  & = & b_1  \\
+	            &   & a_{2,2}' x_2 & + & \cdots & + & a_{2,n}' x_n & = & b_2' \\
+	            &   &              & \vdots  &  &   &              &   &      \\
+	            &   &              &   &        &   & x_n          & = & b_n'
+\end{array}
+\right.
+\]
+
+On va ensuite chercher à remonter dans le système en appliquant les opérations élémentaires avec le même principe que lors de la descente. Pour ensuite obtenir un système de la forme 
+
+\[
+\left\{
+\begin{array}{ccccccccc}
+	x_1 &  &     &        &  &  &     & = & b_1'  \\
+	    &  & x_2 &        &  &  &     & = & b_2'' \\
+	    &  &     & \ddots &  &  &     &   &       \\
+	    &  &     &        &  &  & x_n & = & b_n'
+\end{array}
+\right.
+\]
 
 \begin{example}
 	Utilisons l'algorithme du pivot de Gauss pour résoudre le système suivant.
