@@ -420,7 +420,7 @@
 \begin{proof}
     Soit $(u_n)_{n \in \N}$ une suite. Soit $E = \{ n \in \N,\ \forall m \geq n,\ u_m \leq u_n \}$.
     \\ 
-    \textbf{Cas 1 :} $E$ est fini, donc majoré par un entier $N,\ \forall n \leq N,\ n \notin E$ donc $\exists m > n,\ u_m > u_n$. On définit alors par récurrence une extraction $\varphi : \N \to \N$ en posant $\varphi(0) = N + 1$, puis, étant donnés $\varphi(0) < \varphi(1) < \cdots < \varphi(K)$, on choisit $\varphi(K + 1)$ tel que $u_{\varphi(K+1)} > u_{\varphi(K)}$ et la suite extraite $(u_{\varphi(n)})_{n \in \N}$ est croissante.
+    \textbf{Cas 1 :} $E$ est fini, donc majoré par un entier $N,\ \forall n \geq N : n \notin E$ donc $\exists m > n,\ u_m > u_n$. On définit alors par récurrence une extraction $\varphi : \N \to \N$ en posant $\varphi(0) = N + 1$, puis, étant donnés $\varphi(0) < \varphi(1) < \cdots < \varphi(K)$, on choisit $\varphi(K + 1)$ tel que $u_{\varphi(K+1)} > u_{\varphi(K)}$ et la suite extraite $(u_{\varphi(n)})_{n \in \N}$ est croissante.
     \\ 
     \textbf{Cas 2 :} $E$ est infini. On pose $E = \{ \varphi(n) : n \in \N \}$ avec $\varphi : \N \to \N$.
     \[ \forall k \in \N,\ \varphi(k) \in E, \text{ comme } \varphi(K + 1) > \varphi(K),\ u_{\varphi(K+1)} \leq u_{\varphi(K)} \]
