@@ -97,20 +97,19 @@
 \section{Algorithme d'Euclide}
 \begin{proposition}[Algorithme d'Euclide]
 	Soient $a, b \in \Z^*$ tels que $\abs{a} > \abs{b}$.
-	\[ \exists ! (q, r) \in \Z^2,\ a = bq + r,\ 0 \leq r < \abs{b} \]
+	\[ \exists ! (q, r) \in \Z^2,\ 0 \leq r < \abs{b} : a = bq + r,\  \]
 	\[ \pgcd(a, b) = \pgcd(b, a) = \pgcd(b, a - qb) = \pgcd(b, r) \]
 	\begin{enumerate}
 		\item Si $r = 0$ alors $a = qb$ et donc $\pgcd(a, b) = b$.
 		\item Si $r \neq 0$ alors :
-		\[ \exists ! (q_1, r_1) \in \Z^2,\ b = q_1 r + r_1,\ 0 \leq r_1 < r \]
+		\[ \exists ! (q_1, r_1) \in \Z^2,\ 0 \leq r_1 < r : b = q_1 r + r_1 \]
 		Ensuite : 
 		\begin{enumerate}
 			\item Si $r_1 = 0$ alors $b = q_1 r$ et donc $\pgcd(a, b) = r$.
 			\item Si $r_1 \neq 0$ alors :
-			\[ \exists ! (q_2, r_2) \in \Z^2,\ r = q_2 r_1 + r_2,\ 0 \leq r_2 < r_1 \]
+			\[ \exists ! (q_2, r_2) \in \Z^2,\ 0 \leq r_2 < r_1 : r = q_2 r_1 + r_2 \]
 		\end{enumerate}
 	\end{enumerate}
-	
 	On procède de cette manière jusqu'à obtenir un reste nul, le $\pgcd$ de $a$ et $b$ est le dernier reste non nul.
 \end{proposition}
 
