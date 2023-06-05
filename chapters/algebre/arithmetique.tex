@@ -9,7 +9,7 @@
 \section{Divisibilité}
 
 \begin{theorem}[Division euclidienne]
-    Soient $a \in \Z$ et $b \in \Z^*$.
+    Pour tous $a \in \Z$ et $b \in \Z^*$ :
     \[ \exists ! (q, r) \in \Z^2,\ 0 \leq r < \abs{b} : a = bq + r  \]
     \begin{enumerate}
     	\item $a$ est appelé le \textbf{dividende}.
@@ -66,7 +66,7 @@
 \end{definition}
 
 \begin{theorem}
-	Soient $a, b \in \Z^*$ et $d \in \Z$.
+	Pour tous $a, b \in \Z^*$ et $d \in \Z$ :
 	\begin{enumerate}
 		\item $a \mid d \text{ et } b \mid d \implies \ppcm(a, b) \mid d$.
 		\item $d \mid a \text{ et } d \mid b \implies d \mid \pgcd(a, b)$.
@@ -96,7 +96,7 @@
 
 \section{Algorithme d'Euclide}
 \begin{proposition}[Algorithme d'Euclide]
-	Soient $a, b \in \Z^*$ tels que $\abs{a} > \abs{b}$.
+	Pour tous $a, b \in \Z^*$ tels que $\abs{a} > \abs{b}$ :
 	\[ \exists ! (q, r) \in \Z^2,\ 0 \leq r < \abs{b} : a = bq + r,\  \]
 	\[ \pgcd(a, b) = \pgcd(b, a) = \pgcd(b, a - qb) = \pgcd(b, r) \]
 	\begin{enumerate}
@@ -125,7 +125,7 @@
 \end{example}
 
 \begin{theorem}[Identité de Bézout]
-	Soient $a, b \in \Z$.
+	Pour tous $a, b \in \Z$ :
 	\[ \exists (u, v) \in \Z^2,\ au + bv = \pgcd(a, b) \]
 \end{theorem}
 
@@ -149,12 +149,12 @@
 \end{example}
 
 \begin{corollary}
-	Soient $a, b \in \Z^*$ et $d \in \Z$.
+	Pour tous $a, b \in \Z^*$ et $d \in \Z$ :
 	\[ \exists (u, v) \in \Z^2,\ au + bv = d \iff \pgcd(a,b) \mid d \]
 \end{corollary}
 
 \begin{lemma}[Lemme de Gauss]
-	Soient $a, b \in \Z^*$ tels que $\pgcd(a, b) = 1$.
+	Pour tous $a, b \in \Z^*$ tels que $\pgcd(a, b) = 1$ :
 	\[ \forall c \in \Z,\ a \mid bc \implies a \mid c \]
 \end{lemma}
 
@@ -183,13 +183,13 @@
 \end{proof}
 
 \begin{lemma}
-	Soit $n \in \N$ tel que $n \geq 2$.
+	Pour tout $n \in \N$ tel que $n \geq 2$.
 	\\
 	Si $p$ est le plus petit diviseur de $n$ tel que $p > 2$ alors $p$ est premier.
 \end{lemma}
 
 \begin{theorem}[Décomposition en facteurs premiers]
-	Soit $n \in \N^*$ tel que $n \geq 2$. 
+	Pour tout $n \in \N^*$ tel que $n \geq 2$. 
 	\\
 	Il existe une unique écriture de $n$ sous la forme de :
 	\[ p_1^{\alpha_1} \cdots p_k^{\alpha_k} \]
@@ -227,7 +227,7 @@
 \end{definition}
 
 \begin{proposition}
-	Soient $a, b, c, d \in \Z$ et $k, n \in \N$ tel que $n \geq 2$.
+	Pour tous $a, b, c, d \in \Z$ et $k, n \in \N$ tel que $n \geq 2$ :
 	\begin{enumerate}
 		\item $a \equiv a \ [n]$. 
 		\item $a \equiv b \ [n] \iff b \equiv a \ [n]$. 
@@ -242,18 +242,18 @@
 \end{proof}
 
 \begin{theorem}
-	Soient $m_1, m_2 \in \N$ tel que :
+	Pour tous $m_1, m_2 \in \N$ tels que :
 	\begin{enumerate}
 		\item $m_1 > 1$.
 		\item $\pgcd(m_1, m_2) = 1$.
 	\end{enumerate}
-	Soient $a_1, a_2 \in \Z$ tel que pour $x \in \Z$ :
+	Soient $a_1, a_2 \in \Z$ tels que pour $x \in \Z$ :
 	\begin{enumerate}
 		\item $x \equiv a_1 \ [m_1]$.
 		\item $x \equiv a_2 \ [m_2]$.
 	\end{enumerate}
 	Notons $\mathcal{S}$ l'ensemble des solutions :
-	$\exists k_0,\ k \in \Z$ tel que :
+	$\exists k_0,\ k \in \Z$ tels que :
 	\begin{enumerate}
 		\item $\mathcal{S} = k_0 + k m_1 m_2$.
 		\item $0 \leq k_0 < m_1 m_2$.
