@@ -447,8 +447,13 @@ On définit :
     \begin{enumerate}
         \item On dit que $A$ et $B$ sont \textbf{équivalentes} si et seulement si : 
         \[ \exists P \in \operatorname{GL}(n),\ Q \in \operatorname{GL}(m),\ B = Q^{-1} A P \]
-        \item On dit que $A$ et $B$ sont \textbf{similaires} si et seulement si :
-        \[ \exists P \in \operatorname{GL}(n),\ B = P^{-1} A P \]
+        On note $A \sim B$.
+        \item On dit que $A$ et $B$ sont \textbf{semblables} si et seulement si :
+        \[ \exists P \in \operatorname{GL}(n),\ A = P B P^{-1} \]
+        On note $A \simeq B$.
     \end{enumerate}
 \end{definition}
 
+\begin{lemma}
+	$\forall A, B \in \mathcal{M}_n(\K),\ A \simeq B : \tr(A) = \tr(B)$.
+\end{lemma}
