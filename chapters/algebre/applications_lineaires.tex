@@ -1,6 +1,8 @@
 \chapter{Applications linéaires}
 \def\arraystretch{1}
 
+\par \noindent Dans ce chapitre $\K$ désigne un corps.
+
 \section{Définitions}
 \begin{definition}[Application linéaire]
     Soient $E$ et $F$ deux $\K$-espaces vectoriels et $f : E \to F$.
@@ -122,12 +124,12 @@ On définit :
 \end{definition}
 
 \begin{theorem}[Théorème du rang]
-    Soient $E, F$ des espaces vectoriels de dimensions finies ou infinies et $f \in \mathcal{L}(E, F)$, alors :
+    Pour tous $\K$-espacecs vectoriels $E, F$ de dimensions finies ou infinies et $f \in \mathcal{L}(E, F)$, alors :
     \[ \dim(E) = \dim(\ker(f)) + \rg(f) \]
 \end{theorem}
 
 \begin{corollary}
-    Soit $f \in \mathcal{L}(E)$.
+    Pour tous $\K$-espace vectoriel $E$ et $f \in \mathcal{L}(E)$ :
     \begin{align*}
         \begin{cases}
             \ker(f) + \Im(f) = \ker(f) \oplus \Im(f) \\
@@ -139,16 +141,16 @@ On définit :
 \end{corollary}
 
 \begin{proposition}
-    Soit $f \in \mathcal{L}(E, F)$ et $(b_1, \ldots, b_n)$ une base de $E$. Si l'on connait $f(b_i) \in F$, $1 \leq i \leq n$, on connait toute l'application $f$.
+    Pour tous $\K$-espaces vectoriels $E, F$, $f \in \mathcal{L}(E, F)$ et $(b_1, \ldots, b_n)$ une base de $E$. Si l'on connait $f(b_i) \in F$, $1 \leq i \leq n$, on connait toute l'application $f$.
 \end{proposition}
 
 \begin{proof}
-	$\forall x \in E,\ \exists ! (\lambda_1, \ldots, \lambda_n) \in \R^n$ tel que $x = \sum_{i=1}^{n} \lambda_i b_i$.
+	$\forall x \in E,\ \exists ! \lambda_i \in \R : x = \sum_{i=1}^{n} \lambda_i b_i$.
 	\[ f(x) = f \left( \sum_{i=1}^{n} \lambda_i b_i \right) = \sum_{i=1}^{n} \lambda_i f(b_i) \]
 \end{proof}
 
 \begin{corollary}
-    Soit $(b_1, \ldots, b_n)$ une base de $E$. Alors $\varphi \in \mathcal{L}(E, \R^n)$ est un isomorphisme donné par :
+    Pour toute base de $E$ : $(b_1, \ldots, b_n)$. $\varphi \in \mathcal{L}(E, \R^n)$ est un isomorphisme donné par :
     \[ \varphi(b_i) = e_i,\ 1 \leq i \leq n \]
     \[ \varphi \left( \sum_{i = 1}^{n} x_i b_i \right) = \sum_{i = 1}^{n} x_i e_i = 
     \begin{pmatrix}
@@ -160,12 +162,12 @@ On définit :
      \]
 \end{corollary}
 
-\begin{lemma} Soient $\K$ un corps et $E$ un $\K$-espace-vectoriel de dimension $n \in \N$.
+\begin{lemma} Pour tout $\K$-espace-vectoriel $E$ de dimension $n \in \N$ :
     \[ \dim(E) = n \implies E \cong \K^n \]
 \end{lemma}
 
 \begin{lemma}
-    Soient $\mathcal{B} = (b_1, \ldots, b_n)$ une base de $E$, $\lambda_1, \ldots, \lambda_n \in \K$ et $\varphi \in \mathcal{L}(E, \K^n)$  alors :
+    Soit $n \in \N^*$. Pour toute base de $E$ : $(b_1, \ldots, b_n)$ et pour tous $\lambda_1, \ldots, \lambda_n \in \K$, $\varphi \in \mathcal{L}(E, \K^n)$ :
     \begin{center}
     	$
     	\appli{\varphi}{E}{\K^n}{\sum_{i = 1}^{n} \lambda_i b_i}{
@@ -181,7 +183,7 @@ On définit :
 \end{lemma}
 
 \begin{proposition}
-    Soient $E, F$ des espaces vectoriels $f \in \mathcal{L}(E, F)$ un morphisme et $A$ sa matrice associée. 
+    Pour tous $\K$-espaces vectoriels $E, F$, $f \in \mathcal{L}(E, F)$ un morphisme et $A$ sa matrice associée :
     \[ y = f(x) \iff y = A \cdot x \]
 \end{proposition}
 
@@ -362,7 +364,9 @@ On définit :
 \end{example}
 
 \begin{definition}[Matrice de passage]
-    Soient $n \in \N^*$, $E$ un $\K$-espace vectoriel de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n)$ et $\mathcal{B}' = (b_1', \ldots, b_n')$ deux bases de $E$. On appelle \textbf{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$. Nous la noterons $P_{\mathcal{B}, \mathcal{B}'}$.
+    Soient $n \in \N^*$, $E$ un $\K$-espace vectoriel de dimension $n$, $\mathcal{B} = (b_1, \ldots, b_n)$ et $\mathcal{B}' = (b_1', \ldots, b_n')$ deux bases de $E$. On appelle \textbf{matrice de passage} de $\mathcal{B}$ à $\mathcal{B}'$ la matrice carrée de taille $n$ dont la $j-$ième colonne est formée des coordonnées de $b_j'$ dans la base $\mathcal{B}$. 
+    \\
+    Nous la noterons $P_{\mathcal{B}, \mathcal{B}'}$.
     \begin{align*}
     	\hspace{0.45cm}
     	\begin{matrix}

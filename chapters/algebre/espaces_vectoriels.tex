@@ -1,6 +1,8 @@
 \chapter{Espaces vectoriels}\label{chap:espaces_vectoriels}
 \def\arraystretch{1}
 
+\par \noindent Dans ce chapitre $\K$ désigne un corps.
+
 \section{Définitions}
 \begin{definition}[Loi de composition]
 	Soient $E$, $F$ deux ensembles et $f$ une application.
@@ -55,8 +57,6 @@
 \end{definition}
 
 \begin{definition}[$\K$-espace vectoriel]
-	Soit $\K$ un corps. 
-	\\
 	Un $\K$-espace vectoriel est un ensemble $E$ composé d'une loi de composition \textbf{interne} \og $+$ \fg et d'une loi de composition \textbf{externe} \og $\cdot$ \fg telles que :
 	\begin{center}
 		$
@@ -179,7 +179,7 @@
 \end{definition}
 
 \begin{proposition}
-	Soient un espace vectoriel $E$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $E$.
+	Pour tous $\K$-espace vectoriel $E$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $E$ :
 	\[ 
 	\mathcal{F} \text{ est une base} \iff 
 	\forall x \in E,\ \exists ! \lambda_i \in \K : x = \sum_{i = 1}^n \lambda_i u_i
@@ -189,7 +189,7 @@
 \begin{proof}
 	L'existence est évidente car $\mathcal{F}$ est génératrice. 
 	\\
-	Montrons l'unicité : Soient $\lambda_1, \ldots, \lambda_n, \mu_1, \ldots, \mu_n \in \K$.
+	Montrons l'unicité : Soient $\lambda_i, \mu_i \in \K$.
 	On a d'une part :
 	\[ \forall x \in E,\ x = \sum_{i=1}^{n} \lambda_i u_i \]
 	puis d'autre part :
@@ -199,16 +199,18 @@
 		&\sum_{i=1}^{n} \lambda_i u_i = \sum_{i=1}^{n} \mu_i u_i \\
 		\iff &\sum_{i=1}^{n} (\lambda_i - \mu_i) u_i = 0 
 	\end{align*}
-	Or $\mathcal{F}$ est libre, donc pour tout $i \in \llbracket 1, n \rrbracket,\ \lambda_i - \mu_i = 0 \implies \lambda_i = \mu_i$.
+	Or $\mathcal{F}$ est libre, donc $\lambda_i - \mu_i = 0 \implies \lambda_i = \mu_i$.
 \end{proof}
 
 \begin{proposition}
-	Soit $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $\R^n$. $\mathcal{F}$ est une base de $\R^n$ si et seulement si :
+	Pour toute famille de vecteurs de $\R^n : \mathcal{F} = (u_1, \ldots, u_n)$. 
+	\\
+	$\mathcal{F}$ est une base de $\R^n$ si et seulement si :
 	\[ \det(\mathcal{F}) \neq 0 \]
 \end{proposition}
 
 \begin{proof}
-	$\mathcal{F} = (u_1, \ldots, u_n)$ est une base $\iff \forall x \in \R^n,\ \exists ! (\lambda_1, \ldots, \lambda_n) \in \R^n : x = \sum_{i=1}^{n} \lambda_i u_i$.
+	$\mathcal{F} = (u_1, \ldots, u_n)$ est une base $\iff \forall x \in \R^n,\ \exists ! \lambda_i \in \R : x = \sum_{i=1}^{n} \lambda_i u_i$.
 	\begin{align*}
 		x = \sum_{i=1}^{n} \lambda_i u_i &= 
 		\begin{pmatrix}
@@ -248,7 +250,7 @@
 	$\\
 	On a donc :
 	\[ x = A \cdot \lambda \]
-	Il existe une solution unique si et seulement s'il existe l'inverse de $A$, c'est-à-dire que $\det(A) \neq 0$.
+	Il existe une solution unique si et seulement si l'inverse de $A$ existe, c'est-à-dire que $\det(A) \neq 0$.
 \end{proof}
 
 \begin{definition}[Dimension d'un espace vectoriel]
@@ -256,7 +258,7 @@
 \end{definition}
 
 \begin{proposition}
-	Soient $E$ un espace vectoriel de dimension $n$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $E$. Alors on a :
+	Pour tous $\K$-espace vectoriel $E$ de dimension $n$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $E$ :
 	\begin{enumerate}
 		\item $\mathcal{F}$ est une base.
 		\item $\mathcal{F}$ est libre.
@@ -278,7 +280,7 @@
 \end{theorem}
 
 \begin{corollary}
-	Soient $n, N \in \N^*,\ \mathcal{F} = (u_1, \ldots, u_N)$, $E$ un espace vectoriel tel que $\dim(E) = n$.
+	Soient $n, N \in \N^*$. Pour tous $\K$-espace vectoriel $E$ de dimension $n$ et $\mathcal{F} = (u_1, \ldots, u_N)$ une famille de vecteurs de $E$ :
 	\begin{enumerate}
 		\item Si $N > n$ alors $\mathcal{F}$ n'est pas libre.
 		\item Si $N < n$ alors $\mathcal{F}$ n'est pas génératrice.
