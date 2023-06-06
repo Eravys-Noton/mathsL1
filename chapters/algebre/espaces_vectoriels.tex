@@ -102,7 +102,8 @@
 \end{definition}
 
 \begin{proposition}
-	Soient $E$ un $\K$-espace vectoriel et $F_1, F_2 \subseteq E$, on a $F_1 + F_2 \subseteq E$. 
+	Pour tous $\K$-espace vectoriel $E$, $F_1, F_2 \subseteq E$ :
+	 \[ F_1 + F_2 \subseteq E \]
 \end{proposition}
 
 \begin{proof}
@@ -124,7 +125,8 @@
 \end{proof}
 
 \begin{proposition}
-	$\Vect(u_1, \ldots, u_k) \subseteq \R^n$ est un sous-espace vectoriel.
+	$\forall k \in \N^*$, $u_1, \ldots, u_k \in \R$ : 
+	$\Vect(u_1, \ldots, u_k) \subseteq \R^n$.
 \end{proposition}
 
 \begin{proof}
@@ -138,7 +140,8 @@
 \end{proof}
 
 \begin{proposition}
-	Soient $E$ un $\K$-espace vectoriel, $F_1, F_2 \subseteq E$ alors $F_1 \cap F_2 \subseteq E$.
+	Pour tous $\K$-espace vectoriel $E$, $F_1, F_2 \subseteq E$ : 
+	$F_1 \cap F_2 \subseteq E$.
 \end{proposition}
 
 \begin{proof}
@@ -172,14 +175,14 @@
 
 \section{Base et dimension}
 \begin{definition}[Base]
-	Une famille de vecteurs est une base si elle est \textbf{libre} et \textbf{génératrice}.
+	Une famille de vecteurs est une \textbf{base} si elle est \textbf{libre} et \textbf{génératrice}.
 \end{definition}
 
 \begin{proposition}
 	Soient un espace vectoriel $E$ et $\mathcal{F} = (u_1, \ldots, u_n)$ une famille de vecteurs de $E$.
 	\[ 
 	\mathcal{F} \text{ est une base} \iff 
-	\forall x \in E,\ \exists ! \lambda_i \in \K^n : x = \sum_{i = 1}^n \lambda_i u_i
+	\forall x \in E,\ \exists ! \lambda_i \in \K : x = \sum_{i = 1}^n \lambda_i u_i
 	\]
 \end{proposition}
 
@@ -283,7 +286,7 @@
 \end{corollary}
 
 \begin{proposition}
-	Soient $E$ un espace vectoriel et $F, G\subseteq E$.
+	Soit $E$ un espace vectoriel. Pour tous $F, G\subseteq E$ :
 	\begin{multicols}{2}
 	    \begin{enumerate}
     		\item $\dim(F \oplus G) = \dim(F) + \dim(G)$ .
@@ -293,7 +296,7 @@
 \end{proposition}
 
 \begin{theorem}[Théorème de Grassman]
-	Soient $F$ et $G$ deux espaces vectoriels.
+	Pour tous $\K$-espaces vectoriels $F$ et $G$ :
 	\[ \dim(F+G) = \dim(F) + \dim(G) - \dim(F\cap G) \]
 \end{theorem}
 
