@@ -17,20 +17,20 @@
 \end{definition}
 
 \begin{definition}[Monoïde \cite{monoide_bibmath}]
-	On appelle \textbf{monoïde} un ensemble $M$ muni d'une loi de composition \textbf{interne} \og $*$ \fg \textbf{associative}.
+	On appelle \textbf{monoïde} un ensemble $M$ muni d'une loi de composition \textbf{interne} \og $*$ \fg \textbf{associative}. C'est-à-dire que pour tous $x, y, z \in M$ :
+	\[ x * (y * z) = (x * y) * z \]
 \end{definition}
 
 \begin{definition}[Groupe]
-	Soit $(G, *)$ un magma.
+	Soit $(G, *)$ un \textbf{monoïde}.
 	\\ 
-	On dit que $(G, *)$ est un groupe si et seulement si pour tous $g_1, g_2, g_3 \in G$ : 
+	On dit que $(G, *)$ est un \textbf{groupe} si et seulement si pour tous $g_1, g_2 \in G$ : 
     \begin{enumerate}
-    		\item $(g_1 * g_2) * g_3 = g_1 * (g_2 * g_3)$
     		\item $\exists 0_G \in G,\ g_1 * 0_G = 0_G * g_1 = g_1$
     		\item $\exists g^{-1} \in G,\ g_1 * g^{-1} = g^{-1} * g_1 = 0_G$
     	\end{enumerate}
     \noindent De plus, si et seulement :
-    \[ g_1 * g_2 = g_2* g_1 \]
+    \[ g_1 * g_2 = g_2 * g_1 \]
     on dit que $(G, *)$ est un groupe \textbf{commutatif} ou \textbf{abélien}.
 \end{definition}
 
@@ -46,7 +46,7 @@
 	\noindent On dit que $A$ est \textbf{intègre} si :
 	\begin{enumerate}
 			\item $A$ est commutatif : $a \cdot b = b \cdot a$.
-			\item $a \cdot b = 0 \implies a = 0 \lor b = 0$.
+			\item $a \cdot b = 0 \implies a = 0 \text{ ou } b = 0$.
 		\end{enumerate}
 \end{definition}
 
