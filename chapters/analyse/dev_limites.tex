@@ -43,6 +43,7 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 \end{definition}
 
 \begin{proposition}
+	Pour toutes fonctions $f, g$ telles que $g$ ne s'annule pas :
     \begin{enumerate}
         \item Si $\lim_{x \to a} \frac{f(x)}{g(x)} = 0$ alors $f$ est \textbf{négligeable} devant $g$.
         \item Si $\lim_{x \to a} \frac{f(x)}{g(x)} = 1$ alors $f$ est \textbf{équivalente} à $g$.
@@ -52,23 +53,23 @@ Plus tard dans ce chapitre, nous pourrons également utiliser les développement
 
 \begin{proposition}
 	\begin{enumerate}
-        \item $o(1) + o(1) = o(1)$
-        \item $\forall \lambda \in \R,\ \lambda \cdot o(1) = o(1)$
-        \item $\forall n \in \N^*,\ (o(1))^n = o(1)$
-        \item $\forall \alpha > 0,\ (o(1))^{\alpha} = o(1)$
-        \item $\forall \alpha \in \R,\ (1 + o(1))^{\alpha} = 1 + o(1)$
-        \item $O(1) + O(1) = O(1)$
-        \item $\forall \lambda \in \R,\ \lambda \cdot O(1) = O(1)$
-        \item $\forall n \in \N^*,\ (O(1))^n = O(1)$
-        \item $o(1) \cdot O(1) = o(1)$
+        \item $o(1) + o(1) = o(1)$.
+        \item $\forall \lambda \in \R : \lambda \cdot o(1) = o(1)$.
+        \item $\forall n \in \N^* : (o(1))^n = o(1)$.
+        \item $\forall \alpha > 0 : (o(1))^{\alpha} = o(1)$.
+        \item $\forall \alpha \in \R : (1 + o(1))^{\alpha} = 1 + o(1)$.
+        \item $O(1) + O(1) = O(1)$.
+        \item $\forall \lambda \in \R : \lambda \cdot O(1) = O(1)$.
+        \item $\forall n \in \N^* : (O(1))^n = O(1)$.
+        \item $o(1) \cdot O(1) = o(1)$.
     \end{enumerate}
 \end{proposition}
 
 \begin{proposition}
 	\begin{enumerate}
         \item $\ln(x) \underset{+\infty}{\sim} o(x)$
-        \item $\forall \alpha,\ \beta \in \R_+^*,\ (\ln(x))^{\beta} = o(x^{\alpha})$
-        \item $\forall \alpha,\ \beta \in \R_+^*,\ x^{\beta} = o(e^{\alpha x})$
+        \item $\forall \alpha, \beta \in \R_+^*,\ (\ln(x))^{\beta} = o(x^{\alpha})$
+        \item $\forall \alpha, \beta \in \R_+^*,\ x^{\beta} = o(e^{\alpha x})$
     \end{enumerate}
 \end{proposition}
 
