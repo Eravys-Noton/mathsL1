@@ -325,16 +325,19 @@ On va ensuite chercher à remonter dans le système en appliquant les opération
 \end{example}
 
 \begin{proposition}
-	Soient $m, n, k, l \in \N^*$.
+	$\forall m, n, k, l \in \N^*$ :
 	\begin{enumerate}
-		\item $\forall A, B, C \in \mathcal{M}_{m,n} (\K)$.
-		\[A + B = B + A\]
-		\[A + (B + C) = (A + B) + C\]
-		\item $\forall A \in \mathcal{M}_{m, k}(\K),\ B \in \mathcal{M}_{k, l}(\K),\ C \in \mathcal{M}_{l, n}(\K)$.
-		\[A \cdot (B \cdot C) = (A \cdot B) \cdot C\]
-		\item $\forall A \in \mathcal{M}_{m, k}(\K),\ B, C \in \mathcal{M}_{k, n}(\K),\ \lambda \in \K$.
-		\[A \cdot (B + \lambda C) = A \cdot B + \lambda \cdot A \cdot C\]
-		\[(A + \lambda B) \cdot C = A \cdot C + \lambda \cdot B \cdot C\]
+		\item $\forall A, B, C \in \mathcal{M}_{m,n} (\K)$ :
+		\begin{enumerate}
+			\item $A + B = B + A$.
+			\item $A + (B + C) = (A + B) + C$.
+		\end{enumerate}
+		\item $\forall A \in \mathcal{M}_{m, k}(\K),\ B \in \mathcal{M}_{k, l}(\K),\ C \in \mathcal{M}_{l, n}(\K)$ : $A \cdot (B \cdot C) = (A \cdot B) \cdot C$.
+		\item $\forall A \in \mathcal{M}_{m, k}(\K),\ B, C \in \mathcal{M}_{k, n}(\K),\ \lambda \in \K$ :
+		\begin{enumerate}
+			\item $A \cdot (B + \lambda C) = A \cdot B + \lambda \cdot A \cdot C$.
+			\item $(A + \lambda B) \cdot C = A \cdot C + \lambda \cdot B \cdot C$.
+		\end{enumerate}
 	\end{enumerate}
 \end{proposition}
 
@@ -377,7 +380,7 @@ On va ensuite chercher à remonter dans le système en appliquant les opération
 \end{remark}
 
 \begin{lemma}
-	Soient $m,n \in \N^*$.
+	$\forall m,n \in \N^*$ :
 	\begin{multicols}{2}
 	    \begin{enumerate}
     		\item $\forall A \in \mathcal{M}_{m, n}(\K),\ A + 0_{m,n} = A$
@@ -540,10 +543,10 @@ Soit $A$ une matrice carrée de taille $n \times n$ de coefficients $a_{1,1},\ld
 	Soient $n \in \N^*$, $A, B \in \mathcal{M}_n(\K)$ et $\lambda \in \K$.
 	\begin{multicols}{2}
 	    \begin{enumerate}
-		\item $\det(A \cdot B) = \det(A) \cdot \det(B)$
-		\item $\det(\lambda A) = \lambda^n \det(A)$
-		\item $\det(A^T) = \det(A)$
-		\item $\det(A^{-1}) = \frac{1}{\det(A)}$ si $\det(A) \neq 0$
+		\item $\det(A \cdot B) = \det(A) \cdot \det(B)$.
+		\item $\det(\lambda A) = \lambda^n \det(A)$.
+		\item $\det(A^T) = \det(A)$.
+		\item $\det(A^{-1}) = \frac{1}{\det(A)}$ si $\det(A) \neq 0$.
 	\end{enumerate}
 	\end{multicols}
 \end{proposition}
@@ -723,10 +726,11 @@ Une autre méthode générale est d'utiliser la comatrice de $A$.
 \end{example}
 
 \begin{lemma}
+	$\forall A, B \in \mathcal{M}_n(\K)$ :
 	\begin{multicols}{2}
 	    \begin{enumerate}
-    		\item $\tr(A^T) = \tr(A)$
-    		\item $\tr(A B) = \tr(B A)$
+    		\item $\tr(A^T) = \tr(A)$.
+    		\item $\tr(A B) = \tr(B A)$.
     	\end{enumerate}
 	\end{multicols}
 \end{lemma}
