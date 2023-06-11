@@ -137,6 +137,25 @@ Il est possible de représenter les nombres complexes sur un plan complexe avec 
 	\[ z = re^{i \theta} \]
 \end{definition}
 
+Pour cette partie, il est recommandé de lire le chapitre sur les développements limités (voir \autoref{chap:dev_limites}).
+
+\begin{center}
+	$
+	\begin{array}{ccc}
+		\appli{\exp}{\C}{\C}{z}{\sum_{n = 0}^{\infty} \frac{z^n}{n!}} &
+		\appli{\sin}{\C}{\C}{z}{\sum_{n = 0}^{\infty} (-1)^{n} \frac{z^{2n+1}}{(2n+1)!}} &
+		\appli{\cos}{\C}{\C}{z}{\sum_{n = 0}^{\infty} (-1)^n \frac{z^{2n}}{(2n)!}}
+	\end{array}
+	$
+\end{center}
+
+\begin{align*}
+	e^{iz} &= \sum_{n = 0}^{\infty} \frac{(iz)^n}{n!} \\
+	       &= \sum_{n = 0}^{\infty} \frac{(iz)^{2n}}{(2n)!} + \sum_{n = 0}^{\infty} \frac{(iz)^{2n + 1}}{(2n + 1)!} \\
+	       &= \sum_{n = 0}^{\infty} (-1)^n \frac{z^{2n}}{(2n)!} + i \sum_{n = 0}^{\infty} (-1)^n \frac{z^{2n+1}}{(2n+1)!} \\
+	       &= \cos(z) + i \sin(z)
+\end{align*}
+
 \begin{proposition}[Formule de Moivre]
 	Pour tous $\theta \in \R$ et $n \in \N$ :
 	\[ (\cos(\theta) + i \sin(\theta))^n = \cos(n \theta) + i \sin(n \theta) \]
@@ -149,9 +168,9 @@ Il est possible de représenter les nombres complexes sur un plan complexe avec 
 \begin{proposition}[Formules d'Euler]
 	Pour tout $\theta \in \R$ :
 	\begin{enumerate}
-			\item $\cos(\theta) = \frac{e^{i\theta} + e^{-i\theta}}{2}$.
-			\item $\sin(\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i}$.
-		\end{enumerate}
+		\item $\cos(\theta) = \frac{e^{i\theta} + e^{-i\theta}}{2}$.
+		\item $\sin(\theta) = \frac{e^{i\theta} - e^{-i\theta}}{2i}$.
+	\end{enumerate}
 \end{proposition}
 
 \begin{definition}
